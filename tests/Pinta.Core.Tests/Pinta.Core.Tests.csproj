@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Pinta.Core.Tests</RootNamespace>
+    <AssemblyName>Pinta.Core.Tests</AssemblyName>
+    <IsPublishable>false</IsPublishable>
+
+    <Version>1.8.0.0</Version>
+    <Authors>PintaProject</Authors>
+    <Company />
+    <Product />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.24.24.4" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pinta.Core\Pinta.Core.csproj" />
+  </ItemGroup>
+
+</Project>

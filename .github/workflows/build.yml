@@ -1,0 +1,101 @@
+name: Build
+
+on:
+  # Build on new commits or pull requests.
+  push:
+  pull_request:
+  schedule:
+    # Run every week just to make sure the CI environment still works.
+    - cron: '0 0 * * 0'
+
+env:
+  DOTNET_VERSION: 5.0.x
+
+jobs:
+  build-ubuntu:
+    strategy:
+      matrix:
+        platform: [ubuntu-18.04, ubuntu-20.04]
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{env.DOTNET_VERSION}}
+    - name: Install Apt Dependencies
+      run: |
+        sudo apt update
+        sudo apt install autotools-dev autoconf-archive gettext intltool libgtk-3-dev
+    - name: Build
+      run: |
+        ./autogen.sh --prefix ${{ runner.temp }}
+        make build
+    - name: Test
+      run: make test
+    - name: Test Install
+      run: make install
+    - name: Build Installer
+      run: make releasezip
+    - name: Upload Installer
+      uses: actions/upload-artifact@v2
+      with:
+        name: Pinta-${{ matrix.platform }}.zip
+        path: pinta-1.8.zip
+        if-no-files-found: error
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{env.DOTNET_VERSION}}
+    - name: Install Dependencies
+      run: brew install gtk+3 adwaita-icon-theme gettext
+    - name: Build
+      run: dotnet build Pinta.sln --configuration Release
+    - name: Test
+      run: dotnet test Pinta.sln --configuration Release
+    - name: Build Installer
+      run: |
+        cd installer/macos
+        ./build_installer.sh
+    - name: Upload Installer
+      uses: actions/upload-artifact@v2
+      with:
+        name: "Pinta.app.zip"
+        path: installer/macos/Pinta.app.zip
+        if-no-files-found: error
+
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: microsoft/setup-msbuild@v1.0.2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{env.DOTNET_VERSION}}
+    - name: Build
+      run: dotnet build Pinta.sln --configuration Release
+    - name: Test
+      run: dotnet test Pinta.sln --configuration Release
+
+    # Note that msgfmt is already available from the Git for Windows installation!
+    - name: Build Installer
+      run: |
+        dotnet publish Pinta.sln -p:BuildTranslations=true --configuration Release -r win-x64
+        iscc installer/windows/installer.iss
+
+    - name: Upload Installer
+      uses: actions/upload-artifact@v2
+      with:
+        name: "Pinta.exe"
+        path: installer/windows/Pinta.exe
+        if-no-files-found: error
