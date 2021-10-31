@@ -1,0 +1,2095 @@
+# Japanese translation for pinta
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pinta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pinta\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-05 23:09-0500\n"
+"PO-Revision-Date: 2013-10-15 01:06+0000\n"
+"Last-Translator: ub <xenolith0bytetestcomgreen@gmail.com>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Launchpad-Export-Date: 2014-05-24 15:44+0000\n"
+"X-Generator: Launchpad (build 17017)\n"
+
+#: Pinta.Gui.Widgets/Widgets/Layers/LayersListWidget.cs:216
+msgid "Layer Shown"
+msgstr "レイヤー表示"
+
+#: Pinta.Gui.Widgets/Widgets/Layers/LayersListWidget.cs:216
+msgid "Layer Hidden"
+msgstr "レイヤー非表示"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:84
+msgid "Choose Primary Color"
+msgstr "プライマリ色を選択"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:99
+msgid "Choose Secondary Color"
+msgstr "セカンダリ色を選択"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:130
+msgid "Choose Palette Color"
+msgstr "パレットカラーを選択"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:227
+msgid "Click to switch between primary and secondary color."
+msgstr "クリックでプライマリ色とセカンダリ色の入れ替え。"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:229
+msgid "Click to reset primary and secondary color."
+msgstr "クリックでプライマリ色とセカンダリ色のリセット。"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:231
+msgid "Click to select primary color."
+msgstr "クリックでプライマリーの選択。"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:233
+msgid "Click to select secondary color."
+msgstr "クリックでセカンダリ色の選択。"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:235
+msgid ""
+"Left click to set primary color. Right click to set secondary color. Middle "
+"click to choose palette color."
+msgstr "左クリックでプライマリ色をセット、右クリックでセカンダリ色をセット、中クリックでパレットカラーの選択。"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.HScaleSpinButtonWidget.cs:48
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.AnglePickerWidget.cs:52
+msgid "label1"
+msgstr "ラベル1"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ReseedButtonWidget.cs:38
+msgid "Random Noise"
+msgstr "ランダムノイズ"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ReseedButtonWidget.cs:65
+msgid "Reseed"
+msgstr "シード再生成"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ComboBoxWidget.cs:42
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.PointPickerWidget.cs:58
+msgid "label"
+msgstr "ラベル"
+
+#: Pinta.Tools/Brushes/CircleBrush.cs:37
+msgid "Circles"
+msgstr "円"
+
+#: Pinta.Tools/Brushes/PlainBrush.cs:37
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:181
+#: Pinta.Core/Effects/UserBlendOps.cs:52
+msgid "Normal"
+msgstr "通常"
+
+#: Pinta.Tools/Brushes/GridBrush.cs:37
+msgid "Grid"
+msgstr "グリッド"
+
+#: Pinta.Tools/Brushes/SquaresBrush.cs:39
+msgid "Squares"
+msgstr "四角形"
+
+#: Pinta.Tools/Brushes/SplatterBrush.cs:37
+msgid "Splatter"
+msgstr "スプラッター"
+
+#: Pinta.Tools/Tools/CloneStampTool.cs:42
+msgid "Clone Stamp"
+msgstr "複製スタンプ"
+
+#: Pinta.Tools/Tools/CloneStampTool.cs:47
+msgid "Ctrl-left click to set origin, left click to paint."
+msgstr "Ctrl+左クリックで画像を取得、左クリックで描画。"
+
+#: Pinta.Tools/Tools/PencilTool.cs:47 Pinta.Tools/Tools/ColorPickerTool.cs:209
+msgid "Pencil"
+msgstr "鉛筆"
+
+#: Pinta.Tools/Tools/PencilTool.cs:49
+msgid ""
+"Left click to draw freeform one-pixel wide lines with the primary color. "
+"Right click to use the secondary color."
+msgstr "左クリックでプライマリ色で１ピクセル幅の自由曲線を描画、右クリックはセカンダリ色。"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:52
+msgid "Freeform Shape"
+msgstr "フリーフォーム"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:54
+#: Pinta.Tools/Tools/PaintBrushTool.cs:42
+msgid ""
+"Left click to draw with primary color, right click to draw with secondary "
+"color."
+msgstr "左クリックでプライマリ色で描画、右クリックでセカンダリ色。"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:71
+#: Pinta.Tools/Tools/ShapeTool.cs:131
+msgid "Fill Style"
+msgstr "塗りつぶしスタイル"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:78
+#: Pinta.Tools/Tools/ShapeTool.cs:138
+msgid "Outline Shape"
+msgstr "輪郭を描く"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:79
+#: Pinta.Tools/Tools/ShapeTool.cs:139
+msgid "Fill Shape"
+msgstr "塗りつぶす"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:80
+#: Pinta.Tools/Tools/ShapeTool.cs:140
+msgid "Fill and Outline Shape"
+msgstr "塗りつぶして輪郭を描く"
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:76 Pinta.Tools/Tools/ShapeTool.cs:99
+msgid "Brush width"
+msgstr "ブラシサイズ"
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:81 Pinta.Tools/Tools/ShapeTool.cs:104
+msgid "Decrease brush size"
+msgstr "ブラシサイズを小さくします"
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:95 Pinta.Tools/Tools/ShapeTool.cs:118
+msgid "Increase brush size"
+msgstr "ブラシサイズを大きくします"
+
+#: Pinta.Tools/Tools/PaintBrushTool.cs:40 Pinta/MainWindow.cs:65
+msgid "Paintbrush"
+msgstr "ペイントブラシ"
+
+#: Pinta.Tools/Tools/PaintBrushTool.cs:78
+msgid "Type"
+msgstr "種類"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:63
+msgid "Color Picker"
+msgstr "色の取得"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:69
+msgid "Left click to set primary color. Right click to set secondary color."
+msgstr "左クリックでプライマリ色、右クリックでセカンダリ色を選択。"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:113
+msgid "Sampling"
+msgstr "色の選択"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:123
+msgid "Single Pixel"
+msgstr "ひとつのピクセル"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:124
+msgid "3 x 3 Region"
+msgstr "3 x 3 範囲"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:125
+msgid "5 x 5 Region"
+msgstr "5 x 5 範囲"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:126
+msgid "7 x 7 Region"
+msgstr "7 x 7 範囲"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:127
+msgid "9 x 9 Region"
+msgstr "9 x 9 範囲"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:135 Pinta.Core/Classes/Document.cs:278
+msgid "Layer"
+msgstr "レイヤー"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:136
+msgid "Image"
+msgstr "画像"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:147
+msgid "After select"
+msgstr "色取得後の動作"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:154
+msgid "Do not switch tool"
+msgstr "なにもしない"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:155
+msgid "Switch to previous tool"
+msgstr "以前のツールに切り替える"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:156
+msgid "Switch to Pencil tool"
+msgstr "鉛筆ツールに切り替える"
+
+#: Pinta.Tools/Tools/RectangleTool.cs:37
+msgid "Rectangle"
+msgstr "四角形"
+
+#: Pinta.Tools/Tools/RectangleTool.cs:43
+msgid ""
+"Click and drag to draw a rectangle (right click for secondary color). Hold "
+"Shift to constrain to a square."
+msgstr "クリックとドラッグで四角形を描画(右クリックでセカンダリ色) 、Shiftを押すと正方形を描画。"
+
+#: Pinta.Tools/Tools/EraserTool.cs:52
+msgid "Eraser"
+msgstr "消しゴム"
+
+#: Pinta.Tools/Tools/EraserTool.cs:54
+msgid ""
+"Left click to erase to transparent, right click to erase to secondary color. "
+msgstr "左クリックで消去、右クリックでセカンダリ色。 "
+
+#: Pinta.Tools/Tools/ZoomTool.cs:48
+msgid "Zoom"
+msgstr "ズーム"
+
+#: Pinta.Tools/Tools/ZoomTool.cs:54
+msgid ""
+"Left click to zoom in. Right click to zoom out. Click and drag to zoom in "
+"selection."
+msgstr "左クリックでズームイン、右クリックでズームアウト、クリックとドラッグで選択した範囲にズームイン。"
+
+#: Pinta.Tools/Tools/MoveSelectionTool.cs:42
+msgid "Move Selection"
+msgstr "選択範囲を移動"
+
+#: Pinta.Tools/Tools/MoveSelectionTool.cs:48
+msgid ""
+"Left click and drag the selection to move selection outline. Right click and "
+"drag the selection to rotate selection outline."
+msgstr "左クリックとドラッグで選択範囲の移動、右クリックとドラッグで選択範囲の回転。"
+
+#: Pinta.Tools/Tools/MoveSelectedTool.cs:43
+#: Pinta.Core/HistoryItems/FinishPixelsHistoryItem.cs:65
+#: Pinta.Core/HistoryItems/PasteHistoryItem.cs:67
+#: Pinta/Actions/Edit/PasteAction.cs:108
+msgid "Move Selected Pixels"
+msgstr "選択した領域の画像を移動"
+
+#: Pinta.Tools/Tools/MoveSelectedTool.cs:49
+msgid ""
+"Left click and drag the selection to move selected content. Right click and "
+"drag the selection to rotate selected content."
+msgstr "左クリックとドラッグで選択した領域の移動、右クリックとドラッグで領域の回転。"
+
+#: Pinta.Tools/Tools/PaintBucketTool.cs:40
+msgid "Paint Bucket"
+msgstr "ペイント缶"
+
+#: Pinta.Tools/Tools/PaintBucketTool.cs:46
+msgid ""
+"Left click to fill a region with the primary color, right click to fill with "
+"the secondary color."
+msgstr "左クリックでプライマリ色で塗りつぶし、右クリックでセカンダリ色。"
+
+#: Pinta.Tools/Tools/LassoSelectTool.cs:48
+msgid "Lasso Select"
+msgstr "なげなわ選択"
+
+#: Pinta.Tools/Tools/LassoSelectTool.cs:50
+msgid "Click and drag to draw the outline for a selection area."
+msgstr "クリック - ドラッグで境界線を描いて選択範囲を作成します。"
+
+#: Pinta.Tools/Tools/RecolorTool.cs:58
+msgid "Recolor"
+msgstr "塗り直し"
+
+#: Pinta.Tools/Tools/RecolorTool.cs:60
+msgid "Left click to replace the secondary color with the primary color."
+msgstr "左クリックでセカンダリ色をプライマリ色に置き換え。"
+
+#: Pinta.Tools/Tools/RecolorTool.cs:73 Pinta.Tools/Tools/FloodTool.cs:93
+msgid "Tolerance"
+msgstr "許容範囲"
+
+#: Pinta.Tools/Tools/EllipseTool.cs:37
+msgid "Ellipse"
+msgstr "楕円"
+
+#: Pinta.Tools/Tools/EllipseTool.cs:43
+msgid ""
+"Click and drag to draw an ellipse (right click for secondary color). Hold "
+"Shift to constrain to a circle."
+msgstr "クリックとドラッグで楕円(右クリックはセカンダリ色)、 Shiftを押し続けて円を描画。"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:43
+msgid "Rounded Rectangle"
+msgstr "角丸四角形"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:49
+msgid ""
+"Click and drag to draw a rounded rectangle (right click for secondary "
+"color). Hold Shift to constrain to a square."
+msgstr "クリックとドラッグでコーナー付き四角形(右クリックはセカンダリ色)、 Shiftを押し続けて正方形を描画。"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:87
+msgid "Radius"
+msgstr "半径"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:92
+msgid "Decrease rectangle's corner radius"
+msgstr "コーナーの丸みを小さくします"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:106
+msgid "Increase rectangle's corner radius"
+msgstr "コーナーの丸みを大きくします"
+
+#: Pinta.Tools/Tools/LineCurveTool.cs:37
+msgid "Line"
+msgstr "直線"
+
+#: Pinta.Tools/Tools/LineCurveTool.cs:43
+msgid ""
+"Left click to draw with primary color, right click for secondary color. Hold "
+"Shift key to snap to angles."
+msgstr "左クリックでプライマリ色、右クリックでセカンダリ色で描画、Shiftを押し続けて角度固定。"
+
+#: Pinta.Tools/Tools/FloodTool.cs:74
+msgid "Flood Mode"
+msgstr "適用モード"
+
+#: Pinta.Tools/Tools/FloodTool.cs:81
+msgid "Contiguous"
+msgstr "連続部分"
+
+#: Pinta.Tools/Tools/FloodTool.cs:82
+msgid "Global"
+msgstr "グローバル"
+
+#: Pinta.Tools/Tools/GradientTool.cs:55 Pinta.Tools/Tools/GradientTool.cs:165
+msgid "Gradient"
+msgstr "グラデーション"
+
+#: Pinta.Tools/Tools/GradientTool.cs:63
+msgid ""
+"Click and drag to draw gradient from primary to secondary color.  Right "
+"click to reverse."
+msgstr "クリックとドラッグでプライマリ色からセカンダリ色へのグラデーション、右クリックで逆。"
+
+#: Pinta.Tools/Tools/GradientTool.cs:172
+msgid "Linear Gradient"
+msgstr "線形グラデーション"
+
+#: Pinta.Tools/Tools/GradientTool.cs:173
+msgid "Linear Reflected Gradient"
+msgstr "反射形グラデーション"
+
+#: Pinta.Tools/Tools/GradientTool.cs:174
+msgid "Linear Diamond Gradient"
+msgstr "菱形グラデーション"
+
+#: Pinta.Tools/Tools/GradientTool.cs:175
+msgid "Radial Gradient"
+msgstr "放射状グラデーション"
+
+#: Pinta.Tools/Tools/GradientTool.cs:176
+msgid "Conical Gradient"
+msgstr "円錐形グラデーション"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:35
+msgid "Text"
+msgstr "テキスト"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:41
+msgid ""
+"Left click to place cursor, then type desired text. Text color is primary "
+"color."
+msgstr "左クリックして文字を入力します。文字はプライマリ色。"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:89
+msgid "Font"
+msgstr "フォント"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:124
+msgid "Bold"
+msgstr "太文字"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:131
+msgid "Italic"
+msgstr "斜体"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:138
+msgid "Underline"
+msgstr "下線"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:147
+msgid "Left Align"
+msgstr "左揃え"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:155
+msgid "Center Align"
+msgstr "中央揃え"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:162
+msgid "Right Align"
+msgstr "右揃え"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:174
+msgid "Text Style"
+msgstr "スタイル"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:182
+msgid "Normal and Outline"
+msgstr "アウトライン付き"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:183
+#: Pinta.Effects/Effects/OutlineEffect.cs:28
+msgid "Outline"
+msgstr "アウトライン"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:184
+msgid "Fill Background"
+msgstr "背景を塗りつぶす"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:192
+msgid "Outline width"
+msgstr "アウトライン幅"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:197
+msgid "Decrease outline size"
+msgstr "アウトラインを小さく"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:214
+msgid "Increase outline size"
+msgstr "アウトラインを大きく"
+
+#: Pinta.Tools/Tools/EllipseSelectTool.cs:37
+msgid "Ellipse Select"
+msgstr "楕円選択"
+
+#: Pinta.Tools/Tools/EllipseSelectTool.cs:43
+msgid ""
+"Click and drag to draw an elliptical selection. Hold Shift to constrain to a "
+"circle."
+msgstr "クリックとドラッグで楕円の領域、Shiftキーを押し続けて円。"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:53
+msgid "Replace"
+msgstr "置換(Replace)"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:54
+msgid "Union (+) (Ctrl + Left Click)"
+msgstr "統合 (+) (Ctrl + Left Click)"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:55
+msgid "Exclude (-) (Right Click)"
+msgstr "減算 (-) (Right Click)"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:56
+msgid "Xor (Ctrl + Right Click)"
+msgstr "反転 (Ctrl + Right Click)"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:57
+msgid "Intersect (Shift + Left Click)"
+msgstr "重なり抽出 (Shift + Left Click)"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:70
+msgid " Selection Mode: "
+msgstr " 選択モード: "
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:102
+msgid "Magic Wand Select"
+msgstr "魔法の杖"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:112
+msgid "Click to select region of similar color."
+msgstr "クリックした箇所の類似色領域を選択範囲にします。"
+
+#: Pinta.Tools/Tools/RectangleSelectTool.cs:37
+msgid "Rectangle Select"
+msgstr "四角形選択"
+
+#: Pinta.Tools/Tools/RectangleSelectTool.cs:43
+msgid ""
+"Click and drag to draw a rectangular selection. Hold Shift to constrain to a "
+"square."
+msgstr "クリックとドラッグで四角形を描画、Shiftキーを押し続けて正方形。"
+
+#: Pinta.Tools/Tools/PanTool.cs:37
+msgid "Pan"
+msgstr "パン"
+
+#: Pinta.Tools/Tools/PanTool.cs:43
+msgid "Click and drag to navigate image."
+msgstr "クリックとドラッグで画像を移動します。"
+
+#: Pinta.Core/ImageFormats/FormatDescriptor.cs:67
+#, csharp-format
+msgid "{0} image ({1})"
+msgstr "{0} 画像 ({1})"
+
+#: Pinta.Core/HistoryItems/ResizeHistoryItem.cs:43
+#: Pinta/Dialogs/ResizeImageDialog.cs:38
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:56
+msgid "Resize Image"
+msgstr "画像サイズの変更"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:50
+#: Pinta.Core/Actions/ImageActions.cs:67
+msgid "Rotate 180°"
+msgstr "180度回転"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:54
+msgid "Flip Image Horizontal"
+msgstr "イメージを水平方向に反転"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:58
+msgid "Flip Image Vertical"
+msgstr "イメージを垂直方向に反転"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:62
+#: Pinta.Core/Actions/ImageActions.cs:65
+msgid "Rotate 90° Clockwise"
+msgstr "90度回転 (時計回り)"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:66
+#: Pinta.Core/Actions/ImageActions.cs:66
+msgid "Rotate 90° Counter-Clockwise"
+msgstr "90度回転 (反時計回り)"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:79
+msgid "Flip Layer Horizontal"
+msgstr "レイヤーを水平方向に反転"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:83
+msgid "Flip Layer Vertical"
+msgstr "レイヤーを垂直方向に反転"
+
+#: Pinta.Core/HistoryItems/FinishPixelsHistoryItem.cs:43
+msgid "Finish Pixels"
+msgstr "ピクセル完了"
+
+#: Pinta.Core/HistoryItems/PasteHistoryItem.cs:44
+#: Pinta.Core/Actions/EditActions.cs:72 Pinta/Actions/Edit/PasteAction.cs:79
+msgid "Paste"
+msgstr "貼り付け"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:97
+#, csharp-format
+msgid "Unsaved Image {0}"
+msgstr "未保存の画像 {0}"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:156
+msgid "Background"
+msgstr "背景色"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:165
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:27
+msgid "New Image"
+msgstr "新規イメージ"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:184
+msgid "Open Image"
+msgstr "イメージを開く"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:192
+msgid "Permission denied"
+msgstr "権限がありません"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:311
+#, csharp-format
+msgid "Could not open file: {0}"
+msgstr "ファイルを開けません: {0}"
+
+#: Pinta.Core/Managers/ToolManager.cs:234
+#: Pinta.Core/Managers/ToolManager.cs:236
+msgid "No tool selected."
+msgstr "ツールが選択されていません。"
+
+#: Pinta.Core/Managers/LivePreviewManager.cs:217
+msgid "Rendering Effect"
+msgstr "効果のレンダリング"
+
+#: Pinta.Core/Managers/EffectsManager.cs:63
+#: Pinta.Core/Managers/EffectsManager.cs:98
+msgid "..."
+msgstr "..."
+
+#: Pinta.Core/Actions/EditActions.cs:67
+msgid "Undo"
+msgstr "元に戻す"
+
+#: Pinta.Core/Actions/EditActions.cs:68
+msgid "Redo"
+msgstr "やり直し"
+
+#: Pinta.Core/Actions/EditActions.cs:69 Pinta.Core/Actions/EditActions.cs:216
+msgid "Cut"
+msgstr "切り取り"
+
+#: Pinta.Core/Actions/EditActions.cs:70
+msgid "Copy"
+msgstr "コピー"
+
+#: Pinta.Core/Actions/EditActions.cs:71
+msgid "Copy Merged"
+msgstr "クリップボードにコピー"
+
+#: Pinta.Core/Actions/EditActions.cs:73
+#: Pinta/Actions/Edit/PasteIntoNewLayerAction.cs:67
+msgid "Paste Into New Layer"
+msgstr "新規レイヤーに貼り付け"
+
+#: Pinta.Core/Actions/EditActions.cs:74
+msgid "Paste Into New Image"
+msgstr "新規イメージに貼り付け"
+
+#: Pinta.Core/Actions/EditActions.cs:75
+msgid "Delete Selection"
+msgstr "選択範囲を消去"
+
+#: Pinta.Core/Actions/EditActions.cs:76 Pinta.Core/Actions/EditActions.cs:178
+msgid "Fill Selection"
+msgstr "選択範囲を塗りつぶす"
+
+#: Pinta.Core/Actions/EditActions.cs:77 Pinta.Core/Actions/EditActions.cs:401
+msgid "Invert Selection"
+msgstr "選択範囲を反転"
+
+#: Pinta.Core/Actions/EditActions.cs:78 Pinta.Core/Actions/EditActions.cs:187
+msgid "Select All"
+msgstr "すべて選択"
+
+#: Pinta.Core/Actions/EditActions.cs:79
+msgid "Deselect All"
+msgstr "選択を解除"
+
+#: Pinta.Core/Actions/EditActions.cs:81 Pinta.Core/Actions/FileActions.cs:56
+msgid "Open..."
+msgstr "開く..."
+
+#: Pinta.Core/Actions/EditActions.cs:82 Pinta.Core/Actions/FileActions.cs:66
+msgid "Save As..."
+msgstr "名前を付けて保存..."
+
+#: Pinta.Core/Actions/EditActions.cs:83
+msgid "Reset to Default"
+msgstr "標準設定に戻す"
+
+#: Pinta.Core/Actions/EditActions.cs:84
+msgid "Set Number of Colors"
+msgstr "色数を指定"
+
+#: Pinta.Core/Actions/EditActions.cs:125 Pinta/Pads/ColorPalettePad.cs:42
+#: Pinta/Pads/ColorPalettePad.cs:49
+msgid "Palette"
+msgstr "パレット"
+
+#: Pinta.Core/Actions/EditActions.cs:218
+msgid "Erase Selection"
+msgstr "選択範囲を消去"
+
+#: Pinta.Core/Actions/EditActions.cs:227
+msgid "Deselect"
+msgstr "選択解除"
+
+#: Pinta.Core/Actions/EditActions.cs:319
+msgid "Open Palette File"
+msgstr "パレットファイルを開く"
+
+#: Pinta.Core/Actions/EditActions.cs:326
+msgid "Palette files (*.txt, *.gpl)"
+msgstr "パレットファイル(*.txt, *.gpl)"
+
+#: Pinta.Core/Actions/EditActions.cs:330
+#: Pinta/Actions/File/OpenDocumentAction.cs:68
+msgid "All files"
+msgstr "すべてのファイル"
+
+#: Pinta.Core/Actions/EditActions.cs:346
+#, csharp-format
+msgid ""
+"Could not open palette file: {0}.\n"
+"Please verify that you are trying to open a valid GIMP or Paint.NET palette."
+msgstr ""
+"パレットが開けません: {0}.\n"
+"有効なGIMPまたはPaint.NETパレットか確認してください。"
+
+#: Pinta.Core/Actions/EditActions.cs:347
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:187
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:199
+msgid "Error"
+msgstr "エラー"
+
+#: Pinta.Core/Actions/EditActions.cs:359
+msgid "Save Palette File"
+msgstr "パレットの保存"
+
+#: Pinta.Core/Actions/EditActions.cs:365
+msgid "Paint.NET palette (*.txt)"
+msgstr "Paint.NET パレット (*.txt)"
+
+#: Pinta.Core/Actions/EditActions.cs:370
+msgid "GIMP palette (*.gpl)"
+msgstr "GIMP パレット (*.gpl)"
+
+#: Pinta.Core/Actions/ImageActions.cs:59
+#: Pinta.Core/Actions/ImageActions.cs:277
+msgid "Crop to Selection"
+msgstr "選択範囲のクロップ"
+
+#: Pinta.Core/Actions/ImageActions.cs:60
+msgid "Auto Crop"
+msgstr "自動クロップ"
+
+#: Pinta.Core/Actions/ImageActions.cs:61
+msgid "Resize Image..."
+msgstr "画像サイズの変更..."
+
+#: Pinta.Core/Actions/ImageActions.cs:62
+msgid "Resize Canvas..."
+msgstr "キャンバスサイズの変更..."
+
+#: Pinta.Core/Actions/ImageActions.cs:63 Pinta.Core/Actions/LayerActions.cs:70
+msgid "Flip Horizontal"
+msgstr "水平方向に反転"
+
+#: Pinta.Core/Actions/ImageActions.cs:64 Pinta.Core/Actions/LayerActions.cs:71
+msgid "Flip Vertical"
+msgstr "垂直方向に反転"
+
+#: Pinta.Core/Actions/ImageActions.cs:68
+#: Pinta.Core/Actions/ImageActions.cs:137
+msgid "Flatten"
+msgstr "フラット化"
+
+#: Pinta.Core/Actions/WindowActions.cs:45
+msgid "Save All"
+msgstr "すべて保存"
+
+#: Pinta.Core/Actions/WindowActions.cs:46
+msgid "Close All"
+msgstr "すべて閉じる"
+
+#: Pinta.Core/Actions/ViewActions.cs:75
+msgid "Zoom In"
+msgstr "拡大"
+
+#: Pinta.Core/Actions/ViewActions.cs:76
+msgid "Zoom Out"
+msgstr "縮小"
+
+#: Pinta.Core/Actions/ViewActions.cs:77
+msgid "Best Fit"
+msgstr "最適なサイズ"
+
+#: Pinta.Core/Actions/ViewActions.cs:78
+msgid "Zoom to Selection"
+msgstr "選択範囲に合わせる"
+
+#: Pinta.Core/Actions/ViewActions.cs:79
+msgid "Normal Size"
+msgstr "標準のサイズ"
+
+#: Pinta.Core/Actions/ViewActions.cs:80
+msgid "Toolbar"
+msgstr "ツールバー"
+
+#: Pinta.Core/Actions/ViewActions.cs:81
+msgid "Pixel Grid"
+msgstr "グリッド"
+
+#: Pinta.Core/Actions/ViewActions.cs:82
+msgid "Rulers"
+msgstr "ルーラー"
+
+#: Pinta.Core/Actions/ViewActions.cs:83
+msgid "Pixels"
+msgstr "ピクセル"
+
+#: Pinta.Core/Actions/ViewActions.cs:84
+msgid "Inches"
+msgstr "インチ"
+
+#: Pinta.Core/Actions/ViewActions.cs:85
+msgid "Centimeters"
+msgstr "センチメートル"
+
+#: Pinta.Core/Actions/ViewActions.cs:86
+msgid "Fullscreen"
+msgstr "全画面表示"
+
+#: Pinta.Core/Actions/ViewActions.cs:88 Pinta.Core/Actions/ViewActions.cs:216
+#: Pinta.Core/Classes/DocumentWorkspace.cs:244
+#: Pinta.Core/Classes/DocumentWorkspace.cs:252
+msgid "Window"
+msgstr "ウィンドウ"
+
+#: Pinta.Core/Actions/ViewActions.cs:126
+msgid "Ruler Units"
+msgstr "ルーラーの単位"
+
+#: Pinta.Core/Actions/AddinActions.cs:40
+msgid "Add-in Manager"
+msgstr "アドイン・マネージャー"
+
+#: Pinta.Core/Actions/LayerActions.cs:65
+#: Pinta.Core/Actions/LayerActions.cs:292
+msgid "Add New Layer"
+msgstr "新規レイヤーを追加"
+
+#: Pinta.Core/Actions/LayerActions.cs:66
+#: Pinta.Core/Actions/LayerActions.cs:275
+msgid "Delete Layer"
+msgstr "レイヤーを削除"
+
+#: Pinta.Core/Actions/LayerActions.cs:67
+#: Pinta.Core/Actions/LayerActions.cs:266
+msgid "Duplicate Layer"
+msgstr "レイヤーを複製"
+
+#: Pinta.Core/Actions/LayerActions.cs:68
+#: Pinta.Core/Actions/LayerActions.cs:244
+msgid "Merge Layer Down"
+msgstr "レイヤーを統合"
+
+#: Pinta.Core/Actions/LayerActions.cs:69
+msgid "Import from File..."
+msgstr "ファイルからインポート..."
+
+#: Pinta.Core/Actions/LayerActions.cs:72
+msgid "Rotate / Zoom Layer..."
+msgstr "レイヤーの回転/ズーム..."
+
+#: Pinta.Core/Actions/LayerActions.cs:73
+#: Pinta.Core/Actions/LayerActions.cs:219
+msgid "Move Layer Up"
+msgstr "レイヤーを上に移動"
+
+#: Pinta.Core/Actions/LayerActions.cs:74
+#: Pinta.Core/Actions/LayerActions.cs:230
+msgid "Move Layer Down"
+msgstr "レイヤーを下に移動"
+
+#: Pinta.Core/Actions/LayerActions.cs:75
+msgid "Layer Properties..."
+msgstr "レイヤー・プロパティ"
+
+#: Pinta.Core/Actions/LayerActions.cs:157
+#: Pinta/Actions/File/OpenDocumentAction.cs:50
+msgid "Open Image File"
+msgstr "イメージファイルを開く"
+
+#: Pinta.Core/Actions/LayerActions.cs:185
+msgid "Import From File"
+msgstr "ファイルからインポート"
+
+#: Pinta.Core/Actions/FileActions.cs:54
+msgid "New..."
+msgstr "新規..."
+
+#: Pinta.Core/Actions/FileActions.cs:55
+msgid "New Screenshot..."
+msgstr "新規スクリーンショット..."
+
+#: Pinta.Core/Actions/FileActions.cs:57
+msgid "Open Recent"
+msgstr "最近使用したファイル"
+
+#: Pinta.Core/Actions/FileActions.cs:64
+msgid "Close"
+msgstr "閉じる"
+
+#: Pinta.Core/Actions/FileActions.cs:65
+msgid "Save"
+msgstr "保存"
+
+#: Pinta.Core/Actions/FileActions.cs:67
+msgid "Print"
+msgstr "印刷"
+
+#: Pinta.Core/Actions/FileActions.cs:68
+msgid "Quit"
+msgstr "終了"
+
+#: Pinta.Core/Actions/FileActions.cs:70
+msgid "New"
+msgstr "新規"
+
+#: Pinta.Core/Actions/FileActions.cs:71
+msgid "Open"
+msgstr "開く"
+
+#: Pinta.Core/Actions/HelpActions.cs:50
+msgid "Pinta Website"
+msgstr "Pinta 公式サイト"
+
+#: Pinta.Core/Actions/HelpActions.cs:51
+msgid "File a Bug"
+msgstr "バグの報告"
+
+#: Pinta.Core/Actions/HelpActions.cs:52
+msgid "Translate This Application"
+msgstr "このアプリケーションを翻訳"
+
+#: Pinta.Core/Actions/HelpActions.cs:53 Pinta/MainWindow.cs:161
+msgid "About"
+msgstr "このソフトウェアについて"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:53
+msgid "Multiply"
+msgstr "乗算"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:54
+msgid "Additive"
+msgstr "覆い焼き(リニア)"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:55
+msgid "Color Burn"
+msgstr "焼き込み(カラー)"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:56
+msgid "Color Dodge"
+msgstr "覆い焼き(カラー)"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:57
+msgid "Reflect"
+msgstr "反射"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:58
+#: Pinta.Effects/Effects/GlowEffect.cs:30
+msgid "Glow"
+msgstr "グロー"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:59
+msgid "Overlay"
+msgstr "オーバーレイ"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:60
+msgid "Difference"
+msgstr "差の絶対値"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:61
+msgid "Negation"
+msgstr "否定"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:62
+msgid "Lighten"
+msgstr "比較(明)"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:63
+msgid "Darken"
+msgstr "比較(暗)"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:64
+msgid "Screen"
+msgstr "スクリーン"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:65
+msgid "Xor"
+msgstr "Xor"
+
+#: Pinta.Core/Classes/BaseTool.cs:192
+msgid "Tool"
+msgstr "ツール"
+
+#: Pinta.Core/Classes/BaseTool.cs:263
+msgid "Shortcut key"
+msgstr "ショートカット"
+
+#: Pinta.Core/Classes/BaseTool.cs:418
+msgid "Normal Blending"
+msgstr "ノーマルブレンド"
+
+#: Pinta.Core/Classes/BaseTool.cs:419
+msgid "Overwrite"
+msgstr "上書き"
+
+#: Pinta.Core/Classes/BaseTool.cs:433
+msgid "Antialiasing On"
+msgstr "アンチエイリアスの有効"
+
+#: Pinta.Core/Classes/BaseTool.cs:434
+msgid "Antialiasing Off"
+msgstr "アンチエイリアスの無効"
+
+#: Pinta.Core/Classes/Document.cs:350
+msgid "copy"
+msgstr "コピー"
+
+#: Pinta.Core/Classes/Document.cs:604 Pinta/Dialogs/ResizeCanvasDialog.cs:39
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:86
+msgid "Resize Canvas"
+msgstr "キャンバスサイズの変更"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:41
+#: Pinta/Dialogs/VersionInformationTabPage.cs:50
+msgid "Version"
+msgstr "バージョン"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:50
+msgid "License"
+msgstr "ライセンス"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:50
+msgid "Released under the MIT X11 License."
+msgstr "MIT X11 ライセンスの元で公開されました。"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:57
+msgid "Copyright"
+msgstr "著作権"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:57
+msgid "by Pinta contributors"
+msgstr "Pinta 貢献者"
+
+#: Pinta/Dialogs/ClipboardEmptyDialog.cs:36
+msgid "Image cannot be pasted"
+msgstr "画像を貼り付けできません"
+
+#: Pinta/Dialogs/ClipboardEmptyDialog.cs:37
+msgid "The clipboard does not contain an image."
+msgstr "クリップボードに画像がありません"
+
+#: Pinta/Dialogs/VersionInformationTabPage.cs:44
+msgid "Title"
+msgstr "タイトル"
+
+#: Pinta/Dialogs/VersionInformationTabPage.cs:53
+msgid "Path"
+msgstr "パス名"
+
+#: Pinta/Dialogs/AboutDialog.cs:120
+msgid "Contributors to this release:"
+msgstr "このリリースの貢献者:"
+
+#: Pinta/Dialogs/AboutDialog.cs:132
+msgid "Previous contributors:"
+msgstr "これまでの貢献者:"
+
+#: Pinta/Dialogs/AboutDialog.cs:143
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Cameron White https://launchpad.net/~cameronwhite91\n"
+"  Jonathan Pobst https://launchpad.net/~jpobst\n"
+"  Kiyotaka Nishibori https://launchpad.net/~ml-nishibori-kiyotaka\n"
+"  OTHUBO Jumpei https://launchpad.net/~otsubo-jumpei\n"
+"  YannUbuntu https://launchpad.net/~yannubuntu\n"
+"  Yuki Kodama https://launchpad.net/~kuy\n"
+"  Yutaka Aiko https://launchpad.net/~ubon\n"
+"  ub https://launchpad.net/~xenolith0bytetestcomgreen\n"
+"  ytetsu https://launchpad.net/~ytetsu"
+
+#: Pinta/Dialogs/AboutDialog.cs:146
+msgid "Translated by:"
+msgstr "翻訳:"
+
+#: Pinta/Dialogs/AboutDialog.cs:152
+msgid "Based on the work of Paint.NET:"
+msgstr "Paint.NET プロジェクト:"
+
+#: Pinta/Dialogs/AboutDialog.cs:159
+msgid "Using some icons from:"
+msgstr "一部のアイコン:"
+
+#: Pinta/Dialogs/AboutDialog.cs:167
+msgid "Powered by Mono:"
+msgstr "Powered by Mono:"
+
+#: Pinta/Dialogs/AboutDialog.cs:274
+msgid "About Pinta"
+msgstr "Pinta について"
+
+#: Pinta/Dialogs/AboutDialog.cs:292
+msgid "Version Info"
+msgstr "バージョン情報"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:50
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:107
+msgid "Layer Properties"
+msgstr "レイヤーのプロパティ"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:159
+msgid "Name:"
+msgstr "名前:"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:167
+msgid "Visible"
+msgstr "表示"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:178 GlowEffect dialog
+msgid "Blend Mode"
+msgstr "ブレンドモード"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:189
+msgid "Opacity:"
+msgstr "不透明度:"
+
+#: Pinta/Dialogs/JpegCompressionDialog.cs:38
+msgid "JPEG Quality"
+msgstr "JPEG 画質"
+
+#: Pinta/Dialogs/JpegCompressionDialog.cs:49
+msgid "Quality: "
+msgstr "画質 "
+
+#: Pinta/Main.cs:68
+msgid "number of threads to use for rendering"
+msgstr "レンダリングに使用するスレッド数"
+
+#: Pinta/Options.cs:486
+msgid "OptionName"
+msgstr "オプション名"
+
+#: Pinta/Actions/Layers/RotateZoomLayerAction.cs:52
+#: Pinta/Actions/Layers/RotateZoomLayerAction.cs:75
+msgid "Rotate / Zoom Layer"
+msgstr "レイヤーの回転/ズーム"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:92
+msgid "Layer Opacity"
+msgstr "レイヤーの不透明度"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:97
+msgid "Rename Layer"
+msgstr "レイヤー名を変更"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:102
+msgid "Hide Layer"
+msgstr "レイヤーを非表示"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:102
+msgid "Show Layer"
+msgstr "レイヤーを表示"
+
+#: Pinta/Actions/Edit/ResizePaletteAction.cs:50
+msgid "Resize Palette"
+msgstr "パレットサイズの変更"
+
+#: Pinta/Actions/Edit/ResizePaletteAction.cs:51
+msgid "New palette size:"
+msgstr "新しいパレットサイズ:"
+
+#: Pinta/Actions/Edit/PasteAction.cs:125
+msgid "Image larger than canvas"
+msgstr "画像がキャンバスより大きいです"
+
+#: Pinta/Actions/Edit/PasteAction.cs:126
+msgid ""
+"The image being pasted is larger than the canvas size. What would you like "
+"to do?"
+msgstr "ペーストした画像がキャンバスより大きいです。どうしますか?"
+
+#: Pinta/Actions/Edit/PasteAction.cs:130
+msgid "Expand canvas"
+msgstr "キャンバスを広げる"
+
+#: Pinta/Actions/Edit/PasteAction.cs:131
+msgid "Don't change canvas size"
+msgstr "キャンバスサイズは変えない"
+
+#: Pinta/Actions/File/OpenDocumentAction.cs:64
+msgid "Image files"
+msgstr "イメージファイル"
+
+#: Pinta/Actions/File/NewScreenshotAction.cs:52
+msgid "Take Screenshot"
+msgstr "スクリーンショットの取得"
+
+#: Pinta/Actions/File/NewScreenshotAction.cs:53
+msgid "Delay before taking a screenshot (seconds):"
+msgstr "スクリーンショットを撮るまでの遅延時間（秒）："
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:75
+msgid "Save Image File"
+msgstr "イメージファイルの保存"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:186
+msgid "Pinta does not support saving images in this file format."
+msgstr "Pintaはこの画像形式での保存をサポートしていません"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:198
+msgid "Cannot save read only file."
+msgstr "読み取り専用ファイルは保存できません。"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:213
+msgid "Image too large"
+msgstr "画像が大きすぎます"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:214
+msgid "ICO files can not be larger than 255 x 255 pixels."
+msgstr "ICOファイルは255 x 255ピクセルまでです"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:239
+#, csharp-format
+msgid "A file named \"{0}\" already exists. Do you want to replace it?"
+msgstr "同名のファイル \"{0}\" があります。置き換えますか？"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:240
+#, csharp-format
+msgid ""
+"The file already exists in \"{1}\". Replacing it will overwrite its contents."
+msgstr "同名のファイル \"{1}\" があります。ファイルが上書きされます。"
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:61
+#, csharp-format
+msgid "Save the changes to image \"{0}\" before closing?"
+msgstr "閉じる前に変更を \"{0}\" に保存しますか?"
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:62
+msgid "If you don't save, all changes will be permanently lost."
+msgstr "保存しない場合、すべての変更が失われます。"
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:69
+msgid "Close without saving"
+msgstr "保存せずに閉じる"
+
+#: Pinta/MainWindow.cs:123
+msgid "_File"
+msgstr "ファイル(_F)"
+
+#: Pinta/MainWindow.cs:124
+msgid "_Edit"
+msgstr "編集(_E)"
+
+#: Pinta/MainWindow.cs:126
+msgid "_View"
+msgstr "表示(_V)"
+
+#: Pinta/MainWindow.cs:129
+msgid "_Image"
+msgstr "画像(_I)"
+
+#: Pinta/MainWindow.cs:130
+msgid "_Layers"
+msgstr "レイヤ(_L)"
+
+#: Pinta/MainWindow.cs:131
+msgid "_Adjustments"
+msgstr "調整(_A)"
+
+#: Pinta/MainWindow.cs:132
+msgid "Effe_cts"
+msgstr "効果(_C)"
+
+#: Pinta/MainWindow.cs:133
+msgid "A_dd-ins"
+msgstr "アドイン(_d)"
+
+#: Pinta/MainWindow.cs:135
+msgid "_Window"
+msgstr "ウィンドウ(_W)"
+
+#: Pinta/MainWindow.cs:139
+msgid "Tool Windows"
+msgstr "ツールウィンドウ"
+
+#: Pinta/MainWindow.cs:143
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:105
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:75
+msgid "By percentage:"
+msgstr "パーセント指定:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:146
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:117
+msgid "By absolute size:"
+msgstr "絶対サイズ指定:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:167
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:127
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:138
+msgid "Width:"
+msgstr "幅:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:189
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:229
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:102
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:114
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:160
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:200
+msgid "pixels"
+msgstr "ピクセル"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:207
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:140
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:178
+msgid "Height:"
+msgstr "高さ:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:245
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:216
+msgid "Maintain aspect ratio"
+msgstr "縦横比を保持する"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:530
+msgid "Anchor:"
+msgstr "アンカー:"
+
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:37
+msgid "New Image Size          "
+msgstr "新規イメージのサイズ          "
+
+#: Pinta/Pads/LayersPad.cs:43 Pinta/Pads/LayersPad.cs:54
+msgid "Layers"
+msgstr "レイヤー"
+
+#: Pinta/Pads/CanvasPad.cs:75
+msgid "Canvas"
+msgstr "キャンバス"
+
+#: Pinta/Pads/HistoryPad.cs:43 Pinta/Pads/HistoryPad.cs:50
+msgid "History"
+msgstr "履歴"
+
+#: Pinta/Pads/ToolBoxPad.cs:42 Pinta/Pads/ToolBoxPad.cs:48
+msgid "Tools"
+msgstr "ツール"
+
+#: Pinta/Pads/OpenImagesPad.cs:41 Pinta/Pads/OpenImagesPad.cs:45
+msgid "Images"
+msgstr "画像"
+
+#: Pinta/DockLibrary/DockItem.cs:477 Pinta/DockLibrary/DockItemContainer.cs:91
+msgid "Hide"
+msgstr "非表示"
+
+#: Pinta/DockLibrary/DockItem.cs:485
+msgid "Dockable"
+msgstr "ドックに格納可能"
+
+#: Pinta/DockLibrary/DockItem.cs:493
+msgid "Floating"
+msgstr "フローティング"
+
+#: Pinta/DockLibrary/DockItem.cs:502
+#: Pinta/DockLibrary/DockItemContainer.cs:195
+msgid "Auto Hide"
+msgstr "自動的に隠す"
+
+#: Pinta/DockLibrary/DockItemContainer.cs:191
+msgid "Dock"
+msgstr "ドッキング"
+
+#: Pinta.Effects/Dialogs/Effects.CurvesDialog.cs:82
+#: Pinta.Effects/Adjustments/CurvesEffect.cs:27
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:46
+msgid "Curves"
+msgstr "曲線"
+
+#: Pinta.Effects/Dialogs/Effects.LevelsDialog.cs:53
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:103
+msgid "Levels Adjustment"
+msgstr "レベル補正"
+
+#: Pinta.Effects/Dialogs/Effects.PosterizeDialog.cs:49
+#: Pinta.Effects/Adjustments/PosterizeEffect.cs:25
+#: Pinta.Effects/gtk-gui/Pinta.Effects.PosterizeDialog.cs:26
+msgid "Posterize"
+msgstr "ポスタリゼーション"
+
+#: Pinta.Effects/Adjustments/BrightnessContrastEffect.cs:29
+msgid "Brightness / Contrast"
+msgstr "明かるさ/コントラスト"
+
+#: Pinta.Effects/Adjustments/AutoLevelEffect.cs:25
+msgid "Auto Level"
+msgstr "自動レベル"
+
+#: Pinta.Effects/Adjustments/SepiaEffect.cs:26
+msgid "Sepia"
+msgstr "セピア"
+
+#: Pinta.Effects/Adjustments/BlackAndWhiteEffect.cs:25
+msgid "Black and White"
+msgstr "白黒"
+
+#: Pinta.Effects/Adjustments/LevelsEffect.cs:23
+msgid "Levels"
+msgstr "レベル"
+
+#: Pinta.Effects/Adjustments/InvertColorsEffect.cs:25
+msgid "Invert Colors"
+msgstr "色の反転"
+
+#: Pinta.Effects/Adjustments/HueSaturationEffect.cs:26
+msgid "Hue / Saturation"
+msgstr "色あい/彩やかさ"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.PosterizeDialog.cs:93
+msgid "Linked"
+msgstr "リンク済み"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:130
+msgid "Input Histogram"
+msgstr "入力ヒストグラム"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:172
+msgid "Input"
+msgstr "入力"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:285
+msgid "Output"
+msgstr "出力"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:413
+msgid "Output Histogram"
+msgstr "出力ヒストグラム"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:456
+msgid "Auto"
+msgstr "自動"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:468
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:173
+msgid "Reset"
+msgstr "リセット"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:478
+msgid "Red"
+msgstr "赤"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:489
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:142
+msgid "Green"
+msgstr "緑"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:528
+msgid "Blue"
+msgstr "青"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:62
+msgid "Transfer Map"
+msgstr "転送マップ"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:85
+msgid "RGB"
+msgstr "RGB"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:86
+msgid "Luminosity"
+msgstr "明度"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:100
+msgid "(256, 256)"
+msgstr "(256, 256)"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:131
+msgid "Red  "
+msgstr "赤  "
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:153
+msgid "Blue "
+msgstr "青 "
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:187
+msgid "Tip: Right-click to remove control points."
+msgstr "右クリックで制御点を消去"
+
+#: Pinta.Effects/Effects/OutlineEffect.cs:36
+#: Pinta.Effects/Effects/EmbossEffect.cs:33
+#: Pinta.Effects/Effects/ReliefEffect.cs:32
+#: Pinta.Effects/Effects/EdgeDetectEffect.cs:36
+msgid "Stylize"
+msgstr "様式"
+
+#: Pinta.Effects/Effects/OilPaintingEffect.cs:25
+msgid "Oil Painting"
+msgstr "油絵"
+
+#: Pinta.Effects/Effects/OilPaintingEffect.cs:33
+#: Pinta.Effects/Effects/PencilSketchEffect.cs:40
+#: Pinta.Effects/Effects/InkSketchEffect.cs:41
+msgid "Artistic"
+msgstr "アート"
+
+#: Pinta.Effects/Effects/BulgeEffect.cs:25
+msgid "Bulge"
+msgstr "ふくらみ"
+
+#: Pinta.Effects/Effects/BulgeEffect.cs:33
+#: Pinta.Effects/Effects/TwistEffect.cs:33
+#: Pinta.Effects/Effects/PixelateEffect.cs:37
+#: Pinta.Effects/Effects/TileEffect.cs:33
+#: Pinta.Effects/Effects/FrostedGlassEffect.cs:33
+#: Pinta.Effects/Effects/PolarInversionEffect.cs:38
+msgid "Distort"
+msgstr "デフォルメ"
+
+#: Pinta.Effects/Effects/UnfocusEffect.cs:27
+msgid "Unfocus"
+msgstr "フォーカスなし"
+
+#: Pinta.Effects/Effects/UnfocusEffect.cs:35
+#: Pinta.Effects/Effects/FragmentEffect.cs:33
+#: Pinta.Effects/Effects/RadialBlurEffect.cs:33
+#: Pinta.Effects/Effects/ZoomBlurEffect.cs:33
+#: Pinta.Effects/Effects/MotionBlurEffect.cs:33
+#: Pinta.Effects/Effects/GaussianBlurEffect.cs:33
+msgid "Blurs"
+msgstr "ぼかし"
+
+#: Pinta.Effects/Effects/JuliaFractalEffect.cs:25
+msgid "Julia Fractal"
+msgstr "フラクタル (Julia)"
+
+#: Pinta.Effects/Effects/JuliaFractalEffect.cs:33
+#: Pinta.Effects/Effects/CloudsEffect.cs:37
+#: Pinta.Effects/Effects/MandelbrotFractalEffect.cs:33
+msgid "Render"
+msgstr "レンダリング"
+
+#: Pinta.Effects/Effects/EmbossEffect.cs:25
+msgid "Emboss"
+msgstr "エンボス"
+
+#: Pinta.Effects/Effects/FragmentEffect.cs:25
+msgid "Fragment"
+msgstr "断片"
+
+#: Pinta.Effects/Effects/ReliefEffect.cs:44
+msgid "Relief"
+msgstr "レリーフ"
+
+#: Pinta.Effects/Effects/RedEyeRemoveEffect.cs:28
+msgid "Red Eye Removal"
+msgstr "赤目修正"
+
+#: Pinta.Effects/Effects/RedEyeRemoveEffect.cs:36
+#: Pinta.Effects/Effects/GlowEffect.cs:38
+#: Pinta.Effects/Effects/SharpenEffect.cs:33
+#: Pinta.Effects/Effects/SoftenPortraitEffect.cs:66
+msgid "Photo"
+msgstr "写真"
+
+#: Pinta.Effects/Effects/TwistEffect.cs:25
+msgid "Twist"
+msgstr "ねじれ"
+
+#: Pinta.Effects/Effects/PencilSketchEffect.cs:32
+msgid "Pencil Sketch"
+msgstr "鉛筆"
+
+#: Pinta.Effects/Effects/PixelateEffect.cs:25
+msgid "Pixelate"
+msgstr "モザイク"
+
+#: Pinta.Effects/Effects/InkSketchEffect.cs:33
+msgid "Ink Sketch"
+msgstr "インクスケッチ"
+
+#: Pinta.Effects/Effects/TileEffect.cs:25
+msgid "Tile Reflection"
+msgstr "タイル反射"
+
+#: Pinta.Effects/Effects/SharpenEffect.cs:25
+msgid "Sharpen"
+msgstr "シャープ"
+
+#: Pinta.Effects/Effects/FrostedGlassEffect.cs:25
+msgid "Frosted Glass"
+msgstr "すりガラス"
+
+#: Pinta.Effects/Effects/MedianEffect.cs:28
+msgid "Median"
+msgstr "中央値"
+
+#: Pinta.Effects/Effects/MedianEffect.cs:36
+#: Pinta.Effects/Effects/AddNoiseEffect.cs:37
+#: Pinta.Effects/Effects/ReduceNoiseEffect.cs:36
+msgid "Noise"
+msgstr "ノイズ"
+
+#: Pinta.Effects/Effects/RadialBlurEffect.cs:25
+msgid "Radial Blur"
+msgstr "放射状のぼかし"
+
+#: Pinta.Effects/Effects/ZoomBlurEffect.cs:25
+msgid "Zoom Blur"
+msgstr "ズームのぼかし"
+
+#: Pinta.Effects/Effects/MotionBlurEffect.cs:25
+msgid "Motion Blur"
+msgstr "動作ぼかし"
+
+#: Pinta.Effects/Effects/AddNoiseEffect.cs:29
+msgid "Add Noise"
+msgstr "ノイズの追加"
+
+#: Pinta.Effects/Effects/EdgeDetectEffect.cs:28
+msgid "Edge Detect"
+msgstr "エッジの強調"
+
+#: Pinta.Effects/Effects/GaussianBlurEffect.cs:25
+msgid "Gaussian Blur"
+msgstr "ガウスぼかし"
+
+#: Pinta.Effects/Effects/CloudsEffect.cs:29
+msgid "Clouds"
+msgstr "雲"
+
+#: Pinta.Effects/Effects/ReduceNoiseEffect.cs:28
+msgid "Reduce Noise"
+msgstr "ノイズの除去"
+
+#: Pinta.Effects/Effects/MandelbrotFractalEffect.cs:25
+msgid "Mandelbrot Fractal"
+msgstr "フラクタル"
+
+#: Pinta.Effects/Effects/SoftenPortraitEffect.cs:58
+msgid "Soften Portrait"
+msgstr "ポートレイトのぼかし"
+
+#: Pinta.Effects/Effects/PolarInversionEffect.cs:25
+msgid "Polar Inversion"
+msgstr "極性反転"
+
+#: BulgeEffect dialog FrostedGlassEffect PolarInversionEffect TwistEffect
+#: SharpenData MotionBlurEffect
+msgid "Amount"
+msgstr "量"
+
+#: RadialBlurEffect dialog JuliaFractalEffect MandelbrotFractalEffect
+#: EdgeDetectData EmbossEffect ReliefData TwistEffect
+msgid "Angle"
+msgstr "角度"
+
+#: CloudsEffect dialog
+msgid "Antialias"
+msgstr "アンチエイリアス"
+
+#: OilPaintingEffect dialog
+msgid "Brightness"
+msgstr "輝度"
+
+#: PixelateData dialog
+msgid "Brush Size"
+msgstr "ブラシのサイズ"
+
+#: PolarInversionEffect dialog
+msgid "Cell Size"
+msgstr "セルのサイズ"
+
+#: MotionBlurEffect dialog
+msgid "Center Offset"
+msgstr "中央オフセット"
+
+#: OilPaintingEffect dialog
+msgid "Centered"
+msgstr "中央揃え"
+
+#: PencilSketchEffect dialog
+msgid "Coarseness"
+msgstr "粗さ"
+
+#: AddNoiseEffect dialog
+msgid "Color Range"
+msgstr "色の範囲"
+
+#: InkSketchEffect dialog
+msgid "Color Saturation"
+msgstr "彩度"
+
+#: GlowEffect dialog
+msgid "Coloring"
+msgstr "色の設定"
+
+#: AddNoiseEffect dialog
+msgid "Contrast"
+msgstr "コントラスト"
+
+#: FragmentEffect dialog
+msgid "Coverage"
+msgstr "範囲"
+
+#: MotionBlurEffect dialog PolarInversionEffect
+msgid "Distance"
+msgstr "距離"
+
+#: JuliaFractalEffect dialog
+msgid "Edge Behavior"
+msgstr "境界処理"
+
+#: MandelbrotFractalEffect dialog FragmentEffect
+msgid "Factor"
+msgstr "係数"
+
+#: InkSketchEffect dialog
+msgid "Fragments"
+msgstr "断片"
+
+#: TileEffect dialog
+msgid "Ink Outline"
+msgstr "インクのアウトライン"
+
+#: AddNoiseEffect dialog OutlineEffect MandelbrotFractalEffect
+msgid "Intensity"
+msgstr "輝度"
+
+#: RadialBlurEffect dialog
+msgid "Lighting"
+msgstr "照明"
+
+#: ZoomBlurEffect dialog BulgeEffect PencilSketchEffect
+msgid "Offset"
+msgstr "オフセット"
+
+#: MedianEffect dialog
+msgid "Pencil Tip Size"
+msgstr "鉛筆の先端のサイズ"
+
+#: CloudsEffect dialog
+msgid "Percentile"
+msgstr "パーセント"
+
+#: RadialBlurEffect dialog
+msgid "Power"
+msgstr "強さ"
+
+#: PolarInversionEffect dialog JuliaFractalEffect MandelbrotFractalEffect
+#: GaussianBlurEffect
+msgid "Quality"
+msgstr "品質"
+
+#: TileEffect dialog RedEyeRemoveData
+msgid "Rotation"
+msgstr "回転"
+
+#: CloudsEffect dialog
+msgid "Saturation percentage"
+msgstr "彩度"
+
+#: CloudsEffect dialog
+msgid "Scale"
+msgstr "スケール"
+
+#: SoftenPortraitData dialog
+msgid "Seed"
+msgstr "乱数シード"
+
+#: ReduceNoiseEffect dialog
+msgid "Softness"
+msgstr "ソフトネス"
+
+#: OutlineEffect dialog
+msgid "Strength"
+msgstr "強度"
+
+#: TileEffect dialog
+msgid "Thickness"
+msgstr "太さ"
+
+#: RedEyeRemoveData dialog
+msgid "Tile Size"
+msgstr "タイルのサイズ"
+
+#: JuliaFractalEffect dialog
+msgid "Warmth"
+msgstr "暖色度"
+
+#: RadialBlurEffect dialog
+msgid ""
+"Use low quality for previews, small images, and small angles.  Use high "
+"quality for final quality, large images, and large angles."
+msgstr "プレビューは低品質(小さいイメージ、小さい角度)を使い、最終的な出力は高品質(大きなイメージ、大きな角度)にする。"
+
+#: RedEyeRemoveEffect dialog
+msgid "Hint: For best results, first use selection tools to select each eye."
+msgstr "ヒント: まず目の部分を選択ツールで選択するとうまくいきます。"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:123
+msgid ""
+"Multiple selection:\n"
+"\n"
+msgstr ""
+"複数選択:\n"
+"\n"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:160
+msgid "Enable"
+msgstr "有効"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:163
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:270
+msgid "Disable"
+msgstr "無効"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:178
+msgid "No selection"
+msgstr "選択されていません"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:217
+msgid "Available in repository:"
+msgstr "利用可能なリポジトリ:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:256
+msgid "Update available"
+msgstr "アップデートがあります"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:263
+msgid "This add-in can't be loaded due to missing dependencies"
+msgstr "このアドインは依存関係でロードできません"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:270
+#, csharp-format
+msgid "Required: {0} v{1}, found v{2}"
+msgstr ""
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:272
+#, csharp-format
+msgid "Missing: {0} v{1}"
+msgstr ""
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:286
+msgid "Installed version"
+msgstr "インストールされたバージョン"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:287
+msgid "Repository version"
+msgstr "リポジトリのバージョン"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:293
+msgid "Download size"
+msgstr "ダウンロードサイズ"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:295
+msgid "The following depedencies required by this add-in are not available:"
+msgstr "アドインに必要な依存関係を満たせません:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstaller.cs:16
+msgid "Installation cancelled"
+msgstr "インストールの中止"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstallerDialog.cs:159
+msgid "Some of the required add-ins were not found"
+msgstr "必要なアドインが見つかりませんでした"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstallerDialog.cs:171
+msgid "Installation failed"
+msgstr "インストールに失敗しました"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:115
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:250
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:122
+msgid "Installed"
+msgstr "インストール済"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:123
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:364
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:247
+msgid "Updates"
+msgstr "アップデート"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:131
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:325
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:347
+msgid "Gallery"
+msgstr "ギャラリー"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:261
+msgid "All repositories"
+msgstr "すべてのリポジトリ"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:268
+msgid "Manage Repositories..."
+msgstr "リポジトリの管理..."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:363
+#, csharp-format
+msgid "{0} update available"
+msgid_plural "{0} updates available"
+msgstr[0] "{0} 個のアップデートがあります"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:419
+msgid "Updating repository"
+msgstr "リポジトリのアップデート"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:513
+msgid "Install Add-in Package"
+msgstr "アドインパッケージのインストール"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:523
+msgid "Add-in packages"
+msgstr "アドインパッケージ"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:102
+msgid "No add-ins found"
+msgstr "アドインが見つかりません"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:120
+msgid "Add-in"
+msgstr "アドイン"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:213
+msgid "Other"
+msgstr "その他"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:77
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:82
+msgid "The following packages will be uninstalled:"
+msgstr "以下のパッケージがアンインストールされます:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:89
+msgid ""
+"There are other add-ins that depend on the previous ones which will also be "
+"uninstalled:"
+msgstr "アンインストールものに依存する他のアドインがあります:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:124
+msgid ""
+"The selected add-ins can't be installed because there are dependency "
+"conflicts."
+msgstr "依存関係により選択したアドインはインストールできません。"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:138
+msgid "The following packages will be installed:"
+msgstr "以下のパッケージがインストールされます:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:142
+msgid " (in user directory)"
+msgstr " (ユーザ・フォルダ内)"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:148
+msgid "The following packages need to be uninstalled:"
+msgstr "以下のパッケージのアンインストールが必要です:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:156
+msgid "The following dependencies could not be resolved:"
+msgstr "以下の依存関係が解決できませんでした:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:190
+msgid "Are you sure you want to cancel the installation?"
+msgstr "本当にインストールを中止しますか？"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:209
+msgid "Installing Add-ins"
+msgstr "アドインのインストール"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:211
+msgid "The installation failed!"
+msgstr "インストールが失敗しました！"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:212
+msgid "The installation has completed with warnings."
+msgstr "警告をともないましたが、インストールは完了しました。"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:214
+msgid "Uninstalling Add-ins"
+msgstr "アドインのアンインストール"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:216
+msgid "The uninstallation failed!"
+msgstr "アンインストールが失敗しました！"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:217
+msgid "The uninstallation has completed with warnings."
+msgstr "警告をともないましたが、アンインストールは完了しました。"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/ManageSitesDialog.cs:98
+msgid "Registering repository"
+msgstr "リポジトリ登録"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/Services.cs:64
+#: Mono.Addins.Gui/Mono.Addins.Gui/Services.cs:73
+#, csharp-format
+msgid "Exception occurred: {0}"
+msgstr "例外が発生しました: {0}"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:181
+msgid "More information"
+msgstr "詳細情報"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:229
+msgid "Install..."
+msgstr "インストール..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:255
+msgid "Update"
+msgstr "アップデート"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:281
+msgid "_Uninstall..."
+msgstr "アンインストール(_U)..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInstallerDialog.cs:38
+msgid "Additional extensions are required to perform this operation."
+msgstr "この操作には追加の拡張機能が必要です。"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInstallerDialog.cs:48
+msgid "The following add-ins will be installed:"
+msgstr "以下のアドインがインストールされます:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:143
+msgid "No updates found"
+msgstr "アップデートはありません"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:166
+msgid "Refresh"
+msgstr "更新"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:194
+msgid "Update All"
+msgstr "すべてアップデート"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:268
+msgid "Repository:"
+msgstr "リポジトリ:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:373
+msgid "Install from file..."
+msgstr "ファイルからインストール..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ErrorDialog.cs:92
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ProgressDialog.cs:66
+msgid "Details"
+msgstr "詳細"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.InstallDialog.cs:126
+msgid "Install"
+msgstr "インストール"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ManageSitesDialog.cs:20
+msgid "Add-in Repository Management"
+msgstr "アドインリポジトリの管理"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:29
+msgid "Add New Repository"
+msgstr "新しいリポジトリを追加"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:47
+msgid "Select the location of the repository you want to register:"
+msgstr "登録したいリポジトリの場所を選択:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:54
+msgid "Register an on-line repository"
+msgstr "オンラインリポジトリを登録"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:82
+msgid "Url:"
+msgstr "URL:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:103
+msgid "Register a local repository"
+msgstr "ローカルリポジトリを登録"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:130
+msgid "Path:"
+msgstr "パス:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:154
+msgid "Browse..."
+msgstr "開く..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ProgressDialog.cs:21
+msgid "Progress"
+msgstr ""
+
+#: Mono.Addins/Mono.Addins.Description/AssemblyDependency.cs:103
+#, csharp-format
+msgid "(provided by {0})"
+msgstr ""
+
+#: Pinta.Tools/Tools/TextTool.cs:75
+msgid "Text - Finalize"
+msgstr "テキスト-終了"
