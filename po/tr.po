@@ -1,0 +1,2121 @@
+# Turkish translation for pinta
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pinta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pinta\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-05 23:09-0500\n"
+"PO-Revision-Date: 2012-11-18 10:14+0000\n"
+"Last-Translator: Hasan Yılmaz <iletisim@hasanyilmaz.net>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2013-05-18 18:08+0000\n"
+"X-Generator: Launchpad (build 16626)\n"
+
+#: Pinta.Gui.Widgets/Widgets/Layers/LayersListWidget.cs:216
+msgid "Layer Shown"
+msgstr "Tabakayı Göster"
+
+#: Pinta.Gui.Widgets/Widgets/Layers/LayersListWidget.cs:216
+msgid "Layer Hidden"
+msgstr "Tabakayı Gizle"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:84
+msgid "Choose Primary Color"
+msgstr "Birincil Rengi Seç"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:99
+msgid "Choose Secondary Color"
+msgstr "İkincil Rengi Seç"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:130
+msgid "Choose Palette Color"
+msgstr "Palet Rengini Seç"
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:227
+msgid "Click to switch between primary and secondary color."
+msgstr ""
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:229
+msgid "Click to reset primary and secondary color."
+msgstr ""
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:231
+msgid "Click to select primary color."
+msgstr ""
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:233
+msgid "Click to select secondary color."
+msgstr ""
+
+#: Pinta.Gui.Widgets/Widgets/ColorPaletteWidget.cs:235
+msgid ""
+"Left click to set primary color. Right click to set secondary color. Middle "
+"click to choose palette color."
+msgstr ""
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.HScaleSpinButtonWidget.cs:48
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.AnglePickerWidget.cs:52
+msgid "label1"
+msgstr "etiket1"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ReseedButtonWidget.cs:38
+msgid "Random Noise"
+msgstr "Rastgele Parazit"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ReseedButtonWidget.cs:65
+msgid "Reseed"
+msgstr "Yeniden Tohumla"
+
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.ComboBoxWidget.cs:42
+#: Pinta.Gui.Widgets/gtk-gui/Pinta.Gui.Widgets.PointPickerWidget.cs:58
+msgid "label"
+msgstr "etiket"
+
+#: Pinta.Tools/Brushes/CircleBrush.cs:37
+msgid "Circles"
+msgstr "Daireler"
+
+#: Pinta.Tools/Brushes/PlainBrush.cs:37
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:181
+#: Pinta.Core/Effects/UserBlendOps.cs:52
+msgid "Normal"
+msgstr "Normal"
+
+#: Pinta.Tools/Brushes/GridBrush.cs:37
+msgid "Grid"
+msgstr "Izgara"
+
+#: Pinta.Tools/Brushes/SquaresBrush.cs:39
+msgid "Squares"
+msgstr "Kareler"
+
+#: Pinta.Tools/Brushes/SplatterBrush.cs:37
+msgid "Splatter"
+msgstr "Sıçrat"
+
+#: Pinta.Tools/Tools/CloneStampTool.cs:42
+msgid "Clone Stamp"
+msgstr "Klonlama Aracı"
+
+#: Pinta.Tools/Tools/CloneStampTool.cs:47
+msgid "Ctrl-left click to set origin, left click to paint."
+msgstr ""
+"Kaynağı belirlemek için ctrl'ye basarak sol tıklayın, boyamak için sol "
+"tıklayın."
+
+#: Pinta.Tools/Tools/PencilTool.cs:47 Pinta.Tools/Tools/ColorPickerTool.cs:209
+msgid "Pencil"
+msgstr "Kalem"
+
+#: Pinta.Tools/Tools/PencilTool.cs:49
+msgid ""
+"Left click to draw freeform one-pixel wide lines with the primary color. "
+"Right click to use the secondary color."
+msgstr ""
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:52
+msgid "Freeform Shape"
+msgstr ""
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:54
+#: Pinta.Tools/Tools/PaintBrushTool.cs:42
+msgid ""
+"Left click to draw with primary color, right click to draw with secondary "
+"color."
+msgstr ""
+"Birincil renkle çizmek için sol, ikincil renkle çizmek için sağ tıklayın."
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:71
+#: Pinta.Tools/Tools/ShapeTool.cs:131
+msgid "Fill Style"
+msgstr "Stili Doldur"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:78
+#: Pinta.Tools/Tools/ShapeTool.cs:138
+msgid "Outline Shape"
+msgstr "Anahat Şekli"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:79
+#: Pinta.Tools/Tools/ShapeTool.cs:139
+msgid "Fill Shape"
+msgstr "Şekli Doldur"
+
+#: Pinta.Tools/Tools/FreeformShapeTool.cs:80
+#: Pinta.Tools/Tools/ShapeTool.cs:140
+msgid "Fill and Outline Shape"
+msgstr ""
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:76 Pinta.Tools/Tools/ShapeTool.cs:99
+msgid "Brush width"
+msgstr "Fırça boyutu"
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:81 Pinta.Tools/Tools/ShapeTool.cs:104
+msgid "Decrease brush size"
+msgstr "Fırça boyutunu azalt"
+
+#: Pinta.Tools/Tools/BaseBrushTool.cs:95 Pinta.Tools/Tools/ShapeTool.cs:118
+msgid "Increase brush size"
+msgstr "Fırça boyutunu arttır"
+
+#: Pinta.Tools/Tools/PaintBrushTool.cs:40 Pinta/MainWindow.cs:65
+msgid "Paintbrush"
+msgstr "Boya fırçası"
+
+#: Pinta.Tools/Tools/PaintBrushTool.cs:78
+msgid "Type"
+msgstr "Tür"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:63
+msgid "Color Picker"
+msgstr "Renk Seçici"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:69
+msgid "Left click to set primary color. Right click to set secondary color."
+msgstr ""
+"Temel rengi belirmek için farenizin sol tuşa basın. İkincil rengi belirlemek "
+"için ise farenizin sağ tuşuna basın."
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:113
+msgid "Sampling"
+msgstr "Örnekliyor"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:123
+msgid "Single Pixel"
+msgstr "Tek Piksel"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:124
+msgid "3 x 3 Region"
+msgstr "Bölge"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:125
+msgid "5 x 5 Region"
+msgstr "5 x 5 Bölge"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:126
+msgid "7 x 7 Region"
+msgstr "7 x7 Bölge"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:127
+msgid "9 x 9 Region"
+msgstr "9 x9 Bölge"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:135 Pinta.Core/Classes/Document.cs:278
+msgid "Layer"
+msgstr "Katman"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:136
+msgid "Image"
+msgstr "Görüntü"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:147
+msgid "After select"
+msgstr "Seçimden sonra"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:154
+msgid "Do not switch tool"
+msgstr "Aracı değiştirme"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:155
+msgid "Switch to previous tool"
+msgstr "Önceki araca geç"
+
+#: Pinta.Tools/Tools/ColorPickerTool.cs:156
+msgid "Switch to Pencil tool"
+msgstr "Kalem aracına geçin"
+
+#: Pinta.Tools/Tools/RectangleTool.cs:37
+msgid "Rectangle"
+msgstr "Dikdörtgen"
+
+#: Pinta.Tools/Tools/RectangleTool.cs:43
+msgid ""
+"Click and drag to draw a rectangle (right click for secondary color). Hold "
+"Shift to constrain to a square."
+msgstr ""
+
+#: Pinta.Tools/Tools/EraserTool.cs:52
+msgid "Eraser"
+msgstr "Silgi"
+
+#: Pinta.Tools/Tools/EraserTool.cs:54
+msgid ""
+"Left click to erase to transparent, right click to erase to secondary color. "
+msgstr ""
+"Silindiğinde transparan olması için sol tıklayarak, ikincil rengin görünmesi "
+"için sağ tıklayarak silin. "
+
+#: Pinta.Tools/Tools/ZoomTool.cs:48
+msgid "Zoom"
+msgstr "Büyüt"
+
+#: Pinta.Tools/Tools/ZoomTool.cs:54
+msgid ""
+"Left click to zoom in. Right click to zoom out. Click and drag to zoom in "
+"selection."
+msgstr ""
+"Odağı büyütmek için sol, küçültmek için sağ tıklayın. Seçili bir alanı "
+"büyütmek için tıklayıp sürükleyin."
+
+#: Pinta.Tools/Tools/MoveSelectionTool.cs:42
+msgid "Move Selection"
+msgstr "Seçimi Taşı"
+
+#: Pinta.Tools/Tools/MoveSelectionTool.cs:48
+msgid ""
+"Left click and drag the selection to move selection outline. Right click and "
+"drag the selection to rotate selection outline."
+msgstr ""
+
+#: Pinta.Tools/Tools/MoveSelectedTool.cs:43
+#: Pinta.Core/HistoryItems/FinishPixelsHistoryItem.cs:65
+#: Pinta.Core/HistoryItems/PasteHistoryItem.cs:67
+#: Pinta/Actions/Edit/PasteAction.cs:108
+msgid "Move Selected Pixels"
+msgstr "Seçili Pikselleri Taşı"
+
+#: Pinta.Tools/Tools/MoveSelectedTool.cs:49
+msgid ""
+"Left click and drag the selection to move selected content. Right click and "
+"drag the selection to rotate selected content."
+msgstr ""
+
+#: Pinta.Tools/Tools/PaintBucketTool.cs:40
+msgid "Paint Bucket"
+msgstr "Boya Kovası"
+
+#: Pinta.Tools/Tools/PaintBucketTool.cs:46
+msgid ""
+"Left click to fill a region with the primary color, right click to fill with "
+"the secondary color."
+msgstr ""
+"Bölgeyi birincil renkle doldurmak için sol, ikincil renk ile doldurmak için "
+"sağ tıklayın."
+
+#: Pinta.Tools/Tools/LassoSelectTool.cs:48
+msgid "Lasso Select"
+msgstr "Kement Seçim"
+
+#: Pinta.Tools/Tools/LassoSelectTool.cs:50
+msgid "Click and drag to draw the outline for a selection area."
+msgstr ""
+
+#: Pinta.Tools/Tools/RecolorTool.cs:58
+msgid "Recolor"
+msgstr "Tekrar renklendir"
+
+#: Pinta.Tools/Tools/RecolorTool.cs:60
+msgid "Left click to replace the secondary color with the primary color."
+msgstr "İkincil rengi birincil renkle değiştirmek için sol tıkla."
+
+#: Pinta.Tools/Tools/RecolorTool.cs:73 Pinta.Tools/Tools/FloodTool.cs:93
+msgid "Tolerance"
+msgstr "Tolerans"
+
+#: Pinta.Tools/Tools/EllipseTool.cs:37
+msgid "Ellipse"
+msgstr "Elips"
+
+#: Pinta.Tools/Tools/EllipseTool.cs:43
+msgid ""
+"Click and drag to draw an ellipse (right click for secondary color). Hold "
+"Shift to constrain to a circle."
+msgstr ""
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:43
+msgid "Rounded Rectangle"
+msgstr "Dairesel Dikdörtgen"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:49
+msgid ""
+"Click and drag to draw a rounded rectangle (right click for secondary "
+"color). Hold Shift to constrain to a square."
+msgstr ""
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:87
+msgid "Radius"
+msgstr "Yarıçap"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:92
+msgid "Decrease rectangle's corner radius"
+msgstr "Dikdörtgenin köşe yarıçapını düşür"
+
+#: Pinta.Tools/Tools/RoundedRectangleTool.cs:106
+msgid "Increase rectangle's corner radius"
+msgstr "Dikdörtgenin köşe yarıçapını arttır"
+
+#: Pinta.Tools/Tools/LineCurveTool.cs:37
+msgid "Line"
+msgstr "Çizgi"
+
+#: Pinta.Tools/Tools/LineCurveTool.cs:43
+msgid ""
+"Left click to draw with primary color, right click for secondary color. Hold "
+"Shift key to snap to angles."
+msgstr ""
+"Birincil renk için sol, ikincil renk için sağ tıklayınız. Açılar için "
+"Shift'e basılı tutunuz."
+
+#: Pinta.Tools/Tools/FloodTool.cs:74
+msgid "Flood Mode"
+msgstr "Taşırma Modu"
+
+#: Pinta.Tools/Tools/FloodTool.cs:81
+msgid "Contiguous"
+msgstr "Sürekli"
+
+#: Pinta.Tools/Tools/FloodTool.cs:82
+msgid "Global"
+msgstr "Genel"
+
+#: Pinta.Tools/Tools/GradientTool.cs:55 Pinta.Tools/Tools/GradientTool.cs:165
+msgid "Gradient"
+msgstr "Renk Geçişi"
+
+#: Pinta.Tools/Tools/GradientTool.cs:63
+msgid ""
+"Click and drag to draw gradient from primary to secondary color.  Right "
+"click to reverse."
+msgstr ""
+"Birincil renkten ikincil renge geçiş çizmek için tıklayıp sürükleyin. "
+"Tersini yapmak için sağ tıklayın."
+
+#: Pinta.Tools/Tools/GradientTool.cs:172
+msgid "Linear Gradient"
+msgstr "Doğrusal Renk Geçişi"
+
+#: Pinta.Tools/Tools/GradientTool.cs:173
+msgid "Linear Reflected Gradient"
+msgstr "Doğrusal Yansıyan Renk Geçişi"
+
+#: Pinta.Tools/Tools/GradientTool.cs:174
+msgid "Linear Diamond Gradient"
+msgstr "Doğrusal Elmas Renk Geçişi"
+
+#: Pinta.Tools/Tools/GradientTool.cs:175
+msgid "Radial Gradient"
+msgstr "Işınsal Renk Geçişi"
+
+#: Pinta.Tools/Tools/GradientTool.cs:176
+msgid "Conical Gradient"
+msgstr "Konik Renk Geçişi"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:35
+msgid "Text"
+msgstr "Metin"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:41
+msgid ""
+"Left click to place cursor, then type desired text. Text color is primary "
+"color."
+msgstr ""
+"İşaretçiyi yerleştirmek için tıklayın ve istenen metni yazın. Metin rengi "
+"birincil renktir."
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:89
+msgid "Font"
+msgstr "Yazıtipi"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:124
+msgid "Bold"
+msgstr "Kalın"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:131
+msgid "Italic"
+msgstr "İtalik"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:138
+msgid "Underline"
+msgstr "Altı çizili"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:147
+msgid "Left Align"
+msgstr "Sola Hizalı"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:155
+msgid "Center Align"
+msgstr "Ortala"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:162
+msgid "Right Align"
+msgstr "Sağa Hizalı"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:174
+msgid "Text Style"
+msgstr "Yazı Stili"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:182
+msgid "Normal and Outline"
+msgstr "Normal Anahat"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:183
+#: Pinta.Effects/Effects/OutlineEffect.cs:28
+msgid "Outline"
+msgstr "Anahat"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:184
+msgid "Fill Background"
+msgstr "Arkaplanı Doldur"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:192
+msgid "Outline width"
+msgstr "Anahat genişliği"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:197
+msgid "Decrease outline size"
+msgstr "Anahat boyutunu küçült"
+
+#: Pinta.Tools/Tools/TextTool/TextTool.cs:214
+msgid "Increase outline size"
+msgstr "Anahat boyutunu büyüt"
+
+#: Pinta.Tools/Tools/EllipseSelectTool.cs:37
+msgid "Ellipse Select"
+msgstr "Elips Seçim"
+
+#: Pinta.Tools/Tools/EllipseSelectTool.cs:43
+msgid ""
+"Click and drag to draw an elliptical selection. Hold Shift to constrain to a "
+"circle."
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:53
+msgid "Replace"
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:54
+msgid "Union (+) (Ctrl + Left Click)"
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:55
+msgid "Exclude (-) (Right Click)"
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:56
+msgid "Xor (Ctrl + Right Click)"
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:57
+msgid "Intersect (Shift + Left Click)"
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:70
+msgid " Selection Mode: "
+msgstr ""
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:102
+msgid "Magic Wand Select"
+msgstr "Sihirli Değnek Seçimi"
+
+#: Pinta.Tools/Tools/MagicWandTool.cs:112
+msgid "Click to select region of similar color."
+msgstr "Benzer renkli bir bölge seçmek için tıklayın."
+
+#: Pinta.Tools/Tools/RectangleSelectTool.cs:37
+msgid "Rectangle Select"
+msgstr "Dikdörtgen Seçim"
+
+#: Pinta.Tools/Tools/RectangleSelectTool.cs:43
+msgid ""
+"Click and drag to draw a rectangular selection. Hold Shift to constrain to a "
+"square."
+msgstr ""
+
+#: Pinta.Tools/Tools/PanTool.cs:37
+msgid "Pan"
+msgstr "Kaydırma"
+
+#: Pinta.Tools/Tools/PanTool.cs:43
+msgid "Click and drag to navigate image."
+msgstr "Görüntüyü hareket ettirmek için tıklayın ve sürükleyin."
+
+#: Pinta.Core/ImageFormats/FormatDescriptor.cs:67
+#, csharp-format
+msgid "{0} image ({1})"
+msgstr "{0} görüntü ({1})"
+
+#: Pinta.Core/HistoryItems/ResizeHistoryItem.cs:43
+#: Pinta/Dialogs/ResizeImageDialog.cs:38
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:56
+msgid "Resize Image"
+msgstr "Görüntüyü Yeniden Boyutlandır"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:50
+#: Pinta.Core/Actions/ImageActions.cs:67
+msgid "Rotate 180°"
+msgstr "180° Döndür"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:54
+msgid "Flip Image Horizontal"
+msgstr "Görüntüyü Yatay Döndür"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:58
+msgid "Flip Image Vertical"
+msgstr "Görüntüyü Dikey Döndür"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:62
+#: Pinta.Core/Actions/ImageActions.cs:65
+msgid "Rotate 90° Clockwise"
+msgstr "Saat Yönünde 90° Çevir"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:66
+#: Pinta.Core/Actions/ImageActions.cs:66
+msgid "Rotate 90° Counter-Clockwise"
+msgstr "Saat Yönünün Tersinde 90° Çevir"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:79
+msgid "Flip Layer Horizontal"
+msgstr "Katmanı Yatay Döndür"
+
+#: Pinta.Core/HistoryItems/InvertHistoryItem.cs:83
+msgid "Flip Layer Vertical"
+msgstr "Katmanı Dikey Döndür"
+
+#: Pinta.Core/HistoryItems/FinishPixelsHistoryItem.cs:43
+msgid "Finish Pixels"
+msgstr "Pikseller Bitir"
+
+#: Pinta.Core/HistoryItems/PasteHistoryItem.cs:44
+#: Pinta.Core/Actions/EditActions.cs:72 Pinta/Actions/Edit/PasteAction.cs:79
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:97
+#, csharp-format
+msgid "Unsaved Image {0}"
+msgstr "Kaydedilmemiş Görüntü {0}"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:156
+msgid "Background"
+msgstr "Arkaplan"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:165
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:27
+msgid "New Image"
+msgstr "Yeni Görüntü"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:184
+msgid "Open Image"
+msgstr "Görüntüyü Aç"
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:192
+msgid "Permission denied"
+msgstr ""
+
+#: Pinta.Core/Managers/WorkspaceManager.cs:311
+#, csharp-format
+msgid "Could not open file: {0}"
+msgstr "Dosya açılamadı: {0}"
+
+#: Pinta.Core/Managers/ToolManager.cs:234
+#: Pinta.Core/Managers/ToolManager.cs:236
+msgid "No tool selected."
+msgstr ""
+
+#: Pinta.Core/Managers/LivePreviewManager.cs:217
+msgid "Rendering Effect"
+msgstr "Render Efekti"
+
+#: Pinta.Core/Managers/EffectsManager.cs:63
+#: Pinta.Core/Managers/EffectsManager.cs:98
+msgid "..."
+msgstr "..."
+
+#: Pinta.Core/Actions/EditActions.cs:67
+msgid "Undo"
+msgstr "Geri Al"
+
+#: Pinta.Core/Actions/EditActions.cs:68
+msgid "Redo"
+msgstr "Yinele"
+
+#: Pinta.Core/Actions/EditActions.cs:69 Pinta.Core/Actions/EditActions.cs:216
+msgid "Cut"
+msgstr "Kes"
+
+#: Pinta.Core/Actions/EditActions.cs:70
+msgid "Copy"
+msgstr "Kopyala"
+
+#: Pinta.Core/Actions/EditActions.cs:71
+msgid "Copy Merged"
+msgstr "Kopya Birleşti"
+
+#: Pinta.Core/Actions/EditActions.cs:73
+#: Pinta/Actions/Edit/PasteIntoNewLayerAction.cs:67
+msgid "Paste Into New Layer"
+msgstr "Yeni Katmana Yapıştır"
+
+#: Pinta.Core/Actions/EditActions.cs:74
+msgid "Paste Into New Image"
+msgstr "Yeni Görüntü Dosyasına Yapıştır"
+
+#: Pinta.Core/Actions/EditActions.cs:75
+msgid "Delete Selection"
+msgstr "Seçimi sil"
+
+#: Pinta.Core/Actions/EditActions.cs:76 Pinta.Core/Actions/EditActions.cs:178
+msgid "Fill Selection"
+msgstr "Seçimi Doldur"
+
+#: Pinta.Core/Actions/EditActions.cs:77 Pinta.Core/Actions/EditActions.cs:401
+msgid "Invert Selection"
+msgstr "Seçimi Tersine Çevir"
+
+#: Pinta.Core/Actions/EditActions.cs:78 Pinta.Core/Actions/EditActions.cs:187
+msgid "Select All"
+msgstr "Tümünü Seç"
+
+#: Pinta.Core/Actions/EditActions.cs:79
+msgid "Deselect All"
+msgstr "Tüm Seçimleri Kaldır"
+
+#: Pinta.Core/Actions/EditActions.cs:81 Pinta.Core/Actions/FileActions.cs:56
+msgid "Open..."
+msgstr "Aç..."
+
+#: Pinta.Core/Actions/EditActions.cs:82 Pinta.Core/Actions/FileActions.cs:66
+msgid "Save As..."
+msgstr "Farklı Kaydet..."
+
+#: Pinta.Core/Actions/EditActions.cs:83
+msgid "Reset to Default"
+msgstr "Varsayılana Sıfırla"
+
+#: Pinta.Core/Actions/EditActions.cs:84
+msgid "Set Number of Colors"
+msgstr "Renk Numaraları"
+
+#: Pinta.Core/Actions/EditActions.cs:125 Pinta/Pads/ColorPalettePad.cs:42
+#: Pinta/Pads/ColorPalettePad.cs:49
+msgid "Palette"
+msgstr "Palet"
+
+#: Pinta.Core/Actions/EditActions.cs:218
+msgid "Erase Selection"
+msgstr "Seçimi Sil"
+
+#: Pinta.Core/Actions/EditActions.cs:227
+msgid "Deselect"
+msgstr "Seçimi Kaldır"
+
+#: Pinta.Core/Actions/EditActions.cs:319
+msgid "Open Palette File"
+msgstr "Palet Dosyası Aç"
+
+#: Pinta.Core/Actions/EditActions.cs:326
+msgid "Palette files (*.txt, *.gpl)"
+msgstr "Palet dosyaları (*.txt, *.gpl)"
+
+#: Pinta.Core/Actions/EditActions.cs:330
+#: Pinta/Actions/File/OpenDocumentAction.cs:68
+msgid "All files"
+msgstr "Tüm dosyalar"
+
+#: Pinta.Core/Actions/EditActions.cs:346
+#, csharp-format
+msgid ""
+"Could not open palette file: {0}.\n"
+"Please verify that you are trying to open a valid GIMP or Paint.NET palette."
+msgstr ""
+"Palet dosyası açılamadı: {0}.\n"
+"Lütfen geçerli bir GIMP ya da Paint.NET paleti seçtiğinizi doğrulayın."
+
+#: Pinta.Core/Actions/EditActions.cs:347
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:187
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:199
+msgid "Error"
+msgstr "Hata"
+
+#: Pinta.Core/Actions/EditActions.cs:359
+msgid "Save Palette File"
+msgstr "Palet Dosyasını Kaydet"
+
+#: Pinta.Core/Actions/EditActions.cs:365
+msgid "Paint.NET palette (*.txt)"
+msgstr "Paint.NET paleti (*.txt)"
+
+#: Pinta.Core/Actions/EditActions.cs:370
+msgid "GIMP palette (*.gpl)"
+msgstr "GIMP paleti (*.gpl)"
+
+#: Pinta.Core/Actions/ImageActions.cs:59
+#: Pinta.Core/Actions/ImageActions.cs:277
+msgid "Crop to Selection"
+msgstr "Seçime Kırp"
+
+#: Pinta.Core/Actions/ImageActions.cs:60
+msgid "Auto Crop"
+msgstr "Otomatik Kırp"
+
+#: Pinta.Core/Actions/ImageActions.cs:61
+msgid "Resize Image..."
+msgstr "Görüntüyü Yeniden Boyutlandır..."
+
+#: Pinta.Core/Actions/ImageActions.cs:62
+msgid "Resize Canvas..."
+msgstr "Tuvali Yeniden Boyutlandır..."
+
+#: Pinta.Core/Actions/ImageActions.cs:63 Pinta.Core/Actions/LayerActions.cs:70
+msgid "Flip Horizontal"
+msgstr "Yatay Çevir"
+
+#: Pinta.Core/Actions/ImageActions.cs:64 Pinta.Core/Actions/LayerActions.cs:71
+msgid "Flip Vertical"
+msgstr "Dikey Çevir"
+
+#: Pinta.Core/Actions/ImageActions.cs:68
+#: Pinta.Core/Actions/ImageActions.cs:137
+msgid "Flatten"
+msgstr "Düzleştir"
+
+#: Pinta.Core/Actions/WindowActions.cs:45
+msgid "Save All"
+msgstr "Tümünü Kaydet"
+
+#: Pinta.Core/Actions/WindowActions.cs:46
+msgid "Close All"
+msgstr "Tümünü Kapat"
+
+#: Pinta.Core/Actions/ViewActions.cs:75
+msgid "Zoom In"
+msgstr "Yakınlaştır"
+
+#: Pinta.Core/Actions/ViewActions.cs:76
+msgid "Zoom Out"
+msgstr "Uzaklaştır"
+
+#: Pinta.Core/Actions/ViewActions.cs:77
+msgid "Best Fit"
+msgstr "En Uygun Görünüm"
+
+#: Pinta.Core/Actions/ViewActions.cs:78
+msgid "Zoom to Selection"
+msgstr "Seçime Büyüt"
+
+#: Pinta.Core/Actions/ViewActions.cs:79
+msgid "Normal Size"
+msgstr "Normal Boyut"
+
+#: Pinta.Core/Actions/ViewActions.cs:80
+msgid "Toolbar"
+msgstr "Araç Çubuğu"
+
+#: Pinta.Core/Actions/ViewActions.cs:81
+msgid "Pixel Grid"
+msgstr "Piksel Izgara"
+
+#: Pinta.Core/Actions/ViewActions.cs:82
+msgid "Rulers"
+msgstr "Cetvel"
+
+#: Pinta.Core/Actions/ViewActions.cs:83
+msgid "Pixels"
+msgstr "Piksel"
+
+#: Pinta.Core/Actions/ViewActions.cs:84
+msgid "Inches"
+msgstr "İnç"
+
+#: Pinta.Core/Actions/ViewActions.cs:85
+msgid "Centimeters"
+msgstr "Santimetre"
+
+#: Pinta.Core/Actions/ViewActions.cs:86
+msgid "Fullscreen"
+msgstr "Tam Ekran"
+
+#: Pinta.Core/Actions/ViewActions.cs:88 Pinta.Core/Actions/ViewActions.cs:216
+#: Pinta.Core/Classes/DocumentWorkspace.cs:244
+#: Pinta.Core/Classes/DocumentWorkspace.cs:252
+msgid "Window"
+msgstr "Pencere"
+
+#: Pinta.Core/Actions/ViewActions.cs:126
+msgid "Ruler Units"
+msgstr "Cetvel Birimi"
+
+#: Pinta.Core/Actions/AddinActions.cs:40
+msgid "Add-in Manager"
+msgstr "Eklenti Yöneticisi"
+
+#: Pinta.Core/Actions/LayerActions.cs:65
+#: Pinta.Core/Actions/LayerActions.cs:292
+msgid "Add New Layer"
+msgstr "Yeni Katman Ekle"
+
+#: Pinta.Core/Actions/LayerActions.cs:66
+#: Pinta.Core/Actions/LayerActions.cs:275
+msgid "Delete Layer"
+msgstr "Katmanı Sil"
+
+#: Pinta.Core/Actions/LayerActions.cs:67
+#: Pinta.Core/Actions/LayerActions.cs:266
+msgid "Duplicate Layer"
+msgstr "Katmanı Çoğalt"
+
+#: Pinta.Core/Actions/LayerActions.cs:68
+#: Pinta.Core/Actions/LayerActions.cs:244
+msgid "Merge Layer Down"
+msgstr "Katmanı Birleştir"
+
+#: Pinta.Core/Actions/LayerActions.cs:69
+msgid "Import from File..."
+msgstr "Dosyadan Aktar"
+
+#: Pinta.Core/Actions/LayerActions.cs:72
+msgid "Rotate / Zoom Layer..."
+msgstr "Katmanı Döndür / Yakınlaştır..."
+
+#: Pinta.Core/Actions/LayerActions.cs:73
+#: Pinta.Core/Actions/LayerActions.cs:219
+msgid "Move Layer Up"
+msgstr "Katmanı Yukarı Taşı"
+
+#: Pinta.Core/Actions/LayerActions.cs:74
+#: Pinta.Core/Actions/LayerActions.cs:230
+msgid "Move Layer Down"
+msgstr "Katmanı Aşağı İndir"
+
+#: Pinta.Core/Actions/LayerActions.cs:75
+msgid "Layer Properties..."
+msgstr "Katman Özellikleri..."
+
+#: Pinta.Core/Actions/LayerActions.cs:157
+#: Pinta/Actions/File/OpenDocumentAction.cs:50
+msgid "Open Image File"
+msgstr "Bir Görüntü Dosyası Aç"
+
+#: Pinta.Core/Actions/LayerActions.cs:185
+msgid "Import From File"
+msgstr "Dosyadan Aktar"
+
+#: Pinta.Core/Actions/FileActions.cs:54
+msgid "New..."
+msgstr "Yeni..."
+
+#: Pinta.Core/Actions/FileActions.cs:55
+msgid "New Screenshot..."
+msgstr "Yeni Ekran Görüntüsü..."
+
+#: Pinta.Core/Actions/FileActions.cs:57
+msgid "Open Recent"
+msgstr "Son Kullanılanlardan Aç"
+
+#: Pinta.Core/Actions/FileActions.cs:64
+msgid "Close"
+msgstr "Kapat"
+
+#: Pinta.Core/Actions/FileActions.cs:65
+msgid "Save"
+msgstr "Kaydet"
+
+#: Pinta.Core/Actions/FileActions.cs:67
+msgid "Print"
+msgstr "Yazdır"
+
+#: Pinta.Core/Actions/FileActions.cs:68
+msgid "Quit"
+msgstr "Çık"
+
+#: Pinta.Core/Actions/FileActions.cs:70
+msgid "New"
+msgstr "Yeni"
+
+#: Pinta.Core/Actions/FileActions.cs:71
+msgid "Open"
+msgstr "Aç"
+
+#: Pinta.Core/Actions/HelpActions.cs:50
+msgid "Pinta Website"
+msgstr "Pinta Web Sayfası"
+
+#: Pinta.Core/Actions/HelpActions.cs:51
+msgid "File a Bug"
+msgstr "Hata Bildir"
+
+#: Pinta.Core/Actions/HelpActions.cs:52
+msgid "Translate This Application"
+msgstr "Bu Programı Tercüme Et"
+
+#: Pinta.Core/Actions/HelpActions.cs:53 Pinta/MainWindow.cs:161
+msgid "About"
+msgstr "Hakkında"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:53
+msgid "Multiply"
+msgstr "Çarp"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:54
+msgid "Additive"
+msgstr "Katkı"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:55
+msgid "Color Burn"
+msgstr "Renk Yanığı"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:56
+msgid "Color Dodge"
+msgstr "Renk Atlatma"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:57
+msgid "Reflect"
+msgstr "Yansıt"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:58
+#: Pinta.Effects/Effects/GlowEffect.cs:30
+msgid "Glow"
+msgstr "Parlama"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:59
+msgid "Overlay"
+msgstr "Kaplama"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:60
+msgid "Difference"
+msgstr "Fark"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:61
+msgid "Negation"
+msgstr "Olumsuz"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:62
+msgid "Lighten"
+msgstr "Rengi Aç"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:63
+msgid "Darken"
+msgstr "Koyulaştır"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:64
+msgid "Screen"
+msgstr "Ekran"
+
+#: Pinta.Core/Effects/UserBlendOps.cs:65
+msgid "Xor"
+msgstr "Xor"
+
+#: Pinta.Core/Classes/BaseTool.cs:192
+msgid "Tool"
+msgstr "Araç"
+
+#: Pinta.Core/Classes/BaseTool.cs:263
+msgid "Shortcut key"
+msgstr "Kısayol tuşu"
+
+#: Pinta.Core/Classes/BaseTool.cs:418
+msgid "Normal Blending"
+msgstr "Normal Harmanlama"
+
+#: Pinta.Core/Classes/BaseTool.cs:419
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: Pinta.Core/Classes/BaseTool.cs:433
+msgid "Antialiasing On"
+msgstr "Kenar Keskinleştirme Açık"
+
+#: Pinta.Core/Classes/BaseTool.cs:434
+msgid "Antialiasing Off"
+msgstr "Kenar Keskinleştirme Kapalı"
+
+#: Pinta.Core/Classes/Document.cs:350
+msgid "copy"
+msgstr "kopyala"
+
+#: Pinta.Core/Classes/Document.cs:604 Pinta/Dialogs/ResizeCanvasDialog.cs:39
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:86
+msgid "Resize Canvas"
+msgstr "Tuvali Yeniden Boyutlandır"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:41
+#: Pinta/Dialogs/VersionInformationTabPage.cs:50
+msgid "Version"
+msgstr "Sürüm"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:50
+msgid "License"
+msgstr "Lisans"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:50
+msgid "Released under the MIT X11 License."
+msgstr "MIT X11 Lisansı altında dağıtılmaktadır"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:57
+msgid "Copyright"
+msgstr "Telif Hakkı"
+
+#: Pinta/Dialogs/AboutPintaTabPage.cs:57
+msgid "by Pinta contributors"
+msgstr "Pinta katılımcıları tarafından"
+
+#: Pinta/Dialogs/ClipboardEmptyDialog.cs:36
+msgid "Image cannot be pasted"
+msgstr "Görüntü yapıştırılamadı"
+
+#: Pinta/Dialogs/ClipboardEmptyDialog.cs:37
+msgid "The clipboard does not contain an image."
+msgstr "Panoda bir görüntü bulunmuyor."
+
+#: Pinta/Dialogs/VersionInformationTabPage.cs:44
+msgid "Title"
+msgstr "Başlık"
+
+#: Pinta/Dialogs/VersionInformationTabPage.cs:53
+msgid "Path"
+msgstr "Konum"
+
+#: Pinta/Dialogs/AboutDialog.cs:120
+msgid "Contributors to this release:"
+msgstr ""
+
+#: Pinta/Dialogs/AboutDialog.cs:132
+msgid "Previous contributors:"
+msgstr ""
+
+#: Pinta/Dialogs/AboutDialog.cs:143
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Ahmet Vurgun https://launchpad.net/~ahmetvurgun\n"
+"  Cameron White https://launchpad.net/~cameronwhite91\n"
+"  Hasan Yılmaz https://launchpad.net/~hasanyilmaz\n"
+"  Jonathan Pobst https://launchpad.net/~jpobst\n"
+"  Mehmet Gülmen https://launchpad.net/~memetgulmen\n"
+"  Okan Akıncı https://launchpad.net/~okanakinci86\n"
+"  Omer GOK https://launchpad.net/~mechulkalan\n"
+"  Yalçın Can https://launchpad.net/~yalcin.can\n"
+"  Yusuf ÜLKÜ https://launchpad.net/~yusufulku\n"
+"  rosencreuz https://launchpad.net/~iyiguncevik"
+
+#: Pinta/Dialogs/AboutDialog.cs:146
+msgid "Translated by:"
+msgstr "Çeviren:"
+
+#: Pinta/Dialogs/AboutDialog.cs:152
+msgid "Based on the work of Paint.NET:"
+msgstr "Paint.NET üzerine inşa edilmiştir:"
+
+#: Pinta/Dialogs/AboutDialog.cs:159
+msgid "Using some icons from:"
+msgstr "Bazı simgeler şuradan alınmıştır:"
+
+#: Pinta/Dialogs/AboutDialog.cs:167
+msgid "Powered by Mono:"
+msgstr ""
+
+#: Pinta/Dialogs/AboutDialog.cs:274
+msgid "About Pinta"
+msgstr "Pinta Hakkında"
+
+#: Pinta/Dialogs/AboutDialog.cs:292
+msgid "Version Info"
+msgstr "Sürüm Bilgisi"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:50
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:107
+msgid "Layer Properties"
+msgstr "Katman Özellikleri"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:159
+msgid "Name:"
+msgstr "İsim:"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:167
+msgid "Visible"
+msgstr "Görünür"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:178 GlowEffect dialog
+msgid "Blend Mode"
+msgstr "Karıştırma Kipi"
+
+#: Pinta/Dialogs/LayerPropertiesDialog.cs:189
+msgid "Opacity:"
+msgstr "Saydamlık:"
+
+#: Pinta/Dialogs/JpegCompressionDialog.cs:38
+msgid "JPEG Quality"
+msgstr "JPEG Kalitesi"
+
+#: Pinta/Dialogs/JpegCompressionDialog.cs:49
+msgid "Quality: "
+msgstr "Kalite : "
+
+#: Pinta/Main.cs:68
+msgid "number of threads to use for rendering"
+msgstr "oluşturulma için için kullanılan işlem parçacıkları"
+
+#: Pinta/Options.cs:486
+msgid "OptionName"
+msgstr "Ayarİsmi"
+
+#: Pinta/Actions/Layers/RotateZoomLayerAction.cs:52
+#: Pinta/Actions/Layers/RotateZoomLayerAction.cs:75
+msgid "Rotate / Zoom Layer"
+msgstr "Tabakayı Döndür / Yakınlaştır"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:92
+msgid "Layer Opacity"
+msgstr "Katman Saydamlığı"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:97
+msgid "Rename Layer"
+msgstr "Katmanı Yeniden Adlandır"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:102
+msgid "Hide Layer"
+msgstr "Katmanı Gizle"
+
+#: Pinta/Actions/Layers/LayerPropertiesAction.cs:102
+msgid "Show Layer"
+msgstr "Katmanı Göster"
+
+#: Pinta/Actions/Edit/ResizePaletteAction.cs:50
+msgid "Resize Palette"
+msgstr "Paleti Yeniden Boyutlandır"
+
+#: Pinta/Actions/Edit/ResizePaletteAction.cs:51
+msgid "New palette size:"
+msgstr "Yeni palet büyüklüğü"
+
+#: Pinta/Actions/Edit/PasteAction.cs:125
+msgid "Image larger than canvas"
+msgstr "Görüntü tuvalden büyük"
+
+#: Pinta/Actions/Edit/PasteAction.cs:126
+msgid ""
+"The image being pasted is larger than the canvas size. What would you like "
+"to do?"
+msgstr ""
+"Yapıştırılan görüntünün boyutu tuvalden büyük. Ne yapmak istiyorsunuz?"
+
+#: Pinta/Actions/Edit/PasteAction.cs:130
+msgid "Expand canvas"
+msgstr "Tuvali büyüt"
+
+#: Pinta/Actions/Edit/PasteAction.cs:131
+msgid "Don't change canvas size"
+msgstr "Tuval büyüklüğünü değiştirme"
+
+#: Pinta/Actions/File/OpenDocumentAction.cs:64
+msgid "Image files"
+msgstr "Görüntü dosyaları"
+
+#: Pinta/Actions/File/NewScreenshotAction.cs:52
+msgid "Take Screenshot"
+msgstr "Ekran Görüntüsü Al"
+
+#: Pinta/Actions/File/NewScreenshotAction.cs:53
+msgid "Delay before taking a screenshot (seconds):"
+msgstr "Ekran Görüntüsü Almadan Önce Bekleme (saniye):"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:75
+msgid "Save Image File"
+msgstr "Görüntü Dosyasını Kaydet"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:186
+msgid "Pinta does not support saving images in this file format."
+msgstr "Pinta görüntüleri bu dosya biçimiyle kaydetmeyi desteklemiyor."
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:198
+msgid "Cannot save read only file."
+msgstr "Sadece okunabilir dosyadır, kaydedilemez."
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:213
+msgid "Image too large"
+msgstr "Görüntü çok büyük"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:214
+msgid "ICO files can not be larger than 255 x 255 pixels."
+msgstr "ICO dosyası 255 x 255 pikselden büyük olamaz."
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:239
+#, csharp-format
+msgid "A file named \"{0}\" already exists. Do you want to replace it?"
+msgstr "\"{0}\" isminde dosya mevcut. Değiştirmek ister misiniz?"
+
+#: Pinta/Actions/File/SaveDocumentImplementationAction.cs:240
+#, csharp-format
+msgid ""
+"The file already exists in \"{1}\". Replacing it will overwrite its contents."
+msgstr ""
+"Dosya \"{1}\" içinde mevcut. Değiştirmek içeriğinin üzerine yazılmasına "
+"neden olacak."
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:61
+#, csharp-format
+msgid "Save the changes to image \"{0}\" before closing?"
+msgstr ""
+"Kapatmadan önce değişiklikleri \"{0}\" görüntüsüne kaydetmek istiyor musunuz?"
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:62
+msgid "If you don't save, all changes will be permanently lost."
+msgstr "Kaydetmezseniz tüm değişiklikler kalıcı olarak kaybolacak."
+
+#: Pinta/Actions/File/CloseDocumentAction.cs:69
+msgid "Close without saving"
+msgstr "Kaydetmeden kapat"
+
+#: Pinta/MainWindow.cs:123
+msgid "_File"
+msgstr "_Dosya"
+
+#: Pinta/MainWindow.cs:124
+msgid "_Edit"
+msgstr "Düz_enle"
+
+#: Pinta/MainWindow.cs:126
+msgid "_View"
+msgstr "_Görünüm"
+
+#: Pinta/MainWindow.cs:129
+msgid "_Image"
+msgstr "_Görüntü"
+
+#: Pinta/MainWindow.cs:130
+msgid "_Layers"
+msgstr "_Katmanlar"
+
+#: Pinta/MainWindow.cs:131
+msgid "_Adjustments"
+msgstr "_Ayarlar"
+
+#: Pinta/MainWindow.cs:132
+msgid "Effe_cts"
+msgstr "_Efektler"
+
+#: Pinta/MainWindow.cs:133
+msgid "A_dd-ins"
+msgstr ""
+
+#: Pinta/MainWindow.cs:135
+msgid "_Window"
+msgstr "_Pencere"
+
+#: Pinta/MainWindow.cs:139
+msgid "Tool Windows"
+msgstr "Araç Pencereleri"
+
+#: Pinta/MainWindow.cs:143
+msgid "_Help"
+msgstr "_Yardım"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:105
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:75
+msgid "By percentage:"
+msgstr "Yüzde :"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:146
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:117
+msgid "By absolute size:"
+msgstr "Mutlak boyut:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:167
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:127
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:138
+msgid "Width:"
+msgstr "Genişlik:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:189
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:229
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:102
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:114
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:160
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:200
+msgid "pixels"
+msgstr "piksel"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:207
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:140
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:178
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:245
+#: Pinta/gtk-gui/Pinta.ResizeImageDialog.cs:216
+msgid "Maintain aspect ratio"
+msgstr "En-boy oranını koru"
+
+#: Pinta/gtk-gui/Pinta.ResizeCanvasDialog.cs:530
+msgid "Anchor:"
+msgstr "Çapa:"
+
+#: Pinta/gtk-gui/Pinta.NewImageDialog.cs:37
+msgid "New Image Size          "
+msgstr "Yeni Görüntü Boyutu          "
+
+#: Pinta/Pads/LayersPad.cs:43 Pinta/Pads/LayersPad.cs:54
+msgid "Layers"
+msgstr "Katmanlar"
+
+#: Pinta/Pads/CanvasPad.cs:75
+msgid "Canvas"
+msgstr ""
+
+#: Pinta/Pads/HistoryPad.cs:43 Pinta/Pads/HistoryPad.cs:50
+msgid "History"
+msgstr "Geçmiş"
+
+#: Pinta/Pads/ToolBoxPad.cs:42 Pinta/Pads/ToolBoxPad.cs:48
+msgid "Tools"
+msgstr "Araçlar"
+
+#: Pinta/Pads/OpenImagesPad.cs:41 Pinta/Pads/OpenImagesPad.cs:45
+msgid "Images"
+msgstr "Görüntüler"
+
+#: Pinta/DockLibrary/DockItem.cs:477 Pinta/DockLibrary/DockItemContainer.cs:91
+msgid "Hide"
+msgstr "Gizle"
+
+#: Pinta/DockLibrary/DockItem.cs:485
+msgid "Dockable"
+msgstr "Gömülebilir"
+
+#: Pinta/DockLibrary/DockItem.cs:493
+msgid "Floating"
+msgstr "Yüzen"
+
+#: Pinta/DockLibrary/DockItem.cs:502
+#: Pinta/DockLibrary/DockItemContainer.cs:195
+msgid "Auto Hide"
+msgstr "Otomatik Gizle"
+
+#: Pinta/DockLibrary/DockItemContainer.cs:191
+msgid "Dock"
+msgstr "Rıhtım"
+
+#: Pinta.Effects/Dialogs/Effects.CurvesDialog.cs:82
+#: Pinta.Effects/Adjustments/CurvesEffect.cs:27
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:46
+msgid "Curves"
+msgstr "Eğriler"
+
+#: Pinta.Effects/Dialogs/Effects.LevelsDialog.cs:53
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:103
+msgid "Levels Adjustment"
+msgstr "Seviye Ayarları"
+
+#: Pinta.Effects/Dialogs/Effects.PosterizeDialog.cs:49
+#: Pinta.Effects/Adjustments/PosterizeEffect.cs:25
+#: Pinta.Effects/gtk-gui/Pinta.Effects.PosterizeDialog.cs:26
+msgid "Posterize"
+msgstr "Posterleştir"
+
+#: Pinta.Effects/Adjustments/BrightnessContrastEffect.cs:29
+msgid "Brightness / Contrast"
+msgstr "Parlaklık / Kontrast"
+
+#: Pinta.Effects/Adjustments/AutoLevelEffect.cs:25
+msgid "Auto Level"
+msgstr "Otomatik Seviye"
+
+#: Pinta.Effects/Adjustments/SepiaEffect.cs:26
+msgid "Sepia"
+msgstr "Sepya"
+
+#: Pinta.Effects/Adjustments/BlackAndWhiteEffect.cs:25
+msgid "Black and White"
+msgstr "Siyah Beyaz"
+
+#: Pinta.Effects/Adjustments/LevelsEffect.cs:23
+msgid "Levels"
+msgstr "Seviyeler"
+
+#: Pinta.Effects/Adjustments/InvertColorsEffect.cs:25
+msgid "Invert Colors"
+msgstr "Renkleri Ters Çevir"
+
+#: Pinta.Effects/Adjustments/HueSaturationEffect.cs:26
+msgid "Hue / Saturation"
+msgstr "Ton / Doygunluk"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.PosterizeDialog.cs:93
+msgid "Linked"
+msgstr "Bağlı"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:130
+msgid "Input Histogram"
+msgstr "Giriş Histogram"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:172
+msgid "Input"
+msgstr "Girdi"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:285
+msgid "Output"
+msgstr "Çıktı"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:413
+msgid "Output Histogram"
+msgstr "Çkış Histogram"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:456
+msgid "Auto"
+msgstr "Otomatik"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:468
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:173
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:478
+msgid "Red"
+msgstr "Kırmızı"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:489
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:142
+msgid "Green"
+msgstr "Yeşil"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.LevelsDialog.cs:528
+msgid "Blue"
+msgstr "Mavi"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:62
+msgid "Transfer Map"
+msgstr "Transfer Haritası"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:85
+msgid "RGB"
+msgstr "RGB"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:86
+msgid "Luminosity"
+msgstr "Parlaklık"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:100
+msgid "(256, 256)"
+msgstr "(256, 256)"
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:131
+msgid "Red  "
+msgstr "Kırmızı  "
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:153
+msgid "Blue "
+msgstr "Mavi "
+
+#: Pinta.Effects/gtk-gui/Pinta.Effects.CurvesDialog.cs:187
+msgid "Tip: Right-click to remove control points."
+msgstr "Öneri : Kontrol noktalarını kaldırmak için sağ tıklayın."
+
+#: Pinta.Effects/Effects/OutlineEffect.cs:36
+#: Pinta.Effects/Effects/EmbossEffect.cs:33
+#: Pinta.Effects/Effects/ReliefEffect.cs:32
+#: Pinta.Effects/Effects/EdgeDetectEffect.cs:36
+msgid "Stylize"
+msgstr "Stilize et"
+
+#: Pinta.Effects/Effects/OilPaintingEffect.cs:25
+msgid "Oil Painting"
+msgstr "Yağlı Boya"
+
+#: Pinta.Effects/Effects/OilPaintingEffect.cs:33
+#: Pinta.Effects/Effects/PencilSketchEffect.cs:40
+#: Pinta.Effects/Effects/InkSketchEffect.cs:41
+msgid "Artistic"
+msgstr "Sanatsal"
+
+#: Pinta.Effects/Effects/BulgeEffect.cs:25
+msgid "Bulge"
+msgstr "Şişirme"
+
+#: Pinta.Effects/Effects/BulgeEffect.cs:33
+#: Pinta.Effects/Effects/TwistEffect.cs:33
+#: Pinta.Effects/Effects/PixelateEffect.cs:37
+#: Pinta.Effects/Effects/TileEffect.cs:33
+#: Pinta.Effects/Effects/FrostedGlassEffect.cs:33
+#: Pinta.Effects/Effects/PolarInversionEffect.cs:38
+msgid "Distort"
+msgstr "Boz"
+
+#: Pinta.Effects/Effects/UnfocusEffect.cs:27
+msgid "Unfocus"
+msgstr "Odağı Kaldır"
+
+#: Pinta.Effects/Effects/UnfocusEffect.cs:35
+#: Pinta.Effects/Effects/FragmentEffect.cs:33
+#: Pinta.Effects/Effects/RadialBlurEffect.cs:33
+#: Pinta.Effects/Effects/ZoomBlurEffect.cs:33
+#: Pinta.Effects/Effects/MotionBlurEffect.cs:33
+#: Pinta.Effects/Effects/GaussianBlurEffect.cs:33
+msgid "Blurs"
+msgstr "Bulanıklıklar"
+
+#: Pinta.Effects/Effects/JuliaFractalEffect.cs:25
+msgid "Julia Fractal"
+msgstr "Julia Fraktali"
+
+#: Pinta.Effects/Effects/JuliaFractalEffect.cs:33
+#: Pinta.Effects/Effects/CloudsEffect.cs:37
+#: Pinta.Effects/Effects/MandelbrotFractalEffect.cs:33
+msgid "Render"
+msgstr "Tara"
+
+#: Pinta.Effects/Effects/EmbossEffect.cs:25
+msgid "Emboss"
+msgstr "Kabartma"
+
+#: Pinta.Effects/Effects/FragmentEffect.cs:25
+msgid "Fragment"
+msgstr "Fragman"
+
+#: Pinta.Effects/Effects/ReliefEffect.cs:44
+msgid "Relief"
+msgstr "Kabartma"
+
+#: Pinta.Effects/Effects/RedEyeRemoveEffect.cs:28
+msgid "Red Eye Removal"
+msgstr "Kırmızı Göz Kaldırma"
+
+#: Pinta.Effects/Effects/RedEyeRemoveEffect.cs:36
+#: Pinta.Effects/Effects/GlowEffect.cs:38
+#: Pinta.Effects/Effects/SharpenEffect.cs:33
+#: Pinta.Effects/Effects/SoftenPortraitEffect.cs:66
+msgid "Photo"
+msgstr "Fotoğraf"
+
+#: Pinta.Effects/Effects/TwistEffect.cs:25
+msgid "Twist"
+msgstr ""
+
+#: Pinta.Effects/Effects/PencilSketchEffect.cs:32
+msgid "Pencil Sketch"
+msgstr "Kalemle Eskiz"
+
+#: Pinta.Effects/Effects/PixelateEffect.cs:25
+msgid "Pixelate"
+msgstr "Pikselleştir"
+
+#: Pinta.Effects/Effects/InkSketchEffect.cs:33
+msgid "Ink Sketch"
+msgstr "Mürekkep Efekti"
+
+#: Pinta.Effects/Effects/TileEffect.cs:25
+msgid "Tile Reflection"
+msgstr "Karo Yansıması"
+
+#: Pinta.Effects/Effects/SharpenEffect.cs:25
+msgid "Sharpen"
+msgstr "Keskinleştir"
+
+#: Pinta.Effects/Effects/FrostedGlassEffect.cs:25
+msgid "Frosted Glass"
+msgstr "Buzlu Cam"
+
+#: Pinta.Effects/Effects/MedianEffect.cs:28
+msgid "Median"
+msgstr "Ortalama"
+
+#: Pinta.Effects/Effects/MedianEffect.cs:36
+#: Pinta.Effects/Effects/AddNoiseEffect.cs:37
+#: Pinta.Effects/Effects/ReduceNoiseEffect.cs:36
+msgid "Noise"
+msgstr "Parazit"
+
+#: Pinta.Effects/Effects/RadialBlurEffect.cs:25
+msgid "Radial Blur"
+msgstr "Dairesel Bulanıklaştırma"
+
+#: Pinta.Effects/Effects/ZoomBlurEffect.cs:25
+msgid "Zoom Blur"
+msgstr "Yaklaşma Bulanıklaştırması"
+
+#: Pinta.Effects/Effects/MotionBlurEffect.cs:25
+msgid "Motion Blur"
+msgstr "Hareketli Bulanıklaştır"
+
+#: Pinta.Effects/Effects/AddNoiseEffect.cs:29
+msgid "Add Noise"
+msgstr "Parazit Ekle"
+
+#: Pinta.Effects/Effects/EdgeDetectEffect.cs:28
+msgid "Edge Detect"
+msgstr "Kenar Saptama"
+
+#: Pinta.Effects/Effects/GaussianBlurEffect.cs:25
+msgid "Gaussian Blur"
+msgstr "Gauss Bulanıklığı"
+
+#: Pinta.Effects/Effects/CloudsEffect.cs:29
+msgid "Clouds"
+msgstr "Bulutlar"
+
+#: Pinta.Effects/Effects/ReduceNoiseEffect.cs:28
+msgid "Reduce Noise"
+msgstr "Paraziti Azalt"
+
+#: Pinta.Effects/Effects/MandelbrotFractalEffect.cs:25
+msgid "Mandelbrot Fractal"
+msgstr "Mandelbrot Fraktali"
+
+#: Pinta.Effects/Effects/SoftenPortraitEffect.cs:58
+msgid "Soften Portrait"
+msgstr "Portreyi Yumuşat"
+
+#: Pinta.Effects/Effects/PolarInversionEffect.cs:25
+msgid "Polar Inversion"
+msgstr "Ters Çevirme"
+
+#: BulgeEffect dialog FrostedGlassEffect PolarInversionEffect TwistEffect
+#: SharpenData MotionBlurEffect
+msgid "Amount"
+msgstr "Miktar"
+
+#: RadialBlurEffect dialog JuliaFractalEffect MandelbrotFractalEffect
+#: EdgeDetectData EmbossEffect ReliefData TwistEffect
+msgid "Angle"
+msgstr "Açı"
+
+#: CloudsEffect dialog
+msgid "Antialias"
+msgstr "Örtüşme Önle"
+
+#: OilPaintingEffect dialog
+msgid "Brightness"
+msgstr "Parlaklık"
+
+#: PixelateData dialog
+msgid "Brush Size"
+msgstr "Fırça Boyutu"
+
+#: PolarInversionEffect dialog
+msgid "Cell Size"
+msgstr "Hücre Boyutu"
+
+#: MotionBlurEffect dialog
+msgid "Center Offset"
+msgstr "Orta Baskı"
+
+#: OilPaintingEffect dialog
+msgid "Centered"
+msgstr "Ortalanmış"
+
+#: PencilSketchEffect dialog
+msgid "Coarseness"
+msgstr "Kabalık"
+
+#: AddNoiseEffect dialog
+msgid "Color Range"
+msgstr "Renk Dizisi"
+
+#: InkSketchEffect dialog
+msgid "Color Saturation"
+msgstr "Renk Doygunluğu"
+
+#: GlowEffect dialog
+msgid "Coloring"
+msgstr "Renklendirme"
+
+#: AddNoiseEffect dialog
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: FragmentEffect dialog
+msgid "Coverage"
+msgstr "Kapsam"
+
+#: MotionBlurEffect dialog PolarInversionEffect
+msgid "Distance"
+msgstr "Uzaklık"
+
+#: JuliaFractalEffect dialog
+msgid "Edge Behavior"
+msgstr "Kenar Davranışı"
+
+#: MandelbrotFractalEffect dialog FragmentEffect
+msgid "Factor"
+msgstr "Etken"
+
+#: InkSketchEffect dialog
+msgid "Fragments"
+msgstr "Fragmanlar"
+
+#: TileEffect dialog
+msgid "Ink Outline"
+msgstr "Mürekkep taslak"
+
+#: AddNoiseEffect dialog OutlineEffect MandelbrotFractalEffect
+msgid "Intensity"
+msgstr "Yoğunluk"
+
+#: RadialBlurEffect dialog
+msgid "Lighting"
+msgstr "Aydınlatma"
+
+#: ZoomBlurEffect dialog BulgeEffect PencilSketchEffect
+msgid "Offset"
+msgstr "Yerleşim"
+
+#: MedianEffect dialog
+msgid "Pencil Tip Size"
+msgstr "Kalem Ucu Büyüklüğü"
+
+#: CloudsEffect dialog
+msgid "Percentile"
+msgstr "Yüzdelik Değer"
+
+#: RadialBlurEffect dialog
+msgid "Power"
+msgstr "Güç"
+
+#: PolarInversionEffect dialog JuliaFractalEffect MandelbrotFractalEffect
+#: GaussianBlurEffect
+msgid "Quality"
+msgstr "Kalite"
+
+#: TileEffect dialog RedEyeRemoveData
+msgid "Rotation"
+msgstr "Döndürme"
+
+#: CloudsEffect dialog
+msgid "Saturation percentage"
+msgstr "Doygunluk yüzdesi"
+
+#: CloudsEffect dialog
+msgid "Scale"
+msgstr "Ölçek"
+
+#: SoftenPortraitData dialog
+msgid "Seed"
+msgstr "Tohum"
+
+#: ReduceNoiseEffect dialog
+msgid "Softness"
+msgstr "Yumuşaklık"
+
+#: OutlineEffect dialog
+msgid "Strength"
+msgstr "Güçlülük"
+
+#: TileEffect dialog
+msgid "Thickness"
+msgstr "Kalınlık"
+
+#: RedEyeRemoveData dialog
+msgid "Tile Size"
+msgstr "Döşeme Boyutu"
+
+#: JuliaFractalEffect dialog
+msgid "Warmth"
+msgstr "Sıcaklık"
+
+#: RadialBlurEffect dialog
+msgid ""
+"Use low quality for previews, small images, and small angles.  Use high "
+"quality for final quality, large images, and large angles."
+msgstr ""
+"Önizlemeler, küçük görüntüler ve dar açılar için düşük kalite kullanın. Son "
+"nüshada kalite, büyük görüntüler ve geniş açılar için yüksek kalite kullanın."
+
+#: RedEyeRemoveEffect dialog
+msgid "Hint: For best results, first use selection tools to select each eye."
+msgstr ""
+"Öneri: En iyi sonucu almak için ilk önce seçim araçlarını kullanarak iki "
+"gözü seçin."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:123
+msgid ""
+"Multiple selection:\n"
+"\n"
+msgstr ""
+"Çoklu seçim:\n"
+"\n"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:160
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:163
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:270
+msgid "Disable"
+msgstr "Pasifleştir"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:178
+msgid "No selection"
+msgstr "Seçim yok"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:217
+msgid "Available in repository:"
+msgstr "Depo bulundu:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:256
+msgid "Update available"
+msgstr "Yükseltme bulundu"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:263
+msgid "This add-in can't be loaded due to missing dependencies"
+msgstr "Bu eklenti eksik bağımlılıklar nedeniyle kurulamıyor"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:270
+#, csharp-format
+msgid "Required: {0} v{1}, found v{2}"
+msgstr "Desteklenen: {0} v{1}, bulunan v{2}"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:272
+#, csharp-format
+msgid "Missing: {0} v{1}"
+msgstr "Desteklenmeyen: {0} v{1}"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:286
+msgid "Installed version"
+msgstr "Kurulu sürüm"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:287
+msgid "Repository version"
+msgstr "Depo sürümü"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:293
+msgid "Download size"
+msgstr "İndirme boyutu"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInfoView.cs:295
+msgid "The following depedencies required by this add-in are not available:"
+msgstr "Bu eklenti için aşağıdaki bağımlılıklar mevcut değildir:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstaller.cs:16
+msgid "Installation cancelled"
+msgstr "Yükleme iptal edildi"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstallerDialog.cs:159
+msgid "Some of the required add-ins were not found"
+msgstr "Bazı gerekli eklentiler bulunamadı"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinInstallerDialog.cs:171
+msgid "Installation failed"
+msgstr "Yükleme başarısız"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:115
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:250
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:122
+msgid "Installed"
+msgstr "Kurulu"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:123
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:364
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:247
+msgid "Updates"
+msgstr "Güncelleştirmeler"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:131
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:325
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:347
+msgid "Gallery"
+msgstr "Galeri"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:261
+msgid "All repositories"
+msgstr "Tüm depolar"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:268
+msgid "Manage Repositories..."
+msgstr "Depoları Yönet..."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:363
+#, csharp-format
+msgid "{0} update available"
+msgid_plural "{0} updates available"
+msgstr[0] "{0} güncelleme var"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:419
+msgid "Updating repository"
+msgstr "Depo güncelleniyor"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:513
+msgid "Install Add-in Package"
+msgstr "Eklenti Paketini Yükle"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinManagerDialog.cs:523
+msgid "Add-in packages"
+msgstr "Eklenti paketleri"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:102
+msgid "No add-ins found"
+msgstr "Eklenti bulunamadı"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:120
+msgid "Add-in"
+msgstr "Eklenti"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/AddinTreeWidget.cs:213
+msgid "Other"
+msgstr "Diğer"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:77
+msgid "Uninstall"
+msgstr "Kaldır"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:82
+msgid "The following packages will be uninstalled:"
+msgstr "İzleyen paketler kaldırılmış olacak:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:89
+msgid ""
+"There are other add-ins that depend on the previous ones which will also be "
+"uninstalled:"
+msgstr "Daha önceki eklemelere bağımlı olanlar ayrıca kaldırılacak:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:124
+msgid ""
+"The selected add-ins can't be installed because there are dependency "
+"conflicts."
+msgstr "Seçili eklemeler yüklenemez çünkü çakışan bağımlılıklar var."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:138
+msgid "The following packages will be installed:"
+msgstr "Aşağıdaki paketler kurulacak:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:142
+msgid " (in user directory)"
+msgstr " (kullanıcı dizini içinde)"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:148
+msgid "The following packages need to be uninstalled:"
+msgstr "Bu paketlerin kaldırılmasına gerek duyuluyor:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:156
+msgid "The following dependencies could not be resolved:"
+msgstr "Bu bağımlılıklar çözümlenemedi:"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:190
+msgid "Are you sure you want to cancel the installation?"
+msgstr "Yüklemeden vazgeçmek istediğinize emin misiniz?"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:209
+msgid "Installing Add-ins"
+msgstr "Eklentiler Yükleniyor"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:211
+msgid "The installation failed!"
+msgstr "Yükleme başarısız oldu!"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:212
+msgid "The installation has completed with warnings."
+msgstr "Yükleme uyarılarla tamamlandı."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:214
+msgid "Uninstalling Add-ins"
+msgstr "Eklenti Kaldırılıyor"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:216
+msgid "The uninstallation failed!"
+msgstr "Kaldırma başarısız oldu!"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/InstallDialog.cs:217
+msgid "The uninstallation has completed with warnings."
+msgstr "Kaldırma uyarılarla tamamlandı."
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/ManageSitesDialog.cs:98
+msgid "Registering repository"
+msgstr "Depo onaylanıyor"
+
+#: Mono.Addins.Gui/Mono.Addins.Gui/Services.cs:64
+#: Mono.Addins.Gui/Mono.Addins.Gui/Services.cs:73
+#, csharp-format
+msgid "Exception occurred: {0}"
+msgstr "Kural dışı durum meydana geldi: {0}"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:181
+msgid "More information"
+msgstr "Daha fazla bilgi"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:229
+msgid "Install..."
+msgstr "Kur..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:255
+msgid "Update"
+msgstr "Güncelle"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInfoView.cs:281
+msgid "_Uninstall..."
+msgstr "_Kaldır..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInstallerDialog.cs:38
+msgid "Additional extensions are required to perform this operation."
+msgstr "Bu işlemin gerçekleştirilmesi için ek uzantılar gerekiyor."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinInstallerDialog.cs:48
+msgid "The following add-ins will be installed:"
+msgstr "Yüklecek eklentiler:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:143
+msgid "No updates found"
+msgstr "Güncelleme bulunamadı"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:166
+msgid "Refresh"
+msgstr "Yenile"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:194
+msgid "Update All"
+msgstr "Tümünü Güncelle"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:268
+msgid "Repository:"
+msgstr "Depo:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.AddinManagerDialog.cs:373
+msgid "Install from file..."
+msgstr "Dosyadan yükle..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ErrorDialog.cs:92
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ProgressDialog.cs:66
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.InstallDialog.cs:126
+msgid "Install"
+msgstr "Yükle"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ManageSitesDialog.cs:20
+msgid "Add-in Repository Management"
+msgstr "Eklenti Deposu Yönetimi"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:29
+msgid "Add New Repository"
+msgstr "Yeni Depo Ekle"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:47
+msgid "Select the location of the repository you want to register:"
+msgstr "Kaydetmek istediğiniz deponun konumunu seçin:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:54
+msgid "Register an on-line repository"
+msgstr "Bir çevrimiçi depo kaydedin"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:82
+msgid "Url:"
+msgstr "Adres:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:103
+msgid "Register a local repository"
+msgstr "Yerel bir depo kaydedin"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:130
+msgid "Path:"
+msgstr "Konum:"
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.NewSiteDialog.cs:154
+msgid "Browse..."
+msgstr "Gözat..."
+
+#: Mono.Addins.Gui/gtk-gui/Mono.Addins.Gui.ProgressDialog.cs:21
+msgid "Progress"
+msgstr "İşlem"
+
+#: Mono.Addins/Mono.Addins.Description/AssemblyDependency.cs:103
+#, csharp-format
+msgid "(provided by {0})"
+msgstr "({0} sağladı)"
+
+#: Pinta.Tools/Tools/TextTool.cs:75
+msgid "Text - Finalize"
+msgstr ""
