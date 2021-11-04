@@ -53,7 +53,7 @@ namespace Pinta.Core
 		/// </summary>
 		public void RemoveMenuItem (GLib.MenuItem item)
 		{
-			// TODO-GTK3 (addins)
+			
 			throw new NotImplementedException();
 #if false
 			addins_menu.Remove (item);
