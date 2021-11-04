@@ -45,7 +45,8 @@ namespace Pinta.Core
 		private string ANTIALIAS_SETTING => $"{GetType ().Name.ToLowerInvariant ()}-antialias";
 		private string ALPHABLEND_SETTING => $"{GetType ().Name.ToLowerInvariant ()}-alpha-blend";
 
-		protected static Cairo.Point point_empty = new Cairo.Point (-500, -500);
+		protected static readonly Cairo.Point point_empty = new Cairo.Point (-500, -500);
+
 
 		protected BaseTool (IServiceManager services)
 		{

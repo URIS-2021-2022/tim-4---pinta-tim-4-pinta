@@ -71,7 +71,7 @@ namespace Pinta.Core
 		int updated_x2;
 		int updated_y2;
 		
-		internal AsyncEffectRenderer (Settings settings)
+		 protected AsyncEffectRenderer (Settings settings)
 		{
 			if (settings.ThreadCount < 1)
 				settings.ThreadCount = 1;
@@ -166,7 +166,7 @@ namespace Pinta.Core
 		
 		protected abstract void OnCompletion (bool canceled, Exception[]? exceptions);
 		
-		internal void Dispose ()
+		internal void Dispose () : IDisposable
 		{
 			if (timer_tick_id > 0)
 				GLib.Source.Remove (timer_tick_id);
@@ -246,7 +246,9 @@ namespace Pinta.Core
 		}
 		
 		// Runs on a background thread.
-		void RenderTile (int renderId, int threadId, int tileIndex)
+
+		//removing unused parameters
+		void RenderTile (int tileIndex)
 		{
 			Exception? exception = null;
 			Gdk.Rectangle bounds = new Gdk.Rectangle ();

@@ -173,7 +173,7 @@ namespace Pinta.Core
         public override bool Equals(object? obj)
         {
             
-            if (obj != null && obj is ColorBgra && ((ColorBgra)obj).Bgra == this.Bgra)
+            if (obj is ColorBgra && ((ColorBgra)obj).Bgra == this.Bgra)
             {
                 return true;
             }
