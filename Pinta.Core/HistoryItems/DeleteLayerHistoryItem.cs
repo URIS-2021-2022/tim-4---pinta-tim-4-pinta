@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DeleteLayerHistoryItem.cs
 //  
 // Author:
@@ -30,7 +30,7 @@ namespace Pinta.Core
 {
 	public class DeleteLayerHistoryItem : BaseHistoryItem
 	{
-		private int layer_index;
+		private readonly int layer_index;
 		private UserLayer? layer;
 
 		public DeleteLayerHistoryItem(string icon, string text, UserLayer layer, int layerIndex) : base(icon, text)

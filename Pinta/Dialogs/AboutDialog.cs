@@ -148,7 +148,7 @@ namespace Pinta
 				for (int n = 0; n < authors.Length; n++) {
 					sb.Append (authors[n]);
 					if (n % 2 == 1)
-						sb.Append ("\n");
+						sb.Append ('\n');
 					else if (n < authors.Length - 1)
 						sb.Append (", ");
 				}
