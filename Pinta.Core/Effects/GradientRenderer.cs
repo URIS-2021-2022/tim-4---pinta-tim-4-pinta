@@ -181,7 +181,7 @@ namespace Pinta.Core
 					++pixelPtr;
 				}
 			}
-			else if (alphaOnly && !alphaBlending)
+			else if (!alphaOnly && !alphaBlending)
 			{
 				for (var x = rect.Left; x <= right; ++x)
 				{
