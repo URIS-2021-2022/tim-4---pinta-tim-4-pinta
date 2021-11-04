@@ -1,4 +1,4 @@
-// 
+﻿// 
 // EffectsManager.cs
 //  
 // Author:
@@ -35,8 +35,8 @@ namespace Pinta.Core
 	/// </summary>
 	public class EffectsManager
 	{
-		private readonly Dictionary<BaseEffect, Command> adjustments;
-		private readonly Dictionary<BaseEffect, Command> effects;
+		private Dictionary<BaseEffect, Command> adjustments;
+		private Dictionary<BaseEffect, Command> effects;
 
 		internal EffectsManager ()
 		{

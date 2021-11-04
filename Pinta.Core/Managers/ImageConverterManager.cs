@@ -1,4 +1,4 @@
-// 
+﻿// 
 // ImageConverterManager.cs
 //  
 // Author:
@@ -34,7 +34,7 @@ namespace Pinta.Core
 {
 	public class ImageConverterManager
 	{
-		private readonly List<FormatDescriptor> formats;
+		private List<FormatDescriptor> formats;
 
 		public ImageConverterManager ()
 		{
