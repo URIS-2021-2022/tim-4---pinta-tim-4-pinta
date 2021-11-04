@@ -138,7 +138,7 @@ namespace Pinta.Core
 
 		public void ShowErrorDialog (Window parent, string message, string details)
 		{
-			error_dialog_handler (parent, message, details);
+			//error_dialog_handler (parent, message, details);
 		}
 
 		public void ShowUnsupportedFormatDialog (Window parent, string message, string details)
