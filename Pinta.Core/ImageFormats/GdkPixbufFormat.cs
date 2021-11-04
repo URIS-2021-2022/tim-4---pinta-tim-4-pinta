@@ -43,7 +43,7 @@ namespace Pinta.Core
 
 		#region IImageImporter implementation
 
-		public void Import (string fileName, Gtk.Window parent)
+		public void Import (string filename, Gtk.Window parent)
 		{
 			Pixbuf bg;
 
