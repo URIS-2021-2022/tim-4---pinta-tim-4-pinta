@@ -348,7 +348,7 @@ namespace Pinta.Core
             ret.B = (byte)ClampToByte(Lerp(from.B, to.B, frac));
             ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
-            ret.A = (byte)ClampToByte(Lerp(from.A, to.A, frac));
+            ret.A = ClampToByte(Lerp(from.A, to.A, frac));
 
             return ret;
         }

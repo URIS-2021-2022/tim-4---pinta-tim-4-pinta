@@ -1368,7 +1368,7 @@ namespace Pinta.Tools
 		/// Do not call. Use DrawActiveShape.
 		/// </summary>
 		/// <param name="engine"></param>
-		private void OrganizePoints(ShapeEngine engine)
+		private static void OrganizePoints(ShapeEngine engine)
 		{
 			Document doc = PintaCore.Workspace.ActiveDocument;
 

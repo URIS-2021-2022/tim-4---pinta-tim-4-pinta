@@ -48,7 +48,7 @@ namespace Pinta.Core
             blend_modes.Add (Translations.GetString ("Saturation"), BlendMode.Saturation);
         }
 
-		private UserBlendOps ()
+		public UserBlendOps ()
 		{
 		}
 

@@ -844,7 +844,7 @@ namespace Pinta.Core
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(255, 255, 255, (byte)((lightness * 255) / 100)));
                 }
-                else // if (lightness < 0)
+                else 
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(0, 0, 0, (byte)((-lightness * 255) / 100)));
                 }
