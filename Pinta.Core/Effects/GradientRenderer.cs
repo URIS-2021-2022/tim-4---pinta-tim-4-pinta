@@ -191,7 +191,7 @@ namespace Pinta.Core
 					++pixelPtr;
 				}
 			}
-			else if (!alphaOnly && (alphaBlending && (startAlpha != 255 || endAlpha != 255)))
+			else if (alphaBlending && (startAlpha != 255 || endAlpha != 255))
 			{
 				// If we're doing all color channels, and we're doing alpha blending, and if alpha blending is necessary
 				for (var x = rect.Left; x <= right; ++x)
