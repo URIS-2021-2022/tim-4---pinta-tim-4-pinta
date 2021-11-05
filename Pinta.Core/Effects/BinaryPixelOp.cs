@@ -106,7 +106,7 @@ namespace Pinta.Core
 
 		public override void Apply (Cairo.ImageSurface dst, Point dstOffset, Cairo.ImageSurface src, Point srcOffset, int scanLength)
 		{
-			Apply (dst.GetPointAddress (dstOffset), src.GetPointAddress (srcOffset), roiLength);
+			Apply (dst.GetPointAddress (dstOffset), src.GetPointAddress (srcOffset), scanLength);
 		}
 
 		public void Apply (Cairo.ImageSurface dst, Cairo.ImageSurface src)

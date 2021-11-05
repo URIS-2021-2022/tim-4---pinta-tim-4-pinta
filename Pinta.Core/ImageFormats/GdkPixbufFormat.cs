@@ -48,19 +48,19 @@ namespace Pinta.Core
 			Pixbuf bg;
 
 			// Handle any EXIF orientation flags
-			using (var fs = new FileStream (fileName, FileMode.Open, FileAccess.Read))
+			using (var fs = new FileStream (filename, FileMode.Open, FileAccess.Read))
 				bg = new Pixbuf (fs);
 
 			bg = bg.ApplyEmbeddedOrientation ();
 
 			Size imagesize = new Size (bg.Width, bg.Height);
 
-			Document doc = PintaCore.Workspace.CreateAndActivateDocument (fileName, imagesize);
+			Document doc = PintaCore.Workspace.CreateAndActivateDocument (filename, imagesize);
 			doc.HasFile = true;
 			doc.ImageSize = imagesize;
 			doc.Workspace.CanvasSize = imagesize;
 
-			Layer layer = doc.Layers.AddNewLayer (Path.GetFileName (fileName));
+			Layer layer = doc.Layers.AddNewLayer (Path.GetFileName (filename));
 
 			using (Cairo.Context g = new Cairo.Context (layer.Surface)) {
 				CairoHelper.SetSourcePixbuf (g, bg, 0, 0);

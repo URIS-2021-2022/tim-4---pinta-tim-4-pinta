@@ -208,8 +208,8 @@ namespace Pinta.Effects
 			if (args.Event.State == Gdk.ModifierType.Button1Mask) {
 				// first and last control point cannot be removed
 				if (last_cpx != 0 && last_cpx != size - 1) {
-					foreach (var controlPoints in GetActiveControlPoints.Where(controlPoints => controlPoints.ContainsKey (last_cpx))) {
-
+					foreach (var controlPoints in GetActiveControlPoints()) {
+						if(controlPoints.ContainsKey (last_cpx))
 							controlPoints.Remove (last_cpx);
 					}
 				}	
