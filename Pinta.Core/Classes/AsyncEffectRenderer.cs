@@ -165,8 +165,10 @@ namespace Pinta.Core
 		protected abstract void OnUpdate (double progress, Gdk.Rectangle updatedBounds);
 		
 		protected abstract void OnCompletion (bool canceled, Exception[]? exceptions);
-		
-		internal void Dispose () : IDisposable
+
+
+	//renaming function to prevent confusion
+		internal void Dispose123 () 
 		{
 			if (timer_tick_id > 0)
 				GLib.Source.Remove (timer_tick_id);

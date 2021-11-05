@@ -43,11 +43,12 @@ namespace Pinta.Core
 
 	private ActivatedHandler? Activated;
 
-	public Activated()
+	public  ActivateHandler? Activated12
         {
             get { return  Activated;}
 	    set { Activated = value;}
         }
+
         public void Activate()
         {
             Action.Activate(null);

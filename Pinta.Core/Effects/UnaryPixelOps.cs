@@ -43,7 +43,7 @@ namespace Pinta.Core
 
             public unsafe override void Apply(ColorBgra* ptr, int length)
             {
-                return;
+               
             }
         }
 
@@ -691,21 +691,22 @@ namespace Pinta.Core
 
             public static Level AutoFromLoMdHi(ColorBgra lo, ColorBgra md, ColorBgra hi) 
             {
-                float[] gamma = new float[3];
+		//renaming gamma
+                float[] gamma1 = new float[3];
 
                 for (int i = 0; i < 3; i++)
                 {
                     if (lo[i] < md[i] && md[i] < hi[i])
                     {
-                        gamma[i] = (float)Utility.Clamp(Math.Log(0.5, (float)(md[i] - lo[i]) / (float)(hi[i] - lo[i])), 0.1, 10.0);
+                        gamma1[i] = (float)Utility.Clamp(Math.Log(0.5, (float)(md[i] - lo[i]) / (float)(hi[i] - lo[i])), 0.1, 10.0);
                     }
                     else
                     {
-                        gamma[i] = 1.0f;
+                        gamma1[i] = 1.0f;
                     }
                 }
 
-                return new Level(lo, hi, gamma, ColorBgra.Black, ColorBgra.White);
+                return new Level(lo, hi, gamma1, ColorBgra.Black, ColorBgra.White);
             }
 
             private void UpdateLookupTable() 

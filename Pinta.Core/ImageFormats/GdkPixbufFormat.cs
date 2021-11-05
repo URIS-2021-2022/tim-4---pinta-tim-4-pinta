@@ -122,7 +122,7 @@ namespace Pinta.Core
 		public static bool SaveUtf8 (this Pixbuf pb, string filename, string type)
 		{
 			if (PintaCore.System.OperatingSystem == OS.Windows) {
-				IntPtr error = IntPtr.Zero;
+				IntPtr error;
 				IntPtr native_filename = GLib.Marshaller.StringToPtrGStrdup (filename);
 				IntPtr native_type = GLib.Marshaller.StringToPtrGStrdup (type);
 				bool result = gdk_pixbuf_save_utf8 (pb.Handle, native_filename, native_type, out error, IntPtr.Zero);
