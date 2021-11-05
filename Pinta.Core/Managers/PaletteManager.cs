@@ -58,7 +58,7 @@ namespace Pinta.Core
 			set => SetColor (true, value, true);
 		}
 
-		public int MaxRecentlyUsedColor => MAX_RECENT_COLORS; 
+		public static int MaxRecentlyUsedColor => MAX_RECENT_COLORS; 
 
 		// Return an IEnumerable to prevent modification of the list
 		public IEnumerable<Color> RecentlyUsedColors => recently_used;
