@@ -208,7 +208,7 @@ namespace Pinta.Effects
 			public int Power = 50;
 			
 			[Skip]
-			public static Dictionary <string, object> BlendOps;
+			public static readonly Dictionary <string, object> BlendOps;
 
 			[Skip]
 			private static string defaultBlendOp;

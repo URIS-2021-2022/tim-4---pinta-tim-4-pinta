@@ -1,4 +1,4 @@
-﻿// 
+// 
 // ImageConverterManager.cs
 //  
 // Author:
@@ -141,7 +141,7 @@ namespace Pinta.Core
 
 			extension = NormalizeExtension (extension);
 
-			return Formats.Where (p => p.Extensions.Contains (extension)).FirstOrDefault ();
+			return Formats.FirstOrDefault ((p => p.Extensions.Contains (extension)));
 		}
 
 		/// <summary>

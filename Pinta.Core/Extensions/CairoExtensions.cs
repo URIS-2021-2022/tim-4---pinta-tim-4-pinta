@@ -1483,7 +1483,7 @@ namespace Pinta.Core
 			return scans;
 		}
 
-		public static Path CreatePolygonPath (this Context g, Point polygonSet)
+		public static Path CreatePolygonPath (this Context g, Point[][] polygonSet)
 		{
 			g.Save ();
 			Point p;
