@@ -21,7 +21,7 @@ namespace Pinta.Core
 	/// </summary>
 	public abstract class ColorDifferenceEffect : BaseEffect
 	{
-		public unsafe void RenderColorDifferenceEffect (double[][] weights, ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public unsafe void RenderColorDifferenceEffect (double[][] weights, ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			Gdk.Rectangle src_rect = src.GetBounds ();
 
@@ -41,7 +41,7 @@ namespace Pinta.Core
 						fyEnd = 2;
 
 					// loop through each point in the line 
-					ColorBgra* dstPtr = dest.GetPointAddressUnchecked (rect.X, y);
+					ColorBgra* dstPtr = dst.GetPointAddressUnchecked (rect.X, y);
 
 					for (int x = rect.X; x < rect.X + rect.Width; ++x) {
 						int fxStart = 0;
