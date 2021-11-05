@@ -243,14 +243,15 @@ namespace Pinta.Core
 				if (tileIndex >= total_tiles || cancel_render_flag)
 					return;
 				
-				RenderTile (renderId, threadId, tileIndex);
+				RenderTile (renderId, tileIndex);
+				
  			}
 		}
 		
 		// Runs on a background thread.
 
 		//removing unused parameters
-		void RenderTile (int tileIndex)
+		void RenderTile (int renderId,int tileIndex)
 		{
 			Exception? exception = null;
 			Gdk.Rectangle bounds = new Gdk.Rectangle ();

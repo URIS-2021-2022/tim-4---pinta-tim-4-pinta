@@ -48,12 +48,12 @@ namespace Pinta.Core
 			return string.Format ("({0}, {1})", line, offset);
 		}
 
-		public override static bool operator == (TextPosition x, TextPosition y)
+		public  static bool operator == (TextPosition x, TextPosition y)
 		{
 			return x.CompareTo (y) == 0;
 		}
 
-		public override static bool operator != (TextPosition x, TextPosition y)
+		public  static bool operator != (TextPosition x, TextPosition y)
 		{
 			return x.CompareTo (y) != 0;
 		}
@@ -66,12 +66,12 @@ namespace Pinta.Core
 				return offset.CompareTo (other.offset);
 		}
 
-		public  override static TextPosition Max (TextPosition p1, TextPosition p2)
+		public  static TextPosition Max (TextPosition p1, TextPosition p2)
 		{
 			return (p1.CompareTo (p2) > 0) ? p1 : p2;
 		}
 
-		public override static TextPosition Min (TextPosition p1, TextPosition p2)
+		public static TextPosition Min (TextPosition p1, TextPosition p2)
 		{
 			return (p1.CompareTo (p2) < 0) ? p1 : p2;
 		}
