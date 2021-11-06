@@ -238,7 +238,7 @@ namespace Pinta.Gui.Widgets
 
 				var val = vals[i];
 				var y = GetYFromValue (val);
-				var hoover = ((index == i)) && (all.ContainsPoint (px, py) || ValueIndex != -1);
+				var hoover = (index == i) && (all.ContainsPoint (px, py) || ValueIndex != -1);
 				var color = hoover ? new Color (0.1, 0.1, 0.9) : new Color (0.1, 0.1, 0.1);
 
 				// left triangle

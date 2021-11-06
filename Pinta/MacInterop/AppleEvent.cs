@@ -180,7 +180,7 @@ namespace Pinta.MacInterop
 		static void CheckReturn (AEDescStatus status)
 		{
 			if (status != AEDescStatus.Ok)
-			throw new Exception ("Failed with code " + status.ToString ());
+				throw new Exception ("Failed with code " + status.ToString ());
 		}
 	}
 	
