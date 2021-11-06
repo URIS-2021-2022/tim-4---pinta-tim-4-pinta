@@ -234,7 +234,7 @@ namespace Pinta.Core
 		void Render (int renderId, int threadId)
 		{
 			// Fetch the next tile index and render it.
-			for (;;) {
+			while (true) {
 				
 				int tileIndex = Interlocked.Increment (ref current_tile);
 				
