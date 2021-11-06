@@ -1,4 +1,4 @@
-﻿// 
+// 
 // InvertHistoryItem.cs
 //  
 // Author:
@@ -32,7 +32,7 @@ namespace Pinta.Core
 	// the action: invert colors, rotate 180 degrees, etc
 	public class InvertHistoryItem : BaseHistoryItem
 	{
-		private InvertType type;
+		private readonly InvertType type;
 		private int layer_index;
 		
 		public InvertHistoryItem (InvertType type)

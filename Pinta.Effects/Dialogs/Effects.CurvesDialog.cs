@@ -235,7 +235,7 @@ namespace Pinta.Effects
 				foreach (var controlPoints in GetActiveControlPoints ()) {
 					for (int i = 0; i < controlPoints.Count; i++) {
 						int cpx = controlPoints.Keys [i];
-						int cpy = size - 1 - (int)controlPoints.Values [i];
+						int cpy = size - 1 - controlPoints.Values [i];
 					
 						//we cannot allow user to remove first or last control point
 						if (cpx == 0 && cpy == size - 1)

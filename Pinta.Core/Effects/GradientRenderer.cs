@@ -202,7 +202,7 @@ namespace Pinta.Core
 					*pixelPtr = result;
 					++pixelPtr;
 				}
-				//if (!this.alphaOnly && !this.alphaBlending) // or sC.A == 255 && eC.A == 255
+				
 			}
 			else
 			{
