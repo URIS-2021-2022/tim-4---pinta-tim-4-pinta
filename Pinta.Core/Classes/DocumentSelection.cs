@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DocumentSelection.cs
 //  
 // Author:
@@ -36,8 +36,20 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-		public List<List<IntPoint>> SelectionPolygons = new List<List<IntPoint>>();
-		public Clipper SelectionClipper = new Clipper();
+		private List<List<IntPoint>> selection_polygons = new List<List<IntPoint>> ();
+
+		public List<List<IntPoint>> SelectionPolygons {
+			get { return selection_polygons; }
+			set { selection_polygons = value; }
+		}
+
+		private Clipper selection_clipper = new Clipper ();
+
+		public Clipper SelectionClipper {
+			get { return selection_clipper; }
+			set { selection_clipper = value; }
+
+		}
 
 		public PointD Origin;
 		public PointD End;

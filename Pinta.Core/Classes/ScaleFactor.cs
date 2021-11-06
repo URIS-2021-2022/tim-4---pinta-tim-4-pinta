@@ -125,19 +125,7 @@ namespace Pinta.Core
 			return numerator.GetHashCode () ^ denominator.GetHashCode ();
 		}
 
-		//private static string percentageFormat = PdnResources.GetString("ScaleFactor.Percentage.Format");
-		//public override string ToString()
-		//{
-		//    try
-		//    {
-		//        return string.Format(percentageFormat, unchecked(Math.Round(unchecked(100 * Ratio))));
-		//    }
-
-		//    catch (ArithmeticException)
-		//    {
-		//        return "--";
-		//    }
-		//}
+		
 
 		public int ScaleScalar (int x)
 		{
@@ -249,15 +237,7 @@ namespace Pinta.Core
 			return new Size (UnscaleScalar (s.Width), UnscaleScalar (s.Height));
 		}
 
-		//public RectangleF ScaleRectangle(RectangleF rectF)
-		//{
-		//    return new RectangleF(ScalePoint(rectF.Location), ScaleSize(rectF.Size));
-		//}
-
-		//public RectangleF UnscaleRectangle(RectangleF rectF)
-		//{
-		//    return new RectangleF(UnscalePoint(rectF.Location), UnscaleSize(rectF.Size));
-		//}
+		
 
 		public Rectangle ScaleRectangle (Rectangle rect)
 		{
@@ -359,19 +339,19 @@ namespace Pinta.Core
 			return Reduce (numerator, denominator);
 		}
 
-		public ScaleFactor (int numerator, int denominator)
+		public ScaleFactor (int numer, int denom)
 		{
-			if (denominator <= 0) {
-				throw new ArgumentOutOfRangeException ("denominator", "must be greater than 0(denominator = " + denominator + ")");
+			if (denom <= 0) {
+				throw new ArgumentOutOfRangeException ("denominator", "must be greater than 0(denominator = " + denom + ")");
 			}
 
-			if (numerator < 0) {
-				throw new ArgumentOutOfRangeException ("numerator", "must be greater than 0(numerator = " + numerator + ")");
+			if (numer < 0) {
+				throw new ArgumentOutOfRangeException ("numerator", "must be greater than 0(numerator = " + numer + ")");
 			}
 
-			this.numerator = numerator;
-			this.denominator = denominator;
-			this.Clamp ();
+			numerator = numer;
+			denominator = denom;
+			Clamp ();
 		}
 	}
 }

@@ -1453,8 +1453,9 @@ namespace Pinta.Tools
 						}
 					}
 
-					g.SetDash(new double[] { }, 0.0);
+					g.SetDash (Array.Empty<double>(), 0.0); 
 
+					
 					//Draw anything extra (that not every shape has), like arrows.
 					DrawExtras(ref dirty, g, engine);
 
@@ -1586,8 +1587,7 @@ namespace Pinta.Tools
 		/// </summary>
 		public void DrawAllShapes()
 		{
-			Document doc = PintaCore.Workspace.ActiveDocument;
-
+			
 			//Store the SelectedShapeIndex value for later restoration.
 			int previousToolSI = SelectedShapeIndex;
 
