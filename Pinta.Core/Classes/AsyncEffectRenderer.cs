@@ -317,7 +317,7 @@ namespace Pinta.Core
 		}
 		
 		// Called on the UI thread.
-		bool HandleTimerTick ()
+		void HandleTimerTick ()
 		{			
 			Debug.WriteLine (DateTime.Now.ToString("HH:mm:ss:ffff") + " Timer tick.");
 			
@@ -326,7 +326,7 @@ namespace Pinta.Core
 			lock (updated_lock) {
 				
 				if (!is_updated)
-					return true;
+					return;
 			
 				is_updated = false;
 				
@@ -339,7 +339,7 @@ namespace Pinta.Core
 			if (IsRendering && !cancel_render_flag)
 				OnUpdate (Progress, bounds);
 			
-			return true;
+			return;
 		}
 		
 		void HandleRenderCompletion ()
