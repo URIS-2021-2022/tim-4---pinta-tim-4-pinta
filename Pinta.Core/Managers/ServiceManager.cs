@@ -55,7 +55,8 @@ namespace Pinta.Core
 			if (services.TryGetValue (typeof (T), out var implementation))
 				return (T) implementation;
 
-			throw new ApplicationException ($"Could not resolve service type {typeof (T)}");
+			//throw new ApplicationException ($"Could not resolve service type {typeof (T)}");
+			throw new ArgumentNullException ($"Could not resolve service type {typeof (T)}");
 		}
 
 		public T? GetOptionalService<T> () where T : class

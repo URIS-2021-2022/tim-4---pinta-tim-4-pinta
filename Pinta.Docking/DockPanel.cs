@@ -30,7 +30,7 @@ namespace Pinta.Docking
 {
     public class DockPanel : HBox
     {
-        private class DockPanelItem
+        private sealed class DockPanelItem
         {
             public DockPanelItem(DockItem item)
             {

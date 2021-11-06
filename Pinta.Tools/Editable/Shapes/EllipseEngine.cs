@@ -1,4 +1,4 @@
-﻿// 
+// 
 // EllipseEngine.cs
 //  
 // Author:
@@ -262,7 +262,7 @@ namespace Pinta.Tools
 		/// <returns></returns>
 		protected List<GeneratedPoint> calculateCurvePoints(
 			double tInterval,
-			double x0, double y0, double x1, double y1, double x2, double y2, double x3, double y3,
+			double x0, double y0, double x1, double y1, double x2, double y2,double x3,double y3,
 			int cPIndex)
 		{
 			List<GeneratedPoint> calculatedPoints = new List<GeneratedPoint>((int)(1d / tInterval));

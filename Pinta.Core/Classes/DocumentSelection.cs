@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DocumentSelection.cs
 //  
 // Author:
@@ -430,9 +430,17 @@ namespace Pinta.Core
 
         public void Dispose ()
         {
+	      Dispose(true);
+              GC.SuppressFinalize(this);
+
             if (selection_path != null)
-                selection_path.Dispose ();
+		selection_path.Dispose ();
         }
+
+	protected virtual void Dispose(bool disposing)
+    {
+        // Cleanup
+    }
 
         /// <summary>
         /// Resets the selection.
