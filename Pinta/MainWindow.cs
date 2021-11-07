@@ -624,8 +624,7 @@ namespace Pinta
 		private IDockNotebookItem? FindTabWithCanvas (PintaCanvas canvas)
 		{
 			return canvas_pad.Notebook.Items
-				.Where (i => ((CanvasWindow) i.Widget).Canvas == canvas)
-				.FirstOrDefault ();
+				.FirstOrDefault (i => ((CanvasWindow) i.Widget).Canvas == canvas);
 		}
 		#endregion
 	}
