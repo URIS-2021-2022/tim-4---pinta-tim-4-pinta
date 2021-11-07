@@ -305,6 +305,7 @@ namespace Pinta.Core
         /// <summary>
         /// Smoothly blends between two colors.
         /// </summary>
+        /// 
         public static ColorBgra Blend(ColorBgra ca, ColorBgra cb, byte cbAlpha)
         {
             uint caA = (uint)Utility.FastScaleByteByByte((byte)(255 - cbAlpha), ca.A);
