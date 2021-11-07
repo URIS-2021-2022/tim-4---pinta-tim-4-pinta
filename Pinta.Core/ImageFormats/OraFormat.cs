@@ -43,8 +43,8 @@ namespace Pinta.Core
 
 		#region IImageImporter implementation
 		
-		public void Import (string fileName, Gtk.Window parent) {
-			ZipFile file = new ZipFile (fileName);
+		public void Import (string filename, Gtk.Window parent) {
+			ZipFile file = new ZipFile (filename);
 			XmlDocument stackXml = new XmlDocument ();
 			stackXml.Load (file.GetInputStream (file.GetEntry ("stack.xml")));
 
@@ -56,7 +56,7 @@ namespace Pinta.Core
 
 			Size imagesize = new Size (width, height);
 
-			Document doc = PintaCore.Workspace.CreateAndActivateDocument (fileName, imagesize);
+			Document doc = PintaCore.Workspace.CreateAndActivateDocument (filename, imagesize);
 			doc.HasFile = true;
 			
 			XmlElement stackElement = (XmlElement) stackXml.GetElementsByTagName ("stack")[0]!;
