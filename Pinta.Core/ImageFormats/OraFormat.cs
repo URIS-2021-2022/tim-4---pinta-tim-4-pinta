@@ -108,9 +108,7 @@ namespace Pinta.Core
 							}
 						}
 
-					try {
-						File.Delete (tmp_file);
-					} 
+					
 				} catch {
 					using (var md = new MessageDialog(parent, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Could not import layer \"{0}\" from {0}", name, file))
                     {
