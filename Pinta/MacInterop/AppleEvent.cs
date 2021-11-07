@@ -184,7 +184,7 @@ namespace Pinta.MacInterop
 		}
 	}
 	
-	public delegate T AEDescValueSelector<TRef,T> (ref TRef desc);
+	public delegate T AEDescValueSelector<TRef,out T> (ref TRef desc);
 	
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct AEDesc

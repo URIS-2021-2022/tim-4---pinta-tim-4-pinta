@@ -175,13 +175,13 @@ namespace Pinta.Gui.Widgets
 			var index = FindValueIndex (py);
 			py = (int) NormalizeY (index, py);
 
-			if (mask == Gdk.ModifierType.Button1Mask) {
-				if (index != -1) {
+			if (mask == Gdk.ModifierType.Button1Mask && index != -1) {
+				
 					var y = GetValueFromY (py);
 
 					vals[index] = y;
 					OnValueChanged (index);
-				}
+				
 			}
 
 			// to avoid unnessesary costly redrawing
