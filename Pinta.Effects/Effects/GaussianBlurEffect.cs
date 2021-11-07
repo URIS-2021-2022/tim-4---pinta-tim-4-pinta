@@ -90,7 +90,7 @@ namespace Pinta.Effects
             p += wlen * sizeof (long);
 
             long* rSums = (long*)p;
-            p += wlen * sizeof (long);
+           
 
             // Cache these for a massive performance boost
             int src_width = src.Width;

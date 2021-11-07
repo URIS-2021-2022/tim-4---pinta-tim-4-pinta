@@ -286,7 +286,7 @@ namespace Pinta
 
 			window_shell = new WindowShell (this, "Pinta.GenericWindow", "Pinta", width, height, maximize);
 
-			CreateMainMenu (window_shell);
+			CreateMainMenu ();
 			CreateMainToolBar (window_shell);
 			CreateToolToolBar (window_shell);
 
@@ -300,7 +300,7 @@ namespace Pinta
 			PintaCore.Chrome.InitializeWindowShell (window_shell);
 		}
 
-		private void CreateMainMenu (WindowShell shell)
+		private void CreateMainMenu ()
 		{
 			if (PintaCore.System.OperatingSystem == OS.Mac) {
 				// Only use the application on macOS. On other platforms, these
@@ -624,8 +624,7 @@ namespace Pinta
 		private IDockNotebookItem? FindTabWithCanvas (PintaCanvas canvas)
 		{
 			return canvas_pad.Notebook.Items
-				.Where (i => ((CanvasWindow) i.Widget).Canvas == canvas)
-				.FirstOrDefault ();
+				.FirstOrDefault (i => ((CanvasWindow) i.Widget).Canvas == canvas);
 		}
 		#endregion
 	}

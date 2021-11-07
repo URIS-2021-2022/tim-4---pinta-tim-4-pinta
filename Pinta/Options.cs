@@ -210,8 +210,8 @@ namespace Mono.Options
 			if (c.Option.OptionValueType == OptionValueType.Required &&
 					index >= values.Count)
 				throw new OptionException (string.Format (
-							c.OptionSet.MessageLocalizer ("Missing required value for option '{0}'."), c.OptionName), 
-						c.OptionName);
+							c.OptionSet.MessageLocalizer ("Missing required value for option '{0}'."), c.name), 
+						c.name);
 		}
 
 		public string this [int index] {
@@ -243,7 +243,7 @@ namespace Mono.Options
 
 	public class OptionContext {
 		private Option                option;
-		private string                name;
+		public string name { get; set; }
 		private int                   index;
 		private OptionSet             set;
 		private OptionValueCollection c;
@@ -259,10 +259,6 @@ namespace Mono.Options
 			set {option = value;}
 		}
 
-		public string OptionName { 
-			get {return name;}
-			set {name = value;}
-		}
 
 		public int OptionIndex {
 			get {return index;}
@@ -362,8 +358,8 @@ namespace Mono.Options
 				throw new OptionException (
 						string.Format (
 							c.OptionSet.MessageLocalizer ("Could not convert string `{0}' to type {1} for option `{2}'."),
-							value, targetType.Name, c.OptionName),
-						c.OptionName, e);
+							value, targetType.Name, c.name),
+						c.name, e);
 			}
 			return t;
 		}
@@ -449,7 +445,7 @@ namespace Mono.Options
 		public void Invoke (OptionContext c)
 		{
 			OnParseComplete (c);
-			c.OptionName  = null;
+			c.name  = null;
 			c.Option      = null;
 			c.OptionValues.Clear ();
 		}
@@ -604,7 +600,7 @@ namespace Mono.Options
 
 			protected override void OnParseComplete (OptionContext c)
 			{
-				action (c.OptionValues);
+				action(c.OptionValues);
 			}
 		}
 
@@ -645,7 +641,7 @@ namespace Mono.Options
 				: base (prototype, description, 1)
 			{
 				if (action == null)
-					throw new ArgumentNullException ("action");
+					throw new ArgumentNullException (nameof(action));
 				this.action = action;
 			}
 
@@ -802,7 +798,7 @@ namespace Mono.Options
 			Option p;
 			if (Contains (n)) {
 				p = this [n];
-				c.OptionName = f + n;
+				c.name = f + n;
 				c.Option     = p;
 				switch (p.OptionValueType) {
 					case OptionValueType.None:
@@ -841,7 +837,7 @@ namespace Mono.Options
 				throw new OptionException (localizer (string.Format (
 								"Error: Found {0} option values when expecting {1}.", 
 								c.OptionValues.Count, c.Option.MaxValueCount)),
-						c.OptionName);
+						c.name);
 			}
 		}
 
@@ -853,7 +849,7 @@ namespace Mono.Options
 					Contains (rn)) {
 				p = this [rn];
 				string v = n [n.Length-1] == '+' ? option : null;
-				c.OptionName  = option;
+				c.name  = option;
 				c.Option      = p;
 				c.OptionValues.Add (v);
 				p.Invoke (c);
@@ -885,7 +881,7 @@ namespace Mono.Options
 					case OptionValueType.Required: {
 						string v     = n.Substring (i+1);
 						c.Option     = p;
-						c.OptionName = opt;
+						c.name = opt;
 						ParseValue (v.Length != 0 ? v : null, c);
 						return true;
 					}
@@ -898,7 +894,7 @@ namespace Mono.Options
 
 		private static void Invoke (OptionContext c, string name, string value, Option option)
 		{
-			c.OptionName  = name;
+			c.name  = name;
 			c.Option      = option;
 			c.OptionValues.Add (value);
 			option.Invoke (c);
