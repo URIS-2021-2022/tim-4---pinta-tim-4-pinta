@@ -848,9 +848,9 @@ namespace Mono.Options
 		private bool ParseBool (string option, string n, OptionContext c)
 		{
 			Option p;
-			string rn;
+			string rn=n.Substring (0, n.Length-1);
 			if (n.Length >= 1 && (n [n.Length-1] == '+' || n [n.Length-1] == '-') &&
-					Contains ((rn = n.Substring (0, n.Length-1)))) {
+					Contains (rn)) {
 				p = this [rn];
 				string v = n [n.Length-1] == '+' ? option : null;
 				c.OptionName  = option;

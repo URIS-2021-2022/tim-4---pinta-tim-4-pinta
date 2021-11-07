@@ -471,15 +471,17 @@ namespace Pinta.Tools
 
         public virtual void HandleAfterRedo()
         {
-            ShapeEngine? activeEngine = ActiveShapeEngine;
+	//	 ShapeEngine? activeEngine = ActiveShapeEngine;
 
-            if (activeEngine != null)
-            {
-				UpdateToolbarSettings(activeEngine);
-            }
+//            if (activeEngine != null)
+  //          {
+			//	UpdateToolbarSettings(activeEngine);
+    //     }
 
             //Draw the current state.
-			DrawActiveShape(true, false, true, false, false);
+	//		DrawActiveShape(true, false, true, false, false);
+	HandleAfterUndo();
+	   
         }
 
         public virtual bool HandleKeyDown(Document document, ToolKeyEventArgs e)
@@ -812,7 +814,7 @@ namespace Pinta.Tools
 				}
 				else if (closestPointIndex > 0)
 				{
-					if (current_point.Distance(controlPoints[closestPointIndex - 1].Position) < currentClickRange)
+					if ((current_point.Distance(controlPoints[closestPointIndex - 1].Position) < currentClickRange)&&(controlPoints.Count > 0 && current_point.Distance(controlPoints[controlPoints.Count - 1].Position) < currentClickRange))
 					{
 						//User clicked on a control point (on the "following order" side of the point).
 
@@ -823,17 +825,7 @@ namespace Pinta.Tools
 
 						clickedOnControlPoint = true;
 					}
-					else if (controlPoints.Count > 0 && current_point.Distance(controlPoints[controlPoints.Count - 1].Position) < currentClickRange)
-					{
-						//User clicked on a control point (on the "following order" side of the point).
-
-						clicked_without_modifying = true;
-
-						SelectedPointIndex = closestPointIndex - 1;
-						SelectedShapeIndex = closestShapeIndex;
-
-						clickedOnControlPoint = true;
-					}
+					
 				}
 
 				//Check for clicking on a non-control point. Don't do anything here if right clicked.

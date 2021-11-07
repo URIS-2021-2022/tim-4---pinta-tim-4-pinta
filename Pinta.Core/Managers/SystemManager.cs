@@ -1,4 +1,4 @@
-﻿// 
+// 
 // SystemManager.cs
 //  
 // Author:
@@ -45,6 +45,7 @@ namespace Pinta.Core
 		public PaletteFormats PaletteFormats { get; private set; }
 		public int RenderThreads { get; set; }
 		public OS OperatingSystem { get { return operating_system; } }
+		public static OS static_property = SystemManager1();
 		
 		public SystemManager ()
 		{
@@ -60,7 +61,7 @@ namespace Pinta.Core
 			recent_data.MimeType = "image/*";
 		}
 
-		static SystemManager ()
+		static OS SystemManager1 ()
 		{
 			if (Path.DirectorySeparatorChar == '\\')
 				operating_system = OS.Windows;
@@ -70,6 +71,8 @@ namespace Pinta.Core
 				operating_system = OS.X11;
 			else
 				operating_system = OS.Other;
+
+		return operating_system;
 		}
 
 		#region Public Properties
