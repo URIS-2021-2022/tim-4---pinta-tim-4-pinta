@@ -576,8 +576,9 @@ namespace Pinta.Core
         /// </summary>
         public unsafe static ColorBgra Blend(ColorBgra* colors, int count)
         {
-            if (count < 0)
+	    if (count < 0)
             {
+		
                 throw new ArgumentOutOfRangeException("count must be 0 or greater");
             }
 

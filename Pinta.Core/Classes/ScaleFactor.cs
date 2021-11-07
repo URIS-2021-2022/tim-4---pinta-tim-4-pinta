@@ -255,13 +255,7 @@ namespace Pinta.Core
                 2, 3, 4, 5, 6, 7, 8, 12, 16, 24, 32
             };
 
-		/// <summary>
-		/// Gets a list of values that GetNextLarger() and GetNextSmaller() will cycle through.
-		/// </summary>
-		/// <remarks>
-		/// 1.0 is guaranteed to be in the array returned by this property. This list is also
-		/// sorted in ascending order.
-		/// </remarks>
+		
 		public static double[] PresetValues
 		{
 			get
