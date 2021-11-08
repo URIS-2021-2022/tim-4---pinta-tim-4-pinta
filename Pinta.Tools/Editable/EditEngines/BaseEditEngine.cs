@@ -46,7 +46,7 @@ namespace Pinta.Tools
 			RoundedLineSeries
 		}
 
-		public static Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool>();
+		public static readonly Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool>();
 
         protected abstract string ShapeName { get; }
 

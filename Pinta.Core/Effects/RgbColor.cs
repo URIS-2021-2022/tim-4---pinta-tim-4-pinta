@@ -21,11 +21,17 @@ namespace Pinta.Core
     public struct RgbColor
     {
         // All values are between 0 and 255.
-        public int Red;
+        //public int Red;
         public int Green;
         public int Blue;
+	private int red;
 
-        public RgbColor(int R, int G, int B) 
+	public int Red {
+		get { return red; }
+		set { red = value; }
+	}
+
+		public RgbColor(int R, int G, int B) 
         {
 #if DEBUG
             if (R < 0 || R > 255) 
@@ -41,7 +47,7 @@ namespace Pinta.Core
                 throw new ArgumentOutOfRangeException("B", B, "B must corrospond to a byte value");
             }
 #endif
-            Red = R;
+            this.red = R;
             Green = G;
             Blue = B;
         }

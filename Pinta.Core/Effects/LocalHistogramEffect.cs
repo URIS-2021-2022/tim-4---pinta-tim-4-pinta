@@ -523,7 +523,7 @@ namespace Pinta.Core
 		}
 	
 		//must be more efficient way to zero memory array
-		private unsafe void MemorySetToZero(int* ptr, int size)
+		private static unsafe void MemorySetToZero(int* ptr, int size)
 		{
 			for (int i = 0; i < size; i++) 
 				ptr [i] = 0;
