@@ -1,4 +1,4 @@
-﻿// 
+// 
 // SystemManager.cs
 //  
 // Author:
@@ -165,6 +165,7 @@ namespace Pinta.Core
 						return true;
 				}
 			} catch {
+				Console.WriteLine ("Error was caught in SystemManager, IsRunningOnMac()");
 			} finally {
 				if (buf != IntPtr.Zero)
 					Marshal.FreeHGlobal (buf);

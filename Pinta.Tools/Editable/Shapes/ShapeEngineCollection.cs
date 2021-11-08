@@ -1,4 +1,4 @@
-﻿// 
+// 
 // ShapeEngineCollection.cs
 //  
 // Author:
@@ -137,7 +137,7 @@ namespace Pinta.Tools
 		/// <param name="outline_color">The outline color for the shape.</param>
 		/// <param name="fill_color">The fill color for the shape.</param>
 		/// <param name="brush_width">The width of the outline of the shape.</param>
-        public ShapeEngine (UserLayer parent_layer, ReEditableLayer? drawing_layer,
+        protected ShapeEngine (UserLayer parent_layer, ReEditableLayer? drawing_layer,
                             BaseEditEngine.ShapeTypes shape_type, bool antialiasing,
                             bool closed, Color outline_color, Color fill_color,
                             int brush_width)
