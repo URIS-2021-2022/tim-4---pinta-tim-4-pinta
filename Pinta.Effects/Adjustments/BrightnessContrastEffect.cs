@@ -55,8 +55,11 @@ namespace Pinta.Effects
 		
 		public override bool LaunchConfiguration ()
 		{
+			int i=0;
+	   
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
+
 
 		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
 		{
@@ -69,31 +72,29 @@ namespace Pinta.Effects
 					ColorBgra* dstRowPtr = dest.GetPointAddressUnchecked (rect.Left, y);
 					ColorBgra* dstRowEndPtr = dstRowPtr + rect.Width;
 
-					if (divide == 0) {
+					
 						while (dstRowPtr < dstRowEndPtr) {
 							ColorBgra col = *srcRowPtr;
 							int i = col.GetIntensityByte ();
+							if (divide == 0)
+							{ 
 							uint c = rgbTable![i]; // NRT - Set in Calculate
 							dstRowPtr->Bgra = (col.Bgra & 0xff000000) | c | (c << 8) | (c << 16);
+							}
+							else
+							{
+								int shiftIndex = i * 256;
+								 col.R = rgbTable![shiftIndex + col.R];
+								col.G = rgbTable[shiftIndex + col.G];
+								col.B = rgbTable[shiftIndex + col.B];
+
+								*dstRowPtr = col;
+							}
 
 							++dstRowPtr;
 							++srcRowPtr;
 						}
-					} else {
-						while (dstRowPtr < dstRowEndPtr) {
-							ColorBgra col = *srcRowPtr;
-							int i = col.GetIntensityByte ();
-							int shiftIndex = i * 256;
-
-							col.R = rgbTable![shiftIndex + col.R];
-							col.G = rgbTable[shiftIndex + col.G];
-							col.B = rgbTable[shiftIndex + col.B];
-
-							*dstRowPtr = col;
-							++dstRowPtr;
-							++srcRowPtr;
-						}
-					}
+					
 				}
 			}
 		}
