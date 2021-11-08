@@ -226,8 +226,7 @@ namespace Pinta
 			}
 
 			// If the canvas/tool didn't consume it, see if its a toolbox shortcut
-			if (e.RetVal is not true) {
-				if (e.Event.State.FilterModifierKeys () == Gdk.ModifierType.None)
+			if (e.RetVal is not true && e.Event.State.FilterModifierKeys () == Gdk.ModifierType.None) {
 					PintaCore.Tools.SetCurrentTool (e.Event.Key);
 			}
 

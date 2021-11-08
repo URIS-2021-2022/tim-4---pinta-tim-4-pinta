@@ -13,7 +13,7 @@ namespace Pinta.Core
 		private Label? label_widget;
 		private GLib.Menu dropdown;
 		private GLib.SimpleActionGroup action_group;
-		private Image image;
+		private readonly Image image;
 		private ToolBarItem? selected_item;
 
 		public List<ToolBarItem> Items { get; private set; }

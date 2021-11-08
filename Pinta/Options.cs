@@ -627,7 +627,7 @@ namespace Mono.Options
 		public OptionSet Add (string prototype, string description, OptionAction<string, string> action)
 		{
 			if (action == null)
-				throw new ArgumentNullException ("action");
+				throw new ArgumentNullException (nameof(action));
 			Option p = new ActionOption (prototype, description, 2, 
 					delegate (OptionValueCollection v) {action (v [0], v [1]);});
 			base.Add (p);
