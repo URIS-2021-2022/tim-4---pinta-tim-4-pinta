@@ -17,8 +17,8 @@ namespace Pinta.Core
     public struct HsvColor
     {
         public int Hue; // 0-360
-        public int Saturation; // 0-100
-        public int Value; // 0-100
+        public readonly int Saturation; // 0-100
+        public readonly int Value; // 0-100
 
         public static bool operator== (HsvColor lhs, HsvColor rhs)
         {
@@ -46,7 +46,7 @@ namespace Pinta.Core
 
         public override int GetHashCode()
         {
-            return (Hue + (Saturation << 8) + (Value << 16)).GetHashCode();;
+            return (Hue + (Saturation << 8) + (Value << 16)).GetHashCode();
         }
 
         public HsvColor(int hue, int saturation, int value) 
@@ -71,18 +71,6 @@ namespace Pinta.Core
             Saturation = saturation;
             Value = value;
         }
-
-//        public static HsvColor FromColor(Color color)
-//        {
-//            RgbColor rgb = new RgbColor(color.R, color.G, color.B);
-//            return rgb.ToHsv();
-//        }
-//
-//        public Color ToColor()
-//        {
-//            RgbColor rgb = ToRgb();
-//            return Color.FromArgb(rgb.Red, rgb.Green, rgb.Blue);
-//        }
 
         public RgbColor ToRgb() 
         {
