@@ -15,7 +15,7 @@ namespace Pinta.Core
     /// </summary>
     public sealed class UnaryPixelOps
     {
-        private UnaryPixelOps()
+        public UnaryPixelOps()
         {
         }
 
