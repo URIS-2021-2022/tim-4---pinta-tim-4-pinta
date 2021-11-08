@@ -474,11 +474,6 @@ namespace Pinta.Core
                 return ColorBgra.FromBgra(CurveB[color.B], CurveG[color.G], CurveR[color.R], color.A);
             }
 
-//            public override void Apply(Surface dst, Point dstOffset, Surface src, Point srcOffset, int scanLength)
-//            {
-//                base.Apply (dst, dstOffset, src, srcOffset, scanLength);
-//            }
-        }
 
         [Serializable]
         public class Level
