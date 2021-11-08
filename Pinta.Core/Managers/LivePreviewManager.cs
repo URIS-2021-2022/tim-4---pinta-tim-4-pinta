@@ -275,7 +275,7 @@ namespace Pinta.Core
 			live_preview_surface = null!;
 			
 			if (renderer != null) {
-				renderer.Dispose();
+				renderer.Dispose123();
 				renderer = null!;
 			}
 
