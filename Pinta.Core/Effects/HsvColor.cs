@@ -66,6 +66,7 @@ namespace Pinta.Core
                 throw new ArgumentOutOfRangeException(nameof(value), "must be in the range [0, 100]");
             }
 
+
             Hue = hue;
             Saturation = saturation;
             Value = value;
