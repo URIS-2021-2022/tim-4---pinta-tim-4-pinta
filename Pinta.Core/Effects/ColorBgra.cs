@@ -331,50 +331,7 @@ namespace Pinta.Core
 
             return ColorBgra.FromBgra((byte)b, (byte)g, (byte)r, (byte)cbAT);
         }
-	public unsafe static ColorBgra Blend(ColorBgra* colors, int count)
-        {
-            if (count < 0)
-            {
-                throw new ArgumentOutOfRangeException("count must be 0 or greater");
-            }
-
-            if (count == 0)
-            {
-                return ColorBgra.Transparent;
-            }
-
-            ulong aSum = 0;
-
-            for (int i = 0; i < count; ++i)
-            {
-                aSum += (ulong)colors[i].A;
-            }
-
-            byte b = 0;
-            byte g = 0;
-            byte r = 0;
-            byte a = (byte)(aSum / (ulong)count);
-
-            if (aSum != 0)
-            {
-                ulong bSum = 0;
-                ulong gSum = 0;
-                ulong rSum = 0;
-
-                for (int i = 0; i < count; ++i)
-                {
-                    bSum += (ulong)(colors[i].A * colors[i].B);
-                    gSum += (ulong)(colors[i].A * colors[i].G);
-                    rSum += (ulong)(colors[i].A * colors[i].R);
-                }
-
-                b = (byte)(bSum / aSum);
-                g = (byte)(gSum / aSum);
-                r = (byte)(rSum / aSum);
-            }
-
-            return ColorBgra.FromBgra(b, g, r, a);
-        }
+		
 
         /// <summary>
         /// Linearly interpolates between two color values.
@@ -616,12 +573,6 @@ namespace Pinta.Core
 
             return ColorBgra.FromBgra((byte)b, (byte)g, (byte)r, (byte)a);
         }
-
-		/// <summary>
-        /// Smoothly blends the given colors together, assuming equal weighting for each one.
-        /// </summary>
-        
-
         /// <summary>
         /// Smoothly blends the given colors together, assuming equal weighting for each one.
         /// It is assumed that pre-multiplied alpha is used.
@@ -667,6 +618,54 @@ namespace Pinta.Core
         public override string ToString()
         {
             return "B: " + B + ", G: " + G + ", R: " + R + ", A: " + A;
+        }
+
+	/// <summary>
+        /// Smoothly blends the given colors together, assuming equal weighting for each one.
+        /// </summary>
+	public unsafe static ColorBgra Blend(ColorBgra* colors, int count)
+        {
+            if (count < 0)
+            {
+                throw new ArgumentOutOfRangeException("count must be 0 or greater");
+            }
+
+            if (count == 0)
+            {
+                return ColorBgra.Transparent;
+            }
+
+            ulong aSum = 0;
+
+            for (int i = 0; i < count; ++i)
+            {
+                aSum += (ulong)colors[i].A;
+            }
+
+            byte b = 0;
+            byte g = 0;
+            byte r = 0;
+            byte a = (byte)(aSum / (ulong)count);
+
+            if (aSum != 0)
+            {
+                ulong bSum = 0;
+                ulong gSum = 0;
+                ulong rSum = 0;
+
+                for (int i = 0; i < count; ++i)
+                {
+                    bSum += (ulong)(colors[i].A * colors[i].B);
+                    gSum += (ulong)(colors[i].A * colors[i].G);
+                    rSum += (ulong)(colors[i].A * colors[i].R);
+                }
+
+                b = (byte)(bSum / aSum);
+                g = (byte)(gSum / aSum);
+                r = (byte)(rSum / aSum);
+            }
+
+            return ColorBgra.FromBgra(b, g, r, a);
         }
 
         /// <summary>
