@@ -110,9 +110,9 @@ namespace Pinta.Gui.Widgets
 				tracking = true;
 		}
 
-		protected override bool OnDrawn (Context g)
+		protected override bool OnDrawn (Context cr)
 		{
-			base.OnDrawn (g);
+			base.OnDrawn (cr);
 
 			if (thumbnail == null)
 				UpdateThumbnail ();
@@ -122,18 +122,18 @@ namespace Pinta.Gui.Widgets
 			var black = new Cairo.Color (0, 0, 0);
 
 			// Background
-			g.SetSource (thumbnail, 0.0, 0.0);
-			g.Paint ();
+			cr.SetSource (thumbnail, 0.0, 0.0);
+		        cr.Paint ();
 
-			g.DrawRectangle (new Cairo.Rectangle (rect.X + 1, rect.Y + 1, rect.Width - 1, rect.Height - 1), new Cairo.Color (.75, .75, .75), 1);
-			g.DrawRectangle (new Cairo.Rectangle (rect.X + 2, rect.Y + 2, rect.Width - 3, rect.Height - 3), black, 1);
+			cr.DrawRectangle (new Cairo.Rectangle (rect.X + 1, rect.Y + 1, rect.Width - 1, rect.Height - 1), new Cairo.Color (.75, .75, .75), 1);
+			cr.DrawRectangle (new Cairo.Rectangle (rect.X + 2, rect.Y + 2, rect.Width - 3, rect.Height - 3), black, 1);
 
 			// Cursor
-			g.DrawLine (new PointD (pos.X + 1, rect.Top + 2), new PointD (pos.X + 1, rect.Bottom - 2), black, 1);
-			g.DrawLine (new PointD (rect.Left + 2, pos.Y + 1), new PointD (rect.Right - 2, pos.Y + 1), black, 1);
+			cr.DrawLine (new PointD (pos.X + 1, rect.Top + 2), new PointD (pos.X + 1, rect.Bottom - 2), black, 1);
+			cr.DrawLine (new PointD (rect.Left + 2, pos.Y + 1), new PointD (rect.Right - 2, pos.Y + 1), black, 1);
 
 			// Point
-			g.DrawEllipse (new Cairo.Rectangle (pos.X - 1, pos.Y - 1, 3, 3), black, 2);
+			cr.DrawEllipse (new Cairo.Rectangle (pos.X - 1, pos.Y - 1, 3, 3), black, 2);
 
 			return true;
 		}
