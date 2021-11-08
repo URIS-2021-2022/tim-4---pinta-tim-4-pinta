@@ -90,12 +90,9 @@ namespace Pinta.Tools
 						perfectRectangle = true;
 					}
 				}
-				else if (cp0.Y == cp1.Y)
+				else if (cp0.Y == cp1.Y && cp0.X == cp3.X && cp1.X == cp2.X && cp2.Y == cp3.Y)
 				{
-					if (cp0.X == cp3.X && cp1.X == cp2.X && cp2.Y == cp3.Y)
-					{
-						perfectRectangle = true;
-					}
+						perfectRectangle = true;					
 				}
 
 				if (perfectRectangle)

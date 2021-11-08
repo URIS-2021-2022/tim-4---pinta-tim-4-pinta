@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // Paint.NET                                                                   //
 // Copyright (C) dotPDN LLC, Rick Brewster, Tom Jackson, and contributors.     //
 // Portions Copyright (C) Microsoft Corporation. All Rights Reserved.          //
@@ -29,9 +29,9 @@ namespace Pinta.Effects
 			get { return "I"; }
 		}
 		
-		public override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
-			op.Apply (dest, src, rois);
+			op.Apply (dst, src, rois);
 		}
 	}
 }
