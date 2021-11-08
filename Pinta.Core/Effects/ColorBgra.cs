@@ -376,7 +376,7 @@ namespace Pinta.Core
             ColorBgra ret = new ColorBgra();
 
             ret.B =  ClampToByte(Lerp(from.B, to.B, frac));
-            // doslo do konflikta, obrisana rec (byte)
+           
             ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
 	    //removing unnesessary cast to byte
