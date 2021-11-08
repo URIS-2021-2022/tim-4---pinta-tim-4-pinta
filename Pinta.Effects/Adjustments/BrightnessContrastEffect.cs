@@ -72,7 +72,6 @@ namespace Pinta.Effects
 					ColorBgra* dstRowPtr = dest.GetPointAddressUnchecked (rect.Left, y);
 					ColorBgra* dstRowEndPtr = dstRowPtr + rect.Width;
 
-					
 						while (dstRowPtr < dstRowEndPtr) {
 							ColorBgra col = *srcRowPtr;
 							int i = col.GetIntensityByte ();
