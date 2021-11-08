@@ -37,7 +37,7 @@ using Debug = System.Diagnostics.Debug;
 namespace Pinta.Core
 {
 
-	public class LivePreviewManager
+	public class LivePreviewManager 
 	{
 		// NRT - These are set in Start(). This should be rewritten to be provably non-null.
 		bool live_preview_enabled;		
@@ -275,7 +275,7 @@ namespace Pinta.Core
 			live_preview_surface = null!;
 			
 			if (renderer != null) {
-				renderer.Dispose();
+				//renderer.Dispose();
 				renderer = null!;
 			}
 
