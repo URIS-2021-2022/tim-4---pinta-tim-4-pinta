@@ -475,6 +475,8 @@ namespace Pinta.Core
             }
 
 
+        }
+
         [Serializable]
         public class Level
             : ChannelCurve,
