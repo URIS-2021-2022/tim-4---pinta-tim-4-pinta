@@ -48,10 +48,10 @@ namespace Pinta.Effects
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
 		
-		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			SetWeights ();
-			base.RenderColorDifferenceEffect (weights, src, dest, rois);
+			base.RenderColorDifferenceEffect (weights, src, dst, rois);
 		}
 
 		[MemberNotNull (nameof (weights))]

@@ -57,6 +57,7 @@ namespace Pinta.Core
 
 		public static void RegisterHandlers ()
 		{
+		//no need for this
 		}
 #endregion
 
