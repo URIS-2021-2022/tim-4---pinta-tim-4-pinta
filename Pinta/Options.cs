@@ -987,7 +987,7 @@ namespace Mono.Options
 		private static string GetArgumentName (int index, int maxIndex, string description)
 		{
 			if (description == null)
-				return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+				return ReturnMaxIndex(index, maxIndex);
 			string[] nameStart;
 			if (maxIndex == 1)
 				nameStart = new string[]{"{0:", "{"};
@@ -1005,8 +1005,13 @@ namespace Mono.Options
 					continue;
 				return description.Substring (start + nameStart [i].Length, end - start - nameStart [i].Length);
 			}
-			return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+			return ReturnMaxIndex(index, maxIndex);
 		}
+
+	private static string ReturnMaxIndex(int maxIndex, int index)
+        {
+	    return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+	}
 
 		private static string GetDescription (string description)
 		{
