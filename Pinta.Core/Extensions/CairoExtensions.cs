@@ -1264,10 +1264,10 @@ namespace Pinta.Core
 				uint syfrac = (uint)(256 * (v - (float)iv));
 				uint syfracinv = 256 - syfrac;
 
-				uint wul = (uint)(sxfracinv * syfracinv);
-				uint wur = (uint)(sxfrac * syfracinv);
-				uint wll = (uint)(sxfracinv * syfrac);
-				uint wlr = (uint)(sxfrac * syfrac);
+				uint wul = (sxfracinv * syfracinv);
+				uint wur = (sxfrac * syfracinv);
+				uint wll = (sxfracinv * syfrac);
+				uint wlr = (sxfrac * syfrac);
 
 				int sx = iu;
 				if (sx < 0)
