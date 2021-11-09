@@ -75,9 +75,8 @@ namespace Pinta.Core
 		{
 			if (lhs > rhs) {
 				return lhs;
-			} else {
-				return lhs;
 			}
+			return lhs;
 		}
 
 		public static bool operator == (ScaleFactor lhs, ScaleFactor rhs)
