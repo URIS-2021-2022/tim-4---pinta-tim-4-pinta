@@ -816,7 +816,7 @@ namespace Pinta.Tools
 						utf32Char = args.Str[i];
 					}
 
-					str.Append (utf32Char.ToString ());
+					str.Append (utf32Char);
 				}
 
 				CurrentTextEngine.InsertText (str.ToString ());

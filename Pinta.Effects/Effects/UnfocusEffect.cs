@@ -87,7 +87,8 @@ namespace Pinta.Effects
 				int alpha = sum / area;
 				int div = area * 255;
 
-				return ColorBgra.FromBgraClamped ((float)b / div, g / div, r / div, alpha);
+				return ColorBgra.FromBgraClamped ((float)b / div, g / div, (float)r / div, alpha);
+
 			}
 		}
 		#endregion

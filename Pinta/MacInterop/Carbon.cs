@@ -182,7 +182,7 @@ namespace Pinta.MacInterop
 			}
 		}
 		
-		[DllImport (CarbonLib)]
+		[DllImport ("CarbonLib")]
 		static extern string GetMacOSStatusCommentString (int osErr);
 		
 		#endregion

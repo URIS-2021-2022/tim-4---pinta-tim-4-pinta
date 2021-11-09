@@ -53,7 +53,7 @@ namespace Pinta.Core
         {
             if (hue < 0 || hue > 360)
             {
-                throw new ArgumentOutOfRangeException("hue", "must be in the range [0, 360]");
+                throw new ArgumentOutOfRangeException(nameof(hue), "must be in the range [0, 360]");
             }
 
             if (saturation < 0 || saturation > 100)
@@ -66,11 +66,12 @@ namespace Pinta.Core
                 throw new ArgumentOutOfRangeException(nameof(value), "must be in the range [0, 100]");
             }
 
+            
+			Hue = hue;
 
-            Hue = hue;
             Saturation = saturation;
             Value = value;
-        }
+		}
 
         public RgbColor ToRgb() 
         {

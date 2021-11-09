@@ -295,7 +295,7 @@ namespace Pinta.Core
             }
 
             //Saturation formula from RgbColor.cs, public HsvColor ToHsv()
-            private int GetSaturation(ColorBgra color)
+            private static int GetSaturation(ColorBgra color)
             {
                 double min;
                 double max;
@@ -786,7 +786,7 @@ namespace Pinta.Core
             {
                 if (beforeOut.Length != 3) 
                 {
-                    throw new ArgumentException("before must be a float[3]", "before");
+                    throw new ArgumentException("before must be a float[3]", "beforeOut");
                 }
 
                 if (slopesOut.Length != 3) 

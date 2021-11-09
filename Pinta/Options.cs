@@ -260,10 +260,7 @@ namespace Mono.Options
 		}
 
 
-		public int OptionIndex {
-			get {return index;}
-			set {index = value;}
-		}
+		public int OptionIndex { get; set; }
 
 		public OptionSet OptionSet {
 			get {return set;}
@@ -750,16 +747,17 @@ namespace Mono.Options
 		}
 #endif
 
-		private static bool Unprocessed (ICollection<string> extra, Option def, OptionContext c, string argument)
+		private static void Unprocessed (ICollection<string> extra, Option def, OptionContext c, string argument)
 		{
 			if (def == null) {
 				extra.Add (argument);
-				return false;
+				//return false;
+			} else {
+				c.OptionValues.Add (argument);
+				c.Option = def;
+				c.Option.Invoke (c);
 			}
-			c.OptionValues.Add (argument);
-			c.Option = def;
-			c.Option.Invoke (c);
-			return false;
+			//return false;
 		}
 
 		private readonly Regex ValueOption = new Regex (
