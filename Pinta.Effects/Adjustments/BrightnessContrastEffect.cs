@@ -55,8 +55,6 @@ namespace Pinta.Effects
 		
 		public override bool LaunchConfiguration ()
 		{
-			int i=0;
-	   
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
 

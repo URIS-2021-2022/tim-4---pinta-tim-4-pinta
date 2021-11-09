@@ -346,7 +346,7 @@ namespace Pinta.Core
             ColorBgra ret = new ColorBgra();
 
             ret.B = ClampToByte(Lerp(from.B, to.B, frac));
-            ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
+            ret.G = ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = ClampToByte(Lerp(from.R, to.R, frac));
             ret.A = ClampToByte(Lerp(from.A, to.A, frac));
 

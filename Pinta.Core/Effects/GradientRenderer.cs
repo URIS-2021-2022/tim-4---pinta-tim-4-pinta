@@ -22,7 +22,7 @@ namespace Pinta.Core
 		private PointD startPoint;
 		private PointD endPoint;
 		private bool alphaBlending;
-		private bool alphaOnly;
+		private readonly bool alphaOnly;
 
 		private bool lerpCacheIsValid = false;
 		private byte[] lerpAlphas;
