@@ -27,6 +27,7 @@
 using System;
 using Pinta.Core;
 using Gtk;
+using System.Linq;
 
 namespace Pinta.Actions
 {
@@ -57,13 +58,12 @@ namespace Pinta.Actions
 			var ff = new FileFilter {
 				Name = Translations.GetString ("Image files")
 			};
+			
+			var IsNotWriteOnlyExtensions=PintaCore.System.ImageFormats.Formats.Where(format=>!format.IsWriteOnly()).Select(format=>format.Extensions);
+				foreach (var ext in IsNotWriteOnlyExtensions)
+					ff.AddPattern (string.Format ("*.{0}", ext));
+					
 
-			foreach (var format in PintaCore.System.ImageFormats.Formats) {
-				if (!format.IsWriteOnly ()) {
-					foreach (var ext in format.Extensions)
-						ff.AddPattern (string.Format ("*.{0}", ext));
-				}
-			}
 
 			fcd.AddFilter (ff);
 
