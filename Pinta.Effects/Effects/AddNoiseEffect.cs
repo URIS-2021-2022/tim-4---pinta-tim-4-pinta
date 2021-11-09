@@ -125,7 +125,7 @@ namespace Pinta.Effects
 				//    unchecked ((int)DateTime.Now.Ticks)));
 			}
 
-			Random localRand = threadRand;
+			Random? localRand = threadRand;
 			int[] localLookup = lookup;
 
 			foreach (Gdk.Rectangle rect in rois) {
@@ -134,7 +134,7 @@ namespace Pinta.Effects
 					ColorBgra* dstPtr = dst.GetPointAddressUnchecked (rect.Left, y);
 
 					for (int x = 0; x < rect.Width; ++x) {
-						if (localRand.NextDouble () > this.coverage) {
+						if (localRand?.NextDouble () > this.coverage) {
 							*dstPtr = *srcPtr;
 						} else {
 							int r;
@@ -142,7 +142,15 @@ namespace Pinta.Effects
 							int b;
 							int i;
 
-							r = localLookup[localRand.Next (tableSize)];
+							if(localRand == null) {
+
+								throw new Exception ("localRand was null in AddNoiseEffect, Render method");
+								
+							} else {
+								
+								r = localLookup[localRand!.Next (tableSize)];
+							}
+							
 							g = localLookup[localRand.Next (tableSize)];
 							b = localLookup[localRand.Next (tableSize)];
 
