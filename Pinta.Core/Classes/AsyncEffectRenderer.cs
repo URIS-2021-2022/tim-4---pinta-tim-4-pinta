@@ -217,7 +217,7 @@ namespace Pinta.Core
 			master.Start ();
 			
 			// Start timer used to periodically fire update events on the UI thread.
-			timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
+			//timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
 		}
 		
 		Thread StartSlaveThread (int renderId, int threadId)

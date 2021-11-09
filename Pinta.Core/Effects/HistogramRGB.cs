@@ -112,7 +112,7 @@ namespace Pinta.Core
             OnHistogramUpdated();
         }
 
-	public long channelHist(float before,int c,UnaryPixelOps.Level upo, long[] channelHistogramOutput, int v,long[] channelHistogramInput, float[] slopes)
+	public long[] channelHist(float[] before,int c,UnaryPixelOps.Level upo, long[] channelHistogramOutput, int v,long[] channelHistogramInput, float[] slopes)
         {
 	    if (before[c] >= upo.ColorInHigh[c])
                     {

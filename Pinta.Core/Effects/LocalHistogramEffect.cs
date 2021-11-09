@@ -88,13 +88,13 @@ namespace Pinta.Core
                 ++r;
             }
 
-            int a = aCounter(ha,minCount);
+            int a = aCounter (ha, minCount);
             
 
             return ColorBgra.FromBgra((byte)b, (byte)g, (byte)r, (byte)a);
         }
 
-	public int aCounter(int* ha,int minCount)
+	public static unsafe int aCounter (int* ha,int minCount)
         {
 	    int a=0;
 	    int aCount = 0;
