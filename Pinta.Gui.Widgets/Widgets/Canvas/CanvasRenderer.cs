@@ -207,13 +207,13 @@ namespace Pinta.Gui.Widgets
 			const int fpShift = 12;
 			const int fpFactor = (1 << fpShift);
 
-			var source_size = src.GetBounds ().Size;
+			var source_size1 = src.GetBounds ().Size;
 
 			// Find destination bounds
-			var dst_left = (int) (((long) roi.X * fpFactor * (long) source_size.Width) / (long) destination_size.Width);
-			var dst_top = (int) (((long) roi.Y * fpFactor * (long) source_size.Height) / (long) destination_size.Height);
-			var dst_right = (int) (((long) (roi.X + dst.Width) * fpFactor * (long) source_size.Width) / (long) destination_size.Width);
-			var dst_bottom = (int) (((long) (roi.Y + dst.Height) * fpFactor * (long) source_size.Height) / (long) destination_size.Height);
+			var dst_left = (int) (((long) roi.X * fpFactor * (long) source_size1.Width) / (long) destination_size.Width);
+			var dst_top = (int) (((long) roi.Y * fpFactor * (long) source_size1.Height) / (long) destination_size.Height);
+			var dst_right = (int) (((long) (roi.X + dst.Width) * fpFactor * (long) source_size1.Width) / (long) destination_size.Width);
+			var dst_bottom = (int) (((long) (roi.Y + dst.Height) * fpFactor * (long) source_size1.Height) / (long) destination_size.Height);
 			var dx = (dst_right - dst_left) / dst.Width;
 			var dy = (dst_bottom - dst_top) / dst.Height;
 
