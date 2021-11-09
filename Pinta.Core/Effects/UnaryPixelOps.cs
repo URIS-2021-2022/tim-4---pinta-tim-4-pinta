@@ -43,7 +43,7 @@ namespace Pinta.Core
 
             public unsafe override void Apply(ColorBgra* ptr, int length)
             {
-               
+                throw new NotSupportedException();
             }
         }
 
