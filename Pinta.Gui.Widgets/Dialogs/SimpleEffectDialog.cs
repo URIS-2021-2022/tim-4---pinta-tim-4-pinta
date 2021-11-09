@@ -99,12 +99,13 @@ namespace Pinta.Gui.Widgets
 				foreach (var attr in attrs) {
 					if (attr is SkipAttribute)
 						skip = true;
-					else if (attr is CaptionAttribute)
-						caption = ((CaptionAttribute) attr).Caption;
 					else if (attr is HintAttribute ha)
 						//hint = ((HintAttribute) attr).Hint;
 						//hint = (attr as HintAttribute).Hint;
 						hint = ha.Hint;
+					else if (attr is CaptionAttribute c)
+						//caption = ((CaptionAttribute) attr).Caption;
+						caption=(attr as CaptionAttribute).Caption;
 					else if (attr is StaticListAttribute)
 						combo = true;
 

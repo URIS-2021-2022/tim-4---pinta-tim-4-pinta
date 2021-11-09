@@ -1,4 +1,4 @@
-﻿// 
+// 
 // EllipseEngine.cs
 //  
 // Author:
@@ -90,12 +90,9 @@ namespace Pinta.Tools
 						perfectRectangle = true;
 					}
 				}
-				else if (cp0.Y == cp1.Y)
+				else if (cp0.Y == cp1.Y && cp0.X == cp3.X && cp1.X == cp2.X && cp2.Y == cp3.Y)
 				{
-					if (cp0.X == cp3.X && cp1.X == cp2.X && cp2.Y == cp3.Y)
-					{
-						perfectRectangle = true;
-					}
+						perfectRectangle = true;					
 				}
 
 				if (perfectRectangle)
@@ -262,7 +259,7 @@ namespace Pinta.Tools
 		/// <returns></returns>
 		protected List<GeneratedPoint> calculateCurvePoints(
 			double tInterval,
-			double x0, double y0, double x1, double y1, double x2, double y2, double x3, double y3,
+			double x0, double y0, double x1, double y1, double x2, double y2,double x3,double y3,
 			int cPIndex)
 		{
 			List<GeneratedPoint> calculatedPoints = new List<GeneratedPoint>((int)(1d / tInterval));

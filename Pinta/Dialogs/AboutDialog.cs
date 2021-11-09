@@ -228,7 +228,7 @@ namespace Pinta
 		private void DrawText (Cairo.Context ctx)
 		{
 			int width = Window.FrameExtents.Width;
-			int height = Window.FrameExtents.Height;
+			
 
 			int widthPixel, heightPixel;
 			layout.GetPixelSize(out widthPixel, out heightPixel);

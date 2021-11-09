@@ -397,7 +397,7 @@ namespace Pinta.Core
 			PintaCore.Chrome.ShowUnsupportedFormatDialog(parent, message, details);
 		}
 
-		private void ShowFilePermissionErrorDialog (Window parent, string filename)
+		private static void ShowFilePermissionErrorDialog (Window parent, string filename)
 		{
 			string markup = "<span weight=\"bold\" size=\"larger\">{0}</span>\n\n{1}";
 			string primary = Translations.GetString ("Failed to open image");

@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DocumentSelection.cs
 //  
 // Author:
@@ -36,10 +36,24 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-		public List<List<IntPoint>> SelectionPolygons = new List<List<IntPoint>>();
-		public Clipper SelectionClipper = new Clipper();
+		
 
-		public PointD Origin;
+		public List<List<IntPoint>>? SelectionPolygons { get; set; }
+		private Clipper selection_clipper = new Clipper ();
+
+		public Clipper SelectionClipper {
+			get { return selection_clipper; }
+			set { selection_clipper = value; }
+
+		}
+
+		private PointD origin;
+
+		public PointD Origin {
+			get { return origin; }
+			set { origin = value; }
+		}
+
 		public PointD End;
 
 		private bool _visible = true;
@@ -65,7 +79,7 @@ namespace Pinta.Core
 				var doc = PintaCore.Workspace.ActiveDocument;
 
 		            using (var g = new Context (doc.Layers.CurrentUserLayer.Surface))
-		                selection_path = g.CreatePolygonPath (ConvertToPolygonSet (SelectionPolygons));
+		                selection_path = g.CreatePolygonPath (ConvertToPolygonSet (SelectionPolygons!));
 		        }
 
                 return selection_path;
@@ -133,7 +147,7 @@ namespace Pinta.Core
 		{
 		    return new DocumentSelection
 		    {
-		        SelectionPolygons = SelectionPolygons.ToList (),
+		        SelectionPolygons = SelectionPolygons!.ToList (),
 		        SelectionClipper = new Clipper (),
 		        Origin = new PointD (Origin.X, Origin.Y),
 		        End = new PointD (End.X, End.Y),
@@ -202,7 +216,7 @@ namespace Pinta.Core
         {
             var newPolygons = new List<List<IntPoint>> ();
 
-            foreach (List<IntPoint> ipL in SelectionPolygons) {
+            foreach (List<IntPoint> ipL in SelectionPolygons!) {
                 List<IntPoint> newPolygon = new List<IntPoint> ();
 
                 foreach (IntPoint ip in ipL) {
@@ -244,7 +258,7 @@ namespace Pinta.Core
 			double c1 = 0.552285; //A constant factor used to give the least approximation error.
 
 			//Clear the Selection Polygons collection to start from a clean slate.
-			SelectionPolygons.Clear();
+			SelectionPolygons!.Clear();
 
 			//Calculate an appropriate interval at which to increment t based on
 			//the bounding Rectangle's Width and Height properties. The increment
@@ -369,7 +383,7 @@ namespace Pinta.Core
 		/// <param name="r">The Rectangle.</param>
 		public void CreateRectangleSelection(Rectangle r)
 		{
-			SelectionPolygons.Clear();
+			SelectionPolygons!.Clear();
 			SelectionPolygons.Add (CreateRectanglePolygon (r));
 
 		    Origin = new PointD (r.X, r.Y);
@@ -430,16 +444,24 @@ namespace Pinta.Core
 
         public void Dispose ()
         {
+	      Dispose(true);
+              GC.SuppressFinalize(this);
+
             if (selection_path != null)
-                selection_path.Dispose ();
+		selection_path.Dispose ();
         }
+
+	protected virtual void Dispose(bool disposing)
+    {
+        // Cleanup
+    }
 
         /// <summary>
         /// Resets the selection.
         /// </summary>
         public void Clear ()
         {
-            SelectionPolygons.Clear ();
+            SelectionPolygons!.Clear ();
             Origin = new PointD(0, 0);
             End = new PointD(0, 0);
             MarkDirty ();
@@ -456,7 +478,7 @@ namespace Pinta.Core
 			var maxY = double.MinValue;
 
 			// Calculate the minimum rectangular bounds that surround the current selection.
-			foreach (var li in PintaCore.Workspace.ActiveDocument.Selection.SelectionPolygons) {
+			foreach (var li in PintaCore.Workspace.ActiveDocument.Selection.SelectionPolygons!) {
 				foreach (var ip in li) {
 					if (minX > ip.X)
 						minX = ip.X;

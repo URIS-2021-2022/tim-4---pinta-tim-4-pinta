@@ -55,8 +55,9 @@ namespace Pinta.Core
 			menu.AppendItem(Exit.CreateMenuItem());
 		}
 
-		public void RegisterHandlers ()
+		public static void RegisterHandlers ()
 		{
+		//no need for this
 		}
 #endregion
 

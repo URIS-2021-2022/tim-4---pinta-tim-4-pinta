@@ -43,24 +43,24 @@ namespace Pinta.Core
 
 		#region IImageImporter implementation
 
-		public void Import (string fileName, Gtk.Window parent)
+		public void Import (string filename, Gtk.Window parent)
 		{
 			Pixbuf bg;
 
 			// Handle any EXIF orientation flags
-			using (var fs = new FileStream (fileName, FileMode.Open, FileAccess.Read))
+			using (var fs = new FileStream (filename, FileMode.Open, FileAccess.Read))
 				bg = new Pixbuf (fs);
 
 			bg = bg.ApplyEmbeddedOrientation ();
 
 			Size imagesize = new Size (bg.Width, bg.Height);
 
-			Document doc = PintaCore.Workspace.CreateAndActivateDocument (fileName, imagesize);
+			Document doc = PintaCore.Workspace.CreateAndActivateDocument (filename, imagesize);
 			doc.HasFile = true;
 			doc.ImageSize = imagesize;
 			doc.Workspace.CanvasSize = imagesize;
 
-			Layer layer = doc.Layers.AddNewLayer (Path.GetFileName (fileName));
+			Layer layer = doc.Layers.AddNewLayer (Path.GetFileName (filename));
 
 			using (Cairo.Context g = new Cairo.Context (layer.Surface)) {
 				CairoHelper.SetSourcePixbuf (g, bg, 0, 0);
@@ -122,7 +122,7 @@ namespace Pinta.Core
 		public static bool SaveUtf8 (this Pixbuf pb, string filename, string type)
 		{
 			if (PintaCore.System.OperatingSystem == OS.Windows) {
-				IntPtr error = IntPtr.Zero;
+				IntPtr error;
 				IntPtr native_filename = GLib.Marshaller.StringToPtrGStrdup (filename);
 				IntPtr native_type = GLib.Marshaller.StringToPtrGStrdup (type);
 				bool result = gdk_pixbuf_save_utf8 (pb.Handle, native_filename, native_type, out error, IntPtr.Zero);
@@ -158,7 +158,8 @@ namespace Pinta.Core
 					native_values[j] = GLib.Marshaller.StringToPtrGStrdup (option_values![j]); // NRT - num2 is null-checked length of option_values
 				}
 
-				IntPtr error = IntPtr.Zero;
+
+				IntPtr error;
 				bool result = gdk_pixbuf_savev_utf8 (pb.Handle, native_filename, native_type, native_keys, native_values, out error);
 
 				GLib.Marshaller.Free (native_filename);

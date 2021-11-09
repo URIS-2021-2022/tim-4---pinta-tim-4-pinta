@@ -89,7 +89,8 @@ namespace Pinta.Core
 
 		private void DisplayHelp (object sender, EventArgs e)
 		{
-			OpenUrl ("https://pinta-project.com/user-guide");
+			string userguideurl = "https://pinta-project.com/user-guide";
+			OpenUrl (userguideurl);
 		}
 
 		private void Translate_Activated (object sender, EventArgs e)

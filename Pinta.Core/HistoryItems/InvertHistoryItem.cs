@@ -1,4 +1,4 @@
-﻿// 
+// 
 // InvertHistoryItem.cs
 //  
 // Author:
@@ -32,7 +32,7 @@ namespace Pinta.Core
 	// the action: invert colors, rotate 180 degrees, etc
 	public class InvertHistoryItem : BaseHistoryItem
 	{
-		private InvertType type;
+		private readonly InvertType type;
 		private int layer_index;
 		
 		public InvertHistoryItem (InvertType type)
@@ -41,10 +41,7 @@ namespace Pinta.Core
 
 			switch (type) {
 				// Invert is disabled because it creates a new history item
-				//case InvertType.InvertColors:
-				//        Text = Mono.Unix.Translations.GetString ("Invert Colors");
-				//        Icon = "Menu.Adjustments.InvertColors.png";
-				//        break;
+			
 				case InvertType.Rotate180:
 					Text = Translations.GetString ("Rotate 180°");
 					Icon = Resources.Icons.ImageRotate180;
@@ -90,9 +87,7 @@ namespace Pinta.Core
 			var doc = PintaCore.Workspace.ActiveDocument;
 
 			switch (type) {
-				//case InvertType.InvertColors:
-				//        PintaCore.Actions.Adjustments.InvertColors.Activate ();
-				//        break;
+			
 				case InvertType.Rotate180:
 					doc.RotateImage180 ();
 					break;
@@ -124,9 +119,7 @@ namespace Pinta.Core
 			var doc = PintaCore.Workspace.ActiveDocument;
 
 			switch (type) {
-				//case InvertType.InvertColors:
-				//        PintaCore.Actions.Adjustments.InvertColors.Activate ();
-				//        break;
+				
 				case InvertType.Rotate180:
 					doc.RotateImage180 ();
 					break;

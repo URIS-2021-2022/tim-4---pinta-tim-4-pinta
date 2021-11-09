@@ -162,7 +162,7 @@ namespace Pinta.Gui.Widgets
 			base.OnSizeAllocated (allocation);
 
 			// Store the bounds allocated for our palette
-			var recent_cols = PintaCore.Palette.MaxRecentlyUsedColor / PALETTE_ROWS;
+			var recent_cols = PaletteManager.MaxRecentlyUsedColor / PALETTE_ROWS;
 
 			recent_palette_rect = new Rectangle (50, 2, SWATCH_SIZE * recent_cols, SWATCH_SIZE * PALETTE_ROWS);
 			palette_rect = new Rectangle (recent_palette_rect.GetRight () + PALETTE_MARGIN, 2, AllocatedWidth - recent_palette_rect.GetRight () - PALETTE_MARGIN, SWATCH_SIZE * PALETTE_ROWS);
@@ -178,7 +178,7 @@ namespace Pinta.Gui.Widgets
 			// 4 | 5 | 6 | 7
 
 			// First we need to figure out what row and column the color is
-			var recent_cols = PintaCore.Palette.MaxRecentlyUsedColor / PALETTE_ROWS;
+			var recent_cols = PaletteManager.MaxRecentlyUsedColor / PALETTE_ROWS;
 			var row = recentColorPalette ? index / recent_cols : index % PALETTE_ROWS;
 			var col = recentColorPalette ? index % recent_cols : index / PALETTE_ROWS;
 

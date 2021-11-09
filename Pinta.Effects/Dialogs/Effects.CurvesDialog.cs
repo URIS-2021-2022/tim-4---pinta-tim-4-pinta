@@ -142,7 +142,7 @@ namespace Pinta.Effects
 				ControlPoints [i] = list;
 			}
 			
-			UpdateLivePreview ("ControlPoints");
+			UpdateLivePreview (nameof(ControlPoints));
 		}
 		
 		private void HandleComboMapChanged (object? sender, EventArgs e)
@@ -208,8 +208,8 @@ namespace Pinta.Effects
 			if (args.Event.State == Gdk.ModifierType.Button1Mask) {
 				// first and last control point cannot be removed
 				if (last_cpx != 0 && last_cpx != size - 1) {
-					foreach (var controlPoints in GetActiveControlPoints ()) {
-						if (controlPoints.ContainsKey (last_cpx))
+					foreach (var controlPoints in GetActiveControlPoints()) {
+						if(controlPoints.ContainsKey (last_cpx))
 							controlPoints.Remove (last_cpx);
 					}
 				}	
@@ -235,7 +235,7 @@ namespace Pinta.Effects
 				foreach (var controlPoints in GetActiveControlPoints ()) {
 					for (int i = 0; i < controlPoints.Count; i++) {
 						int cpx = controlPoints.Keys [i];
-						int cpy = size - 1 - (int)controlPoints.Values [i];
+						int cpy = size - 1 - controlPoints.Values [i];
 					
 						//we cannot allow user to remove first or last control point
 						if (cpx == 0 && cpy == size - 1)
@@ -288,7 +288,7 @@ namespace Pinta.Effects
 			
 			for (int i = 1; i < 4; i++) {
 				g.MoveTo (i * size / 4, 0);
-				g.LineTo (i * size / 4, size);
+				g.LineTo ( (double)i * size / 4, (double)size);
 				g.MoveTo (0, i * size / 4);
 				g.LineTo (size, i * size / 4);
 			}

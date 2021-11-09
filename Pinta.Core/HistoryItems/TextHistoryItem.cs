@@ -1,4 +1,4 @@
-﻿// 
+// 
 // TextHistoryItem.cs
 //  
 // Author:
@@ -31,7 +31,7 @@ namespace Pinta.Core
 {
 	public class TextHistoryItem : BaseHistoryItem
 	{
-		UserLayer userLayer;
+		readonly UserLayer userLayer;
 
 		SurfaceDiff? text_surface_diff;
 		ImageSurface? textSurface;

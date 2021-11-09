@@ -94,8 +94,13 @@ namespace Pinta.Effects
         {
             int h = hash & 15;
             double u = h < 8 ? x : y;
-            double v = h < 4 ? y : h == 12 || h == 14 ? x : 0;
-
+	    double v;
+           // double v = h < 4 ? y : h == 12 || h == 14 ? x : 0;
+	   if(h < 4){
+		return y;
+            }
+		 return h == 12 || h == 14 ? x : 0;
+	
             return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
         }
 
@@ -208,7 +213,7 @@ namespace Pinta.Effects
 			public int Power = 50;
 			
 			[Skip]
-			public static Dictionary <string, object> BlendOps;
+			public static readonly Dictionary <string, object> BlendOps;
 
 			[Skip]
 			private static string defaultBlendOp;

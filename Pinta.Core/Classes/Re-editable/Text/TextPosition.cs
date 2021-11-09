@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // Paint.NET                                                                   //
 // Copyright (C) dotPDN LLC, Rick Brewster, Tom Jackson, and contributors.     //
 // Portions Copyright (C) Microsoft Corporation. All Rights Reserved.          //
@@ -48,12 +48,12 @@ namespace Pinta.Core
 			return string.Format ("({0}, {1})", line, offset);
 		}
 
-		public static bool operator == (TextPosition x, TextPosition y)
+		public  static bool operator == (TextPosition x, TextPosition y)
 		{
 			return x.CompareTo (y) == 0;
 		}
 
-		public static bool operator != (TextPosition x, TextPosition y)
+		public  static bool operator != (TextPosition x, TextPosition y)
 		{
 			return x.CompareTo (y) != 0;
 		}
@@ -66,7 +66,7 @@ namespace Pinta.Core
 				return offset.CompareTo (other.offset);
 		}
 
-		public static TextPosition Max (TextPosition p1, TextPosition p2)
+		public  static TextPosition Max (TextPosition p1, TextPosition p2)
 		{
 			return (p1.CompareTo (p2) > 0) ? p1 : p2;
 		}

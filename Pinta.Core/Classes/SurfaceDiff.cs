@@ -1,4 +1,4 @@
-﻿// 
+// 
 // SurfaceDiff.cs
 //  
 // Author:
@@ -137,7 +137,7 @@ namespace Pinta.Core
 					return;
 			});
 
-			var bounds = new Gdk.Rectangle (diff_bounds.left, diff_bounds.top,
+			var bnds = new Gdk.Rectangle (diff_bounds.left, diff_bounds.top,
 			                                diff_bounds.right - diff_bounds.left + 1,
 			                                diff_bounds.bottom - diff_bounds.top + 1);
 
@@ -147,14 +147,14 @@ namespace Pinta.Core
 
 			// STEP 2 - Create a bitarray of whether each pixel in the bounds has changed, and count
 			// how many changed pixels we need to store.
-			var bitmask = new BitArray (bounds.Width * bounds.Height);
+			var bitmask = new BitArray (bnds.Width * bnds.Height);
 			int index = 0;
 			int num_changed = 0;
 
-			int bottom = bounds.GetBottom ();
-			int right = bounds.GetRight ();
-			int bounds_x = bounds.X;
-			int bounds_y = bounds.Y;
+			int bottom = bnds.GetBottom ();
+			int right = bnds.GetRight ();
+			int bounds_x = bnds.X;
+			int bounds_y = bnds.Y;
 
 			for (int y = bounds_y; y <= bottom; ++y) {
 				var offset = y * orig_width;
@@ -208,7 +208,7 @@ namespace Pinta.Core
 			System.Console.WriteLine("SurfaceDiff time: " + timer.ElapsedMilliseconds);
 #endif
 
-			return new SurfaceDiff (bitmask, bounds, pixels);
+			return new SurfaceDiff (bitmask, bnds, pixels);
 		}
 		#endregion
 

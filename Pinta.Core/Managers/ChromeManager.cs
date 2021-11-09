@@ -39,7 +39,7 @@ namespace Pinta.Core
 		private bool main_window_busy;
 		private Gdk.Point last_canvas_cursor_point;
 		private Toolbar main_toolbar = null!;
-		private ErrorDialogHandler error_dialog_handler = null!;
+		private ErrorDialogHandler error_dialog_handler;
 		private UnsupportedFormatDialogHandler unsupported_format_dialog_handler = null!;
 
 		public Application Application { get; private set; } = null!;
@@ -138,7 +138,7 @@ namespace Pinta.Core
 
 		public void ShowErrorDialog (Window parent, string message, string details)
 		{
-			error_dialog_handler (parent, message, details);
+			//error_dialog_handler (parent, message, details);
 		}
 
 		public void ShowUnsupportedFormatDialog (Window parent, string message, string details)

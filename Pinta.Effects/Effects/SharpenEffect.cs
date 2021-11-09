@@ -44,10 +44,10 @@ namespace Pinta.Effects
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
 		
-		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			foreach (Gdk.Rectangle rect in rois)
-				RenderRect (Data.Amount, src, dest, rect);
+				RenderRect (Data.Amount, src, dst, rect);
 		}
 		
 		public unsafe override ColorBgra Apply (ColorBgra src, int area, int* hb, int* hg, int* hr, int* ha)

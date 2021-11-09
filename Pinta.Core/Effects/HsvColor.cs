@@ -58,16 +58,17 @@ namespace Pinta.Core
 
             if (saturation < 0 || saturation > 100)
             {
-                throw new ArgumentOutOfRangeException("saturation", "must be in the range [0, 100]");
+                throw new ArgumentOutOfRangeException(nameof(saturation), "must be in the range [0, 100]");
             }
 
             if (value < 0 || value > 100)
             {
-                throw new ArgumentOutOfRangeException("value", "must be in the range [0, 100]");
+                throw new ArgumentOutOfRangeException(nameof(value), "must be in the range [0, 100]");
             }
 
             
 			Hue = hue;
+
             Saturation = saturation;
             Value = value;
 		}

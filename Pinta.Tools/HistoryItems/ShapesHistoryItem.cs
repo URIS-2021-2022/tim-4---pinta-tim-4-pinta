@@ -1,4 +1,4 @@
-﻿// 
+// 
 // ShapesHistoryItem.cs
 //  
 // Author:
@@ -32,7 +32,7 @@ namespace Pinta.Tools
 {
 	public class ShapesHistoryItem : BaseHistoryItem
 	{
-        private BaseEditEngine ee;
+		private readonly BaseEditEngine ee;
 
 		private UserLayer userLayer;
 
