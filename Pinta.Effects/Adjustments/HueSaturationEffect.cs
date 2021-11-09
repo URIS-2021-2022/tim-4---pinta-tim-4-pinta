@@ -62,7 +62,7 @@ namespace Pinta.Effects
 
 		private HueSaturationData Data { get { return (HueSaturationData)EffectData!; } } // NRT - Set in constructor
 		
-		private class HueSaturationData : EffectData
+		private sealed class HueSaturationData : EffectData
 		{
 			[Caption ("Hue"), MinimumValue (-180), MaximumValue (180)]
 			public int Hue = 0;

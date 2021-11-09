@@ -1,4 +1,4 @@
-﻿// 
+// 
 // WindowShell.cs
 //  
 // Author:
@@ -32,9 +32,9 @@ namespace Pinta
 {
 	public class WindowShell : ApplicationWindow
 	{
-		private VBox shell_layout;
+		private readonly VBox shell_layout;
 		private VBox menu_layout;
-		private HBox? workspace_layout;
+		
 
 		private Toolbar? main_toolbar;
 
@@ -94,7 +94,8 @@ namespace Pinta
 
 		public HBox CreateWorkspace ()
 		{
-			workspace_layout = new HBox ();
+			HBox workspace_layout= new HBox();
+		         
 			workspace_layout.Name = "workspace_layout";
 
 			shell_layout.PackStart (workspace_layout, true, true, 0);

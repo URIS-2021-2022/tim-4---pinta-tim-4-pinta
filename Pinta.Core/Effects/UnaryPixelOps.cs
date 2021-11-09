@@ -43,7 +43,7 @@ namespace Pinta.Core
 
             public unsafe override void Apply(ColorBgra* ptr, int length)
             {
-               
+                throw new NotSupportedException();
             }
         }
 
@@ -474,10 +474,7 @@ namespace Pinta.Core
                 return ColorBgra.FromBgra(CurveB[color.B], CurveG[color.G], CurveR[color.R], color.A);
             }
 
-//            public override void Apply(Surface dst, Point dstOffset, Surface src, Point srcOffset, int scanLength)
-//            {
-//                base.Apply (dst, dstOffset, src, srcOffset, scanLength);
-//            }
+
         }
 
         [Serializable]
@@ -845,7 +842,7 @@ namespace Pinta.Core
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(255, 255, 255, (byte)((lightness * 255) / 100)));
                 }
-                else // if (lightness < 0)
+                else 
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(0, 0, 0, (byte)((-lightness * 255) / 100)));
                 }

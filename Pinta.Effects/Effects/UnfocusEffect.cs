@@ -16,7 +16,7 @@ namespace Pinta.Effects
 {
 	public class UnfocusEffect : LocalHistogramEffect
 	{
-		private int radius;
+		
 
 		public override string Icon {
 			get { return "Menu.Effects.Blurs.Unfocus.png"; }
@@ -49,10 +49,10 @@ namespace Pinta.Effects
 		#region Algorithm Code Ported From PDN
 		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
 		{
-			this.radius = Data.Radius;
+			int radius = Data.Radius;
 
 			foreach (Gdk.Rectangle rect in rois)
-				RenderRectWithAlpha (this.radius, src, dest, rect);
+				RenderRectWithAlpha (radius, src, dest, rect);
 		}
 
 		public unsafe override ColorBgra ApplyWithAlpha (ColorBgra src, int area, int sum, int* hb, int* hg, int* hr)
@@ -87,7 +87,7 @@ namespace Pinta.Effects
 				int alpha = sum / area;
 				int div = area * 255;
 
-				return ColorBgra.FromBgraClamped (b / div, g / div, r / div, alpha);
+				return ColorBgra.FromBgraClamped ((float)b / div, g / div, r / div, alpha);
 			}
 		}
 		#endregion

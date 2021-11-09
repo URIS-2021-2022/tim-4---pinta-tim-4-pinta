@@ -345,10 +345,10 @@ namespace Pinta.Core
         {
             ColorBgra ret = new ColorBgra();
 
-            ret.B = (byte)ClampToByte(Lerp(from.B, to.B, frac));
-            ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
-            ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
-            ret.A = (byte)ClampToByte(Lerp(from.A, to.A, frac));
+            ret.B = ClampToByte(Lerp(from.B, to.B, frac));
+            ret.G = ClampToByte(Lerp(from.G, to.G, frac));
+            ret.R = ClampToByte(Lerp(from.R, to.R, frac));
+            ret.A = ClampToByte(Lerp(from.A, to.A, frac));
 
             return ret;
         }
@@ -375,7 +375,8 @@ namespace Pinta.Core
         {
             ColorBgra ret = new ColorBgra();
 
-            ret.B = (byte)ClampToByte(Lerp(from.B, to.B, frac));
+            ret.B =  ClampToByte(Lerp(from.B, to.B, frac));
+           
             ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
 	    //removing unnesessary cast to byte
@@ -577,8 +578,9 @@ namespace Pinta.Core
         /// </summary>
         public unsafe static ColorBgra Blend(ColorBgra* colors, int count)
         {
-            if (count < 0)
+	    if (count < 0)
             {
+		
                 throw new ArgumentOutOfRangeException("count must be 0 or greater");
             }
 

@@ -1264,10 +1264,13 @@ namespace Pinta.Core
 				uint syfrac = (uint)(256 * (v - (float)iv));
 				uint syfracinv = 256 - syfrac;
 
+
 				uint wul = (sxfracinv * syfracinv);
 				uint wur = (sxfrac * syfracinv);
 				uint wll = (sxfracinv * syfrac);
-				uint wlr = (sxfrac * syfrac);
+			uint wlr = (sxfrac * syfrac);
+
+				
 
 				int sx = iu;
 				if (sx < 0)
@@ -1887,7 +1890,7 @@ namespace Pinta.Core
 						scans[i] = excluded.GetRectangle (i);
 				}
 			} else {
-				scans = new Cairo.RectangleInt[0];
+				scans = Array.Empty<Cairo.RectangleInt> ();
 			}
 
 			foreach (var rect in scans)
@@ -1944,7 +1947,7 @@ namespace Pinta.Core
 		public static ImageSurface CreateImageSurface (Cairo.Format format, int width, int height)
 		{
 			ImageSurface surf = new Cairo.ImageSurface (format, width, height);
-			if (surf == null || surf.Status == Cairo.Status.NoMemory) {
+			if (surf.Status == Cairo.Status.NoMemory) {
 				throw new OutOfMemoryException ("Unable to allocate memory for image");
 			}
 

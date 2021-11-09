@@ -46,7 +46,7 @@ namespace Pinta.Tools
 			RoundedLineSeries
 		}
 
-		public static Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool>();
+		public static readonly Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool>();
 
         protected abstract string ShapeName { get; }
 
@@ -253,14 +253,14 @@ namespace Pinta.Tools
         #endregion ToolbarEventHandlers
 
 
-        public BaseEditEngine(ShapeTool passedOwner)
+        protected BaseEditEngine(ShapeTool passedOwner)
         {
             owner = passedOwner;
 
 			ResetShapes();
         }
 
-		private string BRUSH_WIDTH_SETTING (string prefix) => $"{prefix}-brush-width";
+		private static string BRUSH_WIDTH_SETTING (string prefix) => $"{prefix}-brush-width";
 		private string FILL_TYPE_SETTING (string prefix) => $"{prefix}-fill-style";
 		private string SHAPE_TYPE_SETTING (string prefix) => $"{prefix}-shape-type";
 		private string DASH_PATTERN_SETTING (string prefix) => $"{prefix}-dash-pattern";
@@ -353,11 +353,10 @@ namespace Pinta.Tools
 					ShapeTypes newShapeType = ShapeType;
 					ShapeEngine? selEngine = SelectedShapeEngine;
 
-					if (selEngine != null)
+					if (selEngine != null && GetCorrespondingTool (newShapeType) != this.owner)
 					{
 						//Verify that the tool needs to be switched.
-						if (GetCorrespondingTool(newShapeType) != this.owner)
-						{
+						
 							//Create a new ShapesModifyHistoryItem so that the changing of the shape type can be undone.
 							PintaCore.Workspace.ActiveDocument.History.PushNewItem(new ShapesModifyHistoryItem(
 								this, owner.Icon, Translations.GetString("Changed Shape Type")));
@@ -373,7 +372,7 @@ namespace Pinta.Tools
 
 							//Draw the updated shape with organized points generation (for mouse detection). 
 							DrawActiveShape(true, false, true, false, true);
-						}
+						
 					}
 				};
 			}
@@ -1360,7 +1359,7 @@ namespace Pinta.Tools
 		/// Do not call. Use DrawActiveShape.
 		/// </summary>
 		/// <param name="engine"></param>
-		private void OrganizePoints(ShapeEngine engine)
+		private static void OrganizePoints(ShapeEngine engine)
 		{
 			Document doc = PintaCore.Workspace.ActiveDocument;
 
@@ -1445,8 +1444,9 @@ namespace Pinta.Tools
 						}
 					}
 
-					g.SetDash(new double[] { }, 0.0);
+					g.SetDash (Array.Empty<double>(), 0.0); 
 
+					
 					//Draw anything extra (that not every shape has), like arrows.
 					DrawExtras(ref dirty, g, engine);
 
@@ -1578,8 +1578,7 @@ namespace Pinta.Tools
 		/// </summary>
 		public void DrawAllShapes()
 		{
-			Document doc = PintaCore.Workspace.ActiveDocument;
-
+			
 			//Store the SelectedShapeIndex value for later restoration.
 			int previousToolSI = SelectedShapeIndex;
 

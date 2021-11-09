@@ -34,7 +34,7 @@ namespace Pinta.Core
 {
 	public class ImageConverterManager
 	{
-		private List<FormatDescriptor> formats;
+		private readonly List<FormatDescriptor> formats;
 
 		public ImageConverterManager ()
 		{
@@ -205,7 +205,7 @@ namespace Pinta.Core
 		{
 			extension = NormalizeExtension (extension);
 
-			return Formats.Where (p => p.Extensions.Contains (extension)).FirstOrDefault ();
+			return Formats.FirstOrDefault (p => p.Extensions.Contains (extension));
 		}
 
 		/// <summary>

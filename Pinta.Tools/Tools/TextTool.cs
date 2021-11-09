@@ -922,6 +922,7 @@ namespace Pinta.Tools
 
 			Cairo.ImageSurface surf;
 
+			
 			if (!useTextLayer)
 			{
 				//Draw text on the current UserLayer's surface as finalized text.
@@ -945,10 +946,11 @@ namespace Pinta.Tools
 					foreach (Rectangle rect in CurrentTextLayout.SelectionRectangles)
 						g.FillRectangle (rect.ToCairoRectangle (), c);
 				}
+				SetSelectionToClip(selection,g);
 
-				if (selection != null) {
-					selection.Clip(g);
-				}
+				//if (selection != null) {
+					//selection.Clip(g);
+				//}
 
 				g.MoveTo (new Cairo.PointD (CurrentTextEngine.Origin.X, CurrentTextEngine.Origin.Y));
 
@@ -957,9 +959,10 @@ namespace Pinta.Tools
 				//Fill in background
 				if (BackgroundFill) {
 					using (var g2 = new Cairo.Context (surf)) {
-						if (selection != null) {
-							selection.Clip(g2);
-						}
+						//if (selection != null) {
+							//selection.Clip(g2);
+						//}
+						SetSelectionToClip(selection,g2);
 						
 						g2.FillRectangle(CurrentTextLayout.GetLayoutBounds().ToCairoRectangle(), PintaCore.Palette.SecondaryColor);
 					}
@@ -1032,6 +1035,13 @@ namespace Pinta.Tools
 
 			old_cursor_bounds = cursorBounds;
 		}
+
+	public void SetSelectionToClip(DocumentSelection? selection,Cairo.Context g)
+        {
+
+	    if (selection != null) 
+		selection.Clip(g);
+	}
 
 		/// <summary>
 		/// Finalize re-editable text (if applicable).

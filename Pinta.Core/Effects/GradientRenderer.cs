@@ -22,7 +22,7 @@ namespace Pinta.Core
 		private PointD startPoint;
 		private PointD endPoint;
 		private bool alphaBlending;
-		private bool alphaOnly;
+		private readonly bool alphaOnly;
 
 		private bool lerpCacheIsValid = false;
 		private byte[] lerpAlphas;
@@ -203,7 +203,7 @@ namespace Pinta.Core
 					*pixelPtr = result;
 					++pixelPtr;
 				}
-				//if (!this.alphaOnly && !this.alphaBlending) // or sC.A == 255 && eC.A == 255
+				
 			}
 			else
 			{

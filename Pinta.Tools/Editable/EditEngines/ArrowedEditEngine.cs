@@ -239,11 +239,11 @@ namespace Pinta.Tools
 					}
 				}
 
-				if (lCSEngine.Arrow2.Show) {
-					if (genPoints.Length > 1) {
+				if (lCSEngine.Arrow2.Show && genPoints.Length > 1) {
+					
 						dirty = dirty.UnionRectangles (lCSEngine.Arrow2.Draw (g, lCSEngine.OutlineColor,
 						    genPoints[genPoints.Length - 1].Position, genPoints[genPoints.Length - 2].Position));
-					}
+					
 				}
 			}
 
