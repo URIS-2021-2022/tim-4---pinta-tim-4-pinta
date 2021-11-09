@@ -16,7 +16,7 @@ namespace Pinta.Gui.Widgets
 {
 	class CanvasRenderer
 	{
-		private static Cairo.Pattern tranparent_pattern;
+		private static Cairo.Pattern tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
 
 		private readonly bool enable_pixel_grid;
 
@@ -35,10 +35,10 @@ namespace Pinta.Gui.Widgets
 			this.enable_pixel_grid = enable_pixel_grid;
 		}
 
-		static CanvasRenderer ()
-		{
-			tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
-		}
+//		static CanvasRenderer ()
+//		{
+//			tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
+//		}
 
 		public void Initialize (Size sourceSize, Size destinationSize)
 		{
@@ -236,7 +236,6 @@ namespace Pinta.Gui.Widgets
 				var src4 = src.GetRowAddressUnchecked (src_ptr, src_width, srcY4);
 				var dstPtr = dst.GetRowAddressUnchecked (dst_ptr, dst_width, dstRow);
 
-				var checkerY = dstRow + roi.Y;
 				var checkerX = roi.X;
 				var maxCheckerX = checkerX + dst.Width;
 

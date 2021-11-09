@@ -101,8 +101,10 @@ namespace Pinta.Gui.Widgets
 						skip = true;
 					else if (attr is CaptionAttribute)
 						caption = ((CaptionAttribute) attr).Caption;
-					else if (attr is HintAttribute)
-						hint = ((HintAttribute) attr).Hint;
+					else if (attr is HintAttribute ha)
+						//hint = ((HintAttribute) attr).Hint;
+						//hint = (attr as HintAttribute).Hint;
+						hint = ha.Hint;
 					else if (attr is StaticListAttribute)
 						combo = true;
 

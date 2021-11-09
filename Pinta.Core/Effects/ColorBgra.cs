@@ -578,7 +578,7 @@ namespace Pinta.Core
         {
             if (count < 0)
             {
-                throw new ArgumentOutOfRangeException("count must be 0 or greater");
+                throw new ArgumentOutOfRangeException("count", "count must be 0 or greater");
             }
 
             if (count == 0)
