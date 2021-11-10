@@ -1,4 +1,4 @@
-﻿// 
+// 
 // MovePixelsHistoryItem.cs
 //  
 // Author:
@@ -69,29 +69,29 @@ namespace Pinta.Core
 
 		private void Swap ()
 		{
-			var doc = PintaCore.Workspace.ActiveDocument;
+			var document = PintaCore.Workspace.ActiveDocument;
 
-			DocumentSelection swap_selection = doc.Selection;
-			doc.Selection = old_selection!; // NRT - Set in TakeSnapshot
+			DocumentSelection swap_selection = document.Selection;
+			document.Selection = old_selection!; // NRT - Set in TakeSnapshot
 			old_selection = swap_selection;
 
 			Matrix swap_transform = new Matrix();
-			swap_transform.InitMatrix(doc.Layers.SelectionLayer.Transform);
-			doc.Layers.SelectionLayer.Transform.InitMatrix(old_transform);
+			swap_transform.InitMatrix(document.Layers.SelectionLayer.Transform);
+			document.Layers.SelectionLayer.Transform.InitMatrix(old_transform);
 			old_transform.InitMatrix(swap_transform);
 
 			if (lifted) {
 				// Grab the original surface
-				ImageSurface surf = doc.Layers[layer_index].Surface;
+				ImageSurface surf = document.Layers[layer_index].Surface;
 
 				// Undo to the "old" surface
-				doc.Layers[layer_index].Surface = old_surface!; // NRT - Set in TakeSnapshot
+				document.Layers[layer_index].Surface = old_surface!; // NRT - Set in TakeSnapshot
 
 				// Store the original surface for Redo
 				old_surface = surf;
 
 				is_lifted = !is_lifted;
-				doc.Layers.ShowSelectionLayer = is_lifted;
+				document.Layers.ShowSelectionLayer = is_lifted;
 			}
 
 			PintaCore.Workspace.Invalidate ();

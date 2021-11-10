@@ -45,7 +45,7 @@ namespace Pinta.Core
 		public PaletteFormats PaletteFormats { get; private set; }
 		public int RenderThreads { get; set; }
 		public OS OperatingSystem { get { return operating_system; } }
-		public static OS static_property = SystemManager1();
+		public static readonly OS static_property = SystemManager1();
 		
 		public SystemManager ()
 		{
@@ -168,6 +168,7 @@ namespace Pinta.Core
 						return true;
 				}
 			} catch {
+				Console.WriteLine ("Error was caught in SystemManager, IsRunningOnMac()");
 			} finally {
 				if (buf != IntPtr.Zero)
 					Marshal.FreeHGlobal (buf);

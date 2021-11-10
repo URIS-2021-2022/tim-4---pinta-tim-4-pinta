@@ -81,6 +81,20 @@ namespace Pinta.Tools
 			base.OnMouseDown (document, e);
 		}
 
+		public void LastPointCheck(int x, int y)
+		{
+			if (last_point.Equals (point_empty))
+				last_point = new Point (x, y);
+		}
+
+		public void SurfaceModifiedCheck (Document doc, ToolMouseEventArgs mouse)
+		{
+			if (doc.Workspace.PointInCanvas (mouse.PointDouble))
+				surface_modified = true;
+		}
+
+		
+
 		protected unsafe override void OnMouseMove (Document document, ToolMouseEventArgs e)
 		{
 			ColorBgra old_color;
@@ -101,17 +115,15 @@ namespace Pinta.Tools
 				return;
 			}
 
-			var x = e.Point.X;
-			var y = e.Point.Y;
+			int x = e.Point.X;
+			int y = e.Point.Y;
 
-			if (last_point.Equals (point_empty))
-				last_point = new Point (x, y);
-
-			if (document.Workspace.PointInCanvas (e.PointDouble))
-				surface_modified = true;
+			LastPointCheck (x, y);
+			SurfaceModifiedCheck (document, e);
+			
 
 			var surf = document.Layers.CurrentUserLayer.Surface;
-			var tmp_layer = document.Layers.ToolLayer.Surface;
+			ImageSurface tmp_layer = document.Layers.ToolLayer.Surface;
 
 			var roi = CairoExtensions.GetRectangleFromPoints (last_point, new Point (x, y), BrushWidth + 2);
 
@@ -141,6 +153,14 @@ namespace Pinta.Tools
 
 			tmp_layer.MarkDirty ();
 
+			documentMethod (document,x,y,tmp_layer);
+
+			document.Workspace.Invalidate (roi);
+
+			last_point = new Point (x, y);
+		}
+		public void documentMethod(Document document,int x, int y, ImageSurface tmp_layer)
+		{
 			using (var g = document.CreateClippedContext ()) {
 				g.Antialias = UseAntialiasing ? Antialias.Subpixel : Antialias.None;
 
@@ -155,12 +175,7 @@ namespace Pinta.Tools
 
 				g.Stroke ();
 			}
-
-			document.Workspace.Invalidate (roi);
-
-			last_point = new Point (x, y);
 		}
-
 		protected override void OnSaveSettings (ISettingsService settings)
 		{
 			base.OnSaveSettings (settings);

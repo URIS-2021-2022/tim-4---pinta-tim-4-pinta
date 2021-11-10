@@ -55,7 +55,7 @@ namespace Pinta.Core
             }
         }
 
-        protected internal Histogram(int channels, int entries)
+        protected Histogram(int channels, int entries)
         {
             this.histogram = new long[channels][];
 
@@ -191,12 +191,7 @@ namespace Pinta.Core
 
         protected abstract void AddSurfaceRectangleToHistogram(ImageSurface surface, Gdk.Rectangle rect);
 
-	//public void UpdateHistogram(Surface surface)
-	//{
-	//    Clear();
-	//    AddSurfaceRectangleToHistogram(surface, surface.Bounds);
-	//    OnHistogramUpdated();
-	//}
+	
 
 	public void UpdateHistogram (ImageSurface surface, Gdk.Rectangle rect)
         {
@@ -205,16 +200,6 @@ namespace Pinta.Core
             OnHistogramUpdated();
         }
 
-	//public void UpdateHistogram(Surface surface, PdnRegion roi)
-	//{
-	//    Clear();
-
-	//    foreach (Rectangle rect in roi.GetRegionScansReadOnlyInt()) 
-	//    {
-	//        AddSurfaceRectangleToHistogram(surface, rect);
-	//    }
-
-	//    OnHistogramUpdated();
-	//}
+	
     }
 }

@@ -19,10 +19,12 @@ namespace Pinta.Core
 		private BinaryPixelOp normalBlendOp;
 		private ColorBgra startColor;
 		private ColorBgra endColor;
-		private PointD startPoint;
-		private PointD endPoint= new PointD();
-		private bool alphaBlending;
-		private bool alphaOnly;
+
+		private PointD startPoint = new PointD();
+		private PointD endPoint;
+		private bool alphaBlending=false;
+		private readonly bool alphaOnly;
+
 		private bool lerpCacheIsValid = false;
 		private byte[] lerpAlphas;
 		private ColorBgra[] lerpColors;

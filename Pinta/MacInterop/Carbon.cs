@@ -178,11 +178,10 @@ namespace Pinta.MacInterop
 		{
 			if (osErr != 0) {
 				string s = GetMacOSStatusCommentString (osErr);
-				throw new SystemException ("Unexpected OS error code " + osErr + ": " + s);
 			}
 		}
 		
-		[DllImport (CarbonLib)]
+		[DllImport ("CarbonLib")]
 		static extern string GetMacOSStatusCommentString (int osErr);
 		
 		#endregion
@@ -521,7 +520,7 @@ namespace Pinta.MacInterop
 	struct HIMenuItem
 	{
 		IntPtr menuRef;
-		ushort index;
+		readonly ushort index;
 		
 		public HIMenuItem (IntPtr menuRef, ushort index)
 		{
@@ -542,7 +541,7 @@ namespace Pinta.MacInterop
 	}
 	
 	struct OSType {
-		int value;
+		readonly int value;
 		
 		public int Value {
 			get { return value; }

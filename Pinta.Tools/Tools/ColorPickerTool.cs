@@ -67,18 +67,18 @@ namespace Pinta.Tools
 			}
 		}
 
-		protected override void OnBuildToolBar (Toolbar tb)
+		protected override void OnBuildToolBar (Toolbar toolbar)
 		{
-			base.OnBuildToolBar (tb);
+			base.OnBuildToolBar (toolbar);
 
-			tb.AppendItem (SamplingLabel);
-			tb.AppendItem (SampleSizeDropDown);
-			tb.AppendItem (SampleTypeDropDown);
+			toolbar.AppendItem (SamplingLabel);
+			toolbar.AppendItem (SampleSizeDropDown);
+			toolbar.AppendItem (SampleTypeDropDown);
 
-			tb.AppendItem (Separator);
+			toolbar.AppendItem (Separator);
 
-			tb.AppendItem (ToolSelectionLabel);
-			tb.AppendItem (ToolSelectionDropDown);
+			toolbar.AppendItem (ToolSelectionLabel);
+			toolbar.AppendItem (ToolSelectionDropDown);
 		}
 
 		protected override void OnMouseDown (Document document, ToolMouseEventArgs e)

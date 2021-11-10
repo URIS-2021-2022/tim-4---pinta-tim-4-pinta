@@ -70,31 +70,17 @@ namespace Pinta.Effects
 				++b2;
 			}
 
-			int gCount = 0;
-			int g1 = 0;
-			while (g1 < 255 && hg[g1] == 0)
-				++g1;
-
-			while (g1 < 255 && gCount < minCount1) {
-				gCount += hg[g1];
-				++g1;
-			}
-
+			int gCount = g1Counter (hg, minCount1)[1];
+			int g1 = g1Counter(hg,minCount1)[0];
+			
 			int g2 = g1;
 			while (g2 < 255 && gCount < minCount2) {
 				gCount += hg[g2];
 				++g2;
 			}
 
-			int rCount = 0;
-			int r1 = 0;
-			while (r1 < 255 && hr[r1] == 0)
-				++r1;
-
-			while (r1 < 255 && rCount < minCount1) {
-				rCount += hr[r1];
-				++r1;
-			}
+			int r1 = r1Counter(hr,minCount1)[0];
+			int rCount = r1Counter (hr, minCount1)[1];
 
 			int r2 = r1;
 			while (r2 < 255 && rCount < minCount2) {
@@ -102,15 +88,8 @@ namespace Pinta.Effects
 				++r2;
 			}
 
-			int aCount = 0;
-			int a1 = 0;
-			while (a1 < 255 && hb[a1] == 0)
-				++a1;
-
-			while (a1 < 255 && aCount < minCount1) {
-				aCount += ha[a1];
-				++a1;
-			}
+			int a1 = a1Counter (hb, ha, minCount1)[0];
+			int aCount = a1Counter (hb, ha, minCount1)[0];
 
 			int a2 = a1;
 			while (a2 < 255 && aCount < minCount2) {
@@ -123,6 +102,58 @@ namespace Pinta.Effects
 			    (byte)(255 - (g2 - g1)),
 			    (byte)(255 - (r2 - r1)),
 			    (byte)(a2));
+		}
+
+		public unsafe int[] a1Counter(int* hb,int* ha, int minCount1)
+		{
+
+			int[] array = new int[2];
+			int aCount = 0;
+			int a1 = 0;
+			while (a1 < 255 && hb[a1] == 0)
+				++a1;
+
+			while (a1 < 255 && aCount < minCount1) {
+				aCount += ha[a1];
+				++a1;
+			}
+			array[0] = a1;
+			array[1] = aCount;
+			return array;
+
+		}
+		public unsafe int[] r1Counter(int* hr,int minCount1)
+		{
+			int[] array = new int[2];
+			int rCount = 0;
+			int r1 = 0;
+			while (r1 < 255 && hr[r1] == 0)
+				++r1;
+
+			while (r1 < 255 && rCount < minCount1) {
+				rCount += hr[r1];
+				++r1;
+			}
+			array[0] = r1;
+			array[1] = rCount;
+			return array;
+
+		}
+		public unsafe int[] g1Counter(int* hg,int minCount1)
+		{
+			int[] array = new int[2];
+			int g1=0;
+			int gCount=0;
+		    while (g1 < 255 && hg[g1] == 0)
+				++g1;
+
+			while (g1 < 255 && gCount < minCount1) {
+				gCount += hg[g1];
+				++g1;
+			}
+			array[0] = g1;
+			array[1] = gCount;
+			return array;
 		}
 
 		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)

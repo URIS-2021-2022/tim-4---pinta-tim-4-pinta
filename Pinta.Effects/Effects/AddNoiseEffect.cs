@@ -17,8 +17,10 @@ namespace Pinta.Effects
 {
 	public class AddNoiseEffect : BaseEffect
 	{
-		private int intensity;
+
 		
+		private int colorSaturation;
+
 		private double coverage;
 
 		public override string Icon {
@@ -56,7 +58,7 @@ namespace Pinta.Effects
 
 		#region Algorithm Code Ported From PDN
 		[ThreadStatic]
-		private static Random threadRand = new Random ();
+		private static Random threadRand ;
 		private const int tableSize = 16384;
 		private static int[] lookup;
 
@@ -112,19 +114,22 @@ namespace Pinta.Effects
 		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 
-			this.intensity = Data.Intensity;
-			int colorSaturation = Data.ColorSaturation;
-			this.coverage = 0.01 * Data.Coverage;
+			int intensity;
 
-			int dev = this.intensity * this.intensity / 4;
-			int sat = colorSaturation * 4096 / 100;
+			intensity = Data.Intensity;
+			colorSaturation = Data.ColorSaturation;
+			coverage = 0.01 * Data.Coverage;
+
+			int dev = intensity * intensity / 4;
+			int sat = this.colorSaturation * 4096 / 100;
+
 
 			if (threadRand == null) {
 				//threadRand = new Random (unchecked (System.Threading.Thread.CurrentThread.GetHashCode () ^
 				//    unchecked ((int)DateTime.Now.Ticks)));
 			}
 
-			Random localRand = threadRand;
+			Random? localRand = threadRand;
 			int[] localLookup = lookup;
 
 			foreach (Gdk.Rectangle rect in rois) {
@@ -133,7 +138,7 @@ namespace Pinta.Effects
 					ColorBgra* dstPtr = dst.GetPointAddressUnchecked (rect.Left, y);
 
 					for (int x = 0; x < rect.Width; ++x) {
-						if (localRand.NextDouble () > this.coverage) {
+						if (localRand?.NextDouble () > this.coverage) {
 							*dstPtr = *srcPtr;
 						} else {
 							int r;
@@ -141,7 +146,15 @@ namespace Pinta.Effects
 							int b;
 							int i;
 
-							r = localLookup[localRand.Next (tableSize)];
+							if(localRand == null) {
+
+								throw new Exception ("localRand was null in AddNoiseEffect, Render method");
+								
+							} else {
+								
+								r = localLookup[localRand!.Next (tableSize)];
+							}
+							
 							g = localLookup[localRand.Next (tableSize)];
 							b = localLookup[localRand.Next (tableSize)];
 

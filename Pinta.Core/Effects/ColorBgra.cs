@@ -252,10 +252,20 @@ namespace Pinta.Core
                 return (byte)x;
             }
         }
-        /// <summary>
-        /// Packs color and alpha values into a 32-bit integer.
-        /// </summary>
-        public static UInt32 BgraToUInt32(byte b, byte g, byte r, byte a)
+	public static byte ClampToByte (int x)
+	{
+			if (x > 255) {
+				return 255;
+			} else if (x < 0) {
+				return 0;
+			} else {
+				return (byte) x;
+			}
+	}
+		/// <summary>
+		/// Packs color and alpha values into a 32-bit integer.
+		/// </summary>
+		public static UInt32 BgraToUInt32(byte b, byte g, byte r, byte a)
         {
             return (uint)b + ((uint)g << 8) + ((uint)r << 16) + ((uint)a << 24);
         }
@@ -286,21 +296,7 @@ namespace Pinta.Core
             return color;
         }
 
-        public static byte ClampToByte(int x)
-        {
-            if (x > 255)
-            {
-                return 255;
-            }
-            else if (x < 0)
-            {
-                return 0;
-            }
-            else
-            {
-                return (byte)x;
-            }
-        }
+       
 
         /// <summary>
         /// Smoothly blends between two colors.
@@ -346,7 +342,7 @@ namespace Pinta.Core
             ColorBgra ret = new ColorBgra();
 
             ret.B = ClampToByte(Lerp(from.B, to.B, frac));
-            ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
+            ret.G = ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = ClampToByte(Lerp(from.R, to.R, frac));
             ret.A = ClampToByte(Lerp(from.A, to.A, frac));
 
@@ -504,7 +500,7 @@ namespace Pinta.Core
                 r /= asum;
             }
 
-            return ColorBgra.FromUInt32((uint)b + ((uint)g << 8) + ((uint)r << 16) + ((uint)a << 24));
+            return ColorBgra.FromUInt32((uint)b + ((uint)g << 8) + ((uint)r << 16) + (a << 24));
         }        
         
         /// <summary>
@@ -578,9 +574,11 @@ namespace Pinta.Core
         /// </summary>
         public unsafe static ColorBgra Blend(ColorBgra* colors, int count)
         {
-            if (count < 0)
+	    if (count < 0)
             {
-                throw new ArgumentOutOfRangeException("count must be 0 or greater");
+
+                throw new ArgumentOutOfRangeException("count", "count must be 0 or greater");
+
             }
 
             if (count == 0)

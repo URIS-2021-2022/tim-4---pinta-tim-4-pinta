@@ -226,8 +226,7 @@ namespace Pinta
 			}
 
 			// If the canvas/tool didn't consume it, see if its a toolbox shortcut
-			if (e.RetVal is not true) {
-				if (e.Event.State.FilterModifierKeys () == Gdk.ModifierType.None)
+			if (e.RetVal is not true && e.Event.State.FilterModifierKeys () == Gdk.ModifierType.None) {
 					PintaCore.Tools.SetCurrentTool (e.Event.Key);
 			}
 
@@ -286,7 +285,7 @@ namespace Pinta
 
 			window_shell = new WindowShell (this, "Pinta.GenericWindow", "Pinta", width, height, maximize);
 
-			CreateMainMenu (window_shell);
+			CreateMainMenu ();
 			CreateMainToolBar (window_shell);
 			CreateToolToolBar (window_shell);
 
@@ -300,7 +299,7 @@ namespace Pinta
 			PintaCore.Chrome.InitializeWindowShell (window_shell);
 		}
 
-		private void CreateMainMenu (WindowShell shell)
+		private void CreateMainMenu ()
 		{
 			if (PintaCore.System.OperatingSystem == OS.Mac) {
 				// Only use the application on macOS. On other platforms, these
@@ -460,7 +459,7 @@ namespace Pinta
 		private const string LastDialogDirSettingKey = "last-dialog-directory";
 		private const string LastSelectedToolSettingKey = "last-selected-tool";
 
-		private void LoadUserSettings ()
+		private static void LoadUserSettings ()
 		{
 			// Set selected tool to last selected or default to the PaintBrush
 			PintaCore.Tools.SetCurrentTool (PintaCore.Settings.GetSetting (LastSelectedToolSettingKey, "PaintBrushTool"));
@@ -624,8 +623,7 @@ namespace Pinta
 		private IDockNotebookItem? FindTabWithCanvas (PintaCanvas canvas)
 		{
 			return canvas_pad.Notebook.Items
-				.Where (i => ((CanvasWindow) i.Widget).Canvas == canvas)
-				.FirstOrDefault ();
+				.FirstOrDefault (i => ((CanvasWindow) i.Widget).Canvas == canvas);
 		}
 		#endregion
 	}

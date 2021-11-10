@@ -46,7 +46,7 @@ namespace Pinta.Effects
 		private Button buttonReset;
 		private Label labelTip;
 
-		private class ControlPointDrawingInfo 
+		private sealed class ControlPointDrawingInfo 
 		{
 			public Cairo.Color Color { get; set; }
 			public bool IsActive { get; set; }
@@ -57,7 +57,6 @@ namespace Pinta.Effects
 		//control point radius
 		private const int radius = 6;
 		
-		private int channels;
 		//last added control point x;
 		private int last_cpx;
 		
@@ -131,6 +130,7 @@ namespace Pinta.Effects
 
 		private void ResetControlPoints()
 		{
+			int channels;
 			channels = (Mode == ColorTransferMode.Luminosity) ? 1 : 3;
 			ControlPoints = new SortedList<int, int>[channels];
 			

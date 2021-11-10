@@ -41,7 +41,7 @@ namespace Pinta.Core
 		private Toolbar main_toolbar = null!;
 		private ErrorDialogHandler error_dialog_handler;
 		private UnsupportedFormatDialogHandler unsupported_format_dialog_handler = null!;
-
+		
 		public Application Application { get; private set; } = null!;
 		public Toolbar ToolToolBar { get { return tool_toolbar; } }
 		public Toolbar MainToolBar { get { return main_toolbar; } }

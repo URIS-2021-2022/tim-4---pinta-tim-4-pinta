@@ -816,7 +816,7 @@ namespace Pinta.Tools
 						utf32Char = args.Str[i];
 					}
 
-					str.Append (utf32Char.ToString ());
+					str.Append (utf32Char);
 				}
 
 				CurrentTextEngine.InsertText (str.ToString ());
@@ -922,6 +922,7 @@ namespace Pinta.Tools
 
 			Cairo.ImageSurface surf;
 
+			
 			if (!useTextLayer)
 			{
 				//Draw text on the current UserLayer's surface as finalized text.
@@ -945,10 +946,9 @@ namespace Pinta.Tools
 					foreach (Rectangle rect in CurrentTextLayout.SelectionRectangles)
 						g.FillRectangle (rect.ToCairoRectangle (), c);
 				}
+				SetSelectionToClip(selection,g);
 
-				if (selection != null) {
-					selection.Clip(g);
-				}
+				
 
 				g.MoveTo (new Cairo.PointD (CurrentTextEngine.Origin.X, CurrentTextEngine.Origin.Y));
 
@@ -957,9 +957,8 @@ namespace Pinta.Tools
 				//Fill in background
 				if (BackgroundFill) {
 					using (var g2 = new Cairo.Context (surf)) {
-						if (selection != null) {
-							selection.Clip(g2);
-						}
+						
+						SetSelectionToClip(selection,g2);
 						
 						g2.FillRectangle(CurrentTextLayout.GetLayoutBounds().ToCairoRectangle(), PintaCore.Palette.SecondaryColor);
 					}
@@ -1033,17 +1032,22 @@ namespace Pinta.Tools
 			old_cursor_bounds = cursorBounds;
 		}
 
+	public void SetSelectionToClip(DocumentSelection? selection,Cairo.Context g)
+        {
+
+	    if (selection != null) 
+		selection.Clip(g);
+	}
+
 		/// <summary>
 		/// Finalize re-editable text (if applicable).
 		/// </summary>
 		public void FinalizeText()
 		{
 			//If this is true, don't finalize any text - this is used to prevent the code from looping recursively.
-			if (!ignoreCloneFinalizations)
+			if (!ignoreCloneFinalizations && CurrentTextEngine.State != TextMode.Unchanged)
 			{
-				//Only bother finalizing text if editing.
-				if (CurrentTextEngine.State != TextMode.Unchanged)
-				{
+				
 					//Start ignoring any Surface.Clone calls from this point on (so that it doesn't start to loop).
 					ignoreCloneFinalizations = true;
 					Document doc = PintaCore.Workspace.ActiveDocument;
@@ -1082,7 +1086,7 @@ namespace Pinta.Tools
 						selection.Dispose ();
 						selection = null;
 					}
-				}
+				
 			}
 		}
 

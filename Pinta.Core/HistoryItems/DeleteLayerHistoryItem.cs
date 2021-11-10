@@ -63,6 +63,7 @@ namespace Pinta.Core
 
 		public override void Dispose ()
 		{
+			GC.SuppressFinalize (this);
 			if (layer != null)
 				(layer.Surface as IDisposable).Dispose ();
 		}

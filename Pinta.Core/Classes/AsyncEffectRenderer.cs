@@ -60,11 +60,11 @@ namespace Pinta.Core
 		int render_id;
 		int current_tile;
 		int total_tiles;		
-		List<Exception> render_exceptions;
-		
-		uint timer_tick_id;
-		
-		object updated_lock;
+		readonly List<Exception> render_exceptions;
+
+		readonly uint timer_tick_id;
+
+		readonly object updated_lock;
 		bool is_updated;
 		int updated_x1;
 		int updated_y1;
@@ -217,7 +217,7 @@ namespace Pinta.Core
 			master.Start ();
 			
 			// Start timer used to periodically fire update events on the UI thread.
-			timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
+			//timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
 		}
 		
 		Thread StartSlaveThread (int renderId, int threadId)
@@ -236,7 +236,7 @@ namespace Pinta.Core
 		void Render (int renderId, int threadId)
 		{
 			// Fetch the next tile index and render it.
-			for (;;) {
+			while (true) {
 				
 				int tileIndex = Interlocked.Increment (ref current_tile);
 				
@@ -320,7 +320,7 @@ namespace Pinta.Core
 		}
 		
 		// Called on the UI thread.
-		bool HandleTimerTick ()
+		void HandleTimerTick ()
 		{			
 			Debug.WriteLine (DateTime.Now.ToString("HH:mm:ss:ffff") + " Timer tick.");
 			
@@ -329,7 +329,7 @@ namespace Pinta.Core
 			lock (updated_lock) {
 				
 				if (!is_updated)
-					return true;
+					return;
 			
 				is_updated = false;
 				
@@ -342,7 +342,7 @@ namespace Pinta.Core
 			if (IsRendering && !cancel_render_flag)
 				OnUpdate (Progress, bounds);
 			
-			return true;
+			return;
 		}
 		
 		void HandleRenderCompletion ()

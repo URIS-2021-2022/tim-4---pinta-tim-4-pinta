@@ -136,7 +136,18 @@ namespace Pinta.Core
             return (T)combo.Model.GetValue (iter, 0);
         }
 
-        public static void SetValueAt (this ComboBox combo, int index, object value)
+		/// <summary>
+		/// Gets the value in the specified column in the specified row in a TreeView.
+		/// </summary>
+		public static T? GetValueAt<T> (this TreeView treeView, string path, int column) where T : class
+		{
+			if (treeView.Model.GetIter (out var iter, new TreePath (path)))
+				return treeView.Model.GetValue (iter, column) as T;
+
+			return null;
+		}
+
+		public static void SetValueAt (this ComboBox combo, int index, object value)
         {
             TreeIter iter;
 
@@ -160,16 +171,7 @@ namespace Pinta.Core
 			return null;
 		}
 
-		/// <summary>
-		/// Gets the value in the specified column in the specified row in a TreeView.
-		/// </summary>
-		public static T? GetValueAt<T> (this TreeView treeView, string path, int column) where T : class
-		{
-			if (treeView.Model.GetIter (out var iter, new TreePath (path)))
-				return treeView.Model.GetValue (iter, column) as T;
-
-			return null;
-		}
+		
 
 		/// <summary>
 		/// Sets the specified row(s) as selected in a TreeView.

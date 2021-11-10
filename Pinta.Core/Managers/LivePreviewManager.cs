@@ -37,7 +37,7 @@ using Debug = System.Diagnostics.Debug;
 namespace Pinta.Core
 {
 
-	public class LivePreviewManager
+	public class LivePreviewManager 
 	{
 		// NRT - These are set in Start(). This should be rewritten to be provably non-null.
 		bool live_preview_enabled;		
@@ -364,10 +364,7 @@ namespace Pinta.Core
 			// extra pixel of padding.
 			// I must being doing something wrong here.
 			if (scale > 1.0) {
-				//x1 = (bounds.Left-1) * scale;
-				y1 = (bounds.Top - 1) * scale;
-				//x2 = (bounds.Right+1) * scale;
-				//y2 = (bounds.Bottom+1) * scale;
+				y1 = (bounds.Top - 1) * scale;	
 			}
 
 			// Calculate window bounds.

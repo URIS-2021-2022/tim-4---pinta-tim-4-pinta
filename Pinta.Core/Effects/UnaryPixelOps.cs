@@ -15,7 +15,7 @@ namespace Pinta.Core
     /// </summary>
     public sealed class UnaryPixelOps
     {
-        private UnaryPixelOps()
+        public UnaryPixelOps()
         {
         }
 
@@ -295,7 +295,7 @@ namespace Pinta.Core
             }
 
             //Saturation formula from RgbColor.cs, public HsvColor ToHsv()
-            private int GetSaturation(ColorBgra color)
+            private static int GetSaturation(ColorBgra color)
             {
                 double min;
                 double max;
@@ -474,10 +474,7 @@ namespace Pinta.Core
                 return ColorBgra.FromBgra(CurveB[color.B], CurveG[color.G], CurveR[color.R], color.A);
             }
 
-//            public override void Apply(Surface dst, Point dstOffset, Surface src, Point srcOffset, int scanLength)
-//            {
-//                base.Apply (dst, dstOffset, src, srcOffset, scanLength);
-//            }
+
         }
 
         [Serializable]
@@ -789,7 +786,7 @@ namespace Pinta.Core
             {
                 if (beforeOut.Length != 3) 
                 {
-                    throw new ArgumentException("before must be a float[3]", "before");
+                    throw new ArgumentException("before must be a float[3]", "beforeOut");
                 }
 
                 if (slopesOut.Length != 3) 
