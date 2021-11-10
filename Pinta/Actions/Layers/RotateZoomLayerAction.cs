@@ -107,7 +107,7 @@ namespace Pinta.Actions
 			    Translations.GetString ("Rotate / Zoom Layer"), old_surf, doc.Layers.CurrentUserLayerIndex));
 		}
 
-		private class RotateZoomData : EffectData
+		private sealed class RotateZoomData : EffectData
 		{
 			[Caption ("Angle")]
 			public double Angle = 0;

@@ -135,6 +135,7 @@ namespace Pinta.Tools
 			}
 
 			document.Selection.SelectionPolygons.Clear ();
+			document.Selection.SelectionPolygons=null;
 			document.Selection.SelectionPolygons.Add (lasso_polygon.ToList ());
 			SelectionModeHandler.PerformSelectionMode (combine_mode, document.Selection.SelectionPolygons);
 			document.Workspace.Invalidate ();

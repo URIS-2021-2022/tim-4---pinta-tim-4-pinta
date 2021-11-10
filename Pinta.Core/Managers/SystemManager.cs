@@ -148,7 +148,8 @@ namespace Pinta.Core
 #if false
 			return AddinManager.GetExtensionObjects<T> ();
 #else
-			return new T[0];
+			var a=System.Array.Empty<T>();
+			return a;
 #endif
 		}
 
