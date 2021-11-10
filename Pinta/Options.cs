@@ -260,10 +260,7 @@ namespace Mono.Options
 		}
 
 
-		public int OptionIndex {
-			get {return index;}
-			set {index = value;}
-		}
+		public int OptionIndex { get; set; }
 
 		public OptionSet OptionSet {
 			get {return set;}
@@ -495,7 +492,7 @@ namespace Mono.Options
 		}
 	}
 
-	public delegate void OptionAction<TKey, TValue> (TKey key, TValue value);
+	public delegate void OptionAction<TKey, in TValue> (TKey key, TValue value);
 
 	public class OptionSet : KeyedCollection<string, Option>
 	{
@@ -627,7 +624,7 @@ namespace Mono.Options
 		public OptionSet Add (string prototype, string description, OptionAction<string, string> action)
 		{
 			if (action == null)
-				throw new ArgumentNullException ("action");
+				throw new ArgumentNullException (nameof(action));
 			Option p = new ActionOption (prototype, description, 2, 
 					delegate (OptionValueCollection v) {action (v [0], v [1]);});
 			base.Add (p);
@@ -750,16 +747,17 @@ namespace Mono.Options
 		}
 #endif
 
-		private static bool Unprocessed (ICollection<string> extra, Option def, OptionContext c, string argument)
+		private static void Unprocessed (ICollection<string> extra, Option def, OptionContext c, string argument)
 		{
 			if (def == null) {
 				extra.Add (argument);
-				return false;
+				//return false;
+			} else {
+				c.OptionValues.Add (argument);
+				c.Option = def;
+				c.Option.Invoke (c);
 			}
-			c.OptionValues.Add (argument);
-			c.Option = def;
-			c.Option.Invoke (c);
-			return false;
+			//return false;
 		}
 
 		private readonly Regex ValueOption = new Regex (
@@ -844,9 +842,9 @@ namespace Mono.Options
 		private bool ParseBool (string option, string n, OptionContext c)
 		{
 			Option p;
-			string rn;
+			string rn=n.Substring (0, n.Length-1);
 			if (n.Length >= 1 && (n [n.Length-1] == '+' || n [n.Length-1] == '-') &&
-					Contains ((rn = n.Substring (0, n.Length-1)))) {
+					Contains (rn)) {
 				p = this [rn];
 				string v = n [n.Length-1] == '+' ? option : null;
 				c.name  = option;
@@ -987,7 +985,7 @@ namespace Mono.Options
 		private static string GetArgumentName (int index, int maxIndex, string description)
 		{
 			if (description == null)
-				return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+				return ReturnMaxIndex(index, maxIndex);
 			string[] nameStart;
 			if (maxIndex == 1)
 				nameStart = new string[]{"{0:", "{"};
@@ -1005,8 +1003,13 @@ namespace Mono.Options
 					continue;
 				return description.Substring (start + nameStart [i].Length, end - start - nameStart [i].Length);
 			}
-			return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+			return ReturnMaxIndex(index, maxIndex);
 		}
+
+	private static string ReturnMaxIndex(int maxIndex, int index)
+        {
+	    return maxIndex == 1 ? "VALUE" : "VALUE" + (index + 1);
+	}
 
 		private static string GetDescription (string description)
 		{
@@ -1029,7 +1032,7 @@ namespace Mono.Options
 							if ((i+1) == description.Length || description [i+1] != '}')
 								throw new InvalidOperationException ("Invalid option description: " + description);
 							++i;
-							sb.Append ("}");
+							sb.Append ('}');
 						}
 						else {
 							sb.Append (description.Substring (start, i - start));

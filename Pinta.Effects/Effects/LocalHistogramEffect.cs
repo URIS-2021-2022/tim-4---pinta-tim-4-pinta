@@ -16,10 +16,6 @@ namespace Pinta.Effects
     public abstract class LocalHistogramEffect
         : BaseEffect
     {
-        /*internal LocalHistogramEffect(string name, Image image, string subMenuName, EffectFlags flags)
-            : base(name, image, subMenuName, flags)
-        {
-        }*/
 
         protected static int GetMaxAreaForRadius(int radius)
         {

@@ -72,7 +72,7 @@ namespace Pinta.Gui.Widgets
 			[MemberNotNull (nameof (vals))]
 			set {
 				if (value < 2 || value > 3) 
-					throw new ArgumentOutOfRangeException ("value", value, "Count must be 2 or 3");
+					throw new ArgumentOutOfRangeException (nameof(value), value, "Count must be 2 or 3");
 
 				vals = new double[value];
 
@@ -175,13 +175,13 @@ namespace Pinta.Gui.Widgets
 			var index = FindValueIndex (py);
 			py = (int) NormalizeY (index, py);
 
-			if (mask == Gdk.ModifierType.Button1Mask) {
-				if (index != -1) {
+			if (mask == Gdk.ModifierType.Button1Mask && index != -1) {
+				
 					var y = GetValueFromY (py);
 
 					vals[index] = y;
 					OnValueChanged (index);
-				}
+				
 			}
 
 			// to avoid unnessesary costly redrawing
@@ -238,7 +238,7 @@ namespace Pinta.Gui.Widgets
 
 				var val = vals[i];
 				var y = GetYFromValue (val);
-				var hoover = ((index == i)) && (all.ContainsPoint (px, py) || ValueIndex != -1);
+				var hoover = (index == i) && (all.ContainsPoint (px, py) || ValueIndex != -1);
 				var color = hoover ? new Color (0.1, 0.1, 0.9) : new Color (0.1, 0.1, 0.1);
 
 				// left triangle
@@ -259,10 +259,10 @@ namespace Pinta.Gui.Widgets
 			}
 		}
 
-		protected override bool OnDrawn (Context g)
+		protected override bool OnDrawn (Context cr)
 		{
-			DrawGradient (g);
-			DrawTriangles (g);
+			DrawGradient (cr);
+			DrawTriangles (cr);
 			return true;
 		}
 

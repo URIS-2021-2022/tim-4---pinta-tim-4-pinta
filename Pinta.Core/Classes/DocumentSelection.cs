@@ -229,15 +229,15 @@ namespace Pinta.Core
                 newPolygons.Add (newPolygon);
             }
 
-            var origin = Origin;
+            var origin1 = Origin;
             var end = End;
-            transform.TransformPoint (ref origin);
+            transform.TransformPoint (ref origin1);
             transform.TransformPoint (ref end);
 
             return new DocumentSelection {
                 SelectionPolygons = newPolygons,
                 SelectionClipper = new Clipper (),
-                Origin = origin,
+                Origin = origin1,
                 End = end,
                 _visible = this._visible
             };
@@ -451,9 +451,17 @@ namespace Pinta.Core
 
         public void Dispose ()
         {
+	      Dispose(true);
+              GC.SuppressFinalize(this);
+
             if (selection_path != null)
-                selection_path.Dispose ();
+		selection_path.Dispose ();
         }
+
+	protected virtual void Dispose(bool disposing)
+    {
+        // Cleanup
+    }
 
         /// <summary>
         /// Resets the selection.

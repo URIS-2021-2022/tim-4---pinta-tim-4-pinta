@@ -21,11 +21,11 @@ namespace Pinta.Core
     public struct RgbColor
     {
         // All values are between 0 and 255.
-        public int Red;
         public int Green;
         public int Blue;
+		public int Red;
 
-        public RgbColor(int R, int G, int B) 
+		public RgbColor(int R, int G, int B) 
         {
 #if DEBUG
             if (R < 0 || R > 255) 

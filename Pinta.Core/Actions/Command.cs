@@ -1,4 +1,4 @@
-﻿// 
+// 
 // Command.cs
 //  
 // Author:
@@ -39,7 +39,16 @@ namespace Pinta.Core
         {
             get { return Action.Name; }
         }
-        public ActivatedHandler? Activated;
+     //   public ActivatedHandler? Activated;
+
+	private ActivatedHandler? Activated12;
+
+	public ActivatedHandler? Activated
+        {
+            get { return  Activated12;}
+	    set { Activated12 = value;}
+        }
+
         public void Activate()
         {
             Action.Activate(null);

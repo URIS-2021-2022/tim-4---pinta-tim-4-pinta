@@ -1,4 +1,4 @@
-﻿// 
+// 
 // HistoryPad.cs
 //  
 // Author:

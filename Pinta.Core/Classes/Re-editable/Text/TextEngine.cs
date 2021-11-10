@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // Paint.NET                                                                   //
 // Copyright (C) dotPDN LLC, Rick Brewster, Tom Jackson, and contributors.     //
 // Portions Copyright (C) Microsoft Corporation. All Rights Reserved.          //
@@ -352,6 +352,7 @@ namespace Pinta.Core
 		/// </returns>
 		public bool PerformPaste (Gtk.Clipboard clipboard)
 		{
+			StringBuilder bld = new StringBuilder();
 			string txt = string.Empty;
 			txt = clipboard.WaitForText ();
 			if (String.IsNullOrEmpty (txt))
@@ -371,10 +372,12 @@ namespace Pinta.Core
 					currentPos.Offset = ins_txt.Length;
 				} else {
 					first = false;
-					lines[currentPos.Line] += ins_txt;
+					//lines[currentPos.Line] += ins_txt;
+					bld.Append(ins_txt);
 					currentPos.Offset += ins_txt.Length;
 				}
 			}
+			lines[currentPos.Line]=bld.ToString();
 			lines[currentPos.Line] += endline;
 
 			selectionStart = currentPos;

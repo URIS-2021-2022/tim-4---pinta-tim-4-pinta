@@ -48,20 +48,12 @@ namespace Pinta.Core
 			}
 		}
 
-		private unsafe void ApplyRectangle (ImageSurface surface, Gdk.Rectangle rect)
-		{
-			for (int y = rect.Left; y <= rect.GetBottom (); ++y) {
-				ColorBgra* ptr = surface.GetPointAddress (rect.Left, y);
-				Apply (ptr, rect.Width);
-			}
-		}
-
 		public void Apply (ImageSurface surface, Gdk.Rectangle[] roi, int startIndex, int length)
 		{
 			Gdk.Rectangle regionBounds = Utility.GetRegionBounds (roi, startIndex, length);
 
 			if (regionBounds != Gdk.Rectangle.Intersect (surface.GetBounds (), regionBounds))
-				throw new ArgumentOutOfRangeException ("roi", "Region is out of bounds");
+				throw new ArgumentOutOfRangeException (nameof (roi), "Region is out of bounds");
 
 			unsafe {
 				for (int x = startIndex; x < startIndex + length; ++x)
@@ -102,6 +94,14 @@ namespace Pinta.Core
 		{
 			foreach (Gdk.Rectangle roi in rois)
 				Apply (dst, src, roi);
+		}
+
+		private unsafe void ApplyRectangle (ImageSurface surface, Gdk.Rectangle rect)
+		{
+			for (int y = rect.Left; y <= rect.GetBottom (); ++y) {
+				ColorBgra* ptr = surface.GetPointAddress (rect.Left, y);
+				Apply (ptr, rect.Width);
+			}
 		}
 	}
 }

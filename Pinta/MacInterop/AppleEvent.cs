@@ -180,11 +180,11 @@ namespace Pinta.MacInterop
 		static void CheckReturn (AEDescStatus status)
 		{
 			if (status != AEDescStatus.Ok)
-			throw new Exception ("Failed with code " + status.ToString ());
+				throw new Exception ("Failed with code " + status.ToString ());
 		}
 	}
 	
-	public delegate T AEDescValueSelector<TRef,T> (ref TRef desc);
+	public delegate T AEDescValueSelector<TRef,out T> (ref TRef desc);
 	
 	[StructLayout(LayoutKind.Sequential, Pack = 2)]
 	public struct AEDesc

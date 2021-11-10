@@ -1,4 +1,4 @@
-﻿//
+//
 // PaintShopProPalette.cs
 //
 // Author:
@@ -32,12 +32,13 @@ using System.Globalization;
 
 namespace Pinta.Core
 {
-	public class PaintShopProPalette : IPaletteLoader, IPaletteSaver
+	public class PaintShopProPalette : IPaletteLoader, IPaletteSaver,IDisposable
 	{
+	StreamReader reader;
 		public List<Color> Load (string fileName)
 		{
 			List<Color> colors = new List<Color> ();
-			StreamReader reader = new StreamReader (fileName);
+			 reader = new StreamReader (fileName);
 			string? line = reader.ReadLine ();
 
 			if (line is null || !line.StartsWith ("JASC-PAL"))
@@ -63,6 +64,11 @@ namespace Pinta.Core
 
 			return colors;
 		}
+
+	public void Dispose()
+        {
+	    this.reader.Dispose();
+        }
 
 		public void Save (List<Color> colors, string fileName)
 		{

@@ -173,7 +173,7 @@ namespace Pinta.Core
         public override bool Equals(object? obj)
         {
             
-            if (obj != null && obj is ColorBgra && ((ColorBgra)obj).Bgra == this.Bgra)
+            if (obj is ColorBgra && ((ColorBgra)obj).Bgra == this.Bgra)
             {
                 return true;
             }
@@ -346,9 +346,9 @@ namespace Pinta.Core
             ColorBgra ret = new ColorBgra();
 
             ret.B = ClampToByte(Lerp(from.B, to.B, frac));
-            ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
-            ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
-            ret.A = (byte)ClampToByte(Lerp(from.A, to.A, frac));
+            ret.G = ClampToByte(Lerp(from.G, to.G, frac));
+            ret.R = ClampToByte(Lerp(from.R, to.R, frac));
+            ret.A = ClampToByte(Lerp(from.A, to.A, frac));
 
             return ret;
         }
@@ -375,10 +375,12 @@ namespace Pinta.Core
         {
             ColorBgra ret = new ColorBgra();
 
-            ret.B = (byte)ClampToByte(Lerp(from.B, to.B, frac));
+            ret.B =  ClampToByte(Lerp(from.B, to.B, frac));
+           
             ret.G = (byte)ClampToByte(Lerp(from.G, to.G, frac));
             ret.R = (byte)ClampToByte(Lerp(from.R, to.R, frac));
-            ret.A = (byte)ClampToByte(Lerp(from.A, to.A, frac));
+	    //removing unnesessary cast to byte
+           
 
             return ret;
         }
@@ -578,8 +580,9 @@ namespace Pinta.Core
         {
 	    if (count < 0)
             {
-		
-                throw new ArgumentOutOfRangeException("count must be 0 or greater");
+
+                throw new ArgumentOutOfRangeException("count", "count must be 0 or greater");
+
             }
 
             if (count == 0)

@@ -71,7 +71,7 @@ namespace Pinta.Core
 		int updated_x2;
 		int updated_y2;
 		
-		internal AsyncEffectRenderer (Settings settings)
+		 protected AsyncEffectRenderer (Settings settings)
 		{
 			if (settings.ThreadCount < 1)
 				settings.ThreadCount = 1;
@@ -165,8 +165,10 @@ namespace Pinta.Core
 		protected abstract void OnUpdate (double progress, Gdk.Rectangle updatedBounds);
 		
 		protected abstract void OnCompletion (bool canceled, Exception[]? exceptions);
-		
-		internal void Dispose ()
+
+
+	//renaming function to prevent confusion
+		internal void Dispose123 () 
 		{
 			if (timer_tick_id > 0)
 				GLib.Source.Remove (timer_tick_id);
@@ -215,7 +217,7 @@ namespace Pinta.Core
 			master.Start ();
 			
 			// Start timer used to periodically fire update events on the UI thread.
-			timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
+			//timer_tick_id = GLib.Timeout.Add((uint) settings.UpdateMillis, HandleTimerTick);			
 		}
 		
 		Thread StartSlaveThread (int renderId, int threadId)
@@ -234,19 +236,22 @@ namespace Pinta.Core
 		void Render (int renderId, int threadId)
 		{
 			// Fetch the next tile index and render it.
-			for (;;) {
+			while (true) {
 				
 				int tileIndex = Interlocked.Increment (ref current_tile);
 				
 				if (tileIndex >= total_tiles || cancel_render_flag)
 					return;
 				
-				RenderTile (renderId, threadId, tileIndex);
+				RenderTile (renderId, tileIndex);
+				
  			}
 		}
 		
 		// Runs on a background thread.
-		void RenderTile (int renderId, int threadId, int tileIndex)
+
+		//removing unused parameters
+		void RenderTile (int renderId,int tileIndex)
 		{
 			Exception? exception = null;
 			Gdk.Rectangle bounds = new Gdk.Rectangle ();
@@ -315,7 +320,7 @@ namespace Pinta.Core
 		}
 		
 		// Called on the UI thread.
-		bool HandleTimerTick ()
+		void HandleTimerTick ()
 		{			
 			Debug.WriteLine (DateTime.Now.ToString("HH:mm:ss:ffff") + " Timer tick.");
 			
@@ -324,7 +329,7 @@ namespace Pinta.Core
 			lock (updated_lock) {
 				
 				if (!is_updated)
-					return true;
+					return;
 			
 				is_updated = false;
 				
@@ -337,7 +342,7 @@ namespace Pinta.Core
 			if (IsRendering && !cancel_render_flag)
 				OnUpdate (Progress, bounds);
 			
-			return true;
+			return;
 		}
 		
 		void HandleRenderCompletion ()

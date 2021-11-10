@@ -1,4 +1,4 @@
-﻿//
+//
 // PaletteFormats.cs
 //
 // Author:
@@ -53,7 +53,8 @@ namespace Pinta.Core
 		{
 			string extension = System.IO.Path.GetExtension (fileName);
 			extension = NormalizeExtension (extension);
-			return formats.Where (p => p.Extensions.Contains (extension)).FirstOrDefault ();
+			return formats.FirstOrDefault (p => p.Extensions.Contains (extension));
+			
 		}
 
 		private static string NormalizeExtension (string extension)
