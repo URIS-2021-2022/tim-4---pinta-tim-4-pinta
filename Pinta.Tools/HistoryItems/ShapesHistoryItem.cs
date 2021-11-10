@@ -143,13 +143,11 @@ namespace Pinta.Tools
             Swap (ref selectedShapeIndex, ref ee.SelectedShapeIndex);
 
 			//Determine if the currently active tool matches the shape's corresponding tool, and if not, switch to it.
-			if (BaseEditEngine.ActivateCorrespondingTool(ee.SelectedShapeIndex, true) != null)
+			if (BaseEditEngine.ActivateCorrespondingTool(ee.SelectedShapeIndex, true) != null && redraw)
 			{
-				if(redraw)
-				{ 
 				
-					((ShapeTool?)PintaCore.Tools.CurrentTool)?.EditEngine.DrawAllShapes();
-				}
+				((ShapeTool?)PintaCore.Tools.CurrentTool)?.EditEngine.DrawAllShapes();
+				
 			}
 		}
 
