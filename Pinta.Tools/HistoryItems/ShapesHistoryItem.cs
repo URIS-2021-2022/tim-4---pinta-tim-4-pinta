@@ -146,7 +146,7 @@ namespace Pinta.Tools
 			if (BaseEditEngine.ActivateCorrespondingTool(ee.SelectedShapeIndex, true) != null && redraw)
 			{
 				
-				((ShapeTool?)PintaCore.Tools.CurrentTool)?.EditEngine.DrawAllShapes();
+				 ((ShapeTool?)PintaCore.Tools.CurrentTool)?.EditEngine.DrawAllShapes();
 				
 			}
 		}
