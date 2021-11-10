@@ -158,7 +158,7 @@ namespace Pinta.Core
 		
 		public virtual void ApplyTransform (Matrix xform, Size new_size)
 		{
-			var old_size = PintaCore.Workspace.ImageSize;
+			
 			var dest = CairoExtensions.CreateImageSurface (Format.ARGB32, new_size.Width, new_size.Height);
 
 			using (var g = new Context (dest))
