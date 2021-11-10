@@ -84,12 +84,14 @@ namespace Pinta.Core
 
 		private void Bugs_Activated (object sender, EventArgs e)
 		{
-			OpenUrl ("https://bugs.launchpad.net/pinta");
+			string url = "https://bugs.launchpad.net/pinta";
+			OpenUrl (url);
 		}
 
 		private void DisplayHelp (object sender, EventArgs e)
 		{
-			OpenUrl ("https://pinta-project.com/user-guide");
+			string userguideurl = "https://pinta-project.com/user-guide";
+			OpenUrl (userguideurl);
 		}
 
 		private void Translate_Activated (object sender, EventArgs e)
@@ -104,8 +106,8 @@ namespace Pinta.Core
 			OpenUrl (urlWebSite);
 		}
 
-		private void OpenUrl(string url)
-        {
+		 private static void OpenUrl (string url)
+		 {
 			Gtk.Global.ShowUriOnWindow(PintaCore.Chrome.MainWindow, url, Gtk.Global.CurrentEventTime);
 		}
 #endregion

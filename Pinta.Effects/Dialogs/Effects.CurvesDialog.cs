@@ -46,7 +46,7 @@ namespace Pinta.Effects
 		private Button buttonReset;
 		private Label labelTip;
 
-		private class ControlPointDrawingInfo 
+		private sealed class ControlPointDrawingInfo 
 		{
 			public Cairo.Color Color { get; set; }
 			public bool IsActive { get; set; }
@@ -57,7 +57,6 @@ namespace Pinta.Effects
 		//control point radius
 		private const int radius = 6;
 		
-		private int channels;
 		//last added control point x;
 		private int last_cpx;
 		
@@ -131,6 +130,7 @@ namespace Pinta.Effects
 
 		private void ResetControlPoints()
 		{
+			int channels;
 			channels = (Mode == ColorTransferMode.Luminosity) ? 1 : 3;
 			ControlPoints = new SortedList<int, int>[channels];
 			
@@ -142,7 +142,7 @@ namespace Pinta.Effects
 				ControlPoints [i] = list;
 			}
 			
-			UpdateLivePreview ("ControlPoints");
+			UpdateLivePreview (nameof(ControlPoints));
 		}
 		
 		private void HandleComboMapChanged (object? sender, EventArgs e)
@@ -288,7 +288,7 @@ namespace Pinta.Effects
 			
 			for (int i = 1; i < 4; i++) {
 				g.MoveTo (i * size / 4, 0);
-				g.LineTo (i * size / 4, size);
+				g.LineTo ( (double)i * size / 4, (double)size);
 				g.MoveTo (0, i * size / 4);
 				g.LineTo (size, i * size / 4);
 			}

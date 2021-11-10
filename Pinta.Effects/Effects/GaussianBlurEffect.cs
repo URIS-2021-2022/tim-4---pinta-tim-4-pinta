@@ -90,7 +90,7 @@ namespace Pinta.Effects
             p += wlen * sizeof (long);
 
             long* rSums = (long*)p;
-            p += wlen * sizeof (long);
+           
 
             // Cache these for a massive performance boost
             int src_width = src.Width;
@@ -100,7 +100,7 @@ namespace Pinta.Effects
             foreach (Gdk.Rectangle rect in rois) {
                 if (rect.Height >= 1 && rect.Width >= 1) {
                     for (int y = rect.Top; y <= rect.GetBottom (); ++y) {
-                        //Memory.SetToZero (localStore, (ulong)localStoreSize);
+                       
 
                         long waSum = 0;
                         long wcSum = 0;

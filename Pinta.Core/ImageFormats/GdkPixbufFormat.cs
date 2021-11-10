@@ -158,7 +158,8 @@ namespace Pinta.Core
 					native_values[j] = GLib.Marshaller.StringToPtrGStrdup (option_values![j]); // NRT - num2 is null-checked length of option_values
 				}
 
-				IntPtr error = IntPtr.Zero;
+
+				IntPtr error;
 				bool result = gdk_pixbuf_savev_utf8 (pb.Handle, native_filename, native_type, native_keys, native_values, out error);
 
 				GLib.Marshaller.Free (native_filename);

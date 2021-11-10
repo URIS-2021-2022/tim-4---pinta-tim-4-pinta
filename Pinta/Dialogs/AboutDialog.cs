@@ -159,7 +159,7 @@ namespace Pinta
 				for (int n = 0; n < oldAuthors.Length; n++) {
 					sb.Append (oldAuthors[n]);
 					if (n % 2 == 1)
-						sb.Append ("\n");
+						sb.Append ('\n');
 					else if (n < oldAuthors.Length - 1)
 						sb.Append (", ");
 				}
@@ -228,7 +228,7 @@ namespace Pinta
 		private void DrawText (Cairo.Context ctx)
 		{
 			int width = Window.FrameExtents.Width;
-			int height = Window.FrameExtents.Height;
+			
 
 			int widthPixel, heightPixel;
 			layout.GetPixelSize(out widthPixel, out heightPixel);
@@ -248,11 +248,11 @@ namespace Pinta
 				scroll = scrollStart;
 		}
 
-        protected override bool OnDrawn(Cairo.Context ctx)
+        protected override bool OnDrawn(Cairo.Context cr)
 		{
-			this.DrawImage (ctx);
-			this.DrawText (ctx);
-			this.DrawImageTop (ctx);
+			this.DrawImage (cr);
+			this.DrawText (cr);
+			this.DrawImageTop (cr);
 			
 			return false;
 		}
@@ -282,7 +282,6 @@ namespace Pinta
 	internal class AboutDialog : Dialog
 	{
 		ScrollBox aboutPictureScrollBox;
-		Pixbuf imageSep;
 
 		public AboutDialog () : base (string.Empty, PintaCore.Chrome.MainWindow, DialogFlags.Modal)
 		{
@@ -296,7 +295,7 @@ namespace Pinta
 			aboutPictureScrollBox = new ScrollBox ();
 
 			ContentArea.PackStart (aboutPictureScrollBox, false, false, 0);
-			imageSep = PintaCore.Resources.GetIcon ("About.ImageSep.png");
+			Pixbuf imageSep = PintaCore.Resources.GetIcon ("About.ImageSep.png");
 
 			ContentArea.PackStart (new Gtk.Image (imageSep), false, false, 0);
 

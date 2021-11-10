@@ -42,7 +42,7 @@ namespace Pinta.Core
             return src;
         }
 		
-		public static unsafe ColorBgra GetPercentile(int percentile, int area, int* hb, int* hg, int* hr, int* ha)
+	public static unsafe ColorBgra GetPercentile(int percentile, int area, int* hb, int* hg, int* hr, int* ha)
         {
             int minCount = area * percentile / 100;
 
@@ -88,8 +88,16 @@ namespace Pinta.Core
                 ++r;
             }
 
-            int a = 0;
-            int aCount = 0;
+            int a = aCounter (ha, minCount);
+            
+
+            return ColorBgra.FromBgra((byte)b, (byte)g, (byte)r, (byte)a);
+        }
+
+	public static unsafe int aCounter (int* ha,int minCount)
+        {
+	    int a=0;
+	    int aCount = 0;
 
             while (a < 255 && ha[a] == 0)
             {
@@ -101,8 +109,7 @@ namespace Pinta.Core
                 aCount += ha[a];
                 ++a;
             }
-
-            return ColorBgra.FromBgra((byte)b, (byte)g, (byte)r, (byte)a);
+	    return a;
         }
 		
 		 public unsafe void RenderRect(
@@ -523,7 +530,7 @@ namespace Pinta.Core
 		}
 	
 		//must be more efficient way to zero memory array
-		private unsafe void MemorySetToZero(int* ptr, int size)
+		private static unsafe void MemorySetToZero(int* ptr, int size)
 		{
 			for (int i = 0; i < size; i++) 
 				ptr [i] = 0;

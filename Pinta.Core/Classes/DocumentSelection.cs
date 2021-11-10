@@ -36,13 +36,9 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-		private List<List<IntPoint>> selection_polygons = new List<List<IntPoint>> ();
+		public static Point[][] PintaPolygonSet = new Point[1][];
 
-		public List<List<IntPoint>> SelectionPolygons {
-			get { return selection_polygons; }
-			set { selection_polygons = value; }
-		}
-
+		public List<List<IntPoint>>? SelectionPolygons { get; set; } = new List<List<IntPoint>>();
 		private Clipper selection_clipper = new Clipper ();
 
 		public Clipper SelectionClipper {
@@ -57,6 +53,7 @@ namespace Pinta.Core
 			get { return origin; }
 			set { origin = value; }
 		}
+
 
 		public PointD End;
 
@@ -84,7 +81,7 @@ namespace Pinta.Core
 				var doc = PintaCore.Workspace.ActiveDocument;
 
 		            using (var g = new Context (doc.Layers.CurrentUserLayer.Surface))
-		                selection_path = g.CreatePolygonPath (ConvertToPolygonSet (SelectionPolygons));
+		                selection_path = g.CreatePolygonPath (ConvertToPolygonSet (SelectionPolygons!));
 		        }
 
                 return selection_path;
@@ -152,7 +149,7 @@ namespace Pinta.Core
 		{
 		    return new DocumentSelection
 		    {
-		        SelectionPolygons = SelectionPolygons.ToList (),
+		        SelectionPolygons = SelectionPolygons!.ToList (),
 		        SelectionClipper = new Clipper (),
 		        Origin = new PointD (Origin.X, Origin.Y),
 		        End = new PointD (End.X, End.Y),
@@ -165,21 +162,19 @@ namespace Pinta.Core
 		/// </summary>
 		/// <param name="pintaPolygonSet">A Pinta Polygon set.</param>
 		/// <returns>A Clipper Polygon collection.</returns>
-		public static List<List<IntPoint>> ConvertToPolygons(Point[][] pintaPolygonSet)
+		public static List<List<IntPoint>> ConvertToPolygons()
 		{
 			List<List<IntPoint>> newPolygons = new List<List<IntPoint>>();
 
-			foreach (Point[] pA in pintaPolygonSet)
-			{
-				List<IntPoint> newPolygon = new List<IntPoint>();
+				foreach (Point[] pA in PintaPolygonSet) {
+					List<IntPoint> newPolygon = new List<IntPoint> ();
 
-				foreach (Point p in pA)
-				{
-					newPolygon.Add(new IntPoint((long)p.X, (long)p.Y));
+					foreach (Point p in pA) {
+						newPolygon.Add (new IntPoint ((long) p.X, (long) p.Y));
+					}
+
+					newPolygons.Add (newPolygon);
 				}
-
-				newPolygons.Add(newPolygon);
-			}
 
 			return newPolygons;
 		}
@@ -221,7 +216,7 @@ namespace Pinta.Core
         {
             var newPolygons = new List<List<IntPoint>> ();
 
-            foreach (List<IntPoint> ipL in SelectionPolygons) {
+            foreach (List<IntPoint> ipL in SelectionPolygons!) {
                 List<IntPoint> newPolygon = new List<IntPoint> ();
 
                 foreach (IntPoint ip in ipL) {
@@ -234,15 +229,15 @@ namespace Pinta.Core
                 newPolygons.Add (newPolygon);
             }
 
-            var origin = Origin;
+            var origin1 = Origin;
             var end = End;
-            transform.TransformPoint (ref origin);
+            transform.TransformPoint (ref origin1);
             transform.TransformPoint (ref end);
 
             return new DocumentSelection {
                 SelectionPolygons = newPolygons,
                 SelectionClipper = new Clipper (),
-                Origin = origin,
+                Origin = origin1,
                 End = end,
                 _visible = this._visible
             };
@@ -263,7 +258,7 @@ namespace Pinta.Core
 			double c1 = 0.552285; //A constant factor used to give the least approximation error.
 
 			//Clear the Selection Polygons collection to start from a clean slate.
-			SelectionPolygons.Clear();
+			SelectionPolygons!.Clear();
 
 			//Calculate an appropriate interval at which to increment t based on
 			//the bounding Rectangle's Width and Height properties. The increment
@@ -388,8 +383,15 @@ namespace Pinta.Core
 		/// <param name="r">The Rectangle.</param>
 		public void CreateRectangleSelection(Rectangle r)
 		{
-			SelectionPolygons.Clear();
-			SelectionPolygons.Add (CreateRectanglePolygon (r));
+			if(SelectionPolygons != null) {
+
+				SelectionPolygons!.Clear ();
+			
+				SelectionPolygons.Add (CreateRectanglePolygon (r));
+
+			} else {
+				Console.WriteLine ("SelectionPolygons is null in DocumentSelection");
+			}
 
 		    Origin = new PointD (r.X, r.Y);
 		    End = new PointD (r.GetRight (), r.GetBottom ());
@@ -466,7 +468,7 @@ namespace Pinta.Core
         /// </summary>
         public void Clear ()
         {
-            SelectionPolygons.Clear ();
+            SelectionPolygons!.Clear ();
             Origin = new PointD(0, 0);
             End = new PointD(0, 0);
             MarkDirty ();
@@ -483,7 +485,7 @@ namespace Pinta.Core
 			var maxY = double.MinValue;
 
 			// Calculate the minimum rectangular bounds that surround the current selection.
-			foreach (var li in PintaCore.Workspace.ActiveDocument.Selection.SelectionPolygons) {
+			foreach (var li in PintaCore.Workspace.ActiveDocument.Selection.SelectionPolygons!) {
 				foreach (var ip in li) {
 					if (minX > ip.X)
 						minX = ip.X;

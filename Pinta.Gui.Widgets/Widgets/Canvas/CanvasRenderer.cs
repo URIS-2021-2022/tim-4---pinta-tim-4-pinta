@@ -16,7 +16,7 @@ namespace Pinta.Gui.Widgets
 {
 	class CanvasRenderer
 	{
-		private static Cairo.Pattern tranparent_pattern;
+		private static Cairo.Pattern tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
 
 		private readonly bool enable_pixel_grid;
 
@@ -35,10 +35,10 @@ namespace Pinta.Gui.Widgets
 			this.enable_pixel_grid = enable_pixel_grid;
 		}
 
-		static CanvasRenderer ()
-		{
-			tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
-		}
+//		static CanvasRenderer ()
+//		{
+//			tranparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (16);
+//		}
 
 		public void Initialize (Size sourceSize, Size destinationSize)
 		{
@@ -207,13 +207,13 @@ namespace Pinta.Gui.Widgets
 			const int fpShift = 12;
 			const int fpFactor = (1 << fpShift);
 
-			var source_size = src.GetBounds ().Size;
+			var source_size1 = src.GetBounds ().Size;
 
 			// Find destination bounds
-			var dst_left = (int) (((long) roi.X * fpFactor * (long) source_size.Width) / (long) destination_size.Width);
-			var dst_top = (int) (((long) roi.Y * fpFactor * (long) source_size.Height) / (long) destination_size.Height);
-			var dst_right = (int) (((long) (roi.X + dst.Width) * fpFactor * (long) source_size.Width) / (long) destination_size.Width);
-			var dst_bottom = (int) (((long) (roi.Y + dst.Height) * fpFactor * (long) source_size.Height) / (long) destination_size.Height);
+			var dst_left = (int) (((long) roi.X * fpFactor * (long) source_size1.Width) / (long) destination_size.Width);
+			var dst_top = (int) (((long) roi.Y * fpFactor * (long) source_size1.Height) / (long) destination_size.Height);
+			var dst_right = (int) (((long) (roi.X + dst.Width) * fpFactor * (long) source_size1.Width) / (long) destination_size.Width);
+			var dst_bottom = (int) (((long) (roi.Y + dst.Height) * fpFactor * (long) source_size1.Height) / (long) destination_size.Height);
 			var dx = (dst_right - dst_left) / dst.Width;
 			var dy = (dst_bottom - dst_top) / dst.Height;
 
@@ -236,7 +236,6 @@ namespace Pinta.Gui.Widgets
 				var src4 = src.GetRowAddressUnchecked (src_ptr, src_width, srcY4);
 				var dstPtr = dst.GetRowAddressUnchecked (dst_ptr, dst_width, dstRow);
 
-				var checkerY = dstRow + roi.Y;
 				var checkerX = roi.X;
 				var maxCheckerX = checkerX + dst.Width;
 

@@ -460,7 +460,7 @@ namespace Pinta
 				preset_combo.Active = index;
 		}
 
-		private class PreviewArea : DrawingArea
+		sealed class PreviewArea : DrawingArea
 		{
 			private Gdk.Size size;
 			private Cairo.Color color;

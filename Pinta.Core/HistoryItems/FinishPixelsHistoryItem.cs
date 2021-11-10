@@ -1,4 +1,4 @@
-﻿// 
+// 
 // FinishPixelsHistoryItem.cs
 //  
 // Author:
@@ -40,7 +40,7 @@ namespace Pinta.Core
 		public FinishPixelsHistoryItem ()
 		{
 			Text = Translations.GetString ("Finish Pixels");
-			Icon = Resources.Icons.ToolMove; ;
+			Icon = Resources.Icons.ToolMove;
 		}
 
 		public override void Undo ()

@@ -36,7 +36,7 @@ using System.Runtime.InteropServices;
 
 namespace Pinta
 {
-	class MainClass
+	static class MainClass
 	{
 		[STAThread]
 		public static void Main (string[] args)

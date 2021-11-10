@@ -379,7 +379,7 @@ namespace Pinta
 			ShowAll ();
 		}
 
-		private Button CreateAnchorButton()
+		private static Button CreateAnchorButton()
         {
 			return new Button () { WidthRequest = 30, HeightRequest = 30 };
         }

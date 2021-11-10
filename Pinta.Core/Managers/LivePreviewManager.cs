@@ -37,7 +37,7 @@ using Debug = System.Diagnostics.Debug;
 namespace Pinta.Core
 {
 
-	public class LivePreviewManager
+	public class LivePreviewManager 
 	{
 		// NRT - These are set in Start(). This should be rewritten to be provably non-null.
 		bool live_preview_enabled;		
@@ -300,7 +300,7 @@ namespace Pinta.Core
 		
 		class Renderer : AsyncEffectRenderer
 		{
-			LivePreviewManager manager;
+			readonly LivePreviewManager manager;
 			
 			internal Renderer (LivePreviewManager manager, AsyncEffectRenderer.Settings settings)
 				: base (settings)

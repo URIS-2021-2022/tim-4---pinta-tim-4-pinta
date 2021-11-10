@@ -82,19 +82,19 @@ namespace Pinta.Effects
 			return EffectHelper.LaunchSimpleEffectDialog (this);
 		}
 		
-		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			int warmth = Data.Warmth;
 			float redAdjust = 1.0f + (warmth / 100.0f);
             float blueAdjust = 1.0f - (warmth / 100.0f);
 
-            this.blurEffect.Render(src, dest, rois);
-            this.bacAdjustment.Render(src, dest, rois);
+            this.blurEffect.Render(src, dst, rois);
+            this.bacAdjustment.Render(src, dst, rois);
 
 			foreach (Gdk.Rectangle roi in rois) {
                 for (int y = roi.Top; y <= roi.GetBottom (); ++y) {
                     ColorBgra* srcPtr = src.GetPointAddress(roi.X, y);
-                    ColorBgra* dstPtr = dest.GetPointAddress(roi.X, y);
+                    ColorBgra* dstPtr = dst.GetPointAddress(roi.X, y);
 
                     for (int x = roi.Left; x <= roi.GetRight (); ++x) {
                         ColorBgra srcGrey = this.desaturateOp.Apply(*srcPtr);

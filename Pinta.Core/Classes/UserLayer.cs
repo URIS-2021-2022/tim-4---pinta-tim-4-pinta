@@ -1,4 +1,4 @@
-﻿// 
+// 
 // UserLayer.cs
 //  
 // Author:
@@ -40,8 +40,20 @@ namespace Pinta.Core
 	public class UserLayer : Layer
 	{
 		//Special layers to be drawn on to keep things editable by drawing them separately from the UserLayers.
-		public List<ReEditableLayer> ReEditableLayers = new List<ReEditableLayer>();
-		public ReEditableLayer TextLayer;
+		private List<ReEditableLayer> re_editable_layers = new List<ReEditableLayer> ();
+
+		public List<ReEditableLayer> ReEditableLayers {
+
+			get { return re_editable_layers; }
+			set { re_editable_layers = value; }
+			}
+
+		private ReEditableLayer? text_layer;
+
+		public ReEditableLayer TextLayer {
+			get { return text_layer!; }
+			set { text_layer = value; }
+		}
 
 		//Call the base class constructor and setup the engines.
 		public UserLayer(ImageSurface surface) : this(surface, false, 1f, "")
@@ -49,10 +61,12 @@ namespace Pinta.Core
 		}
 
 		//Call the base class constructor and setup the engines.
-		public UserLayer(ImageSurface surface, bool hidden, double opacity, string name) : base(surface, hidden, opacity, name)
+		public UserLayer (ImageSurface surface, bool hidden, double opacity, string name) : base (surface, hidden, opacity, name)
 		{
 			tEngine = new TextEngine();
+			
 			TextLayer = new ReEditableLayer(this);
+
 		}
 
 		//Stores most of the editable text's data, including the text itself.
@@ -66,7 +80,7 @@ namespace Pinta.Core
 		{
 			base.ApplyTransform (xform, new_size);
 
-			foreach (ReEditableLayer rel in ReEditableLayers)
+			foreach (ReEditableLayer rel in re_editable_layers)
 			{
 				if (rel.IsLayerSetup)
                     rel.Layer.ApplyTransform (xform, new_size);
@@ -90,7 +104,7 @@ namespace Pinta.Core
 		{
 			base.Crop (rect, selection);
 
-			foreach (ReEditableLayer rel in ReEditableLayers)
+			foreach (ReEditableLayer rel in re_editable_layers)
 			{
 				if (rel.IsLayerSetup)
                     rel.Layer.Crop (rect, selection);
@@ -101,7 +115,7 @@ namespace Pinta.Core
 		{
 			base.ResizeCanvas (width, height, anchor);
 
-			foreach (ReEditableLayer rel in ReEditableLayers)
+			foreach (ReEditableLayer rel in re_editable_layers)
 			{
 				if (rel.IsLayerSetup)
 				{
@@ -114,7 +128,7 @@ namespace Pinta.Core
 		{
 			base.Resize (width, height);
 
-			foreach (ReEditableLayer rel in ReEditableLayers)
+			foreach (ReEditableLayer rel in re_editable_layers)
 			{
 				if (rel.IsLayerSetup)
 				{

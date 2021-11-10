@@ -114,7 +114,7 @@ namespace Pinta.Tools
 				radius.Widget.ValueChanged += (o, e) =>
 				{
 					//Go through the Get/Set routine.
-					Radius = Radius;
+					
 				};
 			}
 
