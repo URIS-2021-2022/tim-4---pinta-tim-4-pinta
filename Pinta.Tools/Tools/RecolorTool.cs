@@ -81,6 +81,20 @@ namespace Pinta.Tools
 			base.OnMouseDown (document, e);
 		}
 
+		public void LastPointCheck(int x, int y)
+		{
+			if (last_point.Equals (point_empty))
+				last_point = new Point (x, y);
+		}
+
+		public void SurfaceModifiedCheck (Document doc, ToolMouseEventArgs mouse)
+		{
+			if (doc.Workspace.PointInCanvas (mouse.PointDouble))
+				surface_modified = true;
+		}
+
+		
+
 		protected unsafe override void OnMouseMove (Document document, ToolMouseEventArgs e)
 		{
 			ColorBgra old_color;
@@ -104,11 +118,9 @@ namespace Pinta.Tools
 			int x = e.Point.X;
 			int y = e.Point.Y;
 
-			if (last_point.Equals (point_empty))
-				last_point = new Point (x, y);
-
-			if (document.Workspace.PointInCanvas (e.PointDouble))
-				surface_modified = true;
+			LastPointCheck (x, y);
+			SurfaceModifiedCheck (document, e);
+			
 
 			var surf = document.Layers.CurrentUserLayer.Surface;
 			ImageSurface tmp_layer = document.Layers.ToolLayer.Surface;
