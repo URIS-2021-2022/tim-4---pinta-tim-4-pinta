@@ -111,7 +111,11 @@ namespace Pinta.Tools
 				g.ClosePath ();
 			}
 
-			document.Selection.SelectionPolygons.Clear ();
+			if(document.Selection.SelectionPolygons == null) {
+				Console.WriteLine ("SelectionPolygons is null in LassoSelectTool!");
+			} else {
+				document.Selection.SelectionPolygons.Clear ();
+			}
 			document.Selection.SelectionPolygons.Add (lasso_polygon.ToList ());
 
 			SelectionModeHandler.PerformSelectionMode (combine_mode, document.Selection.SelectionPolygons);

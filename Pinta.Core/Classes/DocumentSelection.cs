@@ -36,9 +36,9 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-		
 
-		public List<List<IntPoint>>? SelectionPolygons { get; set; }
+
+		public List<List<IntPoint>>? SelectionPolygons { get; set; } = new List<List<IntPoint>>();
 		private Clipper selection_clipper = new Clipper ();
 
 		public Clipper SelectionClipper {
@@ -383,8 +383,15 @@ namespace Pinta.Core
 		/// <param name="r">The Rectangle.</param>
 		public void CreateRectangleSelection(Rectangle r)
 		{
-			SelectionPolygons!.Clear();
-			SelectionPolygons.Add (CreateRectanglePolygon (r));
+			if(SelectionPolygons != null) {
+
+				SelectionPolygons!.Clear ();
+			
+				SelectionPolygons.Add (CreateRectanglePolygon (r));
+
+			} else {
+				Console.WriteLine ("SelectionPolygons is null in DocumentSelection");
+			}
 
 		    Origin = new PointD (r.X, r.Y);
 		    End = new PointD (r.GetRight (), r.GetBottom ());

@@ -779,7 +779,7 @@ namespace Pinta.Core
 		public unsafe static void SetColorBgra (this Cairo.ImageSurface surf, ColorBgra color, int x, int y)
 		{
 			if (x > surf.Width || y > surf.Height)
-				throw new ArgumentOutOfRangeException ("Invalid canvas coordinates");
+				throw new ArgumentOutOfRangeException (nameof(surf));
 
 			ColorBgra* dstPtr = (ColorBgra*)surf.DataPtr;
 
