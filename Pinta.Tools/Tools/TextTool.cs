@@ -948,9 +948,7 @@ namespace Pinta.Tools
 				}
 				SetSelectionToClip(selection,g);
 
-				//if (selection != null) {
-					//selection.Clip(g);
-				//}
+				
 
 				g.MoveTo (new Cairo.PointD (CurrentTextEngine.Origin.X, CurrentTextEngine.Origin.Y));
 
@@ -959,9 +957,7 @@ namespace Pinta.Tools
 				//Fill in background
 				if (BackgroundFill) {
 					using (var g2 = new Cairo.Context (surf)) {
-						//if (selection != null) {
-							//selection.Clip(g2);
-						//}
+						
 						SetSelectionToClip(selection,g2);
 						
 						g2.FillRectangle(CurrentTextLayout.GetLayoutBounds().ToCairoRectangle(), PintaCore.Palette.SecondaryColor);
@@ -1049,11 +1045,9 @@ namespace Pinta.Tools
 		public void FinalizeText()
 		{
 			//If this is true, don't finalize any text - this is used to prevent the code from looping recursively.
-			if (!ignoreCloneFinalizations)
+			if (!ignoreCloneFinalizations && CurrentTextEngine.State != TextMode.Unchanged)
 			{
-				//Only bother finalizing text if editing.
-				if (CurrentTextEngine.State != TextMode.Unchanged)
-				{
+				
 					//Start ignoring any Surface.Clone calls from this point on (so that it doesn't start to loop).
 					ignoreCloneFinalizations = true;
 					Document doc = PintaCore.Workspace.ActiveDocument;
@@ -1092,7 +1086,7 @@ namespace Pinta.Tools
 						selection.Dispose ();
 						selection = null;
 					}
-				}
+				
 			}
 		}
 
