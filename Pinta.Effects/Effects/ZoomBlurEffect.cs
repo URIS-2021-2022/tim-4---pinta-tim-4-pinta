@@ -89,33 +89,7 @@ namespace Pinta.Effects
 						sa += srcPtr->A;
 						++sc;
 
-						for (int i = 0; i < n; ++i) {
-							fx -= ((fx >> 4) * fz) >> 10;
-							fy -= ((fy >> 4) * fz) >> 10;
-
-							int u = (int)(fx + fcx + 32768 >> 16);
-							int v = (int)(fy + fcy + 32768 >> 16);
-
-							if (src_bounds.Contains (u, v)) {
-								ColorBgra* srcPtr2 = src.GetPointAddressUnchecked (src_data_ptr, src_width, u, v);
-
-								sr += srcPtr2->R * srcPtr2->A;
-								sg += srcPtr2->G * srcPtr2->A;
-								sb += srcPtr2->B * srcPtr2->A;
-								sa += srcPtr2->A;
-								++sc;
-							}
-						}
-
-						if (sa != 0) {
-							*dstPtr = ColorBgra.FromBgra (
-							    Utility.ClampToByte (sb / sa),
-							    Utility.ClampToByte (sg / sa),
-							    Utility.ClampToByte (sr / sa),
-							    Utility.ClampToByte (sa / sc));
-						} else {
-							dstPtr->Bgra = 0;
-						}
+						dstPtrMethod (n, fx, fy, fz, fcx, fcy, src_bounds, src, src_data_ptr, src_width, sr, sg, sb, sa, sc, dstPtr);
 
 						++srcPtr;
 						++dstPtr;
@@ -124,6 +98,41 @@ namespace Pinta.Effects
 			}
 		}
 		#endregion
+		public unsafe void dstPtrMethod (int n, long fx, long fy, long fz, long fcx, long fcy,
+						Gdk.Rectangle src_bounds, ImageSurface src,
+						ColorBgra* src_data_ptr, int src_width, int sr, int sg, int sb, int sa, int sc,
+						ColorBgra* dstPtr)
+		{
+
+			for (int i = 0; i < n; ++i) {
+				fx -= ((fx >> 4) * fz) >> 10;
+				fy -= ((fy >> 4) * fz) >> 10;
+
+				int u = (int) (fx + fcx + 32768 >> 16);
+				int v = (int) (fy + fcy + 32768 >> 16);
+
+				if (src_bounds.Contains (u, v)) {
+					ColorBgra* srcPtr2 = src.GetPointAddressUnchecked (src_data_ptr, src_width, u, v);
+
+					sr += srcPtr2->R * srcPtr2->A;
+					sg += srcPtr2->G * srcPtr2->A;
+					sb += srcPtr2->B * srcPtr2->A;
+					sa += srcPtr2->A;
+					++sc;
+				}
+			}
+
+			if (sa != 0) {
+				*dstPtr = ColorBgra.FromBgra (
+				    Utility.ClampToByte (sb / sa),
+				    Utility.ClampToByte (sg / sa),
+				    Utility.ClampToByte (sr / sa),
+				    Utility.ClampToByte (sa / sc));
+			} else {
+				dstPtr->Bgra = 0;
+			}
+		}
+
 
 		public class ZoomBlurData : EffectData
 		{
