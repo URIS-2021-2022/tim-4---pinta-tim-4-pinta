@@ -103,8 +103,8 @@ namespace Pinta.Core
 			OpenUrl ("https://www.pinta-project.com");
 		}
 
-		private void OpenUrl(string url)
-        {
+		 private static void OpenUrl (string url)
+		 {
 			Gtk.Global.ShowUriOnWindow(PintaCore.Chrome.MainWindow, url, Gtk.Global.CurrentEventTime);
 		}
 #endregion
