@@ -51,7 +51,7 @@ namespace Pinta.Tools
 		private CursorType? active_cursor;
 		private CombineMode combine_mode;
 
-		public SelectTool (IServiceManager services) : base (services)
+		protected SelectTool (IServiceManager services) : base (services)
 		{
 			tools = services.GetService<IToolService> ();
 			workspace = services.GetService<IWorkspaceService> ();

@@ -20,10 +20,9 @@ namespace Pinta.Core
 		private ColorBgra startColor;
 		private ColorBgra endColor;
 		private PointD startPoint;
-		private PointD endPoint;
+		private PointD endPoint= new PointD();
 		private bool alphaBlending;
 		private bool alphaOnly;
-
 		private bool lerpCacheIsValid = false;
 		private byte[] lerpAlphas;
 		private ColorBgra[] lerpColors;

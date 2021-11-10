@@ -1475,7 +1475,7 @@ namespace Pinta.Tools
 				last_control_pt_size = Math.Min(BrushWidth + 1, 3);
 			}
 
-			double controlPointOffset = (double)last_control_pt_size / 2d;
+			double controlPointOffset = last_control_pt_size / 2d;
 
 			if (activeEngine != null)
 			{
