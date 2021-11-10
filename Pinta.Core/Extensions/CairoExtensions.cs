@@ -570,7 +570,8 @@ namespace Pinta.Core
 			layout.SetText (text);
 			Pango.CairoHelper.ShowLayoutLine (g, layout.Lines[0]);
 
-			Pango.Rectangle unused = Pango.Rectangle.Zero;
+			//Pango.Rectangle unused = Pango.Rectangle.Zero;
+			Pango.Rectangle unused;
 			Pango.Rectangle te = Pango.Rectangle.Zero;
 			layout.GetExtents (out unused, out te);
 
