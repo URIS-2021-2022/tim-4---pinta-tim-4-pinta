@@ -604,7 +604,7 @@ namespace Mono.Options
 				: base (prototype, description, count)
 			{
 				if (action == null)
-					throw new ArgumentNullException ("action");
+					throw new ArgumentNullException (nameof(action));
 				this.action = action;
 			}
 
@@ -827,7 +827,8 @@ namespace Mono.Options
 			if (ParseBool (argument, n, c))
 				return true;
 			// is it a bundled option?
-			if (ParseBundledValue (f, string.Concat (n + s + v), c))
+			string paramConcat=string.Concat (n + s + v);
+			if (ParseBundledValue (f, paramConcat, c))
 				return true;
 
 			return false;

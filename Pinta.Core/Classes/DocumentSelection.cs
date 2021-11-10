@@ -46,16 +46,18 @@ namespace Pinta.Core
 			set { selection_clipper = value; }
 
 		}
+	private PointD origin;
 
-		private PointD origin;
 
 		public PointD Origin {
 			get { return origin; }
 			set { origin = value; }
 		}
 
+
 		public PointD End;
 
+		
 		private bool _visible = true;
 		public bool Visible
 		{
