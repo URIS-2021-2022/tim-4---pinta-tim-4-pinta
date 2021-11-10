@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +10,10 @@ namespace Pinta.Core
 	{
         private const string action_prefix = "tool";
 
-        private Gtk.MenuButton menu_button;
 		private Label? label_widget;
 		private GLib.Menu dropdown;
 		private GLib.SimpleActionGroup action_group;
-		private Image image;
+		private readonly Image image;
 		private ToolBarItem? selected_item;
 
 		public List<ToolBarItem> Items { get; private set; }
@@ -23,7 +22,7 @@ namespace Pinta.Core
 		{
 			Items = new List<ToolBarItem> ();
 
-			menu_button = new Gtk.MenuButton();
+			Gtk.MenuButton menu_button = new Gtk.MenuButton();
 			image = new Image ();
 
 			dropdown = new GLib.Menu();

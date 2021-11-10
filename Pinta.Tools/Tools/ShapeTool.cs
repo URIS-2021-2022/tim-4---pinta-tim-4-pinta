@@ -35,7 +35,7 @@ namespace Pinta.Tools
 
 		public ShapeTool (IServiceManager services) : base (services)
 		{
-			EditEngine = CreateEditEngine ();
+			
 		}
 
 		public override Gdk.Key ShortcutKey => Gdk.Key.O;

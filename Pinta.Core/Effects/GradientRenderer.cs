@@ -22,7 +22,7 @@ namespace Pinta.Core
 		private PointD startPoint;
 		private PointD endPoint;
 		private bool alphaBlending;
-		private bool alphaOnly;
+		private readonly bool alphaOnly;
 
 		private bool lerpCacheIsValid = false;
 		private byte[] lerpAlphas;
@@ -51,27 +51,28 @@ namespace Pinta.Core
 		}
 
 		public PointD StartPoint {
-			get { return this.startPoint; }
-
-			set { this.startPoint = value; }
+			//get { return this.startPoint; }
+			get;
+			set;
+			//set { this.startPoint = value; }
 		}
 
 		public PointD EndPoint {
-			get { return this.endPoint; }
-
-			set { this.endPoint = value; }
+		//	get { return this.endPoint; }
+		get; set;
+		//	set { this.endPoint = value; }
 		}
 
 		public bool AlphaBlending {
-			get { return this.alphaBlending; }
-
-			set { this.alphaBlending = value; }
+		//	get { return this.alphaBlending; }
+		get; set;
+		//	set { this.alphaBlending = value; }
 		}
 
 		public bool AlphaOnly {
-			get { return this.alphaOnly; }
-
-			set { this.alphaOnly = value; }
+		//	get { return this.alphaOnly; }
+		get; set;
+		//	set { this.alphaOnly = value; }
 		}
 
 		public virtual void BeforeRender ()
@@ -166,7 +167,7 @@ namespace Pinta.Core
 			AfterRender ();
 		}
 
-		private unsafe bool ProcessGradientLine (byte startAlpha, byte endAlpha, int y, Rectangle rect, ImageSurface surface, ColorBgra* src_data_ptr, int src_width)
+		private unsafe void ProcessGradientLine (byte startAlpha, byte endAlpha, int y, Rectangle rect, ImageSurface surface, ColorBgra* src_data_ptr, int src_width)
 		{
 			var pixelPtr = surface.GetPointAddressUnchecked(src_data_ptr, src_width, rect.Left, y);
 			var right = rect.GetRight ();
@@ -181,7 +182,7 @@ namespace Pinta.Core
 					++pixelPtr;
 				}
 			}
-			else if (alphaOnly && !alphaBlending)
+			else if (!alphaOnly && alphaBlending)
 			{
 				for (var x = rect.Left; x <= right; ++x)
 				{
@@ -191,7 +192,7 @@ namespace Pinta.Core
 					++pixelPtr;
 				}
 			}
-			else if (!alphaOnly && (alphaBlending && (startAlpha != 255 || endAlpha != 255)))
+			else if (alphaOnly && (alphaBlending && (startAlpha != 255 || endAlpha != 255)))
 			{
 				// If we're doing all color channels, and we're doing alpha blending, and if alpha blending is necessary
 				for (var x = rect.Left; x <= right; ++x)
@@ -202,7 +203,7 @@ namespace Pinta.Core
 					*pixelPtr = result;
 					++pixelPtr;
 				}
-				//if (!this.alphaOnly && !this.alphaBlending) // or sC.A == 255 && eC.A == 255
+				
 			}
 			else
 			{
@@ -214,7 +215,7 @@ namespace Pinta.Core
 					++pixelPtr;
 				}
 			}
-			return true;
+			
 		}
 
 		protected internal GradientRenderer (bool alphaOnly, BinaryPixelOp normalBlendOp)

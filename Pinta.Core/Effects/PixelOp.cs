@@ -21,10 +21,7 @@ namespace Pinta.Core
 		/// <summary>
 		/// Computes alpha for r OVER l operation.
 		/// </summary>
-		public static byte ComputeAlpha (byte la, byte ra)
-		{
-			return (byte)(((la * (256 - (ra + (ra >> 7)))) >> 8) + ra);
-		}
+		
 
 		public void Apply (ImageSurface dst, ImageSurface src, Gdk.Rectangle[] rois, int startIndex, int length)
 		{
@@ -36,6 +33,20 @@ namespace Pinta.Core
 		public void Apply (ImageSurface dst, Gdk.Point dstOffset, ImageSurface src, Gdk.Point srcOffset, Gdk.Size roiSize)
 		{
 			ApplyBase (dst, dstOffset, src, srcOffset, roiSize);
+		}
+		public virtual void Apply (ImageSurface dst, Gdk.Point dstOffset, ImageSurface src, Gdk.Point srcOffset, int scanLength)
+		{
+			Apply (dst.GetPointAddress (dstOffset), src.GetPointAddress (srcOffset), scanLength);
+		}
+
+		public virtual void Apply (ColorBgra* dst, ColorBgra* src, int length)
+		{
+			throw new System.NotImplementedException ("Derived class must implement Apply(ColorBgra*,ColorBgra*,int)");
+		}
+
+		public static byte ComputeAlpha (byte la, byte ra)
+		{
+			return (byte) (((la * (256 - (ra + (ra >> 7)))) >> 8) + ra);
 		}
 
 		/// <summary>
@@ -100,14 +111,6 @@ namespace Pinta.Core
 			}
 		}
 
-		public virtual void Apply (ImageSurface dst, Gdk.Point dstOffset, ImageSurface src, Gdk.Point srcOffset, int scanLength)
-		{
-			Apply (dst.GetPointAddress (dstOffset), src.GetPointAddress (srcOffset), scanLength);
-		}
-
-		public virtual void Apply (ColorBgra* dst, ColorBgra* src, int length)
-		{
-			throw new System.NotImplementedException ("Derived class must implement Apply(ColorBgra*,ColorBgra*,int)");
-		}
+		
 	}
 }

@@ -102,7 +102,19 @@ namespace Pinta.Core
                             channelHistogramOutput[v] += channelHistogramInput[i];
                         }
                     } 
-                    else if (before[c] >= upo.ColorInHigh[c])
+                    else
+                    {
+			channelHistogramOutput=channelHist(before,c,upo,channelHistogramOutput,v,channelHistogramInput,slopes);
+                    }
+                }
+            }
+
+            OnHistogramUpdated();
+        }
+
+	public long[] channelHist(float[] before,int c,UnaryPixelOps.Level upo, long[] channelHistogramOutput, int v,long[] channelHistogramInput, float[] slopes)
+        {
+	    if (before[c] >= upo.ColorInHigh[c])
                     {
                         channelHistogramOutput[v] = 0;
 
@@ -111,17 +123,16 @@ namespace Pinta.Core
                             channelHistogramOutput[v] += channelHistogramInput[i];
                         }
                     }
-                    else
+
+            else
                     {
                         channelHistogramOutput[v] = (int)(slopes[c] * Utility.Lerp(
                             channelHistogramInput[(int)Math.Floor(before[c])],
                             channelHistogramInput[(int)Math.Ceiling(before[c])],
                             before[c] - Math.Floor(before[c])));
                     }
-                }
-            }
+	    return channelHistogramOutput;
 
-            OnHistogramUpdated();
         }
 
         public UnaryPixelOps.Level MakeLevelsAuto() 

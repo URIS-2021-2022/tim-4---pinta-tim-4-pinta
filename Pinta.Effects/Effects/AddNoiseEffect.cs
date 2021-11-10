@@ -56,7 +56,7 @@ namespace Pinta.Effects
 
 		#region Algorithm Code Ported From PDN
 		[ThreadStatic]
-		private static Random threadRand = new Random ();
+		private static Random threadRand ;
 		private const int tableSize = 16384;
 		private static int[] lookup;
 
@@ -121,8 +121,8 @@ namespace Pinta.Effects
 			int sat = this.colorSaturation * 4096 / 100;
 
 			if (threadRand == null) {
-				threadRand = new Random (unchecked (System.Threading.Thread.CurrentThread.GetHashCode () ^
-				    unchecked ((int)DateTime.Now.Ticks)));
+				//threadRand = new Random (unchecked (System.Threading.Thread.CurrentThread.GetHashCode () ^
+				//    unchecked ((int)DateTime.Now.Ticks)));
 			}
 
 			Random? localRand = threadRand;

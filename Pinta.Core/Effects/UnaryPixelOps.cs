@@ -15,7 +15,7 @@ namespace Pinta.Core
     /// </summary>
     public sealed class UnaryPixelOps
     {
-        private UnaryPixelOps()
+        public UnaryPixelOps()
         {
         }
 
@@ -43,7 +43,7 @@ namespace Pinta.Core
 
             public unsafe override void Apply(ColorBgra* ptr, int length)
             {
-                return;
+                throw new NotSupportedException();
             }
         }
 
@@ -295,7 +295,7 @@ namespace Pinta.Core
             }
 
             //Saturation formula from RgbColor.cs, public HsvColor ToHsv()
-            private int GetSaturation(ColorBgra color)
+            private static int GetSaturation(ColorBgra color)
             {
                 double min;
                 double max;
@@ -474,10 +474,7 @@ namespace Pinta.Core
                 return ColorBgra.FromBgra(CurveB[color.B], CurveG[color.G], CurveR[color.R], color.A);
             }
 
-//            public override void Apply(Surface dst, Point dstOffset, Surface src, Point srcOffset, int scanLength)
-//            {
-//                base.Apply (dst, dstOffset, src, srcOffset, scanLength);
-//            }
+
         }
 
         [Serializable]
@@ -691,21 +688,22 @@ namespace Pinta.Core
 
             public static Level AutoFromLoMdHi(ColorBgra lo, ColorBgra md, ColorBgra hi) 
             {
-                float[] gamma = new float[3];
+		//renaming gamma
+                float[] gamma1 = new float[3];
 
                 for (int i = 0; i < 3; i++)
                 {
                     if (lo[i] < md[i] && md[i] < hi[i])
                     {
-                        gamma[i] = (float)Utility.Clamp(Math.Log(0.5, (float)(md[i] - lo[i]) / (float)(hi[i] - lo[i])), 0.1, 10.0);
+                        gamma1[i] = (float)Utility.Clamp(Math.Log(0.5, (float)(md[i] - lo[i]) / (float)(hi[i] - lo[i])), 0.1, 10.0);
                     }
                     else
                     {
-                        gamma[i] = 1.0f;
+                        gamma1[i] = 1.0f;
                     }
                 }
 
-                return new Level(lo, hi, gamma, ColorBgra.Black, ColorBgra.White);
+                return new Level(lo, hi, gamma1, ColorBgra.Black, ColorBgra.White);
             }
 
             private void UpdateLookupTable() 
@@ -788,7 +786,7 @@ namespace Pinta.Core
             {
                 if (beforeOut.Length != 3) 
                 {
-                    throw new ArgumentException("before must be a float[3]", "before");
+                    throw new ArgumentException("before must be a float[3]", "beforeOut");
                 }
 
                 if (slopesOut.Length != 3) 
@@ -844,7 +842,7 @@ namespace Pinta.Core
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(255, 255, 255, (byte)((lightness * 255) / 100)));
                 }
-                else // if (lightness < 0)
+                else 
                 {
                     blendOp = new UnaryPixelOps.BlendConstant(ColorBgra.FromBgra(0, 0, 0, (byte)((-lightness * 255) / 100)));
                 }

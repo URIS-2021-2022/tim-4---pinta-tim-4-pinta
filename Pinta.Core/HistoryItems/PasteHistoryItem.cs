@@ -1,4 +1,4 @@
-﻿// 
+// 
 // PasteHistoryItem.cs
 //  
 // Author:
@@ -32,7 +32,7 @@ namespace Pinta.Core
 {
 	public class PasteHistoryItem : BaseHistoryItem
 	{
-		private Gdk.Pixbuf paste_image;
+		private readonly Gdk.Pixbuf paste_image;
 		private DocumentSelection old_selection;
 
 		public override bool CausesDirty { get { return true; } }

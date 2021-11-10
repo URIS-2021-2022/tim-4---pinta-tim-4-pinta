@@ -49,23 +49,23 @@ namespace Pinta.Gui.Widgets
 			SetFixedSize (width, height);
 		}
 
-		protected override void OnGetSize (Widget widget, ref Gdk.Rectangle cellArea, out int x, out int y, out int width, out int height)
+		protected override void OnGetSize (Widget widget, ref Gdk.Rectangle cellArea, out int x_offset, out int y_offset, out int width, out int height)
 		{
 			// TODO: Respect cell padding (Xpad and Ypad).
-			x = cellArea.Left;
-			y = cellArea.Top;
+			x_offset = cellArea.Left;
+			y_offset = cellArea.Top;
 			width = cellArea.Width;
 			height = cellArea.Height;
 		}
 
-		protected override void OnRender (Context g, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, CellRendererState flags)
+		protected override void OnRender (Context cr, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, CellRendererState flags)
 		{
 			OnGetSize (widget, ref cell_area, out var x, out var y, out var width, out var height);
 
-			g.Save ();
-			g.Translate (x, y);
-			RenderCell (g, width, height);
-			g.Restore ();
+			cr.Save ();
+			cr.Translate (x, y);
+			RenderCell (cr, width, height);
+			cr.Restore ();
 		}
 
 		private void RenderCell (Context g, int width, int height)

@@ -53,12 +53,12 @@ namespace Pinta.Effects
 			}
 		}
 
-		public override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			if (op == null)
 				op = new UnaryPixelOps.PosterizePixel (Data.Red, Data.Green, Data.Blue);
 				
-			op.Apply (dest, src, rois);
+			op.Apply (dst, src, rois);
 		}		
 	}
 	

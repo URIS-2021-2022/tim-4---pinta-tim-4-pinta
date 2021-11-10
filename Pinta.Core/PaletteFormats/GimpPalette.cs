@@ -1,4 +1,4 @@
-﻿//
+//
 // PaintDotNetPalette.cs
 //
 // Author:
@@ -60,9 +60,11 @@ namespace Pinta.Core
 				colors.Add (new Color (r, g, b));
 			} while ((line = reader.ReadLine ()) != null);
 
+			reader.Close ();
 			return colors;
 		}
 
+		
 		public void Save (List<Color> colors, string fileName)
 		{
 			StreamWriter writer = new StreamWriter (fileName);
