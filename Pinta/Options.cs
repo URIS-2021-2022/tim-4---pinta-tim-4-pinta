@@ -499,7 +499,7 @@ namespace Mono.Options
 		}
 	}
 
-	public delegate void OptionAction<in TKey, TValue> (TKey key, TValue value);
+	public delegate void OptionAction<TKey, TValue> (TKey key, TValue value);
 
 	public class OptionSet : KeyedCollection<string, Option>
 	{
