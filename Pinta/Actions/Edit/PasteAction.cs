@@ -82,8 +82,7 @@ namespace Pinta.Actions
 
 			// See if the current tool wants to handle the paste
 			// operation (e.g., the text tool could paste text)
-			if (!toNewLayer) {
-				if (PintaCore.Tools.DoHandlePaste (doc, cb))
+			if (!toNewLayer && PintaCore.Tools.DoHandlePaste (doc, cb)) {
 					return;
 			}
 

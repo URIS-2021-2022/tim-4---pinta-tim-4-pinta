@@ -1,4 +1,4 @@
-﻿// 
+// 
 // LayersPad.cs
 //  
 // Author:

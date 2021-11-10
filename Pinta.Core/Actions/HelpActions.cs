@@ -96,16 +96,18 @@ namespace Pinta.Core
 
 		private void Translate_Activated (object sender, EventArgs e)
 		{
-			OpenUrl ("https://translations.launchpad.net/pinta");
+			string urlTranslations="https://translations.launchpad.net/pinta";
+			OpenUrl (urlTranslations);
 		}
 
 		private void Website_Activated (object sender, EventArgs e)
 		{
-			OpenUrl ("https://www.pinta-project.com");
+			string urlWebSite="https://www.pinta-project.com";
+			OpenUrl (urlWebSite);
 		}
 
-		private void OpenUrl(string url)
-        {
+		 private static void OpenUrl (string url)
+		 {
 			Gtk.Global.ShowUriOnWindow(PintaCore.Chrome.MainWindow, url, Gtk.Global.CurrentEventTime);
 		}
 #endregion

@@ -87,7 +87,6 @@
 // Unprocessed options are returned from OptionSet.Parse().
 //
 // Examples:
-//  int verbose = 0;
 //  OptionSet p = new OptionSet ()
 //    .Add ("v", v => ++verbose)
 //    .Add ("name=|value=", v => Console.WriteLine (v));
@@ -609,7 +608,7 @@ namespace Mono.Options
 		public OptionSet Add (string prototype, string description, Action<string> action)
 		{
 			if (action == null)
-				throw new ArgumentNullException ("action");
+				throw new ArgumentNullException (nameof(action));
 			Option p = new ActionOption (prototype, description, 1, 
 					delegate (OptionValueCollection v) { action (v [0]); });
 			base.Add (p);
@@ -766,7 +765,7 @@ namespace Mono.Options
 		protected bool GetOptionParts (string argument, out string flag, out string name, out string sep, out string value)
 		{
 			if (argument == null)
-				throw new ArgumentNullException ("argument");
+				throw new ArgumentNullException (nameof(argument));
 
 			flag = name = sep = value = null;
 			Match m = ValueOption.Match (argument);
@@ -985,7 +984,7 @@ namespace Mono.Options
 		private static string GetArgumentName (int index, int maxIndex, string description)
 		{
 			if (description == null)
-				return ReturnMaxIndex(index, maxIndex);
+				return ReturnMaxIndex(maxIndex,index);
 			string[] nameStart;
 			if (maxIndex == 1)
 				nameStart = new string[]{"{0:", "{"};
@@ -1003,7 +1002,7 @@ namespace Mono.Options
 					continue;
 				return description.Substring (start + nameStart [i].Length, end - start - nameStart [i].Length);
 			}
-			return ReturnMaxIndex(index, maxIndex);
+			return ReturnMaxIndex(maxIndex,index);
 		}
 
 	private static string ReturnMaxIndex(int maxIndex, int index)

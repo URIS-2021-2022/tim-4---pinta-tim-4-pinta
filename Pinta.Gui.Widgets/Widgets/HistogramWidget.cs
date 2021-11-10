@@ -79,7 +79,7 @@ namespace Pinta.Gui.Widgets
 				point.Y = rect.Y + rect.Height;
 		}
 
-		private void DrawChannel (Context g, ColorBgra color, int channel, long max, float mean)
+		private void DrawChannel (Context g, ColorBgra color, int channel, long max)
 		{
 			var rect = new Rectangle (0, 0, AllocatedWidth, AllocatedHeight);
 
@@ -142,12 +142,14 @@ namespace Pinta.Gui.Widgets
 		protected override bool OnDrawn (Context cr)
 		{
 			var max = Histogram.GetMax ();
-			var mean = Histogram.GetMean ();
+			
 
 			var channels = Histogram.Channels;
 
 			for (var i = 0; i < channels; ++i)
-				DrawChannel (cr, Histogram.GetVisualColor (i), i, max, mean[i]);
+
+				DrawChannel (cr, Histogram.GetVisualColor (i), i, max);
+
 
 			return true;
 		}

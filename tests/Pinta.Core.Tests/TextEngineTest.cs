@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,7 @@ namespace Pinta.Core.Tests
 			"bc\u0327a\u0304\u0308"
 		};
 
-		private string LinesToString (string[] lines) => string.Join (Environment.NewLine, lines);
+		private static string LinesToString (string[] lines) => string.Join (Environment.NewLine, lines);
 
 		[Test]
 		public void PerformEnter ()

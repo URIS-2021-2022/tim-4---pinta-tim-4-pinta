@@ -100,11 +100,10 @@ namespace Pinta.Gui.Widgets
 					if (attr is SkipAttribute)
 						skip = true;
 					else if (attr is HintAttribute ha)
-						//hint = ((HintAttribute) attr).Hint;
-						//hint = (attr as HintAttribute).Hint;
+						
 						hint = ha.Hint;
 					else if (attr is CaptionAttribute c)
-						//caption = ((CaptionAttribute) attr).Caption;
+						
 						caption=(attr as CaptionAttribute).Caption;
 					else if (attr is StaticListAttribute)
 						combo = true;
@@ -118,11 +117,11 @@ namespace Pinta.Gui.Widgets
 					caption = MakeCaption (mi.Name);
 
 				if (mType == typeof (int) && (caption == "Seed"))
-					AddWidget (CreateSeed (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreateSeed (EffectData, mi));
 				else if (mType == typeof (int))
 					AddWidget (CreateSlider (localizer.GetString (caption), EffectData, mi, attrs));
 				else if (mType == typeof (double) && (caption == "Angle" || caption == "Rotation"))
-					AddWidget (CreateAnglePicker (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreateAnglePicker (localizer.GetString (caption), EffectData, mi));
 				else if (mType == typeof (double))
 					AddWidget (CreateDoubleSlider (localizer.GetString (caption), EffectData, mi, attrs));
 				else if (combo && mType == typeof (string))
@@ -130,9 +129,9 @@ namespace Pinta.Gui.Widgets
 				else if (mType == typeof (bool))
 					AddWidget (CreateCheckBox (localizer.GetString (caption), EffectData, mi));
 				else if (mType == typeof (Gdk.Point))
-					AddWidget (CreatePointPicker (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreatePointPicker (localizer.GetString (caption), EffectData, mi));
 				else if (mType == typeof (Cairo.PointD))
-					AddWidget (CreateOffsetPicker (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreateOffsetPicker (localizer.GetString (caption), EffectData, mi));
 				else if (mType.IsEnum)
 					AddWidget (CreateEnumComboBox (localizer.GetString (caption), EffectData, mi));
 
@@ -314,7 +313,7 @@ namespace Pinta.Gui.Widgets
 			return widget;
 		}
 
-		private PointPickerWidget CreateOffsetPicker (string caption, object o, MemberInfo member, object[] attributes)
+		private PointPickerWidget CreateOffsetPicker (string caption, object o, MemberInfo member)
 		{
 			var widget = new PointPickerWidget {
 				Label = caption
@@ -330,7 +329,7 @@ namespace Pinta.Gui.Widgets
 			return widget;
 		}
 
-		private PointPickerWidget CreatePointPicker (string caption, object o, MemberInfo member, object[] attributes)
+		private PointPickerWidget CreatePointPicker (string caption, object o, MemberInfo member)
 		{
 			var widget = new PointPickerWidget {
 				Label = caption
@@ -346,7 +345,7 @@ namespace Pinta.Gui.Widgets
 			return widget;
 		}
 
-		private AnglePickerWidget CreateAnglePicker (string caption, object o, MemberInfo member, object[] attributes)
+		private AnglePickerWidget CreateAnglePicker (string caption, object o, MemberInfo member)
 		{
 			var widget = new AnglePickerWidget {
 				Label = caption
@@ -374,7 +373,7 @@ namespace Pinta.Gui.Widgets
 			return label;
 		}
 
-		private ReseedButtonWidget CreateSeed (string caption, object o, MemberInfo member, object[] attributes)
+		private ReseedButtonWidget CreateSeed (object o, MemberInfo member)
 		{
 			var widget = new ReseedButtonWidget ();
 

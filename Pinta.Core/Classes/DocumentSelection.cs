@@ -38,7 +38,7 @@ namespace Pinta.Core
 
 		public static Point[][] PintaPolygonSet = new Point[1][];
 
-		public List<List<IntPoint>>? SelectionPolygons { get; set; }
+		public List<List<IntPoint>>? SelectionPolygons { get; set; } = new List<List<IntPoint>>();
 		private Clipper selection_clipper = new Clipper ();
 
 		public Clipper SelectionClipper {
@@ -227,15 +227,15 @@ namespace Pinta.Core
                 newPolygons.Add (newPolygon);
             }
 
-            var origin = Origin;
+            var origin1 = Origin;
             var end = End;
-            transform.TransformPoint (ref origin);
+            transform.TransformPoint (ref origin1);
             transform.TransformPoint (ref end);
 
             return new DocumentSelection {
                 SelectionPolygons = newPolygons,
                 SelectionClipper = new Clipper (),
-                Origin = origin,
+                Origin = origin1,
                 End = end,
                 _visible = this._visible
             };
@@ -381,8 +381,15 @@ namespace Pinta.Core
 		/// <param name="r">The Rectangle.</param>
 		public void CreateRectangleSelection(Rectangle r)
 		{
-			SelectionPolygons!.Clear();
-			SelectionPolygons.Add (CreateRectanglePolygon (r));
+			if(SelectionPolygons != null) {
+
+				SelectionPolygons!.Clear ();
+			
+				SelectionPolygons.Add (CreateRectanglePolygon (r));
+
+			} else {
+				Console.WriteLine ("SelectionPolygons is null in DocumentSelection");
+			}
 
 		    Origin = new PointD (r.X, r.Y);
 		    End = new PointD (r.GetRight (), r.GetBottom ());

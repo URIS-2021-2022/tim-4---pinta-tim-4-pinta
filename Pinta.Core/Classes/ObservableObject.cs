@@ -32,7 +32,7 @@ namespace Pinta.Core
 
 	public abstract class ObservableObject
 	{
-		public ObservableObject ()
+		protected ObservableObject ()
 		{
 		}
 				
