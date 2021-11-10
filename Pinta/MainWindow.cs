@@ -460,7 +460,7 @@ namespace Pinta
 		private const string LastDialogDirSettingKey = "last-dialog-directory";
 		private const string LastSelectedToolSettingKey = "last-selected-tool";
 
-		private void LoadUserSettings ()
+		private static void LoadUserSettings ()
 		{
 			// Set selected tool to last selected or default to the PaintBrush
 			PintaCore.Tools.SetCurrentTool (PintaCore.Settings.GetSetting (LastSelectedToolSettingKey, "PaintBrushTool"));

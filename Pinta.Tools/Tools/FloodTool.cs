@@ -41,6 +41,7 @@ using Pinta.Core;
 
 namespace Pinta.Tools
 {
+	
 	public abstract class FloodTool : BaseTool
 	{
 		protected ToolBarLabel? mode_label;

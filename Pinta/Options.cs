@@ -499,7 +499,7 @@ namespace Mono.Options
 		}
 	}
 
-	public delegate void OptionAction<TKey, TValue> (TKey key, TValue value);
+	public delegate void OptionAction<in TKey, TValue> (TKey key, TValue value);
 
 	public class OptionSet : KeyedCollection<string, Option>
 	{
@@ -991,7 +991,7 @@ namespace Mono.Options
 		private static string GetArgumentName (int index, int maxIndex, string description)
 		{
 			if (description == null)
-				return ReturnMaxIndex(index, maxIndex);
+				return ReturnMaxIndex(maxIndex,index);
 			string[] nameStart;
 			if (maxIndex == 1)
 				nameStart = new string[]{"{0:", "{"};
@@ -1009,7 +1009,7 @@ namespace Mono.Options
 					continue;
 				return description.Substring (start + nameStart [i].Length, end - start - nameStart [i].Length);
 			}
-			return ReturnMaxIndex(index, maxIndex);
+			return ReturnMaxIndex(maxIndex,index);
 		}
 
 	private static string ReturnMaxIndex(int maxIndex, int index)
