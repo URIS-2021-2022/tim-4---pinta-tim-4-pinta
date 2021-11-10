@@ -1226,15 +1226,13 @@ namespace Pinta.Tools
 			//Draw the finalized shape.
 			Rectangle dirty = DrawShape(engine, doc.Layers.CurrentUserLayer, false, false);
 
-			if (createHistoryItem)
+			if (createHistoryItem && undoSurface != null)
 			{
-				//Make sure that the undo surface isn't null.
-				if (undoSurface != null)
-				{
+				
 					//Create a new ShapesHistoryItem so that the finalization of the shape can be undone.
 					doc.History.PushNewItem(new ShapesHistoryItem(this, owner.Icon, ShapeName + " " + Translations.GetString("Finalized"),
 						undoSurface, doc.Layers.CurrentUserLayer, SelectedPointIndex, SelectedShapeIndex, false));
-				}
+				
 			}
 
 			return dirty;
