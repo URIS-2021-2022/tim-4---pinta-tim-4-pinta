@@ -147,7 +147,7 @@ namespace Pinta.Gui.Widgets
 			var channels = Histogram.Channels;
 
 			for (var i = 0; i < channels; ++i)
-				DrawChannel (g, Histogram.GetVisualColor (i), i, max, mean[i]);
+				DrawChannel (g, Histogram.GetVisualColor (i), i, max);
 
 			return true;
 		}
