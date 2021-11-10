@@ -10,9 +10,9 @@ namespace Pinta.Core
 	{
         private const string action_prefix = "tool";
 
-		private Label? label_widget;
-		private GLib.Menu dropdown;
-		private GLib.SimpleActionGroup action_group;
+		private readonly Label? label_widget;
+		private readonly GLib.Menu dropdown;
+		private readonly GLib.SimpleActionGroup action_group;
 		private readonly Image image;
 		private ToolBarItem? selected_item;
 
