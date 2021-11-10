@@ -17,8 +17,10 @@ namespace Pinta.Effects
 {
 	public class AddNoiseEffect : BaseEffect
 	{
+
 		
 		private int colorSaturation;
+
 		private double coverage;
 
 		public override string Icon {
@@ -111,6 +113,7 @@ namespace Pinta.Effects
 
 		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
+
 			int intensity;
 
 			intensity = Data.Intensity;
@@ -119,6 +122,7 @@ namespace Pinta.Effects
 
 			int dev = intensity * intensity / 4;
 			int sat = this.colorSaturation * 4096 / 100;
+
 
 			if (threadRand == null) {
 				//threadRand = new Random (unchecked (System.Threading.Thread.CurrentThread.GetHashCode () ^

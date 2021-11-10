@@ -102,6 +102,12 @@ namespace Pinta.Core
         }
 
         public delegate void ToggledHandler(bool value);
-        public ToggledHandler? Toggled;
-    }
+
+        private ToggledHandler? toggled;
+		public ToggledHandler Toggled {
+			get { return toggled; }
+			set { toggled = value; }
+		}
+
+	}
 }

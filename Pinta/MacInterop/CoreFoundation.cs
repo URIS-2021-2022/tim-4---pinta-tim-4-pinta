@@ -129,10 +129,10 @@ namespace Pinta.MacInterop
 			CFUrlPathStyle pathStyle, bool isDirectory);
 		
 		[DllImport (LSLib)]
-		extern static IntPtr LSCopyApplicationURLsForURL (IntPtr urlRef, LSRolesMask roleMask); //CFArrayRef
+		extern static IntPtr LSCopyApplicationURLsForURL (IntPtr urlRef, Options roleMask); //CFArrayRef
 		
 		[DllImport (LSLib)]
-		extern static int LSGetApplicationForURL (IntPtr url, LSRolesMask roleMask, IntPtr fsRefZero,
+		extern static int LSGetApplicationForURL (IntPtr url, Options roleMask, IntPtr fsRefZero,
 			ref IntPtr  appUrl);
 		
 		[DllImport (CFLib)]
@@ -142,7 +142,7 @@ namespace Pinta.MacInterop
 		extern static IntPtr CFArrayGetValueAtIndex (IntPtr theArray, int idx);
 		
 		
-		public enum LSRolesMask : uint
+		public enum Options: uint
 		{
 			None = 0x00000001,
 			Viewer = 0x00000002,

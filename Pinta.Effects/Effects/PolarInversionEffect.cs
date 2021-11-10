@@ -43,16 +43,16 @@ namespace Pinta.Effects
 		}
 
 		#region Algorithm Code Ported From PDN
-		protected override void InverseTransform (ref TransformData transData)
+		protected override void InverseTransform (ref TransformData data)
 		{
-			double x = transData.X;
-			double y = transData.Y;
+			double x = data.X;
+			double y = data.Y;
 			
 			// NOTE: when x and y are zero, this will divide by zero and return NaN
 			double invertDistance = Utility.Lerp (1.0, DefaultRadius2 / ((x * x) + (y * y)), Data.Amount);
 			
-			transData.X = x * invertDistance;
-			transData.Y = y * invertDistance;
+			data.X = x * invertDistance;
+			data.Y = y * invertDistance;
 		}
 		#endregion
 

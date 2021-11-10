@@ -377,13 +377,8 @@ namespace Mono.Options
 				int end = name.IndexOfAny (NameTerminator);
 				if (end == -1)
 					continue;
-				names [i] = name.Substring (0, end);
-				if (type == '\0' || type == name [end])
-					type = name [end];
-				else 
-					throw new ArgumentException (
-							string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name [end]),
-							"prototype");
+				type=pomocna (names[i], i, end, type);
+				
 				AddSeparators (name, end, seps);
 			}
 
@@ -395,15 +390,34 @@ namespace Mono.Options
 						string.Format ("Cannot provide key/value separators for Options taking {0} value(s).", count),
 						"prototype");
 			if (count > 1) {
-				if (seps.Count == 0)
-					this.separators = new string[]{":", "="};
-				else if (seps.Count == 1 && seps [0].Length == 0)
-					this.separators = null;
-				else
-					this.separators = seps.ToArray ();
+				setSeparators (seps);
 			}
 
 			return type == '=' ? OptionValueType.Required : OptionValueType.Optional;
+		}
+
+		public char pomocna (string name, int i,int end, char type)
+		{
+			names[i] = name.Substring (0, end);
+			if (type == '\0' || type == name[end])
+				type = name[end];
+			else
+				throw new ArgumentException (
+						string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name[end]),
+						"prototype");
+			return type;
+		}
+
+		public void setSeparators (List<string>seps)
+		{
+			if (seps.Count == 0)
+				this.separators = new string[] { ":", "=" };
+			else if (seps.Count == 1 && seps[0].Length == 0)
+				this.separators = null;
+			else
+				this.separators = seps.ToArray ();
+
+			
 		}
 
 		private static void AddSeparators (string name, int end, ICollection<string> seps)
