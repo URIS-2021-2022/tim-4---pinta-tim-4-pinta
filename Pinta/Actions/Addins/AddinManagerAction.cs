@@ -1,4 +1,4 @@
-﻿// 
+// 
 // AddinManagerAction.cs
 //  
 // Author:
@@ -54,7 +54,7 @@ namespace Pinta.Actions
 			throw new NotImplementedException();
 #endif
 
-			//dlg.DeleteEvent += delegate { dlg.Destroy (); };
+			
 		}
 	}
 }
