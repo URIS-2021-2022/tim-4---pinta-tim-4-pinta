@@ -54,14 +54,6 @@ namespace Pinta.Core
 			ScaleFactor b = UseIfValid (n2, d2, lastResort);
 			return ScaleFactor.Min (a, b);
 		}
-
-		public static ScaleFactor Max (int n1, int d1, int n2, int d2, ScaleFactor lastResort)
-		{
-			ScaleFactor a = UseIfValid (n1, d1, lastResort);
-			ScaleFactor b = UseIfValid (n2, d2, lastResort);
-			return ScaleFactor.Max (a, b);
-		}
-
 		public static ScaleFactor Min (ScaleFactor lhs, ScaleFactor rhs)
 		{
 			if (lhs < rhs) {
@@ -70,6 +62,14 @@ namespace Pinta.Core
 				return rhs;
 			}
 		}
+		public static ScaleFactor Max (int n1, int d1, int n2, int d2, ScaleFactor lastResort)
+		{
+			ScaleFactor a = UseIfValid (n1, d1, lastResort);
+			ScaleFactor b = UseIfValid (n2, d2, lastResort);
+			return ScaleFactor.Max (a, b);
+		}
+
+		
 
 		public static ScaleFactor Max (ScaleFactor lhs, ScaleFactor rhs)
 		{
