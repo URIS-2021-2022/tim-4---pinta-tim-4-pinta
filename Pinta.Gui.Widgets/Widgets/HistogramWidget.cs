@@ -79,7 +79,7 @@ namespace Pinta.Gui.Widgets
 				point.Y = rect.Y + rect.Height;
 		}
 
-		private void DrawChannel (Context g, ColorBgra color, int channel, long max, float mean)
+		private void DrawChannel (Context g, ColorBgra color, int channel, long max)
 		{
 			var rect = new Rectangle (0, 0, AllocatedWidth, AllocatedHeight);
 
