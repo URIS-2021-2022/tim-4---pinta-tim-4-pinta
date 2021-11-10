@@ -54,6 +54,7 @@ namespace Pinta.Core
 		public PointD Origin;
 		public PointD End;
 
+
 		private bool _visible = true;
 		public bool Visible
 		{
