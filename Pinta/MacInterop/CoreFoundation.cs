@@ -141,7 +141,7 @@ namespace Pinta.MacInterop
 		[DllImport (CFLib)]
 		extern static IntPtr CFArrayGetValueAtIndex (IntPtr theArray, int idx);
 		
-		[Flags]
+		
 		public enum LSRolesMask : uint
 		{
 			None = 0x00000001,
