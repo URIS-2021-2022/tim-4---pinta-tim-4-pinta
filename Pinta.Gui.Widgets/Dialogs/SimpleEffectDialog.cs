@@ -128,13 +128,13 @@ namespace Pinta.Gui.Widgets
 				else if (combo && mType == typeof (string))
 					AddWidget (CreateComboBox (localizer.GetString (caption), EffectData, mi, attrs));
 				else if (mType == typeof (bool))
-					AddWidget (CreateCheckBox (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreateCheckBox (localizer.GetString (caption), EffectData, mi));
 				else if (mType == typeof (Gdk.Point))
 					AddWidget (CreatePointPicker (localizer.GetString (caption), EffectData, mi, attrs));
 				else if (mType == typeof (Cairo.PointD))
 					AddWidget (CreateOffsetPicker (localizer.GetString (caption), EffectData, mi, attrs));
 				else if (mType.IsEnum)
-					AddWidget (CreateEnumComboBox (localizer.GetString (caption), EffectData, mi, attrs));
+					AddWidget (CreateEnumComboBox (localizer.GetString (caption), EffectData, mi));
 
 				if (hint != null)
 					AddWidget (CreateHintLabel (localizer.GetString (hint)));
@@ -149,7 +149,7 @@ namespace Pinta.Gui.Widgets
 		#endregion
 
 		#region Control Builders
-		private ComboBoxWidget CreateEnumComboBox (string caption, object o, MemberInfo member, object[] attributes)
+		private ComboBoxWidget CreateEnumComboBox (string caption, object o, MemberInfo member)
 		{
 			var myType = GetTypeForMember (member)!; // NRT - We're looping through members we got from reflection
 
@@ -298,7 +298,7 @@ namespace Pinta.Gui.Widgets
 			return widget;
 		}
 
-		private Gtk.CheckButton CreateCheckBox (string caption, object o, MemberInfo member, object[] attributes)
+		private Gtk.CheckButton CreateCheckBox (string caption, object o, MemberInfo member)
 		{
 			var widget = new Gtk.CheckButton {
 				Label = caption

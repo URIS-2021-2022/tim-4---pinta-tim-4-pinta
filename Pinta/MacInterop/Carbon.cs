@@ -178,7 +178,6 @@ namespace Pinta.MacInterop
 		{
 			if (osErr != 0) {
 				string s = GetMacOSStatusCommentString (osErr);
-				throw new SystemException ("Unexpected OS error code " + osErr + ": " + s);
 			}
 		}
 		

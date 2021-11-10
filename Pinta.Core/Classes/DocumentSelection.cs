@@ -36,7 +36,7 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-		
+		public static Point[][] PintaPolygonSet = new Point[1][];
 
 		public List<List<IntPoint>>? SelectionPolygons { get; set; }
 		private Clipper selection_clipper = new Clipper ();
@@ -160,21 +160,19 @@ namespace Pinta.Core
 		/// </summary>
 		/// <param name="pintaPolygonSet">A Pinta Polygon set.</param>
 		/// <returns>A Clipper Polygon collection.</returns>
-		public static List<List<IntPoint>> ConvertToPolygons(Point[][] pintaPolygonSet)
+		public static List<List<IntPoint>> ConvertToPolygons()
 		{
 			List<List<IntPoint>> newPolygons = new List<List<IntPoint>>();
 
-			foreach (Point[] pA in pintaPolygonSet)
-			{
-				List<IntPoint> newPolygon = new List<IntPoint>();
+				foreach (Point[] pA in PintaPolygonSet) {
+					List<IntPoint> newPolygon = new List<IntPoint> ();
 
-				foreach (Point p in pA)
-				{
-					newPolygon.Add(new IntPoint((long)p.X, (long)p.Y));
+					foreach (Point p in pA) {
+						newPolygon.Add (new IntPoint ((long) p.X, (long) p.Y));
+					}
+
+					newPolygons.Add (newPolygon);
 				}
-
-				newPolygons.Add(newPolygon);
-			}
 
 			return newPolygons;
 		}
