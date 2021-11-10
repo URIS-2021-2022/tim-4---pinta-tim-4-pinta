@@ -139,15 +139,15 @@ namespace Pinta.Gui.Widgets
 			g.FillPolygonal (points, brush_color.ToCairoColor ());
 		}
 
-		protected override bool OnDrawn (Context g)
+		protected override bool OnDrawn (Context cr)
 		{
 			var max = Histogram.GetMax ();
-			var mean = Histogram.GetMean ();
+			
 
 			var channels = Histogram.Channels;
 
 			for (var i = 0; i < channels; ++i)
-				DrawChannel (g, Histogram.GetVisualColor (i), i, max);
+				DrawChannel (cr, Histogram.GetVisualColor (i), i, max);
 
 			return true;
 		}
