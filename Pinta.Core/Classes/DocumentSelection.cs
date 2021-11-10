@@ -227,15 +227,15 @@ namespace Pinta.Core
                 newPolygons.Add (newPolygon);
             }
 
-            var origin = Origin;
+            var origin1 = Origin;
             var end = End;
-            transform.TransformPoint (ref origin);
+            transform.TransformPoint (ref origin1);
             transform.TransformPoint (ref end);
 
             return new DocumentSelection {
                 SelectionPolygons = newPolygons,
                 SelectionClipper = new Clipper (),
-                Origin = origin,
+                Origin = origin1,
                 End = end,
                 _visible = this._visible
             };
