@@ -181,7 +181,6 @@ namespace Pinta.Gui.Widgets
 					subdivide = new int[] { 1, 2, 4, 8, 16 };
 					pixels_per_unit = 72;
 					break;
-				case MetricType.Centimeters:
 				default:
 					ruler_scale = new double[] { 1, 2, 5, 10, 25, 50, 100, 250, 500, 1000 };
 					subdivide = new int[] { 1, 5, 10, 50, 100 };

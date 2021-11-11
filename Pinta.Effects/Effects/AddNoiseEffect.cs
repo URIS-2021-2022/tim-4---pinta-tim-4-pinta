@@ -18,11 +18,6 @@ namespace Pinta.Effects
 	public class AddNoiseEffect : BaseEffect
 	{
 
-		
-		
-
-		private double coverage;
-
 		public override string Icon {
 			get { return "Menu.Effects.Noise.AddNoise.png"; }
 		}
@@ -117,8 +112,9 @@ namespace Pinta.Effects
 			int intensity;
 
 			intensity = Data.Intensity;
+
 			int colorSaturation = Data.ColorSaturation;
-			coverage = 0.01 * Data.Coverage;
+			double coverage = 0.01 * Data.Coverage;
 
 			int dev = intensity * intensity / 4;
 			int sat = colorSaturation * 4096 / 100;
@@ -138,7 +134,7 @@ namespace Pinta.Effects
 					ColorBgra* dstPtr = dst.GetPointAddressUnchecked (rect.Left, y);
 
 					for (int x = 0; x < rect.Width; ++x) {
-						if (localRand?.NextDouble () > this.coverage) {
+						if (localRand?.NextDouble () > coverage) {
 							*dstPtr = *srcPtr;
 						} else {
 							int r;

@@ -83,11 +83,6 @@ namespace Pinta.Core
 				return m.HasFlag (ModifierType.ControlMask);
 		}
 
-		public static bool IsAltPressed (this ModifierType m)
-		{
-			return m.HasFlag (ModifierType.Mod1Mask);
-		}
-
 		public static bool IsLeftMousePressed (this ModifierType m)
 		{
 			return m.HasFlag (ModifierType.Button1Mask);
@@ -106,6 +101,11 @@ namespace Pinta.Core
 		public static bool IsControlPressed(this EventButton ev)
 		{
 			return ev.State.IsControlPressed();
+		}
+
+		public static bool IsAltPressed (this ModifierType m)
+		{
+			return m.HasFlag (ModifierType.Mod1Mask);
 		}
 
 		public static bool IsAltPressed (this EventButton ev)

@@ -84,8 +84,8 @@ namespace Pinta.Core
 
 		private void Bugs_Activated (object sender, EventArgs e)
 		{
-			string url = "https://bugs.launchpad.net/pinta";
-			OpenUrl (url);
+			string bugsactivatedurl = "https://bugs.launchpad.net/pinta";
+			OpenUrl (bugsactivatedurl);
 		}
 
 		private void DisplayHelp (object sender, EventArgs e)
