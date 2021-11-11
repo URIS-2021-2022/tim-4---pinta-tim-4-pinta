@@ -226,15 +226,7 @@ namespace Pinta.Core
 			return new Point (p.X, UnscaleScalar (p.Y));
 		}
 
-		//public SizeF ScaleSize(C s)
-		//{
-		//    return new SizeF(ScaleScalar(s.Width), ScaleScalar(s.Height));
-		//}
-
-		//public SizeF UnscaleSize(SizeF s)
-		//{
-		//    return new SizeF(UnscaleScalar(s.Width), UnscaleScalar(s.Height));
-		//}
+		
 
 		
 		public Size UnscaleSize (Size s)
