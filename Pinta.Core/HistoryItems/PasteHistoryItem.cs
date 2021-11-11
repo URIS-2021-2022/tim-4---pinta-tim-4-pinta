@@ -76,11 +76,17 @@ namespace Pinta.Core
 
 		public override void Dispose ()
 		{
-			if (paste_image != null)
+			if (paste_image != null) 
 				(paste_image as IDisposable).Dispose ();
-
-			if (old_selection != null)
+				
+			
+			if (old_selection != null) 
 				old_selection.Dispose ();
+
+
+
+			GC.SuppressFinalize (this);
+
 		}
 
 		private void Swap ()

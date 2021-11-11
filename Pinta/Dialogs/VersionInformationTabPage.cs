@@ -80,7 +80,9 @@ namespace Pinta
 				try {
 					AssemblyName assemblyName = assembly.GetName ();
 					data.AppendValues (assemblyName.Name, assemblyName.Version?.ToString (), System.IO.Path.GetFullPath (assembly.Location));
-				} catch { }
+				} catch {
+					Console.WriteLine ("An exception occured in VersionInformationTabPage");
+				}
 			}
 
 
