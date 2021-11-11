@@ -16,7 +16,7 @@ namespace Pinta.Effects
 {
 	public class OutlineEffect : LocalHistogramEffect
 	{
-		private int thickness;
+		
 		private int intensity;
 
 		public override string Icon {
@@ -158,11 +158,12 @@ namespace Pinta.Effects
 
 		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
 		{
-			this.thickness = Data.Thickness;
+			int thickness;
+			thickness = Data.Thickness;
 			this.intensity = Data.Intensity;
 
 			foreach (Gdk.Rectangle rect in rois)
-				RenderRect (this.thickness, src, dest, rect);
+				RenderRect (thickness, src, dest, rect);
 		}
 
 		#endregion
