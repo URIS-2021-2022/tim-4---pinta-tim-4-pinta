@@ -48,10 +48,12 @@ namespace Pinta.MacInterop
 		public static extern void Release (IntPtr cfRef);
 		
 		struct CFRange {
+
 			public IntPtr Location;
 			public CFRange (int l, int len)
 			{
 				Location = (IntPtr)l;
+
 			}
 		}
 		
