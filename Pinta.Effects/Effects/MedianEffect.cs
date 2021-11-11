@@ -16,7 +16,7 @@ namespace Pinta.Effects
 {
 	public class MedianEffect : LocalHistogramEffect
 	{
-		private int radius;
+		
 		private int percentile;
 
 		public override string Icon {
@@ -50,11 +50,12 @@ namespace Pinta.Effects
 		#region Algorithm Code Ported From PDN
 		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
-			this.radius = Data.Radius;
+			 int radius;
+			radius = Data.Radius;
 			this.percentile = Data.Percentile;
 
 			foreach (Gdk.Rectangle rect in rois)
-				RenderRect (this.radius, src, dst, rect);
+				RenderRect (radius, src, dst, rect);
 		}
 
 		public unsafe override ColorBgra Apply (ColorBgra src, int area, int* hb, int* hg, int* hr, int* ha)

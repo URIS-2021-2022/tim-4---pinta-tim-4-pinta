@@ -108,7 +108,7 @@ namespace Pinta.Tools
 		public List<ControlPoint> ControlPoints = new List<ControlPoint>();
 
 		//A collection of calculated GeneratedPoints that make up the entirety of the shape being drawn.
-		public GeneratedPoint[] GeneratedPoints = new GeneratedPoint[0];
+		public GeneratedPoint[] GeneratedPoints =Array.Empty<GeneratedPoint>(); //new GeneratedPoint[0];
 
 		//An organized collection of the GeneratedPoints's points for optimized nearest point detection.
 		public OrganizedPointCollection OrganizedPoints = new OrganizedPointCollection();

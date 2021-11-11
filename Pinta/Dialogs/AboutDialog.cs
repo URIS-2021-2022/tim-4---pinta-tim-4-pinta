@@ -198,10 +198,6 @@ namespace Pinta
 
 		bool ScrollDown ()
 		{
-			//if (scrollPause > 0) {
-			//        if (--scrollPause == 0)
-			//                ++scroll;
-			//} else
 				++scroll;
 			
 			this.QueueDrawArea (0, 0, Window.FrameExtents.Width, image.Height);
