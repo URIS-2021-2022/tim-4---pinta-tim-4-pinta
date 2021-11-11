@@ -355,10 +355,10 @@ namespace Pinta.Tools
 		{
 			if (document.Selection.Visible) {
 				foreach (var ct in controls.Where (ct => ct.IsInside (point)).Where(ct=>ct.Cursor!=active_cursor)) {
-					//if (active_cursor != ct.Cursor) {
+					
 						SetCursor (new Cursor (ct.Cursor));
 						active_cursor = ct.Cursor;
-					//}
+					
 					return;
 				}
 			}
