@@ -46,8 +46,7 @@ namespace Pinta.Core
 			set { selection_clipper = value; }
 
 		}
-	private PointD origin;
-
+		private PointD origin;
 
 		public PointD Origin {
 			get { return origin; }
@@ -55,7 +54,12 @@ namespace Pinta.Core
 		}
 
 
-		public PointD End;
+		private PointD end;
+		public PointD End {
+			get { return end; }
+			set { end = value; }
+		}
+		
 
 		
 		private bool _visible = true;
