@@ -786,12 +786,12 @@ namespace Pinta.Core
             {
                 if (beforeOut.Length != 3) 
                 {
-                    throw new ArgumentException("before must be a float[3]", "beforeOut");
+                    throw new ArgumentException("before must be a float[3]", nameof(beforeOut));
                 }
 
                 if (slopesOut.Length != 3) 
                 {
-                    throw new ArgumentException("slopes must be a float[3]", "slopes");
+                    throw new ArgumentException("slopes must be a float[3]", nameof(slopesOut));
                 }
 
                 for (int i = 0; i < 3; i++) 

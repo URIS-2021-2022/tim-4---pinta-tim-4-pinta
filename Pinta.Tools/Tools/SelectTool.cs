@@ -125,7 +125,7 @@ namespace Pinta.Tools
 
 			var dirty = ReDraw (document, e.IsShiftPressed);
 
-			if (document.Selection != null) {
+			if (document.Selection != null && document.Selection.SelectionPolygons != null) {
 				SelectionModeHandler.PerformSelectionMode (combine_mode, document.Selection.SelectionPolygons);
 				document.Workspace.Invalidate (dirty.Union (last_dirty));
 			}
