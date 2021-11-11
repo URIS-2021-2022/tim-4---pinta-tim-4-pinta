@@ -286,7 +286,7 @@ namespace Pinta.Core
                 {
                     double i = 255.0 * color.GetIntensity();
                     byte ib = (byte)(i * setSaturation); // adjust the red color for user inputted saturation
-                    return ColorBgra.FromBgra((byte)color.B,(byte)color.G, ib, color.A);
+                    return ColorBgra.FromBgra(color.B,color.G, ib, color.A);
                 }
                 else
                 {
