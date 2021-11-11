@@ -17,7 +17,7 @@ namespace Pinta.Gui.Widgets
 	public class AnglePickerGraphic : Gtk.DrawingArea
 	{
 		private bool tracking = false;
-		private Gdk.Point last_mouse_xy;
+		
 		private double angle_value;
 
 		public AnglePickerGraphic ()
@@ -74,7 +74,7 @@ namespace Pinta.Gui.Widgets
 
 		private void ProcessMouseEvent (Gdk.Point pt, bool constrainAngle)
 		{
-			last_mouse_xy = pt;
+			 Gdk.Point last_mouse_xy = pt;
 
 			if (tracking) {
 				var ourRect = Gdk.Rectangle.Inflate (Window.GetBounds (), -2, -2);
@@ -115,9 +115,9 @@ namespace Pinta.Gui.Widgets
 			}
 		}
 
-		protected override bool OnDrawn (Context gc)
+		protected override bool OnDrawn (Context cr)
 		{
-			base.OnDrawn (gc);
+			base.OnDrawn (cr);
 
 			var ourRect = Gdk.Rectangle.Inflate (Window.GetBounds (), -1, -1).ToCairoRectangle ();
 
@@ -133,7 +133,7 @@ namespace Pinta.Gui.Widgets
 			var ellipseRect = new Cairo.Rectangle (ourRect.Location (), diameter, diameter);
 			var ellipseOutlineRect = ellipseRect;
 
-			gc.DrawEllipse (ellipseOutlineRect, new Cairo.Color (.1, .1, .1), 1);
+			cr.DrawEllipse (ellipseOutlineRect, new Cairo.Color (.1, .1, .1), 1);
 
 			var endPointRadius = radius - 2;
 
@@ -144,8 +144,8 @@ namespace Pinta.Gui.Widgets
 			var gripSize = 2.5f;
 			var gripEllipseRect = new Cairo.Rectangle (center.X - gripSize, center.Y - gripSize, gripSize * 2, gripSize * 2);
 
-			gc.FillEllipse (gripEllipseRect, new Cairo.Color (.1, .1, .1));
-			gc.DrawLine (center, endPoint, new Cairo.Color (.1, .1, .1), 1);
+			cr.FillEllipse (gripEllipseRect, new Cairo.Color (.1, .1, .1));
+			cr.DrawLine (center, endPoint, new Cairo.Color (.1, .1, .1), 1);
 
 			return true;
 		}
