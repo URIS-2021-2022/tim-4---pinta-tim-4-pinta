@@ -68,7 +68,7 @@ namespace Pinta.Effects
 		
 		private UnaryPixelOp MakeUop()
         {
-            UnaryPixelOp op;
+            UnaryPixelOp op1;
             byte[][] transferCurves;
             int entries;
 
@@ -77,14 +77,14 @@ namespace Pinta.Effects
                     UnaryPixelOps.ChannelCurve cc = new UnaryPixelOps.ChannelCurve();
                     transferCurves = new byte[][] { cc.CurveR, cc.CurveG, cc.CurveB };
                     entries = 256;
-                    op = cc;
+                    op1 = cc;
                     break;
 
                 case ColorTransferMode.Luminosity:
                     UnaryPixelOps.LuminosityCurve lc = new UnaryPixelOps.LuminosityCurve();
                     transferCurves = new byte[][] { lc.Curve };
                     entries = 256;
-                    op = lc;
+                    op1 = lc;
                     break;
 
                 default:
@@ -122,11 +122,8 @@ namespace Pinta.Effects
 		
 		public override EffectData Clone ()
 		{
-//			Not sure if we have to copy contents of ControlPoints
-//			var controlPoints = new SortedList<int, int> [ControlPoints.Length];
 //			
-//			for (int i = 0; i < ControlPoints.Length; i++)
-//				controlPoints[i] = new SortedList<int, int> (ControlPoints[i]);
+//				
 			
 			return new CurvesData () {
 				Mode = Mode,
