@@ -51,7 +51,7 @@ namespace Pinta.Tools
 		private CursorType? active_cursor;
 		private CombineMode combine_mode;
 
-		public SelectTool (IServiceManager services) : base (services)
+		protected SelectTool (IServiceManager services) : base (services)
 		{
 			tools = services.GetService<IToolService> ();
 			workspace = services.GetService<IWorkspaceService> ();
@@ -227,16 +227,19 @@ namespace Pinta.Tools
 				var dx = Math.Abs (shape_end.X - shape_origin.X);
 				var dy = Math.Abs (shape_end.Y - shape_origin.Y);
 
-				if (dx <= dy)
+				if (dx <= dy) {
 					if (shape_end.X >= shape_origin.X)
 						shape_end.X = shape_origin.X + dy;
 					else
 						shape_end.X = shape_origin.X - dy;
-				else
+
+				} else {
 					if (shape_end.Y >= shape_origin.Y)
-					shape_end.Y = shape_origin.Y + dx;
-				else
-					shape_end.Y = shape_origin.Y - dx;
+						shape_end.Y = shape_origin.Y + dx;
+					else
+						shape_end.Y = shape_origin.Y - dx;
+				}
+					
 			}
 
 			var rect = Utility.PointsToRectangle (shape_origin, shape_end, constraint);

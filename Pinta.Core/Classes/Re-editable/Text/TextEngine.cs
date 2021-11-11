@@ -33,7 +33,11 @@ namespace Pinta.Core
 
 		public TextPosition CurrentPosition { get { return currentPos; } }
 		public int LineCount { get { return lines.Count; } }
-		public TextMode State;
+		private TextMode state= new TextMode();
+		public TextMode State {
+			get { return state;  }
+			set { state = value; }
+		}
 		public Point Origin { get; set; }
 
 		public event EventHandler? Modified;

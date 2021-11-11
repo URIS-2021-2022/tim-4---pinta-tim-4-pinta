@@ -49,8 +49,14 @@ namespace Pinta.Core
 
 		public PointD Origin { get; set; }
 
-		public PointD End;
+		private PointD end;
+		public PointD End {
+			get { return end; }
+			set { end = value; }
+		}
+		
 
+		
 		private bool _visible = true;
 		public bool Visible
 		{

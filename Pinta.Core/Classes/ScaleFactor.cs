@@ -226,15 +226,7 @@ namespace Pinta.Core
 			return new Point (p.X, UnscaleScalar (p.Y));
 		}
 
-		//public SizeF ScaleSize(C s)
-		//{
-		//    return new SizeF(ScaleScalar(s.Width), ScaleScalar(s.Height));
-		//}
-
-		//public SizeF UnscaleSize(SizeF s)
-		//{
-		//    return new SizeF(UnscaleScalar(s.Width), UnscaleScalar(s.Height));
-		//}
+		
 
 		
 		public Size UnscaleSize (Size s)
@@ -329,8 +321,8 @@ namespace Pinta.Core
 		public static ScaleFactor FromDouble (double scalar)
 		{
 			int numerator = (int)(Math.Floor (scalar * 1000.0));
-			int denominator = 1000;
-			return Reduce (numerator, denominator);
+			int denominator1 = 1000;
+			return Reduce (numerator, denominator1);
 		}
 
 		public ScaleFactor (int numer, int denom)

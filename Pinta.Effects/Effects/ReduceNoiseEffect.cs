@@ -16,7 +16,7 @@ namespace Pinta.Effects
 {
 	public class ReduceNoiseEffect : LocalHistogramEffect
 	{
-		private int radius;
+		
 		private double strength;
 
 		public override string Icon {
@@ -80,11 +80,11 @@ namespace Pinta.Effects
 
 		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
 		{
-			this.radius = Data.Radius;
+			int radius = Data.Radius;
 			this.strength = -0.2 * Data.Strength;
 
 			foreach (Gdk.Rectangle rect in rois)
-				RenderRect (this.radius, src, dest, rect);
+				RenderRect (radius, src, dest, rect);
 		}
 		#endregion
 

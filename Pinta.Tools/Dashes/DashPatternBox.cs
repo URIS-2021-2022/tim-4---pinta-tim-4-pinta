@@ -1,4 +1,4 @@
-﻿// 
+// 
 // DashPatternBox.cs
 // 
 // Author:
@@ -43,8 +43,8 @@ namespace Pinta.Tools
 
 		private ToolBarLabel? dashPatternLabel;
 		private ToolItem? dashPatternSep;
-
 		public ToolBarComboBox? comboBox;
+
 
 
 
@@ -61,6 +61,7 @@ namespace Pinta.Tools
 		/// <returns>null if the DashPatternBox has already been setup; otherwise, returns the DashPatternBox itself.</returns>
 		public Gtk.ComboBoxText? SetupToolbar(Toolbar tb)
 		{
+			
 			if (dashPatternSep == null)
 			{
 				dashPatternSep = new SeparatorToolItem();
