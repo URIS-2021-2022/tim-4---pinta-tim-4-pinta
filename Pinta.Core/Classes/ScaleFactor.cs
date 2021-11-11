@@ -329,8 +329,8 @@ namespace Pinta.Core
 		public static ScaleFactor FromDouble (double scalar)
 		{
 			int numerator = (int)(Math.Floor (scalar * 1000.0));
-			int denominator = 1000;
-			return Reduce (numerator, denominator);
+			int denominator1 = 1000;
+			return Reduce (numerator, denominator1);
 		}
 
 		public ScaleFactor (int numer, int denom)

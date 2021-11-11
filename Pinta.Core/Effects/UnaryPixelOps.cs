@@ -667,7 +667,7 @@ namespace Pinta.Core
             {               
                 if (index < 0 || index >= 3) 
                 {
-                    throw new ArgumentOutOfRangeException("index", index, "Index must be between 0 and 2");
+                    throw new ArgumentOutOfRangeException(nameof(index), index, "Index must be between 0 and 2");
                 }
 
                 return gamma[index];

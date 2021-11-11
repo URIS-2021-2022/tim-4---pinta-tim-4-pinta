@@ -64,11 +64,7 @@ namespace Pinta.Core
 
 		private DocumentSelection previousSelection = new DocumentSelection ();
 
-		public DocumentSelection PreviousSelection
-		{
-			get {return previousSelection; }
-			set { previousSelection=value; }
-		}
+		public DocumentSelection PreviousSelection { get; set; }
 
 		public Document (Gdk.Size size)
 		{
