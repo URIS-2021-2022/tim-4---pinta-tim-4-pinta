@@ -58,9 +58,9 @@ namespace Pinta.Effects
 			}
 		}
 		
-		public override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
-			Data.Levels.Apply (dest, src, rois);
+			Data.Levels.Apply (dst, src, rois);
 		}
 	}
 	

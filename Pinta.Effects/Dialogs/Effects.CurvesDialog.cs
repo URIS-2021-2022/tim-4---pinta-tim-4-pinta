@@ -287,10 +287,10 @@ namespace Pinta.Effects
 			g.LineWidth = 1;
 			
 			for (int i = 1; i < 4; i++) {
-				g.MoveTo (i * size / 4, 0);
-				g.LineTo ( (double)i * size / 4, (double)size);
+				g.MoveTo ((double)(i * size / 4), 0);
+				g.LineTo ( (double)(i * size / 4), size);
 				g.MoveTo (0, i * size / 4);
-				g.LineTo (size, i * size / 4);
+				g.LineTo (size, (double)(i * size / 4));
 			}
 			
 			g.MoveTo (0, size - 1);

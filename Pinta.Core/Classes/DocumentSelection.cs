@@ -36,7 +36,7 @@ namespace Pinta.Core
 	{
 		private Path? selection_path;
 
-
+		public static Point[][] PintaPolygonSet = new Point[1][];
 
 		public List<List<IntPoint>>? SelectionPolygons { get; set; } = new List<List<IntPoint>>();
 		private Clipper selection_clipper = new Clipper ();
@@ -47,15 +47,16 @@ namespace Pinta.Core
 
 		}
 
-		private PointD origin;
+		public PointD Origin { get; set; }
 
-		public PointD Origin {
-			get { return origin; }
-			set { origin = value; }
+		private PointD end;
+		public PointD End {
+			get { return end; }
+			set { end = value; }
 		}
+		
 
-		public PointD End;
-
+		
 		private bool _visible = true;
 		public bool Visible
 		{
@@ -160,21 +161,19 @@ namespace Pinta.Core
 		/// </summary>
 		/// <param name="pintaPolygonSet">A Pinta Polygon set.</param>
 		/// <returns>A Clipper Polygon collection.</returns>
-		public static List<List<IntPoint>> ConvertToPolygons(Point[][] pintaPolygonSet)
+		public static List<List<IntPoint>> ConvertToPolygons()
 		{
 			List<List<IntPoint>> newPolygons = new List<List<IntPoint>>();
 
-			foreach (Point[] pA in pintaPolygonSet)
-			{
-				List<IntPoint> newPolygon = new List<IntPoint>();
+				foreach (Point[] pA in PintaPolygonSet) {
+					List<IntPoint> newPolygon = new List<IntPoint> ();
 
-				foreach (Point p in pA)
-				{
-					newPolygon.Add(new IntPoint((long)p.X, (long)p.Y));
+					foreach (Point p in pA) {
+						newPolygon.Add (new IntPoint ((long) p.X, (long) p.Y));
+					}
+
+					newPolygons.Add (newPolygon);
 				}
-
-				newPolygons.Add(newPolygon);
-			}
 
 			return newPolygons;
 		}
@@ -281,31 +280,32 @@ namespace Pinta.Core
 
 			//Curve 1.
 			newPolygon.AddRange(CalculateCurvePoints(tInterval,
-				cx + rx, cy,
-				cx + rx, cy - c1 * ry,
-				cx + c1 * rx, cy - ry,
-				cx, cy - ry));
+				new DoublePoint(cx + rx, cy),
+				new DoublePoint (cx + rx, cy - c1 * ry),
+				new DoublePoint (cx + c1 * rx, cy - ry),
+				new DoublePoint (cx, cy - ry)));
 
 			//Curve 2.
 			newPolygon.AddRange(CalculateCurvePoints(tInterval,
-				cx, cy - ry,
-				cx - c1 * rx, cy - ry,
-				cx - rx, cy - c1 * ry,
-				cx - rx, cy));
+				new DoublePoint (cx, cy - ry),
+				new DoublePoint (cx - c1 * rx, cy - ry),
+				new DoublePoint (cx - rx, cy - c1 * ry),
+				new DoublePoint (cx - rx, cy)));
 
 			//Curve 3.
 			newPolygon.AddRange(CalculateCurvePoints(tInterval,
-				cx - rx, cy,
-				cx - rx, cy + c1 * ry,
-				cx - c1 * rx, cy + ry,
-				cx, cy + ry));
+				new DoublePoint (cx - rx, cy),
+				new DoublePoint (cx - rx, cy + c1 * ry),
+				new DoublePoint (cx - c1 * rx, cy + ry),
+				new DoublePoint (cx, cy + ry)));
 
 			//Curve 4.
 			newPolygon.AddRange(CalculateCurvePoints(tInterval,
-				cx, cy + ry,
-				cx + c1 * rx, cy + ry,
-				cx + rx, cy + c1 * ry,
-				cx + rx, cy));
+				new DoublePoint (cx, cy + ry),
+				new DoublePoint (cx + c1 * rx, cy + ry),
+				new DoublePoint (cx + rx, cy + c1 * ry),
+				new DoublePoint (cx + rx, cy)));
+
 
 			//Add the newly calculated elliptical Polygon.
 			SelectionPolygons.Add(newPolygon);
@@ -325,11 +325,12 @@ namespace Pinta.Core
 		/// <param name="x3">Ending point X (included in the returned Point(s)).</param>
 		/// <param name="y3">Ending point Y (included in the returned Point(s)).</param>
 		/// <returns></returns>
-		private static List<IntPoint> CalculateCurvePoints(double tInterval, double x0, double y0, double x1, double y1, double x2, double y2, double x3, double y3)
+
+		private static List<IntPoint> CalculateCurvePoints (double tInterval, DoublePoint dp0, DoublePoint dp1, DoublePoint dp2, DoublePoint dp3)
 		{
 			//Create a new partial Polygon to store the calculated Points.
-			List<IntPoint> calculatedPoints = new List<IntPoint>((int)(1d / tInterval));
-            
+			List<IntPoint> calculatedPoints = new List<IntPoint> ((int) (1d / tInterval));
+
 			double oneMinusT;
 			double oneMinusTSquared;
 			double oneMinusTCubed;
@@ -345,8 +346,7 @@ namespace Pinta.Core
 			//skipped. This is needed because multiple curves will be placed
 			//sequentially after each other and we don't want to have the same
 			//Point be added to the Polygon twice.
-			for (double t = tInterval; t < 1d; t += tInterval)
-			{
+			for (double t = tInterval; t < 1d; t += tInterval) {
 				//There are 3 "layers" in a cubic Bezier curve's calculation. These "layers"
 				//must be calculated for each intermediate Point (for each value of t from
 				//tInterval to 1d). The Points in each "layer" store [the distance between
@@ -368,9 +368,9 @@ namespace Pinta.Core
 				oneMinusTSquaredTimesTTimesThree = oneMinusTSquared * t * 3d;
 				oneMinusTTimesTSquaredTimesThree = oneMinusT * tSquared * 3d;
 
-				calculatedPoints.Add(new IntPoint(
-					(long)(oneMinusTCubed * x0 + oneMinusTSquaredTimesTTimesThree * x1 + oneMinusTTimesTSquaredTimesThree * x2 + tCubed * x3),
-					(long)(oneMinusTCubed * y0 + oneMinusTSquaredTimesTTimesThree * y1 + oneMinusTTimesTSquaredTimesThree * y2 + tCubed * y3)));
+				calculatedPoints.Add (new IntPoint (
+					(long) (oneMinusTCubed * dp0.X + oneMinusTSquaredTimesTTimesThree * dp1.X + oneMinusTTimesTSquaredTimesThree * dp2.X + tCubed * dp3.X),
+					(long) (oneMinusTCubed * dp0.Y + oneMinusTSquaredTimesTTimesThree * dp1.Y + oneMinusTTimesTSquaredTimesThree * dp2.Y + tCubed * dp3.Y)));
 			}
 
 			//Return the partial Polygon containing the calculated Points in the curve.

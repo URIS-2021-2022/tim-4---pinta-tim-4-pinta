@@ -34,16 +34,16 @@ namespace Pinta.Tools
 	{
 		private readonly BaseEditEngine ee;
 
-		private UserLayer userLayer;
+		private readonly UserLayer userLayer;
 
-		private SurfaceDiff? userSurfaceDiff;
+		private readonly SurfaceDiff? userSurfaceDiff;
 		private ImageSurface? userSurface;
 
 		private ShapeEngineCollection sEngines;
 
 		private int selectedPointIndex, selectedShapeIndex;
 
-		private bool redrawEverything;
+		private readonly bool redrawEverything;
 
 		/// <summary>
 		/// A history item for when shapes are finalized.
@@ -143,14 +143,13 @@ namespace Pinta.Tools
             Swap (ref selectedShapeIndex, ref ee.SelectedShapeIndex);
 
 			//Determine if the currently active tool matches the shape's corresponding tool, and if not, switch to it.
-			if (BaseEditEngine.ActivateCorrespondingTool(ee.SelectedShapeIndex, true) != null)
+			if (BaseEditEngine.ActivateCorrespondingTool(ee.SelectedShapeIndex, true) != null && redraw)
 			{
-				//The currently active tool now matches the shape's corresponding tool.
+				
 
-				if (redraw)
-				{
 					((ShapeTool?)PintaCore.Tools.CurrentTool)?.EditEngine.DrawAllShapes();
-				}
+
+				
 			}
 		}
 

@@ -92,7 +92,7 @@ namespace Pinta.Actions
 			return xform;
 		}
 
-		private void ApplyTransform (RotateZoomData data)
+		private static void ApplyTransform (RotateZoomData data)
 		{
 			var doc = PintaCore.Workspace.ActiveDocument;
 			PintaCore.Tools.Commit ();
@@ -107,7 +107,7 @@ namespace Pinta.Actions
 			    Translations.GetString ("Rotate / Zoom Layer"), old_surf, doc.Layers.CurrentUserLayerIndex));
 		}
 
-		private class RotateZoomData : EffectData
+		private sealed class RotateZoomData : EffectData
 		{
 			[Caption ("Angle")]
 			public double Angle = 0;

@@ -33,6 +33,7 @@ namespace Pinta.Core
 	{
 		public ComboBoxText ComboBox { get; private set; }
 
+		
 		public ToolBarComboBox (int width, int activeIndex, bool allowEntry, params string[] contents)
 		{
 			if (allowEntry)

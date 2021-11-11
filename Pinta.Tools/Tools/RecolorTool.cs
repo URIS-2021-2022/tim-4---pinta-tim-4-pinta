@@ -115,15 +115,15 @@ namespace Pinta.Tools
 				return;
 			}
 
-			var x = e.Point.X;
-			var y = e.Point.Y;
+			int x = e.Point.X;
+			int y = e.Point.Y;
 
 			LastPointCheck (x, y);
 			SurfaceModifiedCheck (document, e);
 			
 
 			var surf = document.Layers.CurrentUserLayer.Surface;
-			var tmp_layer = document.Layers.ToolLayer.Surface;
+			ImageSurface tmp_layer = document.Layers.ToolLayer.Surface;
 
 			var roi = CairoExtensions.GetRectangleFromPoints (last_point, new Point (x, y), BrushWidth + 2);
 
@@ -153,6 +153,14 @@ namespace Pinta.Tools
 
 			tmp_layer.MarkDirty ();
 
+			documentMethod (document,x,y,tmp_layer);
+
+			document.Workspace.Invalidate (roi);
+
+			last_point = new Point (x, y);
+		}
+		public void documentMethod(Document document,int x, int y, ImageSurface tmp_layer)
+		{
 			using (var g = document.CreateClippedContext ()) {
 				g.Antialias = UseAntialiasing ? Antialias.Subpixel : Antialias.None;
 
@@ -167,12 +175,7 @@ namespace Pinta.Tools
 
 				g.Stroke ();
 			}
-
-			document.Workspace.Invalidate (roi);
-
-			last_point = new Point (x, y);
 		}
-
 		protected override void OnSaveSettings (ISettingsService settings)
 		{
 			base.OnSaveSettings (settings);

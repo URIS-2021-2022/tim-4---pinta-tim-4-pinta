@@ -64,7 +64,7 @@ namespace Pinta.Tools
 		private bool ArrowOneEnabled => ArrowOneEnabledCheckBox.Widget.Active;
 		private bool ArrowTwoEnabled => ArrowTwoEnabledCheckBox.Widget.Active;
 
-		public ArrowedEditEngine (ShapeTool passedOwner) : base (passedOwner)
+		protected ArrowedEditEngine (ShapeTool passedOwner) : base (passedOwner)
 		{
 		}
 

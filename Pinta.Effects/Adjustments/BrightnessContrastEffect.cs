@@ -59,7 +59,7 @@ namespace Pinta.Effects
 		}
 
 
-		public unsafe override void Render (ImageSurface src, ImageSurface dest, Gdk.Rectangle[] rois)
+		public unsafe override void Render (ImageSurface src, ImageSurface dst, Gdk.Rectangle[] rois)
 		{
 			if (!table_calculated)
 				Calculate ();
@@ -67,7 +67,7 @@ namespace Pinta.Effects
 			foreach (Gdk.Rectangle rect in rois) {
 				for (int y = rect.Top; y <= rect.GetBottom (); y++) {
 					ColorBgra* srcRowPtr = src.GetPointAddressUnchecked (rect.Left, y);
-					ColorBgra* dstRowPtr = dest.GetPointAddressUnchecked (rect.Left, y);
+					ColorBgra* dstRowPtr = dst.GetPointAddressUnchecked (rect.Left, y);
 					ColorBgra* dstRowEndPtr = dstRowPtr + rect.Width;
 
 						while (dstRowPtr < dstRowEndPtr) {

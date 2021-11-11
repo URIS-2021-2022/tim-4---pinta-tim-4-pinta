@@ -286,7 +286,7 @@ namespace Pinta.Core
                 {
                     double i = 255.0 * color.GetIntensity();
                     byte ib = (byte)(i * setSaturation); // adjust the red color for user inputted saturation
-                    return ColorBgra.FromBgra((byte)color.B,(byte)color.G, ib, color.A);
+                    return ColorBgra.FromBgra(color.B,color.G, ib, color.A);
                 }
                 else
                 {
@@ -667,7 +667,7 @@ namespace Pinta.Core
             {               
                 if (index < 0 || index >= 3) 
                 {
-                    throw new ArgumentOutOfRangeException("index", index, "Index must be between 0 and 2");
+                    throw new ArgumentOutOfRangeException(nameof(index), index, "Index must be between 0 and 2");
                 }
 
                 return gamma[index];
@@ -786,12 +786,12 @@ namespace Pinta.Core
             {
                 if (beforeOut.Length != 3) 
                 {
-                    throw new ArgumentException("before must be a float[3]", "beforeOut");
+                    throw new ArgumentException("before must be a float[3]", nameof(beforeOut));
                 }
 
                 if (slopesOut.Length != 3) 
                 {
-                    throw new ArgumentException("slopes must be a float[3]", "slopes");
+                    throw new ArgumentException("slopes must be a float[3]", nameof(slopesOut));
                 }
 
                 for (int i = 0; i < 3; i++) 

@@ -57,11 +57,11 @@ namespace Pinta.Tools
 		public override Gdk.Cursor DefaultCursor => new Gdk.Cursor (Gdk.Display.Default, Resources.GetIcon ("Cursor.LassoSelect.png"), 9, 18);
 		public override int Priority => 17;
 
-		protected override void OnBuildToolBar (Toolbar tb)
+		protected override void OnBuildToolBar (Toolbar toolbar)
 		{
-			base.OnBuildToolBar (tb);
+			base.OnBuildToolBar (toolbar);
 
-			workspace.SelectionHandler.BuildToolbar (tb, Settings);
+			workspace.SelectionHandler.BuildToolbar (toolbar, Settings);
 		}
 
 		protected override void OnMouseDown (Document document, ToolMouseEventArgs e)
@@ -139,6 +139,7 @@ namespace Pinta.Tools
 			}
 
 			document.Selection.SelectionPolygons.Clear ();
+			document.Selection.SelectionPolygons=null;
 			document.Selection.SelectionPolygons.Add (lasso_polygon.ToList ());
 			SelectionModeHandler.PerformSelectionMode (combine_mode, document.Selection.SelectionPolygons);
 			document.Workspace.Invalidate ();

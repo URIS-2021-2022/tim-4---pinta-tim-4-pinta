@@ -51,7 +51,7 @@ namespace Pinta.Tools
 		private CursorType? active_cursor;
 		private CombineMode combine_mode;
 
-		public SelectTool (IServiceManager services) : base (services)
+		protected SelectTool (IServiceManager services) : base (services)
 		{
 			tools = services.GetService<IToolService> ();
 			workspace = services.GetService<IWorkspaceService> ();
@@ -125,7 +125,7 @@ namespace Pinta.Tools
 
 			var dirty = ReDraw (document, e.IsShiftPressed);
 
-			if (document.Selection != null) {
+			if (document.Selection != null && document.Selection.SelectionPolygons != null) {
 				SelectionModeHandler.PerformSelectionMode (combine_mode, document.Selection.SelectionPolygons);
 				document.Workspace.Invalidate (dirty.Union (last_dirty));
 			}

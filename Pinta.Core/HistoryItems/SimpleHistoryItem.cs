@@ -1,4 +1,4 @@
-﻿// 
+// 
 // SimpleHistoryItem.cs
 //  
 // Author:
@@ -31,7 +31,7 @@ namespace Pinta.Core
 {
 	public class SimpleHistoryItem : BaseHistoryItem
 	{
-		private SurfaceDiff? surface_diff;
+		private readonly SurfaceDiff? surface_diff;
 		ImageSurface? old_surface;
 		int layer_index;
 
@@ -86,6 +86,7 @@ namespace Pinta.Core
 
 		public override void Dispose ()
 		{
+			GC.SuppressFinalize (this);
 			// Free up native surface
 			if (old_surface != null)
 				(old_surface as IDisposable).Dispose ();

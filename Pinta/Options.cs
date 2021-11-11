@@ -87,7 +87,6 @@
 // Unprocessed options are returned from OptionSet.Parse().
 //
 // Examples:
-//  int verbose = 0;
 //  OptionSet p = new OptionSet ()
 //    .Add ("v", v => ++verbose)
 //    .Add ("name=|value=", v => Console.WriteLine (v));
@@ -378,13 +377,8 @@ namespace Mono.Options
 				int end = name.IndexOfAny (NameTerminator);
 				if (end == -1)
 					continue;
-				names [i] = name.Substring (0, end);
-				if (type == '\0' || type == name [end])
-					type = name [end];
-				else 
-					throw new ArgumentException (
-							string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name [end]),
-							"prototype");
+				type=pomocna (names[i], i, end, type);
+				
 				AddSeparators (name, end, seps);
 			}
 
@@ -396,15 +390,34 @@ namespace Mono.Options
 						string.Format ("Cannot provide key/value separators for Options taking {0} value(s).", count),
 						"prototype");
 			if (count > 1) {
-				if (seps.Count == 0)
-					this.separators = new string[]{":", "="};
-				else if (seps.Count == 1 && seps [0].Length == 0)
-					this.separators = null;
-				else
-					this.separators = seps.ToArray ();
+				setSeparators (seps);
 			}
 
 			return type == '=' ? OptionValueType.Required : OptionValueType.Optional;
+		}
+
+		public char pomocna (string name, int i,int end, char type)
+		{
+			names[i] = name.Substring (0, end);
+			if (type == '\0' || type == name[end])
+				type = name[end];
+			else
+				throw new ArgumentException (
+						string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name[end]),
+						"prototype");
+			return type;
+		}
+
+		public void setSeparators (List<string>seps)
+		{
+			if (seps.Count == 0)
+				this.separators = new string[] { ":", "=" };
+			else if (seps.Count == 1 && seps[0].Length == 0)
+				this.separators = null;
+			else
+				this.separators = seps.ToArray ();
+
+			
 		}
 
 		private static void AddSeparators (string name, int end, ICollection<string> seps)
@@ -492,7 +505,7 @@ namespace Mono.Options
 		}
 	}
 
-	public delegate void OptionAction<TKey, in TValue> (TKey key, TValue value);
+	public delegate void OptionAction<in TKey, in TValue> (TKey key, TValue value);
 
 	public class OptionSet : KeyedCollection<string, Option>
 	{
@@ -591,7 +604,7 @@ namespace Mono.Options
 				: base (prototype, description, count)
 			{
 				if (action == null)
-					throw new ArgumentNullException ("action");
+					throw new ArgumentNullException (nameof(action));
 				this.action = action;
 			}
 
@@ -609,7 +622,7 @@ namespace Mono.Options
 		public OptionSet Add (string prototype, string description, Action<string> action)
 		{
 			if (action == null)
-				throw new ArgumentNullException ("action");
+				throw new ArgumentNullException (nameof(action));
 			Option p = new ActionOption (prototype, description, 1, 
 					delegate (OptionValueCollection v) { action (v [0]); });
 			base.Add (p);
@@ -766,7 +779,7 @@ namespace Mono.Options
 		protected bool GetOptionParts (string argument, out string flag, out string name, out string sep, out string value)
 		{
 			if (argument == null)
-				throw new ArgumentNullException ("argument");
+				throw new ArgumentNullException (nameof(argument));
 
 			flag = name = sep = value = null;
 			Match m = ValueOption.Match (argument);
@@ -814,7 +827,8 @@ namespace Mono.Options
 			if (ParseBool (argument, n, c))
 				return true;
 			// is it a bundled option?
-			if (ParseBundledValue (f, string.Concat (n + s + v), c))
+			string paramConcat=string.Concat (n + s + v);
+			if (ParseBundledValue (f, paramConcat, c))
 				return true;
 
 			return false;
@@ -985,7 +999,7 @@ namespace Mono.Options
 		private static string GetArgumentName (int index, int maxIndex, string description)
 		{
 			if (description == null)
-				return ReturnMaxIndex(index, maxIndex);
+				return ReturnMaxIndex(maxIndex,index);
 			string[] nameStart;
 			if (maxIndex == 1)
 				nameStart = new string[]{"{0:", "{"};
@@ -1003,7 +1017,7 @@ namespace Mono.Options
 					continue;
 				return description.Substring (start + nameStart [i].Length, end - start - nameStart [i].Length);
 			}
-			return ReturnMaxIndex(index, maxIndex);
+			return ReturnMaxIndex(maxIndex,index);
 		}
 
 	private static string ReturnMaxIndex(int maxIndex, int index)

@@ -33,15 +33,10 @@ namespace Pinta.Gui.Widgets
 {
 	public class CellRendererSurface : CellRenderer
 	{
-		private static readonly Pattern transparent_pattern;
+		private static readonly Pattern transparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (8);
 
 		[GLib.Property ("surface", "Get/Set Surface", "Set the cairo image surface to display a thumbnail of.")]
 		public ImageSurface? Surface { get; set; }
-
-		static CellRendererSurface ()
-		{
-			transparent_pattern = CairoExtensions.CreateTransparentBackgroundPattern (8);
-		}
 
 		public CellRendererSurface (int width, int height)
 		{

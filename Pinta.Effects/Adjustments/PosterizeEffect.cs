@@ -64,8 +64,25 @@ namespace Pinta.Effects
 	
 	public class PosterizeData : EffectData
 	{
-		public int Red = 16;
-		public int Green = 16;
-		public int Blue = 16;
+		private int red = 16;
+		public int Red
+		{
+			get { return red; }
+			set { red = value ; }
+		}
+    
+		private int green = 16;
+		public int Green
+		{
+			get { return green; }
+			set { green = value ; }
+		}
+
+		private int blue = 16;
+		public int Blue
+		{
+			get { return blue; }
+			set { blue = value ; }
+		}
 	}
 }

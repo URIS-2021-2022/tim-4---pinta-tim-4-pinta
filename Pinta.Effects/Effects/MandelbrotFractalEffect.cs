@@ -89,6 +89,7 @@ namespace Pinta.Effects
 			
 			ColorBgra* dst_dataptr = (ColorBgra*)dst.DataPtr;
 			int dst_width = dst.Width;
+
 			
 			foreach (Gdk.Rectangle rect in rois) {
 				for (int y = rect.Top; y <= rect.GetBottom (); y++) {

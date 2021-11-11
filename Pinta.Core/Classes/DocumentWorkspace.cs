@@ -1,4 +1,4 @@
-﻿//
+//
 // DocumentWorkspace.cs
 //  
 // Author:
@@ -31,7 +31,7 @@ namespace Pinta.Core
 {
 	public class DocumentWorkspace
 	{
-		private Document document;
+		private readonly Document document;
 		private Size canvas_size;
 		private enum ZoomType
 		{

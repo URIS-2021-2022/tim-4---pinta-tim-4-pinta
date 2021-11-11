@@ -64,7 +64,7 @@ namespace Pinta.Core
 
 		public static string GetBlendModeName (BlendMode mode)
 		{
-			return blend_modes.Where (p => p.Value == mode).First ().Key;
+			return blend_modes.First (p => p.Value == mode).Key;
 		}
 	}
 }

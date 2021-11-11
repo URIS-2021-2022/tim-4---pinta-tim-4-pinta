@@ -54,14 +54,6 @@ namespace Pinta.Core
 			ScaleFactor b = UseIfValid (n2, d2, lastResort);
 			return ScaleFactor.Min (a, b);
 		}
-
-		public static ScaleFactor Max (int n1, int d1, int n2, int d2, ScaleFactor lastResort)
-		{
-			ScaleFactor a = UseIfValid (n1, d1, lastResort);
-			ScaleFactor b = UseIfValid (n2, d2, lastResort);
-			return ScaleFactor.Max (a, b);
-		}
-
 		public static ScaleFactor Min (ScaleFactor lhs, ScaleFactor rhs)
 		{
 			if (lhs < rhs) {
@@ -70,6 +62,14 @@ namespace Pinta.Core
 				return rhs;
 			}
 		}
+		public static ScaleFactor Max (int n1, int d1, int n2, int d2, ScaleFactor lastResort)
+		{
+			ScaleFactor a = UseIfValid (n1, d1, lastResort);
+			ScaleFactor b = UseIfValid (n2, d2, lastResort);
+			return ScaleFactor.Max (a, b);
+		}
+
+		
 
 		public static ScaleFactor Max (ScaleFactor lhs, ScaleFactor rhs)
 		{
@@ -131,36 +131,20 @@ namespace Pinta.Core
 			return (int)(((long)x * numerator) / denominator);
 		}
 
-		public int UnscaleScalar (int x)
-		{
-			return (int)(((long)x * denominator) / numerator);
-		}
+		
 
 		public float ScaleScalar (float x)
 		{
 			return (x * (float)numerator) / (float)denominator;
 		}
-
-		public float UnscaleScalar (float x)
-		{
-			return (x * (float)denominator) / (float)numerator;
-		}
-
 		public double ScaleScalar (double x)
 		{
-			return (x * (double)numerator) / (double)denominator;
+			return (x * (double) numerator) / (double) denominator;
 		}
-
-		public double UnscaleScalar (double x)
-		{
-			return (x * (double)denominator) / (double)numerator;
-		}
-
 		public Point ScalePoint (Point p)
 		{
 			return new Point (ScaleScalar (p.X), ScaleScalar (p.Y));
 		}
-
 		public Cairo.PointD ScalePoint (Cairo.PointD p)
 		{
 			return new Cairo.PointD (ScaleScalar (p.X), ScaleScalar (p.Y));
@@ -170,46 +154,72 @@ namespace Pinta.Core
 		{
 			return new Cairo.PointD (ScaleScalar (p.X), p.Y);
 		}
+		public Point ScalePointJustX (Point p)
+		{
+			return new Point (ScaleScalar (p.X), p.Y);
+		}
 
 		public Cairo.PointD ScalePointJustY (Cairo.PointD p)
 		{
 			return new Cairo.PointD (p.X, ScaleScalar (p.Y));
 		}
+		public Point ScalePointJustY (Point p)
+		{
+			return new Point (p.X, ScaleScalar (p.Y));
+		}
+		public Size ScaleSize (Size s)
+		{
+			return new Size (ScaleScalar (s.Width), ScaleScalar (s.Height));
+		}
+
+		public Rectangle ScaleRectangle (Rectangle rect)
+		{
+			return new Rectangle (ScalePoint (rect.Location), ScaleSize (rect.Size));
+		}
+
+
+		public int UnscaleScalar (int x)
+		{
+			return (int) (((long) x * denominator) / numerator);
+		}
+		public float UnscaleScalar (float x)
+		{
+			return (x * (float)denominator) / (float)numerator;
+		}
+
+		
+		public double UnscaleScalar (double x)
+		{
+			return (x * (double)denominator) / (double)numerator;
+		}
+
 
 		public Cairo.PointD UnscalePoint (Cairo.PointD p)
 		{
 			return new Cairo.PointD (UnscaleScalar (p.X), UnscaleScalar (p.Y));
+		}
+		public Point UnscalePoint (Point p)
+		{
+			return new Point (UnscaleScalar (p.X), UnscaleScalar (p.Y));
 		}
 
 		public Cairo.PointD UnscalePointJustX (Cairo.PointD p)
 		{
 			return new Cairo.PointD (UnscaleScalar (p.X), p.Y);
 		}
-
+		public Point UnscalePointJustX (Point p)
+		{
+			return new Point (UnscaleScalar (p.X), p.Y);
+		}
 		public Cairo.PointD UnscalePointJustY (Cairo.PointD p)
 		{
 			return new Cairo.PointD (p.X, UnscaleScalar (p.Y));
 		}
 
-		public Point ScalePointJustX (Point p)
-		{
-			return new Point (ScaleScalar (p.X), p.Y);
-		}
-
-		public Point ScalePointJustY (Point p)
-		{
-			return new Point (p.X, ScaleScalar (p.Y));
-		}
-
-		public Point UnscalePoint (Point p)
-		{
-			return new Point (UnscaleScalar (p.X), UnscaleScalar (p.Y));
-		}
-
-		public Point UnscalePointJustX (Point p)
-		{
-			return new Point (UnscaleScalar (p.X), p.Y);
-		}
+		
+		
+		
+		
 
 		public Point UnscalePointJustY (Point p)
 		{
@@ -218,22 +228,13 @@ namespace Pinta.Core
 
 		
 
-		public Size ScaleSize (Size s)
-		{
-			return new Size (ScaleScalar (s.Width), ScaleScalar (s.Height));
-		}
-
+		
 		public Size UnscaleSize (Size s)
 		{
 			return new Size (UnscaleScalar (s.Width), UnscaleScalar (s.Height));
 		}
 
 		
-
-		public Rectangle ScaleRectangle (Rectangle rect)
-		{
-			return new Rectangle (ScalePoint (rect.Location), ScaleSize (rect.Size));
-		}
 
 		public Rectangle UnscaleRectangle (Rectangle rect)
 		{
@@ -320,8 +321,8 @@ namespace Pinta.Core
 		public static ScaleFactor FromDouble (double scalar)
 		{
 			int numerator = (int)(Math.Floor (scalar * 1000.0));
-			int denominator = 1000;
-			return Reduce (numerator, denominator);
+			int denominator1 = 1000;
+			return Reduce (numerator, denominator1);
 		}
 
 		public ScaleFactor (int numer, int denom)

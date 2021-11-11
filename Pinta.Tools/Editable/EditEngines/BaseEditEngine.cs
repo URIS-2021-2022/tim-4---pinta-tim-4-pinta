@@ -33,11 +33,11 @@ using System.Text;
 
 namespace Pinta.Tools
 {
-    //The EditEngine was created for tools that wish to utilize any of the control point, line/curve, hover point (reacting to the mouse),
-    //and etc. code that was originally used in the LineCurveTool for editability. If a class wishes to use it, it should create and instantiate
-    //a protected instance of the EditEngine inside the class and then utilize it in a similar fashion to any of the editable tools.
-    public abstract class BaseEditEngine
-    {
+	//The EditEngine was created for tools that wish to utilize any of the control point, line/curve, hover point (reacting to the mouse),
+	//and etc. code that was originally used in the LineCurveTool for editability. If a class wishes to use it, it should create and instantiate
+	//a protected instance of the EditEngine inside the class and then utilize it in a similar fashion to any of the editable tools.
+	public abstract class BaseEditEngine
+	{
 		public enum ShapeTypes
 		{
 			OpenLineCurveSeries,
@@ -46,46 +46,44 @@ namespace Pinta.Tools
 			RoundedLineSeries
 		}
 
-		public static readonly Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool>();
+		public static readonly Dictionary<ShapeTypes, ShapeTool> CorrespondingTools = new Dictionary<ShapeTypes, ShapeTool> ();
 
-        protected abstract string ShapeName { get; }
+		protected abstract string ShapeName { get; }
 
-        protected readonly ShapeTool owner;
+		protected readonly ShapeTool owner;
 
-        protected bool is_drawing = false;
+		protected bool is_drawing = false;
 
 		protected Rectangle? last_dirty = null;
 		protected Rectangle? last_hover = null;
 
 		protected double last_control_pt_size = 0d;
 
-        protected PointD shape_origin;
-        protected PointD current_point;
+		protected PointD shape_origin;
+		protected PointD current_point;
 
-		public static Color OutlineColor
-		{
+		public static Color OutlineColor {
 			get { return PintaCore.Palette.PrimaryColor; }
 			set { PintaCore.Palette.PrimaryColor = value; }
 		}
 
-		public static Color FillColor
-		{
+		public static Color FillColor {
 			get { return PintaCore.Palette.SecondaryColor; }
 			set { PintaCore.Palette.SecondaryColor = value; }
 		}
 
-	// NRT - Created by HandleBuildToolBar
-        protected ToolBarWidget<Gtk.SpinButton> brush_width = null!;
-        protected ToolBarLabel brush_width_label = null!;
-        protected ToolBarLabel fill_label = null!;
-        protected ToolBarDropDownButton fill_button = null!;
-        protected Gtk.SeparatorToolItem fill_sep = null!;
+		// NRT - Created by HandleBuildToolBar
+		protected ToolBarWidget<Gtk.SpinButton> brush_width = null!;
+		protected ToolBarLabel brush_width_label = null!;
+		protected ToolBarLabel fill_label = null!;
+		protected ToolBarDropDownButton fill_button = null!;
+		protected Gtk.SeparatorToolItem fill_sep = null!;
 
 		protected ToolBarLabel shape_type_label = null!;
 		protected ToolBarDropDownButton shape_type_button = null!;
 		protected Gtk.SeparatorToolItem shape_type_sep = null!;
 
-        protected DashPatternBox dash_pattern_box = new DashPatternBox();
+		protected DashPatternBox dash_pattern_box = new DashPatternBox ();
 		private string prev_dash_pattern = "-";
 
 		private bool prev_antialiasing = true;
@@ -100,24 +98,22 @@ namespace Pinta.Tools
 
 		private int prev_brush_width = BaseTool.DEFAULT_BRUSH_WIDTH;
 
-        private bool StrokeShape { get {
+		private bool StrokeShape { get {
 				if (fill_button.SelectedItem?.Tag is int value)
 					return value % 2 == 0;
 
 				return true;
 			} }
 
-        private bool FillShape { get {
+		private bool FillShape { get {
 				if (fill_button.SelectedItem?.Tag is int value)
 					return value >= 1;
 
 				return false;
 			} }
 
-		private ShapeTypes ShapeType
-		{
-			get
-			{
+		private ShapeTypes ShapeType {
+			get {
 				if (shape_type_button.SelectedItem?.Tag is int value)
 					return (ShapeTypes) value;
 
@@ -125,8 +121,8 @@ namespace Pinta.Tools
 			}
 		}
 
-        protected static readonly Color hover_color =
-            new Color(ToolControl.FillColor.R, ToolControl.FillColor.G, ToolControl.FillColor.B, ToolControl.FillColor.A * 2d / 3d);
+		protected static readonly Color hover_color =
+		    new Color (ToolControl.FillColor.R, ToolControl.FillColor.G, ToolControl.FillColor.B, ToolControl.FillColor.A * 2d / 3d);
 
 		public const double ShapeClickStartingRange = 10d;
 		public const double ShapeClickThicknessFactor = 1d;
@@ -136,39 +132,29 @@ namespace Pinta.Tools
 		public int SelectedPointIndex, SelectedShapeIndex;
 		protected int prev_selected_shape_index;
 
-        /// <summary>
-        /// The selected ControlPoint.
-        /// </summary>
-		public ControlPoint? SelectedPoint
-        {
-            get
-            {
-                ShapeEngine? selEngine = SelectedShapeEngine;
+		/// <summary>
+		/// The selected ControlPoint.
+		/// </summary>
+		public ControlPoint? SelectedPoint {
+			get {
+				ShapeEngine? selEngine = SelectedShapeEngine;
 
-                if (selEngine != null && selEngine.ControlPoints.Count > SelectedPointIndex)
-                {
-                    return selEngine.ControlPoints[SelectedPointIndex];
-                }
-                else
-                {
-                    return null;
-                }
-            }
-        }
+				if (selEngine != null && selEngine.ControlPoints.Count > SelectedPointIndex) {
+					return selEngine.ControlPoints[SelectedPointIndex];
+				} else {
+					return null;
+				}
+			}
+		}
 
 		/// <summary>
 		/// The active shape's ShapeEngine. A point does not have to be selected here, only a shape. This can be null.
 		/// </summary>
-		public ShapeEngine? ActiveShapeEngine
-		{
-			get
-			{
-				if (SelectedShapeIndex > -1 && SEngines.Count > SelectedShapeIndex)
-				{
+		public ShapeEngine? ActiveShapeEngine {
+			get {
+				if (SelectedShapeIndex > -1 && SEngines.Count > SelectedShapeIndex) {
 					return SEngines[SelectedShapeIndex];
-				}
-				else
-				{
+				} else {
 					return null;
 				}
 			}
@@ -177,88 +163,81 @@ namespace Pinta.Tools
 		/// <summary>
 		/// The selected shape's ShapeEngine. This requires that a point in the shape be selected and should be used in most cases. This can be null.
 		/// </summary>
-		public ShapeEngine? SelectedShapeEngine
-		{
-			get
-			{
-				if (SelectedPointIndex > -1)
-				{
+		public ShapeEngine? SelectedShapeEngine {
+			get {
+				if (SelectedPointIndex > -1) {
 					return ActiveShapeEngine;
-				}
-				else
-				{
+				} else {
 					return null;
 				}
 			}
 		}
 
-		protected PointD hover_point = new PointD(-1d, -1d);
+		protected PointD hover_point = new PointD (-1d, -1d);
 		protected int hovered_pt_as_control_pt = -1;
 
 		protected bool changing_tension = false;
-		protected PointD last_mouse_pos = new PointD(0d, 0d);
+		protected PointD last_mouse_pos = new PointD (0d, 0d);
 
-        //Helps to keep track of the first modification on a shape after the mouse is clicked, to prevent unnecessary history items.
+		//Helps to keep track of the first modification on a shape after the mouse is clicked, to prevent unnecessary history items.
 		protected bool clicked_without_modifying = false;
 
-        //Stores the editable shape data.
-		public static ShapeEngineCollection SEngines = new ShapeEngineCollection();
+		//Stores the editable shape data.
+		public static ShapeEngineCollection SEngines = new ShapeEngineCollection ();
 
-        #region ToolbarEventHandlers
+		#region ToolbarEventHandlers
 
-        protected virtual void BrushMinusButtonClickedEvent(object? o, EventArgs args)
-        {
-            if (BrushWidth > 1)
-                BrushWidth--;
-
-			//No need to store previous settings or redraw, as this is done in the Changed event handler.
-        }
-
-        protected virtual void BrushPlusButtonClickedEvent(object? o, EventArgs args)
-        {
-            BrushWidth++;
+		protected virtual void BrushMinusButtonClickedEvent (object? o, EventArgs args)
+		{
+			if (BrushWidth > 1)
+				BrushWidth--;
 
 			//No need to store previous settings or redraw, as this is done in the Changed event handler.
-        }
+		}
 
-		protected void Palette_PrimaryColorChanged(object? sender, EventArgs e)
+		protected virtual void BrushPlusButtonClickedEvent (object? o, EventArgs args)
+		{
+			BrushWidth++;
+
+			//No need to store previous settings or redraw, as this is done in the Changed event handler.
+		}
+
+		protected void Palette_PrimaryColorChanged (object? sender, EventArgs e)
 		{
 			ShapeEngine? activeEngine = ActiveShapeEngine;
 
-			if (activeEngine != null)
-			{
-				activeEngine.OutlineColor = OutlineColor.Clone();
+			if (activeEngine != null) {
+				activeEngine.OutlineColor = OutlineColor.Clone ();
 
-				DrawActiveShape(false, false, true, false, false);
+				DrawActiveShape (false, false, true, false, false);
 			}
 		}
 
-		protected void Palette_SecondaryColorChanged(object? sender, EventArgs e)
+		protected void Palette_SecondaryColorChanged (object? sender, EventArgs e)
 		{
 			ShapeEngine? activeEngine = ActiveShapeEngine;
 
-			if (activeEngine != null)
-			{
-				activeEngine.FillColor = FillColor.Clone();
+			if (activeEngine != null) {
+				activeEngine.FillColor = FillColor.Clone ();
 
-				DrawActiveShape(false, false, true, false, false);
+				DrawActiveShape (false, false, true, false, false);
 			}
 		}
 
-		private void OnFillStyleChanged(object? sender, EventArgs e)
+		private void OnFillStyleChanged (object? sender, EventArgs e)
 		{
 			DrawActiveShape (false, false, true, false, false);
 		}
 
-        #endregion ToolbarEventHandlers
+		#endregion ToolbarEventHandlers
 
 
-        protected BaseEditEngine(ShapeTool passedOwner)
-        {
-            owner = passedOwner;
+		protected BaseEditEngine (ShapeTool passedOwner)
+		{
+			owner = passedOwner;
 
-			ResetShapes();
-        }
+			ResetShapes ();
+		}
 
 		private static string BRUSH_WIDTH_SETTING (string prefix) => $"{prefix}-brush-width";
 		private string FILL_TYPE_SETTING (string prefix) => $"{prefix}-fill-style";
@@ -268,7 +247,7 @@ namespace Pinta.Tools
 		public virtual void OnSaveSettings (ISettingsService settings, string toolPrefix)
 		{
 			if (brush_width is not null)
-				settings.PutSetting (BRUSH_WIDTH_SETTING (toolPrefix), (int)brush_width.Widget.Value);
+				settings.PutSetting (BRUSH_WIDTH_SETTING (toolPrefix), (int) brush_width.Widget.Value);
 			if (fill_button is not null)
 				settings.PutSetting (FILL_TYPE_SETTING (toolPrefix), fill_button.SelectedIndex);
 			if (shape_type_button is not null)
@@ -277,12 +256,33 @@ namespace Pinta.Tools
 				settings.PutSetting (DASH_PATTERN_SETTING (toolPrefix), dash_pattern_box.comboBox.ComboBox.ActiveText);
 		}
 
-		public virtual void HandleBuildToolBar(Gtk.Toolbar tb, ISettingsService settings, string toolPrefix)
-        {
-            if (brush_width_label == null)
-                brush_width_label = new ToolBarLabel(string.Format(" {0}: ", Translations.GetString("Brush width")));
+		private void initializeBrushWidthLabel ()
+		{
+			if (brush_width_label == null)
+				brush_width_label = new ToolBarLabel (string.Format (" {0}: ", Translations.GetString ("Brush width")));
+		}
 
-            tb.AppendItem(brush_width_label);
+		private void initializeFillSep ()
+		{
+			if (fill_sep == null)
+				fill_sep = new Gtk.SeparatorToolItem ();
+		}
+		private void initializeFillLabel ()
+		{
+			if (fill_label == null)
+				fill_label = new ToolBarLabel (string.Format (" {0}: ", Translations.GetString ("Fill Style")));
+		}
+		private void initializeShapeTypeSep ()
+		{
+			if (shape_type_sep == null)
+				shape_type_sep = new Gtk.SeparatorToolItem ();
+		}
+
+		public virtual void HandleBuildToolBar (Gtk.Toolbar tb, ISettingsService settings, string toolPrefix)
+		{
+			initializeBrushWidthLabel ();
+
+			tb.AppendItem(brush_width_label);
 
 			if (brush_width == null)
 			{
@@ -303,13 +303,11 @@ namespace Pinta.Tools
 
             tb.AppendItem(brush_width);
 
-            if (fill_sep == null)
-                fill_sep = new Gtk.SeparatorToolItem();
+			initializeFillSep ();
 
             tb.AppendItem(fill_sep);
 
-            if (fill_label == null)
-                fill_label = new ToolBarLabel(string.Format(" {0}: ", Translations.GetString("Fill Style")));
+			initializeFillLabel ();
 
             tb.AppendItem(fill_label);
 
@@ -327,8 +325,7 @@ namespace Pinta.Tools
 
             tb.AppendItem(fill_button);
 
-			if (shape_type_sep == null)
-				shape_type_sep = new Gtk.SeparatorToolItem();
+			initializeShapeTypeSep ();
 
 			tb.AppendItem(shape_type_sep);
 
@@ -1214,27 +1211,22 @@ namespace Pinta.Tools
 
 			ImageSurface? undoSurface = null;
 
-			if (createHistoryItem)
+			if (createHistoryItem && engine.ControlPoints.Count > 0)
 			{
 				//We only need to create a history item if there was a previous shape.
-				if (engine.ControlPoints.Count > 0)
-				{
-					undoSurface = doc.Layers.CurrentUserLayer.Surface.Clone();
-				}
+				undoSurface = doc.Layers.CurrentUserLayer.Surface.Clone ();
 			}
 
 			//Draw the finalized shape.
 			Rectangle dirty = DrawShape(engine, doc.Layers.CurrentUserLayer, false, false);
 
-			if (createHistoryItem)
+			if (createHistoryItem && undoSurface != null)
 			{
-				//Make sure that the undo surface isn't null.
-				if (undoSurface != null)
-				{
+				
 					//Create a new ShapesHistoryItem so that the finalization of the shape can be undone.
 					doc.History.PushNewItem(new ShapesHistoryItem(this, owner.Icon, ShapeName + " " + Translations.GetString("Finalized"),
 						undoSurface, doc.Layers.CurrentUserLayer, SelectedPointIndex, SelectedShapeIndex, false));
-				}
+				
 			}
 
 			return dirty;
@@ -1474,7 +1466,7 @@ namespace Pinta.Tools
 				last_control_pt_size = Math.Min(BrushWidth + 1, 3);
 			}
 
-			double controlPointOffset = (double)last_control_pt_size / 2d;
+			double controlPointOffset = last_control_pt_size / 2d;
 
 			if (activeEngine != null)
 			{
