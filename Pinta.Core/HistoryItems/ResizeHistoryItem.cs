@@ -1,4 +1,4 @@
-﻿// 
+// 
 // ResizeHistoryItem.cs
 //  
 // Author:
@@ -42,7 +42,11 @@ namespace Pinta.Core
 			Text = Translations.GetString ("Resize Image");
 		}
 
-		public DocumentSelection? RestoreSelection;
+		private DocumentSelection? restoreSelection;
+		public DocumentSelection RestoreSelection {
+			get { return restoreSelection; }
+			set { restoreSelection = value; }
+		}
 		
 		public override void Undo ()
 		{

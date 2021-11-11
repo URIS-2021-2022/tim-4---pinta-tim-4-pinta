@@ -336,7 +336,7 @@ namespace Pinta.Core
 		public ScaleFactor (int numer, int denom)
 		{
 			if (denom <= 0) {
-				throw new ArgumentOutOfRangeException ("denominator", "must be greater than 0(denominator = " + denom + ")");
+				throw new ArgumentOutOfRangeException ("denom", "must be greater than 0(denominator = " + denom + ")");
 			}
 
 			if (numer < 0) {
