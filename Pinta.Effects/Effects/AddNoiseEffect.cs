@@ -178,7 +178,11 @@ namespace Pinta.Effects
 		public class NoiseData : EffectData
 		{
 			[Caption ("Intensity"), MinimumValue (0), MaximumValue (100)]
-			public int Intensity = 64;
+			private int intensity = 64;
+			public int Intensity {
+				get { return intensity; }
+				set { intensity = value; }
+			}
 
 			[Caption ("Color Saturation"), MinimumValue (0), MaximumValue (400)]
 			public int ColorSaturation = 100;
