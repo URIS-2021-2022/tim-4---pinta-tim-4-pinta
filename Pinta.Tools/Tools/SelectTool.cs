@@ -357,11 +357,11 @@ namespace Pinta.Tools
 		public void UpdateCursor (Document document, PointD point)
 		{
 			if (document.Selection.Visible) {
-				foreach (var ct in controls.Where (ct => ct.IsInside (point))) {
-					if (active_cursor != ct.Cursor) {
+				foreach (var ct in controls.Where (ct => ct.IsInside (point)).Where(ct=> active_cursor != ct.Cursor)) {
+					//if (active_cursor != ct.Cursor) {
 						SetCursor (new Cursor (ct.Cursor));
 						active_cursor = ct.Cursor;
-					}
+					//}
 					return;
 				}
 			}
