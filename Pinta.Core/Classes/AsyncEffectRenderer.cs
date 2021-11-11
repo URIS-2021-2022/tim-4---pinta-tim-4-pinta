@@ -203,7 +203,7 @@ namespace Pinta.Core
 			var master = new Thread (() => {
 				
 				// Do part of the rendering on the master thread.
-				Render (renderId, 0);
+				Render (renderId);
 				
 				// Wait for slave threads to complete.
 				foreach (var slave in slaves)
@@ -223,7 +223,7 @@ namespace Pinta.Core
 		Thread StartSlaveThread (int renderId, int threadId)
 		{
 			var slave = new Thread(() => {
-				Render (renderId, threadId);
+				Render (renderId);
 			});
 			
 			slave.Priority = settings.ThreadPriority;
@@ -233,7 +233,7 @@ namespace Pinta.Core
 		}
 		
 		// Runs on a background thread.
-		void Render (int renderId, int threadId)
+		void Render (int renderId)
 		{
 			// Fetch the next tile index and render it.
 			while (true) {

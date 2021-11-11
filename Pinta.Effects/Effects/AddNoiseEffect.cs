@@ -144,7 +144,7 @@ namespace Pinta.Effects
 
 							if(localRand == null) {
 
-								throw new Exception ("localRand was null in AddNoiseEffect, Render method");
+								throw new ArgumentNullException ("localRand was null in AddNoiseEffect, Render method");
 								
 							} else {
 								

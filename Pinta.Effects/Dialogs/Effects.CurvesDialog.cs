@@ -296,8 +296,8 @@ namespace Pinta.Effects
 			g.MoveTo (0, size - 1);
 			g.LineTo (size - 1, 0);
 			g.Stroke ();
-			
-			g.SetDash (new double[] {}, 0);
+			var a=Array.Empty<double>() ;
+			g.SetDash (a, 0);
 		}
 		
 		//cpx, cpyx - control point's x and y coordinates
