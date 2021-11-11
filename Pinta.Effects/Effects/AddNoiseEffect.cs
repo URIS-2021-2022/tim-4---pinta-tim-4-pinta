@@ -19,7 +19,7 @@ namespace Pinta.Effects
 	{
 
 		
-		private int colorSaturation;
+		
 
 		private double coverage;
 
@@ -117,11 +117,11 @@ namespace Pinta.Effects
 			int intensity;
 
 			intensity = Data.Intensity;
-			colorSaturation = Data.ColorSaturation;
+			int colorSaturation = Data.ColorSaturation;
 			coverage = 0.01 * Data.Coverage;
 
 			int dev = intensity * intensity / 4;
-			int sat = this.colorSaturation * 4096 / 100;
+			int sat = colorSaturation * 4096 / 100;
 
 
 			if (threadRand == null) {

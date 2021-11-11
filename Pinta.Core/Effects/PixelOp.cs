@@ -80,7 +80,7 @@ namespace Pinta.Core
 			if (dstRect != dstClip)
 				throw new ArgumentOutOfRangeException
 				(
-				    "roiSize",
+				    nameof(roiSize),
 				    "Destination roi out of bounds" +
 				    string.Format (", dst.Size=({0},{1}", dst.Width, dst.Height) +
 				    ", dst.Bounds=" + dst.GetBounds ().ToString () +

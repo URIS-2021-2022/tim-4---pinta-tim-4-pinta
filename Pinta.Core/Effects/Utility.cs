@@ -373,7 +373,7 @@ namespace Pinta.Core
             return r;
         }
 
-        // i = z * 3;
+       
         // (x / z) = ((x * masTable[i]) + masTable[i + 1]) >> masTable[i + 2)
         private static readonly uint[] masTable = 
         {

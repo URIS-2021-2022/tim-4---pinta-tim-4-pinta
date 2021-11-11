@@ -1,4 +1,4 @@
-﻿//  
+//  
 // Author:
 //       Cameron White <cameronwhite91@gmail.com>
 // 
@@ -56,7 +56,7 @@ namespace Pinta.Docking
             SwitchPage += (o, args) =>
             {
                 var widget = args.Page;
-                IDockNotebookItem? item = items.Where(i => i.Widget == widget).FirstOrDefault();
+                IDockNotebookItem? item = items.FirstOrDefault(i => i.Widget == widget);
                 ActiveTabChanged?.Invoke(this, new TabEventArgs(item));
             };
         }
@@ -84,7 +84,7 @@ namespace Pinta.Docking
             get
             {
                 var current = CurrentPageWidget;
-                return items.Where(i => i.Widget == current).FirstOrDefault();
+                return items.FirstOrDefault(i => i.Widget == current);
             }
             set
             {

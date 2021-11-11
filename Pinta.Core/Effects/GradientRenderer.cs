@@ -21,7 +21,7 @@ namespace Pinta.Core
 		private ColorBgra endColor;
 
 		private PointD startPoint = new PointD();
-		private PointD endPoint;
+		private PointD endPoint= new PointD();
 		private bool alphaBlending=false;
 		private readonly bool alphaOnly;
 

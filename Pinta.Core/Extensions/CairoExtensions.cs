@@ -1781,7 +1781,7 @@ namespace Pinta.Core
 						scans[i] = excluded.GetRectangle (i);
 				}
 			} else {
-				scans = new Cairo.RectangleInt[0];
+				scans = Array.Empty<RectangleInt> ();
 			}
 
 			foreach (var rect in scans) {
