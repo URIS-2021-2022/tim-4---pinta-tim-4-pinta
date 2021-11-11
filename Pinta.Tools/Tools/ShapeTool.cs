@@ -31,7 +31,7 @@ namespace Pinta.Tools
 {
 	public abstract class ShapeTool : BaseTool
 	{
-		public BaseEditEngine EditEngine { get; }
+		public BaseEditEngine? EditEngine { get; }
 
 		public ShapeTool (IServiceManager services) : base (services)
 		{
