@@ -53,7 +53,7 @@ namespace Pinta.Core
 		public GLib.Menu AdjustmentsMenu { get; private set; } = null!;
 		public GLib.Menu EffectsMenu { get; private set; } = null!;
 
-		public ChromeManager ()
+		public ChromeManager? ()
 		{
 		}
 		
