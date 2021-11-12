@@ -164,7 +164,7 @@ namespace Pinta.Effects
 				set {
 					if (value != contrast) {
 						contrast = value;
-						FirePropertyChanged ("Contrast");
+						FirePropertyChanged (nameof(Contrast));
 					}
 				}
 			}

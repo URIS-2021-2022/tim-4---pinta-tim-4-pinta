@@ -134,7 +134,6 @@ namespace Pinta.Core
 					lock (diff_bounds_lock) {
 						diff_bounds.Merge (my_bounds);
 					}
-					return;
 			});
 
 			var bnds = new Gdk.Rectangle (diff_bounds.left, diff_bounds.top,

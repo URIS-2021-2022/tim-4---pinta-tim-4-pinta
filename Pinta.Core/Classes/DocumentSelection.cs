@@ -49,11 +49,7 @@ namespace Pinta.Core
 
 		public PointD Origin { get; set; }
 
-		private PointD end;
-		public PointD End {
-			get { return end; }
-			set { end = value; }
-		}
+		public PointD End { get; set; }
 		
 
 		

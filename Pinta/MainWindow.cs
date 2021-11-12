@@ -425,8 +425,7 @@ namespace Pinta
 			layers_pad.Initialize (dock, this, show_pad);
 
 			// History pad
-			var history_pad = new HistoryPad ();
-			history_pad.Initialize (dock, this, show_pad);
+			HistoryPad.Initialize (dock, this, show_pad);
 
 			container.PackStart (dock, true, true, 0);
 

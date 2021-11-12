@@ -19,8 +19,8 @@ namespace Pinta.Core
 	/// </summary>
 	public struct ScaleFactor
 	{
-		private int denominator;
-		private int numerator;
+		private readonly int denominator;
+		private readonly int numerator;
 
 		public int Denominator { get { return denominator; } }
 		public int Numerator { get { return numerator; } }

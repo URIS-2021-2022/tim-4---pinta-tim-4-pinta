@@ -67,8 +67,8 @@ namespace Pinta.Tools
 		protected override void OnBuildToolBar (Gtk.Toolbar tb)
 		{
 			base.OnBuildToolBar (tb);
-
-			EditEngine.HandleBuildToolBar (tb, Settings, GetType ().Name.ToLowerInvariant ());
+			if (EditEngine != null)
+				EditEngine.HandleBuildToolBar (tb, Settings, GetType ().Name.ToLowerInvariant ());
 		}
 
 		protected override void OnMouseDown (Document document, ToolMouseEventArgs e)
