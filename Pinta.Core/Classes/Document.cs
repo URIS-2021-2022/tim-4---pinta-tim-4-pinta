@@ -64,7 +64,7 @@ namespace Pinta.Core
 
 		private DocumentSelection previousSelection = new DocumentSelection ();
 
-		public DocumentSelection PreviousSelection
+		public DocumentSelection? PreviousSelection
 		{
 			get {return previousSelection; }
 			set { previousSelection=value; }
