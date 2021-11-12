@@ -81,14 +81,14 @@ namespace Pinta.Actions
 			if (response == ResponseType.Accept) {
 				PintaCore.System.LastDialogDirectory = fcd.CurrentFolder;
 
-				foreach (var file in fcd.Filenames ) {
-					if (PintaCore.Workspace.OpenFile (file)) {
+				foreach (var file in fcd.Filenames.Where(file => PintaCore.Workspace.OpenFile(file)) ) {
+					
 						RecentManager.Default.AddFull (fcd.Uri, PintaCore.System.RecentData);
 
 						var directory = System.IO.Path.GetDirectoryName (file);
 						if (directory is not null)
 							PintaCore.System.LastDialogDirectory = directory;
-					}
+					
 				}
 			}
 		}
