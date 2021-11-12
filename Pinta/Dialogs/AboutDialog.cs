@@ -177,7 +177,7 @@ namespace Pinta
 				sb.AppendLine ();
 				sb.AppendFormat ("<b>{0}</b>\n", Translations.GetString ("Based on the work of Paint.NET:"));
 				sb.AppendLine ();
-				sb.Append ("http://www.getpaint.net/");
+				sb.Append ("https://www.getpaint.net/");
 
 				sb.AppendLine ();
 				sb.AppendLine ();
@@ -198,10 +198,6 @@ namespace Pinta
 
 		bool ScrollDown ()
 		{
-			//if (scrollPause > 0) {
-			//        if (--scrollPause == 0)
-			//                ++scroll;
-			//} else
 				++scroll;
 			
 			this.QueueDrawArea (0, 0, Window.FrameExtents.Width, image.Height);

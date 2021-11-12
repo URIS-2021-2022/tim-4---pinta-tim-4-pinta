@@ -50,7 +50,7 @@ namespace Pinta.Tools
 		protected ToolBarLabel? tolerance_label;
 		protected ToolBarSlider? tolerance_slider;
 
-		public FloodTool (IServiceManager services) : base (services)
+		protected FloodTool (IServiceManager services) : base (services)
 		{
 		}
 

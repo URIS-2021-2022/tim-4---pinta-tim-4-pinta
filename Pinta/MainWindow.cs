@@ -58,7 +58,7 @@ namespace Pinta
 
 			// Initialize interface things
 			window_shell.AddAccelGroup (PintaCore.Actions.AccelGroup);
-			new ActionHandlers ();
+			
 
 			PintaCore.Chrome.InitializeProgessDialog (new ProgressDialog ());
 			PintaCore.Chrome.InitializeErrorDialogHandler ((parent, message, details) => {
@@ -202,7 +202,7 @@ namespace Pinta
 			};
 		}
 
-		private MetricType GetCurrentRulerMetric ()
+		private static MetricType GetCurrentRulerMetric ()
 		{
 			return (MetricType) (int) PintaCore.Actions.View.RulerMetric.State;
 		}

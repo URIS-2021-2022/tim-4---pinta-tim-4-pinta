@@ -177,7 +177,7 @@ namespace Pinta.MacInterop
 		public static void CheckReturn (int osErr)
 		{
 			if (osErr != 0) {
-				string s = GetMacOSStatusCommentString (osErr);
+				GetMacOSStatusCommentString (osErr);
 			}
 		}
 		
@@ -248,7 +248,6 @@ namespace Pinta.MacInterop
 	{
 		//this is an 80-char opaque byte array
 		#pragma warning disable 0169
-		private byte hidden;
 		#pragma warning restore 0169
 	}
 	

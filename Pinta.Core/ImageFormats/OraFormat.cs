@@ -232,7 +232,7 @@ namespace Pinta.Core
 			stream.Close ();
 		}
 
-		private string BlendModeToStandard (BlendMode mode)
+		static  string BlendModeToStandard (BlendMode mode)
 		{
 			switch (mode) {
 				case BlendMode.Normal:

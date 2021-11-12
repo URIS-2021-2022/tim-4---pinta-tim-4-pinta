@@ -64,7 +64,13 @@ namespace Pinta.Core
 
 		private DocumentSelection previousSelection = new DocumentSelection ();
 
-		public DocumentSelection PreviousSelection { get; set; }
+
+		public DocumentSelection? PreviousSelection
+		{
+			get {return previousSelection; }
+			set { previousSelection=value; }
+		}
+
 
 		public Document (Gdk.Size size)
 		{
@@ -279,9 +285,9 @@ namespace Pinta.Core
 		{
 			var rect = new Cairo.Rectangle (0, 0, ImageSize.Width, ImageSize.Height);
 			Selection.CreateRectangleSelection (rect);
-			PreviousSelection.CreateRectangleSelection (rect);
+			//PreviousSelection.CreateRectangleSelection (rect);
 			Selection.Visible = false;
-			PreviousSelection.Visible = false;
+			//PreviousSelection.Visible = false;
 		}
 
 		/// <summary>

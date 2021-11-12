@@ -71,12 +71,17 @@ namespace Pinta.Core
 
 		//Stores most of the editable text's data, including the text itself.
 		public TextEngine tEngine;
-
+		
 		//Rectangular boundary surrounding the editable text.
-		public Gdk.Rectangle textBounds = Gdk.Rectangle.Zero;
-		public Gdk.Rectangle previousTextBounds = Gdk.Rectangle.Zero;
+		public  Gdk.Rectangle textBounds = Gdk.Rectangle.Zero;
+		
 
-        public override void ApplyTransform (Matrix xform, Size new_size)
+		public  Gdk.Rectangle previousTextBounds = Gdk.Rectangle.Zero;
+
+		
+
+
+		public override void ApplyTransform (Matrix xform, Size new_size)
 		{
 			base.ApplyTransform (xform, new_size);
 

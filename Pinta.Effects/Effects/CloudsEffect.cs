@@ -93,7 +93,7 @@ namespace Pinta.Effects
         private static double Grad(int hash, double x, double y)
         {
             int h = hash & 15;
-            double u = h < 8 ? x : y;
+	    double u;
 	    double v;
            // double v = h < 4 ? y : h == 12 || h == 14 ? x : 0;
 	   if(h < 4){
