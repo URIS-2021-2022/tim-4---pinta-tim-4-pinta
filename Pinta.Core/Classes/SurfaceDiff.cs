@@ -183,11 +183,11 @@ namespace Pinta.Core
 			}
 
 			// Store the old pixels.
-			var pixels = new ColorBgra[num_changed];
+			var pxls = new ColorBgra[num_changed];
 			var new_ptr = (ColorBgra*)original.DataPtr;
 			int mask_index = 0;
 
-			fixed (ColorBgra* fixed_ptr = pixels) {
+			fixed (ColorBgra* fixed_ptr = pxls) {
 				var pixel_ptr = fixed_ptr;
 
 				for (int y = bounds_y; y <= bottom; ++y) {
@@ -208,7 +208,7 @@ namespace Pinta.Core
 			System.Console.WriteLine("SurfaceDiff time: " + timer.ElapsedMilliseconds);
 #endif
 
-			return new SurfaceDiff (bitmask, bnds, pixels);
+			return new SurfaceDiff (bitmask, bnds, pxls);
 		}
 		#endregion
 

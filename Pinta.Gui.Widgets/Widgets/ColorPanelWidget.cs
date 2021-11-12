@@ -34,15 +34,16 @@ namespace Pinta.Gui.Widgets
 {
 	public class ColorPanelWidget : FilledAreaBin
 	{
-		private readonly EventBox eventbox;
+		
 
 		public Color CairoColor { get; set; }
 
 		public ColorPanelWidget ()
 		{
-			HeightRequest = 24;
+			 
+		HeightRequest = 24;
 
-			eventbox = new EventBox {
+			EventBox eventbox = new EventBox {
 				Events = (Gdk.EventMask) 256,
 				VisibleWindow = false
 			};

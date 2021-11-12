@@ -403,8 +403,7 @@ namespace Mono.Options
 				type = name[end];
 			else
 				throw new ArgumentException (
-						string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name[end]),
-						"prototype");
+						string.Format ("Conflicting option types: '{0}' vs. '{1}'.", type, name[end]));
 			return type;
 		}
 
@@ -428,8 +427,7 @@ namespace Mono.Options
 					case '{':
 						if (start != -1)
 							throw new ArgumentException (
-									string.Format ("Ill-formed name/value separator found in \"{0}\".", name),
-									"prototype");
+									string.Format ("Ill-formed name/value separator found in \"{0}\".", name));
 						start = i+1;
 						break;
 					case '}':

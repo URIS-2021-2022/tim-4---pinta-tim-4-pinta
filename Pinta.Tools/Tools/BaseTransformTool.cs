@@ -44,7 +44,7 @@ namespace Pinta.Tools
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Pinta.Tools.BaseTransformTool"/> class.
 		/// </summary>
-		public BaseTransformTool (IServiceManager services) : base (services)
+		protected BaseTransformTool (IServiceManager services) : base (services)
 		{
 		}
 

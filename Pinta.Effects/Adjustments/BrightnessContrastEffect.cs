@@ -153,7 +153,7 @@ namespace Pinta.Effects
 				set {
 					if (value != brightness) {
 						brightness = value;
-						FirePropertyChanged ("Brightness");
+						FirePropertyChanged (nameof(brightness));
 					}
 				}
 			}

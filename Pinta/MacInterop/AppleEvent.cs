@@ -33,7 +33,7 @@ namespace Pinta.MacInterop
 	{
 		const string AELib = Carbon.CarbonLib;
 		
-		//FIXME: is "int" correct for size?
+		
 		[DllImport (AELib)]
 		static extern AEDescStatus AECreateDesc (OSType typeCode, IntPtr dataPtr, int dataSize, out AEDesc desc);
 		
@@ -180,7 +180,7 @@ namespace Pinta.MacInterop
 		static void CheckReturn (AEDescStatus status)
 		{
 			if (status != AEDescStatus.Ok)
-				throw new Exception ("Failed with code " + status.ToString ());
+				throw new ArgumentNullException ("Failed with code " + status.ToString ());
 		}
 	}
 	

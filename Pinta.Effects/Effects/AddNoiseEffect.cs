@@ -18,11 +18,6 @@ namespace Pinta.Effects
 	public class AddNoiseEffect : BaseEffect
 	{
 
-		
-		private int colorSaturation;
-
-		private double coverage;
-
 		public override string Icon {
 			get { return "Menu.Effects.Noise.AddNoise.png"; }
 		}
@@ -117,11 +112,12 @@ namespace Pinta.Effects
 			int intensity;
 
 			intensity = Data.Intensity;
-			colorSaturation = Data.ColorSaturation;
-			coverage = 0.01 * Data.Coverage;
+
+			int colorSaturation = Data.ColorSaturation;
+			double coverage = 0.01 * Data.Coverage;
 
 			int dev = intensity * intensity / 4;
-			int sat = this.colorSaturation * 4096 / 100;
+			int sat = colorSaturation * 4096 / 100;
 
 
 			if (threadRand == null) {
@@ -138,7 +134,7 @@ namespace Pinta.Effects
 					ColorBgra* dstPtr = dst.GetPointAddressUnchecked (rect.Left, y);
 
 					for (int x = 0; x < rect.Width; ++x) {
-						if (localRand?.NextDouble () > this.coverage) {
+						if (localRand?.NextDouble () > coverage) {
 							*dstPtr = *srcPtr;
 						} else {
 							int r;
@@ -182,7 +178,11 @@ namespace Pinta.Effects
 		public class NoiseData : EffectData
 		{
 			[Caption ("Intensity"), MinimumValue (0), MaximumValue (100)]
-			public int Intensity = 64;
+			private int intensity = 64;
+			public int Intensity {
+				get { return intensity; }
+				set { intensity = value; }
+			}
 
 			[Caption ("Color Saturation"), MinimumValue (0), MaximumValue (400)]
 			public int ColorSaturation = 100;

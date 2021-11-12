@@ -16,7 +16,9 @@ namespace Pinta.Core
     /// </summary>
     public struct HsvColor
     {
-        public int Hue; // 0-360
+       public int Hue; // 0-360
+	 
+
         public readonly int Saturation; // 0-100
         public readonly int Value; // 0-100
 

@@ -135,7 +135,7 @@ namespace Pinta.Resources
 				g.MoveTo (size / 4, size / 4);
 				g.LineTo ((size - 1) - (size / 4), (size - 1) - (size / 4));
 				g.MoveTo ((size - 1) - (size / 4), size / 4);
-				g.LineTo (size / 4, (size - 1) - (size / 4));
+				g.LineTo ((double)size / 4, (size - 1) - (size / 4));
 
 				return new Pixbuf (surf, 0, 0, surf.Width, surf.Height);
 			}

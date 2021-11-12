@@ -1781,7 +1781,7 @@ namespace Pinta.Core
 						scans[i] = excluded.GetRectangle (i);
 				}
 			} else {
-				scans = new Cairo.RectangleInt[0];
+				scans = Array.Empty<RectangleInt> ();
 			}
 
 			foreach (var rect in scans) {
@@ -1949,7 +1949,7 @@ namespace Pinta.Core
 		{
 			ImageSurface surf = new Cairo.ImageSurface (format, width, height);
 			if (surf.Status == Cairo.Status.NoMemory) {
-				throw new OutOfMemoryException ("Unable to allocate memory for image");
+				Console.WriteLine ("Out of memory - Unable to allocate memory for image");
 			}
 
 			return surf;

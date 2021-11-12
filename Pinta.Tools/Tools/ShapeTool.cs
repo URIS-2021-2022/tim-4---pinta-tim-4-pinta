@@ -164,7 +164,7 @@ namespace Pinta.Tools
 		{
 			base.OnSaveSettings (settings);
 
-			EditEngine.OnSaveSettings (settings, GetType ().Name.ToLowerInvariant ());
+			//EditEngine.OnSaveSettings (settings, GetType ().Name.ToLowerInvariant ());
 		}
 	}
 }
