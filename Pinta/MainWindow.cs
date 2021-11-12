@@ -202,7 +202,7 @@ namespace Pinta
 			};
 		}
 
-		private MetricType GetCurrentRulerMetric ()
+		private static MetricType GetCurrentRulerMetric ()
 		{
 			return (MetricType) (int) PintaCore.Actions.View.RulerMetric.State;
 		}

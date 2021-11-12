@@ -602,33 +602,30 @@ namespace Pinta.Tools
 
 				}
 			}
-			else
-			{
+			
 				showNormalCursor = true;
-			}
+			
 
-			if (showNormalCursor)
+			if (showNormalCursor && !previousMouseCursorNormal)
 			{
-				if (!previousMouseCursorNormal)
-				{
+				
 					SetCursor(DefaultCursor);
 
 					previousMouseCursorNormal = showNormalCursor;
 
 					if (PintaCore.Workspace.HasOpenDocuments)
 						RedrawText(is_editing, true);
-				}
+				
 			}
-			else
+			else if(!showNormalCursor && previousMouseCursorNormal)
 			{
-				if (previousMouseCursorNormal)
-				{
+				
 					SetCursor(InvalidEditCursor);
 
 					previousMouseCursorNormal = showNormalCursor;
 
 					RedrawText(is_editing, true);
-				}
+				
 			}
 		}
 #endregion

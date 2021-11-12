@@ -86,7 +86,6 @@ namespace Pinta
 			Application.Init ();
 
 			// For testing a dark variant of the theme.
-			//Gtk.Settings.Default.SetProperty("gtk-application-prefer-dark-theme", new GLib.Value(true));
 
 			// Add our icons to the search path.
 			Gtk.IconTheme.Default.AppendSearchPath(Pinta.Core.SystemManager.GetDataRootDirectory() + "/icons");
@@ -116,12 +115,9 @@ namespace Pinta
 		private static void OpenFilesFromCommandLine (List<string> extra)
 		{
 			// Ignore the process serial number parameter on Mac OS X
-			if (PintaCore.System.OperatingSystem == OS.Mac && extra.Count > 0)
-			{
-				if (extra[0].StartsWith ("-psn_"))
-				{
+			if (PintaCore.System.OperatingSystem == OS.Mac && extra.Count > 0 && extra[0].StartsWith ("-psn_"))
+			{								
 					extra.RemoveAt (0);
-				}
 			}
 
 			if (extra.Count > 0)
