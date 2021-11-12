@@ -100,8 +100,6 @@ namespace Pinta.Effects
 		return y;
             }
 		 return h == 12 || h == 14 ? x : 0;
-	
-            return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
         }
 
         private static double Noise(byte ix, byte iy, double x, double y, byte seed)

@@ -341,8 +341,6 @@ namespace Pinta.Core
 			
 			if (IsRendering && !cancel_render_flag)
 				OnUpdate (Progress, bounds);
-			
-			return;
 		}
 		
 		void HandleRenderCompletion ()

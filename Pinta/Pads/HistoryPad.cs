@@ -33,7 +33,7 @@ namespace Pinta
 {
 	public class HistoryPad : IDockPad
 	{
-		public void Initialize (Dock workspace, Application app, GLib.Menu padMenu)
+		public static void Initialize (Dock workspace, Application app, GLib.Menu padMenu)
 		{
 			var history = new HistoryTreeView ();
 			DockItem history_item = new DockItem(history, "History")

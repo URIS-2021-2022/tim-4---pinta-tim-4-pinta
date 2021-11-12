@@ -44,8 +44,6 @@ namespace Pinta.Core
 			if (line is null || !line.StartsWith ("JASC-PAL"))
 				throw new InvalidDataException("Not a valid PaintShopPro palette file.");
 
-			line = reader.ReadLine (); // version
-
 			int numberOfColors = int.Parse(reader.ReadLine()!); // NRT - Assumes valid formatted file
 			PintaCore.Palette.CurrentPalette.Resize (numberOfColors);
 

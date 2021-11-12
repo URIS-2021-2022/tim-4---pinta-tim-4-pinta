@@ -243,9 +243,8 @@ namespace Mono.Options
 	public class OptionContext {
 		private Option                option;
 		public string name { get; set; }
-		private int                   index;
 		private OptionSet             set;
-		private OptionValueCollection c;
+		private readonly OptionValueCollection c;
 
 		public OptionContext (OptionSet set)
 		{

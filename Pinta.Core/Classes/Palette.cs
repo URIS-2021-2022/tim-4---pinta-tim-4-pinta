@@ -183,7 +183,7 @@ namespace Pinta.Core
 			saver.Save (colors, fileName);
 		}
 
-		private void ShowUnsupportedFormatDialog(Window parent, string filename, string primaryText, string details)
+		private static void ShowUnsupportedFormatDialog(Window parent, string filename, string primaryText, string details)
 		{
 			string markup = "<span weight=\"bold\" size=\"larger\">{0}</span>\n\n{1}";
 
