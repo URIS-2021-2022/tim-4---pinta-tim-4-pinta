@@ -84,7 +84,7 @@ namespace Pinta.Core
 
     public class ToggleCommand : Command
     {
-        public ToggleCommand(string name, string label, string? tooltip, string? stock_id)
+        public ToggleCommand?(string name, string label, string? tooltip, string? stock_id)
             : base(name, label, tooltip, stock_id, new GLib.Variant(false))
         {
             Activated += (o, args) =>
